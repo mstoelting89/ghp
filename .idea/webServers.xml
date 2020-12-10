@@ -3,7 +3,7 @@
   <component name="WebServers">
     <option name="servers">
       <webServer id="8b2ead51-57a4-4c60-818d-be65301833be" name="GuitarHeartsProject" url="https://dev-ghp.whocando.eu">
-        <fileTransfer rootFolder="/guitarheartsproject" accessType="SFTP" host="access764565842.webspace-data.io" port="22" sshConfigId="d37e7235-44e8-4c5c-9af0-5f2dbb4ecc1a" sshConfig="u95803079@access764565842.webspace-data.io:22 key" keyPair="true">
+        <fileTransfer rootFolder="/guitarheartsproject/ghp" accessType="SFTP" host="access764565842.webspace-data.io" port="22" sshConfigId="d37e7235-44e8-4c5c-9af0-5f2dbb4ecc1a" sshConfig="u95803079@access764565842.webspace-data.io:22 key" keyPair="true">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
           </advancedOptions>
