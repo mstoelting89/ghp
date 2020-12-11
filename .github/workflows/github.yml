@@ -13,6 +13,6 @@ jobs:
           username: 'u95803079-github'
           server: ${{ secrets.SERVER_IP }} 
           ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }} 
-          local_path: './ghp/*'
+          local_path: '/home/michael/Projekte/private/Guitarheartsproject/*'
           remote_path: '/kunden/homepages/16/d764565842/htdocs/guitarheartsproject/ghp'
           args: '-o ConnectTimeout=5'
