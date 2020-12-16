@@ -1,0 +1,11 @@
+.navbar-nav {
+    position:absolute;
+    right:50px;
+
+}
+
+.header-content {
+    background-image: url("../images/PHOTO_20190127_185130.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+}

@@ -1,0 +1,40 @@
+<f:if condition="{model.showElement}">
+  <div class="form-group {f:if(condition: model.validationErrorMessages, then:'has-error')}">
+    <label for="{model.additionalArguments.id}">
+      {model.additionalArguments.label}
+    </label>
+
+    <f:form.textfield
+      class="form-control"
+      id="{model.additionalArguments.id}"
+      lang="{model.additionalArguments.lang}"
+
+      name="{model.additionalArguments.prefix}[{model.additionalArguments.name}]"
+      value="{model.additionalArguments.value}"
+
+      maxlength="{model.additionalArguments.maxlength}"
+      placeholder="{model.additionalArguments.placeholder}"
+      pattern="{model.additionalArguments.pattern}"
+      required="{model.additionalArguments.required}"
+      type="{model.additionalArguments.type}"
+
+      additionalAttributes="{model.htmlAttributes}"
+    />
+
+    <f:if condition="{model.mandatoryValidationMessages}">
+      <div class="help-block">
+        <f:for each="{model.mandatoryValidationMessages}" as="message">
+          {message}
+        </f:for>
+      </div>
+    </f:if>
+
+    <f:if condition="{model.validationErrorMessages}">
+      <div class="help-block">
+        <f:for each="{model.validationErrorMessages}" as="error">
+          {error}
+        </f:for>
+      </div>
+    </f:if>
+  </div>
+</f:if>
