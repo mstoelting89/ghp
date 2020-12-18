@@ -1,4 +1,6 @@
 $(document).ready(function () {
+
+    /* Navbar scroll function */
    if($(window).width() > 992) {
        $(window).scroll(function() {
            if($(this).scrollTop() > 40) {
@@ -8,4 +10,14 @@ $(document).ready(function () {
            }
        })
    }
+
+   $('.mini-blog-article').click(function() {
+       $('.blog-overlay').addClass('show');
+       $('.blog-detail').addClass('show');
+   });
+
+   $('.blog-detail-closing').click(function() {
+       $('.blog-overlay').removeClass('show');
+       $('.blog-detail').removeClass('show');
+   })
 });

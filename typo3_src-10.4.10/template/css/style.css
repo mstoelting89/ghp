@@ -62,6 +62,81 @@ body {
     height:100%;
 }
 
+.card-header {
+    background-color: #b20027;
+    color:#fff;
+}
+
+/*************************************/
+/*          Carousel                 */
+/*************************************/
+.carousel.slide.w-50 {
+    margin: 0 auto;
+}
+
+/*************************************/
+/*          Blog-Posts               */
+/*************************************/
+.mini-blog-posts {
+    scrollbar-color:#666 #201c29;
+    padding:3rem;
+    margin:0;
+    display:flex;
+    overflow-x:scroll;
+}
+
+.mini-blog-article {
+    min-width:300px;
+    min-height: 350px;
+    box-shadow: -0.5rem 0 1rem #000;
+    padding:1.5rem;
+    border-radius:16px;
+    background-color:#b20027;
+    color:#fff;
+    display:flex;
+    flex-direction: column;
+    transition: .2s;
+    margin:0;
+}
+
+.mini-blog-article:not(:first-child) {
+    margin-left:-130px;
+}
+
+.mini-blog-article:hover {
+    margin-right:140px;
+    transform: translateY(-1rem);
+}
+
+.blog-overlay {
+    position:fixed;
+    z-index: 999;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    background-color: rgba(0,0,0,.5);
+    display:none;
+}
+
+.blog-detail {
+    position: fixed;
+    z-index: 1000;
+    height:70vh;
+    width:50vw;
+    background-color:#fff;
+    color:#000;
+    top:15vh;
+    display:none;
+    margin-left:25vw;
+    margin-right:25vw;
+    border-radius: 5px;
+}
+
+.show {
+    display:block;
+}
+
 /*************************************/
 /*          Footer                   */
 /*************************************/
