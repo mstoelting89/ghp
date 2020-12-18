@@ -1,11 +1,72 @@
+/*************************************/
+/*          Header / Navbar          */
+/*************************************/
+
 .navbar-nav {
     position:absolute;
     right:50px;
+}
 
+.navbar-light .navbar-nav .nav-link {
+    color: #000;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.navbar-nav li {
+    margin-top:auto;
+    margin-bottom: auto;
+    padding-left:10px;
+    padding-right:10px;
+}
+
+.navbar {
+    padding: 0;
+    background-color: rgba(255,255,255, .7);
+}
+
+.navbar a {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.nav-item:hover {
+    background-color: #f7f7f7;
+    opacity: .6;
 }
 
 .header-content {
-    background-image: url("../images/PHOTO_20190127_185130.jpg");
-    background-size: contain;
+    background-image: url("../images/PHOTO_20190127_185215_gedreht.jpg");
+    background-size: cover;
     background-repeat: no-repeat;
+    height: 70vh;
+    background-position: center 70%;
+}
+
+.header-title {
+    height:50vh;
+    position:absolute;
+    bottom:0;
+    color:#fff;
+}
+
+/*************************************/
+/*          Info-box                 */
+/*************************************/
+
+.info-box .card {
+    height:100%;
+}
+
+/*************************************/
+/*          Footer                   */
+/*************************************/
+
+footer {
+    background-color: #000;
+    color: #FFF;
+}
+
+footer .sub-text-footer, footer h5 {
+    text-align: center;
 }
