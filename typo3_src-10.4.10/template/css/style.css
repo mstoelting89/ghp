@@ -127,14 +127,15 @@ body {
     position: fixed;
     z-index: 3000;
     height:70%;
-    width:50%;
     background-color:#fff;
     color:#000;
     top:15%;
-    margin-left:5%;
+    margin-left:2vw;
+    margin-right:2vw;
     display:none;
     border-radius: 5px;
     padding:3rem;
+    overflow:scroll;
 }
 
 .blog-detail-closing {
@@ -299,6 +300,24 @@ footer .img-thumbnail {
         background-color:#fff;
         z-index:3000;
         border: 2px solid black;
+    }
+
+    /*************************************/
+    /*          Blog-Posts               */
+    /*************************************/
+
+    .blog-detail {
+        position: fixed;
+        z-index: 3000;
+        height:70%;
+        width:50%;
+        background-color:#fff;
+        color:#000;
+        top:15%;
+        margin-left:5%;
+        display:none;
+        border-radius: 5px;
+        padding:3rem;
     }
 }
 
