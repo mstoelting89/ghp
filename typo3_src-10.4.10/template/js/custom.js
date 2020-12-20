@@ -17,7 +17,12 @@ $(document).ready(function () {
    });
 
    $('.blog-detail-closing').click(function() {
-       $('.blog-overlay').removeClass('show');
-       $('.blog-detail').removeClass('show');
+       console.log("Hallo");
+        $('.blog-overlay').removeClass('show');
+        $('.blog-detail').removeClass('show');
+   });
+
+   $('.sidebar-title').click(function() {
+       $(this).parent().toggleClass('active');
    })
 });
