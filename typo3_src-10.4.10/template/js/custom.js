@@ -17,12 +17,13 @@ $(document).ready(function () {
    });
 
    $('.blog-detail-closing').click(function() {
-       console.log("Hallo");
         $('.blog-overlay').removeClass('show');
         $('.blog-detail').removeClass('show');
    });
 
    $('.sidebar-title').click(function() {
        $(this).parent().toggleClass('active');
+
+       //$('div[class^="sidebar-item"]:not(.active)').
    })
 });
