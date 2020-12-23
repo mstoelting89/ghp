@@ -6,6 +6,10 @@ body {
 /*          Header / Navbar          */
 /*************************************/
 
+.logo {
+    width:100px;
+    height:inherit;
+}
 .navbar-nav {
    /* position:absolute;
     right:50px;*/
@@ -44,7 +48,6 @@ body {
 }
 
 .header-content {
-    background-image: url("../images/PHOTO_20190127_185215_gedreht.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     height: 40rem;
