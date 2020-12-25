@@ -69,6 +69,7 @@
       <sourceFolder url="file://$MODULE_DIR$/typo3_src-10.4.10/typo3/sysext/rte_ckeditor/Classes" isTestSource="false" packagePrefix="TYPO3\CMS\RteCKEditor\" />
       <sourceFolder url="file://$MODULE_DIR$/typo3_src-10.4.10/typo3/sysext/seo/Classes" isTestSource="false" packagePrefix="TYPO3\CMS\Seo\" />
       <sourceFolder url="file://$MODULE_DIR$/typo3_src-10.4.10/typo3/sysext/core/Classes" isTestSource="false" packagePrefix="TYPO3\CMS\Core\" />
+      <excludeFolder url="file://$MODULE_DIR$/template" />
       <excludeFolder url="file://$MODULE_DIR$/typo3_src-10.4.10/vendor/cogpowered/finediff" />
       <excludeFolder url="file://$MODULE_DIR$/typo3_src-10.4.10/vendor/composer" />
       <excludeFolder url="file://$MODULE_DIR$/typo3_src-10.4.10/vendor/doctrine/annotations" />
