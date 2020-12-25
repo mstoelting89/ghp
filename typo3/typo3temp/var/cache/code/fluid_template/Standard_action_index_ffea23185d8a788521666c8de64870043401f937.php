@@ -1,6 +1,6 @@
 <?php
 
-class Standard_action_index_b614166710d30b6421165ec38d46fb68cccf4ab3 extends \TYPO3Fluid\Fluid\Core\Compiler\AbstractCompiledTemplate {
+class Standard_action_index_ffea23185d8a788521666c8de64870043401f937 extends \TYPO3Fluid\Fluid\Core\Compiler\AbstractCompiledTemplate {
 
 public function getLayoutName(\TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface $renderingContext) {
 $self = $this;
@@ -36,12 +36,13 @@ $output0 = '';
 
 $output0 .= '
 <header>
-    <div class="header-content" style="background-image: url(';
+    <!--<div class="header-content" style="background-image: url(';
 $array1 = array (
 );
 $output0 .= call_user_func_array( function ($var) { return (is_string($var) || (is_object($var) && method_exists($var, '__toString')) ? htmlspecialchars((string) $var, ENT_QUOTES) : $var); }, [$renderingContext->getVariableProvider()->getByPath('image', $array1)]);
 
-$output0 .= ')">
+$output0 .= ')">-->
+    <div class="header-content header-bg-image">
         ';
 // Rendering ViewHelper TYPO3\CMS\Fluid\ViewHelpers\DebugViewHelper
 $renderChildrenClosure3 = function() use ($renderingContext, $self) {
@@ -79,8 +80,7 @@ $output0 .= '
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                    ';
+                ';
 // Rendering ViewHelper TYPO3Fluid\Fluid\ViewHelpers\Format\RawViewHelper
 $renderChildrenClosure9 = function() use ($renderingContext, $self) {
 $array10 = array (
@@ -92,7 +92,8 @@ $arguments8['value'] = NULL;
 $output0 .= isset($arguments8['value']) ? $arguments8['value'] : $renderChildrenClosure9();
 
 $output0 .= '
-                </ul>
+                <!--<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                </ul>-->
             </div>
         </nav>
         <div class="header-title">
@@ -173,6 +174,21 @@ $arguments23 = array();
 $arguments23['value'] = NULL;
 
 $output0 .= isset($arguments23['value']) ? $arguments23['value'] : $renderChildrenClosure24();
+
+$output0 .= '
+
+    </div>
+    <div class="secondary-menu">
+        ';
+// Rendering ViewHelper TYPO3Fluid\Fluid\ViewHelpers\Format\RawViewHelper
+$renderChildrenClosure27 = function() use ($renderingContext, $self) {
+$array28 = array (
+);return $renderingContext->getVariableProvider()->getByPath('footerSecondaryMenu', $array28);
+};
+$arguments26 = array();
+$arguments26['value'] = NULL;
+
+$output0 .= isset($arguments26['value']) ? $arguments26['value'] : $renderChildrenClosure27();
 
 $output0 .= '
 

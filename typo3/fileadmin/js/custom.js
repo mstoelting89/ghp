@@ -1,15 +1,19 @@
 $(document).ready(function () {
 
     /* Navbar scroll function */
-   if($(window).width() > 992) {
-       $(window).scroll(function() {
-           if($(this).scrollTop() > 40) {
-               $('.navbar').addClass('fixed-top');
-           } else {
-               $('.navbar').removeClass('fixed-top');
+   //if($(window).width() > 992) {
+       $(window).on({
+           'scroll': function (e) {
+               console.log("Hallo Welt " + $(this).scrollTop());
+               if ($(this).scrollTop() > 40) {
+                   $('.navbar').addClass('fixed-top');
+                   console.log("Es wird gescrollt");
+               } else {
+                   $('.navbar').removeClass('fixed-top');
+               }
            }
        })
-   }
+   //}
 
    $('.mini-blog-article').click(function() {
        $('.blog-overlay').addClass('show');
