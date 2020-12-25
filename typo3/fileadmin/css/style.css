@@ -59,8 +59,8 @@ body {
 }*/
 
 .nav-item a:hover {
-    font-size: 26px;
-    transition: .4s;
+    font-size: 22px;
+    transition: .2s;
 }
 
 .nav-link {
@@ -84,6 +84,11 @@ body {
     position:absolute;
     bottom:0;
     color:#fff;
+}
+
+.breadcrumb {
+    height:2rem;
+    background-color: #E6E6E6;
 }
 
 /*************************************/

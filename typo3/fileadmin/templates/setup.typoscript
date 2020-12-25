@@ -1,0 +1,176 @@
+# Default PAGE object:
+page = PAGE
+
+page {
+
+    # Meta Tags
+    page.config.doctype = html5
+    meta.author = Michael Stoelting
+    meta.description = Dies ist die Webseite des Guitar Hearts Project
+    meta.viewport = width=device-width, initial-scale=1
+
+    # Einbindung CSS
+    includeCSS {
+        bootstrap = fileadmin/vendors/bootstrap/dist/css/bootstrap.min.css
+        fontawesome = fileadmin/vendors/fortawesome/css/all.min.css
+        main = fileadmin/css/style.css
+    }
+
+    # Einbindung JS
+    includeJS {
+        jquery = fileadmin/vendors/jquery/dist/jquery.min.js
+        main = fileadmin/js/custom.js
+        bootstrapJS = fileadmin/vendors/bootstrap/dist/js/bootstrap.bundle.min.js
+        fontawesomeJS = fileadmin/vendors/fortawesome/js/all.min.js
+    }
+
+    # Header Hintergrundbild dynamische hinterlegung
+    headerData {
+        10 = IMAGE
+        10 {
+            file {
+                import = 1
+                import {
+
+                    # Import der Daten aus der Templatedatei
+                    data = levelmedia:-1,slide
+
+                    # Auswahl erstes Angezeigtes Bild
+                    listNum = 0
+                }
+                treatIdAsReference = 1
+                width = 1920
+            }
+
+            # Einbindung der CSS-Klasse mit dem Hintergrundbild in den Header
+            layoutKey = cssbg
+            layout {
+                cssbg {
+                    # SRC ist das Attribut src des img tags welches vorher eingebunden wurde
+                    element = <style type="text/css">.header-bg-image { background-image: url(###SRC###); }</style>
+                }
+            }
+        }
+    }
+
+    # Inititalisierung des Fluid-Templates
+    10 = FLUIDTEMPLATE
+    10 {
+
+        # Template-Datei wird eingebunden
+        file = fileadmin/templates/main_template.html
+
+        # Variablen aus der Templatedatei werden gesetzt
+        variables {
+
+            # Einbindung fixes Logo
+            logo = IMAGE
+            logo.file = fileadmin/images/images/f2e0a4ac-3cbf-43e1-bfa0-d9b075e276df.jpg
+            logo.file.height = 70
+
+            # Einbindung fixer Footer
+            footerLabel = TEXT
+            footerLabel.value = The Guitar Hearts Project e.V. <br>guitarheartsproject@outlook.de <br>067719344061 <br>Langgasse 17, 56348 Bornich, Germany <br><br>©2020 The Guitar Hearts Project e.V.
+
+            # Einbindung Navbar
+            menuPrimary = HMENU
+            menuPrimary {
+
+                # Ordner Struktur als Vorgabe (alle Unterseiten von ID=2 werden als Menü dargestellt)
+                special = directory
+                special.value = 2
+
+                # ul-tag kommt um das Menü herum
+                wrap = <ul class="navbar-nav mr-auto mt-2 mt-lg-0">|</ul>
+
+                # Darstellung des Menüs
+                1 = TMENU
+                1 {
+
+                    # NO(rmale) Darstellung
+                    NO = 1
+                    NO {
+
+                        # umschließung des Menü-Eintrags mit einem li-tag
+                        wrapItemAndSub = <li class="nav-item nav-link">|</li>
+                    }
+
+                    # ACT(ive) hat gleiche Eigenschaften wie NO
+                    ACT < .NO
+                    ACT {
+                        wrapItemAndSub = <li class="nav-item nav-link active">|</li>
+                    }
+
+                    IFSUB < .NO
+                    IFSUB {
+                        wrapItemAndSub = <li class="nav-item nav-link dropdown">|</li>
+                        linkWrap = | <span class="caret"></span>
+                        ATagParams = class="dropdown-toggle" role="button" data-toggle="dropdown"
+                        ATagBeforeWrap = 1
+                    }
+
+                    ACTIFSUB < .IFSUB
+                    ACTIFSUB {
+                        wrapItemAndSub = <li class="nav-item nav-link dropdown active">|</li>
+                    }
+                }
+            }
+
+            footerSecondaryMenu = HMENU
+            footerSecondaryMenu {
+                special = directory
+                special.value = 4
+                wrap = <ul>|</ul>
+
+                1 = TMENU
+                1 {
+                    NO = 1
+                    NO {
+                        linkWrap = <li>|</li>
+                    }
+                }
+            }
+
+            # Breadcrumb Leiste erstellen
+            # Das COA-Objekt bietet die Möglichkeit mehrere Objekte innerhalb des Objektes zu realisieren (Hier Text und HMENU)
+            menuBreadcrumb = COA
+            menuBreadcrumb {
+
+                # Text vor Breadcump setzen
+                10 = TEXT
+                10 {
+                    value = Sie sind hier:
+                    wrap = <span class="youarehere"> | </span>
+                }
+
+                20 = HMENU
+                20 {
+                    # Überschriften der einzelen Seiten bzw. Unterseiten werden gezogen
+                    special = rootline
+
+                    # Startpunkt des Pfades definieren - ab 2 (0 = root, 1 = Hauptnavigation) - -1 (bis zum Ende)
+                    special.range = 2|-1
+
+                    # Styling des Menüs
+                    1 = TMENU
+                    1 {
+                        wrap = <ol class="breadcrumb-menu">|</ol>
+                        NO = 1
+                        NO {
+                            linkWrap = <li class="breadcrumb-item">|</li>
+                        }
+                    }
+
+                    # Styling aktueller Seite (ACT = aktuelle Seite + übergeordnete Seiten / CUR = nur aktuelle Seite)
+                    CUR = 1
+                    CUR {
+                        linkWrap = <li class="activeBread">|</li>
+
+                        # Letzte Seite wird nicht verlinkt
+                        doNotLinkIt = 1
+                    }
+                }
+            }
+        }
+    }
+}

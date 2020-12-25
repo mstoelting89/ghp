@@ -1,5 +1,6 @@
 
 <header>
+    {_all -> f:debug()}
     <!--<div class="header-content" style="background-image: url({image})">-->
     <div class="header-content header-bg-image">
         <nav class="navbar navbar-expand-lg navbar-light">
@@ -20,7 +21,9 @@
             {contentTrailer -> f:format.raw()}
         </div>
     </div>
-
+    <div class="breadcrumb">
+        {menuBreadcrumb -> f:format.raw()}
+    </div>
 </header>
 
 <main>
