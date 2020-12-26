@@ -182,3 +182,8 @@ page {
         }
     }
 }
+
+# Erweiterung des contentElement um einen weiteren rootpath
+lib.contentElement {
+    partialRootPaths = fileadmin/templates/content/partials
+}
