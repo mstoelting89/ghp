@@ -189,3 +189,9 @@ lib.contentElement {
       10 = fileadmin/templates/content/partials
     }
 }
+
+lib.fluidContent {
+    partialRootPaths {
+        10 = fileadmin/templates/content/partials
+    }
+}

@@ -1,4 +1,5 @@
 <f:if condition="{data.header}">
+    {data.header -> f:debug()}
     <f:switch expression="{data.header_layout}">
         <f:case value="1">
             <div class="page-header">
