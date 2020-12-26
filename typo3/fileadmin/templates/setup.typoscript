@@ -68,6 +68,10 @@ page {
             logo.file = fileadmin/images/images/f2e0a4ac-3cbf-43e1-bfa0-d9b075e276df.jpg
             logo.file.height = 70
 
+            contentTrailer = TEXT
+            contentTrailer.wrap = <h1> | </h1>
+            contentTrailer.value = Mit jeder Gitarre ein Lächeln
+
             # Einbindung fixer Footer
             footerLabel = TEXT
             footerLabel.value = The Guitar Hearts Project e.V. <br>guitarheartsproject@outlook.de <br>067719344061 <br>Langgasse 17, 56348 Bornich, Germany <br><br>©2020 The Guitar Hearts Project e.V.
@@ -116,6 +120,10 @@ page {
                 }
             }
 
+            # Einbindung des Contents
+            contentMain < styles.content.get
+
+            # Einbindung Footer-Menü
             footerSecondaryMenu = HMENU
             footerSecondaryMenu {
                 special = directory
