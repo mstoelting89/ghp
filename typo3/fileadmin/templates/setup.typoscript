@@ -186,7 +186,7 @@ page {
 # Erweiterung des contentElement um einen weiteren rootpath
 lib.contentElement {
     partialRootPaths {
-      10 = fileadmin/templates/content/partials
+        10 = fileadmin/templates/content/partials
     }
 }
 
