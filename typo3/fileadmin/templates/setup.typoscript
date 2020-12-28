@@ -121,7 +121,18 @@ page {
             }
 
             # Einbindung des Contents
-            contentMain < styles.content.get
+            //contentMain < styles.content.get
+            //Alternative:
+            # Inhalte werden aus tt_content Tabelle gezogen
+            contentMain = CONTENT
+            contentMain {
+                table = tt_content
+                # Datensätze werden in Backend-Reihenfolge ausgelesen
+                select.orderBy = sorting
+                # Spalte "Normal"
+                select.where = colPos=0
+                select.languageField = sys_language_uid
+            }
 
             # Einbindung Footer-Menü
             footerSecondaryMenu = HMENU
@@ -190,8 +201,3 @@ lib.contentElement {
     }
 }
 
-lib.fluidContent {
-    partialRootPaths {
-        10 = fileadmin/templates/content/partials
-    }
-}
