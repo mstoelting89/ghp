@@ -201,3 +201,8 @@ lib.contentElement {
     }
 }
 
+plugin.tx_form.settings {
+    yamlConfigurations {
+        100 = fileadmin/forms.yaml
+    }
+}
