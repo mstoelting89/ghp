@@ -1,11 +1,10 @@
 <f:if condition="{data.header}">
-    {data.header -> f:debug()}
     <f:switch expression="{data.header_layout}">
         <f:case value="1">
             <div class="page-header">
                 <h1>{data.header}
                     <f:if condition="{data.subheader}">
-                        <small>{data.subheader}</small>
+                        <h3>{data.subheader}</h3>
                     </f:if>
                 </h1>
             </div>

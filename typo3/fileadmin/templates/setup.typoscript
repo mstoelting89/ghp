@@ -68,9 +68,18 @@ page {
             logo.file = fileadmin/images/images/f2e0a4ac-3cbf-43e1-bfa0-d9b075e276df.jpg
             logo.file.height = 70
 
+            /*
             contentTrailer = TEXT
             contentTrailer.wrap = <h1> | </h1>
             contentTrailer.value = Mit jeder Gitarre ein Lächeln
+            */
+            # Holen der Überschirft auf dem Trailer
+            contentTrailer = CONTENT
+            contentTrailer {
+                table = tt_content
+                select.orderBy = sorting
+                select.where = colPos=5
+            }
 
             # Einbindung fixer Footer
             footerLabel = TEXT
@@ -120,9 +129,9 @@ page {
                 }
             }
 
-            # Einbindung des Contents
+            # Einbindung des Contents in der Hauptspalte
             //contentMain < styles.content.get
-            //Alternative:
+            # Alternative:
             # Inhalte werden aus tt_content Tabelle gezogen
             contentMain = CONTENT
             contentMain {
@@ -132,6 +141,19 @@ page {
                 # Spalte "Normal"
                 select.where = colPos=0
                 select.languageField = sys_language_uid
+            }
+
+            # Einbindung des Contents in der rechten Spalte
+            contentMargin = COA
+            contentMargin {
+                10 < styles.content.get
+                10.select.orderBy = sorting
+                # colPos=2 ist der Bezeichner in der Tabelle für die Randspalte (angegeben im List-Backend)
+                10.select.where = colPos=2
+
+                20 < styles.content.get
+                20.select.where = colPos=2
+                20.select.pidInList = 14
             }
 
             # Einbindung Footer-Menü
