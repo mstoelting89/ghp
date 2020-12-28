@@ -7,8 +7,8 @@ TYPO3:
             Form:
               renderingOptions:
                 templateRootPaths:
-                  20: 'fileadmin/templates/ext/form/templates/'
+                  20: fileadmin/templates/ext/form/templates/
                 partialRootPaths:
-                  20: 'fileadmin/templates/ext/form/partials/'
+                  20: fileadmin/templates/ext/form/partials/
                 layoutRootPaths:
-                  20: 'fileadmin/templates/ext/form/layouts/'
+                  20: fileadmin/templates/ext/form/layouts/
