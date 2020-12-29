@@ -1,6 +1,6 @@
 <?php
 
-class Standard_action_index_22a76915ea2c2d7f0771d6f395f3c1bffea9f24a extends \TYPO3Fluid\Fluid\Core\Compiler\AbstractCompiledTemplate {
+class Standard_action_index_d931670e8acf76c7780bd6c08066a95f2a7e9d8b extends \TYPO3Fluid\Fluid\Core\Compiler\AbstractCompiledTemplate {
 
 public function getLayoutName(\TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface $renderingContext) {
 $self = $this;
@@ -127,88 +127,76 @@ $output0 .= '
         ';
 // Rendering ViewHelper TYPO3Fluid\Fluid\ViewHelpers\IfViewHelper
 $renderChildrenClosure18 = function() use ($renderingContext, $self) {
+$output33 = '';
+
+$output33 .= '
+            ';
+// Rendering ViewHelper TYPO3Fluid\Fluid\ViewHelpers\ThenViewHelper
+$renderChildrenClosure35 = function() use ($renderingContext, $self) {
 $output36 = '';
 
 $output36 .= '
-            ';
-// Rendering ViewHelper TYPO3Fluid\Fluid\ViewHelpers\ThenViewHelper
-$renderChildrenClosure38 = function() use ($renderingContext, $self) {
-$output39 = '';
-
-$output39 .= '
                 <div class="col-md-8 content-main">';
+// Rendering ViewHelper TYPO3Fluid\Fluid\ViewHelpers\Format\RawViewHelper
+$renderChildrenClosure38 = function() use ($renderingContext, $self) {
+$array39 = array (
+);return $renderingContext->getVariableProvider()->getByPath('contentMain', $array39);
+};
+$arguments37 = array();
+$arguments37['value'] = NULL;
+
+$output36 .= isset($arguments37['value']) ? $arguments37['value'] : $renderChildrenClosure38();
+
+$output36 .= '</div>
+                <div class="col-md-4 content-margin">';
 // Rendering ViewHelper TYPO3Fluid\Fluid\ViewHelpers\Format\RawViewHelper
 $renderChildrenClosure41 = function() use ($renderingContext, $self) {
 $array42 = array (
-);return $renderingContext->getVariableProvider()->getByPath('contentMain', $array42);
+);return $renderingContext->getVariableProvider()->getByPath('contentMargin', $array42);
 };
 $arguments40 = array();
 $arguments40['value'] = NULL;
 
-$output39 .= isset($arguments40['value']) ? $arguments40['value'] : $renderChildrenClosure41();
+$output36 .= isset($arguments40['value']) ? $arguments40['value'] : $renderChildrenClosure41();
 
-$output39 .= '</div>
-                <div class="col-md-4 content-margin">';
-// Rendering ViewHelper TYPO3Fluid\Fluid\ViewHelpers\Format\RawViewHelper
-$renderChildrenClosure44 = function() use ($renderingContext, $self) {
-$array45 = array (
-);return $renderingContext->getVariableProvider()->getByPath('contentMargin', $array45);
-};
-$arguments43 = array();
-$arguments43['value'] = NULL;
-
-$output39 .= isset($arguments43['value']) ? $arguments43['value'] : $renderChildrenClosure44();
-
-$output39 .= '</div>
+$output36 .= '</div>
             ';
-return $output39;
+return $output36;
 };
-$arguments37 = array();
+$arguments34 = array();
 
-$output36 .= '';
+$output33 .= '';
 
-$output36 .= '
+$output33 .= '
             ';
 // Rendering ViewHelper TYPO3Fluid\Fluid\ViewHelpers\ElseViewHelper
+$renderChildrenClosure44 = function() use ($renderingContext, $self) {
+$output45 = '';
+
+$output45 .= '
+                <div class="col-md-12 content-main">';
+// Rendering ViewHelper TYPO3Fluid\Fluid\ViewHelpers\Format\RawViewHelper
 $renderChildrenClosure47 = function() use ($renderingContext, $self) {
-$output48 = '';
-
-$output48 .= '
-                <div class="col-md-6 content-main">';
-// Rendering ViewHelper TYPO3Fluid\Fluid\ViewHelpers\Format\RawViewHelper
-$renderChildrenClosure50 = function() use ($renderingContext, $self) {
-$array51 = array (
-);return $renderingContext->getVariableProvider()->getByPath('contentMain', $array51);
-};
-$arguments49 = array();
-$arguments49['value'] = NULL;
-
-$output48 .= isset($arguments49['value']) ? $arguments49['value'] : $renderChildrenClosure50();
-
-$output48 .= '</div>
-                <div class="col-md-6 content-main">';
-// Rendering ViewHelper TYPO3Fluid\Fluid\ViewHelpers\Format\RawViewHelper
-$renderChildrenClosure53 = function() use ($renderingContext, $self) {
-$array54 = array (
-);return $renderingContext->getVariableProvider()->getByPath('contentMain', $array54);
-};
-$arguments52 = array();
-$arguments52['value'] = NULL;
-
-$output48 .= isset($arguments52['value']) ? $arguments52['value'] : $renderChildrenClosure53();
-
-$output48 .= '</div>
-            ';
-return $output48;
+$array48 = array (
+);return $renderingContext->getVariableProvider()->getByPath('contentMain', $array48);
 };
 $arguments46 = array();
-$arguments46['if'] = NULL;
+$arguments46['value'] = NULL;
 
-$output36 .= '';
+$output45 .= isset($arguments46['value']) ? $arguments46['value'] : $renderChildrenClosure47();
 
-$output36 .= '
+$output45 .= '</div>
+            ';
+return $output45;
+};
+$arguments43 = array();
+$arguments43['if'] = NULL;
+
+$output33 .= '';
+
+$output33 .= '
         ';
-return $output36;
+return $output33;
 };
 $arguments17 = array();
 $arguments17['then'] = NULL;
@@ -216,14 +204,14 @@ $arguments17['else'] = NULL;
 $arguments17['condition'] = false;
 // Rendering Boolean node
 // Rendering Array
-$array33 = array();
-$array34 = array (
-);$array33['0'] = $renderingContext->getVariableProvider()->getByPath('contentMargin', $array34);
+$array30 = array();
+$array31 = array (
+);$array30['0'] = $renderingContext->getVariableProvider()->getByPath('contentMargin', $array31);
 
-$expression35 = function($context) {return TYPO3Fluid\Fluid\Core\Parser\BooleanParser::convertNodeToBoolean($context["node0"]);};
+$expression32 = function($context) {return TYPO3Fluid\Fluid\Core\Parser\BooleanParser::convertNodeToBoolean($context["node0"]);};
 $arguments17['condition'] = TYPO3Fluid\Fluid\Core\Parser\SyntaxTree\BooleanNode::convertToBoolean(
-					$expression35(
-						TYPO3Fluid\Fluid\Core\Parser\SyntaxTree\BooleanNode::gatherContext($renderingContext, $array33)
+					$expression32(
+						TYPO3Fluid\Fluid\Core\Parser\SyntaxTree\BooleanNode::gatherContext($renderingContext, $array30)
 					),
 					$renderingContext
 				);
@@ -262,7 +250,7 @@ $arguments17['__elseClosures'][] = function() use ($renderingContext, $self) {
 $output26 = '';
 
 $output26 .= '
-                <div class="col-md-6 content-main">';
+                <div class="col-md-12 content-main">';
 // Rendering ViewHelper TYPO3Fluid\Fluid\ViewHelpers\Format\RawViewHelper
 $renderChildrenClosure28 = function() use ($renderingContext, $self) {
 $array29 = array (
@@ -272,18 +260,6 @@ $arguments27 = array();
 $arguments27['value'] = NULL;
 
 $output26 .= isset($arguments27['value']) ? $arguments27['value'] : $renderChildrenClosure28();
-
-$output26 .= '</div>
-                <div class="col-md-6 content-main">';
-// Rendering ViewHelper TYPO3Fluid\Fluid\ViewHelpers\Format\RawViewHelper
-$renderChildrenClosure31 = function() use ($renderingContext, $self) {
-$array32 = array (
-);return $renderingContext->getVariableProvider()->getByPath('contentMain', $array32);
-};
-$arguments30 = array();
-$arguments30['value'] = NULL;
-
-$output26 .= isset($arguments30['value']) ? $arguments30['value'] : $renderChildrenClosure31();
 
 $output26 .= '</div>
             ';
@@ -297,14 +273,14 @@ $output0 .= '
     <div class="sidebars">
         ';
 // Rendering ViewHelper TYPO3Fluid\Fluid\ViewHelpers\Format\RawViewHelper
-$renderChildrenClosure56 = function() use ($renderingContext, $self) {
-$array57 = array (
-);return $renderingContext->getVariableProvider()->getByPath('sidebars', $array57);
+$renderChildrenClosure50 = function() use ($renderingContext, $self) {
+$array51 = array (
+);return $renderingContext->getVariableProvider()->getByPath('sidebars', $array51);
 };
-$arguments55 = array();
-$arguments55['value'] = NULL;
+$arguments49 = array();
+$arguments49['value'] = NULL;
 
-$output0 .= isset($arguments55['value']) ? $arguments55['value'] : $renderChildrenClosure56();
+$output0 .= isset($arguments49['value']) ? $arguments49['value'] : $renderChildrenClosure50();
 
 $output0 .= '
     </div>
@@ -315,14 +291,14 @@ $output0 .= '
     <div class="sub-text-footer pt-3 pb-3">
         ';
 // Rendering ViewHelper TYPO3Fluid\Fluid\ViewHelpers\Format\RawViewHelper
-$renderChildrenClosure59 = function() use ($renderingContext, $self) {
-$array60 = array (
-);return $renderingContext->getVariableProvider()->getByPath('footerLabel', $array60);
+$renderChildrenClosure53 = function() use ($renderingContext, $self) {
+$array54 = array (
+);return $renderingContext->getVariableProvider()->getByPath('footerLabel', $array54);
 };
-$arguments58 = array();
-$arguments58['value'] = NULL;
+$arguments52 = array();
+$arguments52['value'] = NULL;
 
-$output0 .= isset($arguments58['value']) ? $arguments58['value'] : $renderChildrenClosure59();
+$output0 .= isset($arguments52['value']) ? $arguments52['value'] : $renderChildrenClosure53();
 
 $output0 .= '
     </div>
@@ -330,14 +306,14 @@ $output0 .= '
     <div class="partners">
         ';
 // Rendering ViewHelper TYPO3Fluid\Fluid\ViewHelpers\Format\RawViewHelper
-$renderChildrenClosure62 = function() use ($renderingContext, $self) {
-$array63 = array (
-);return $renderingContext->getVariableProvider()->getByPath('footerPartners', $array63);
+$renderChildrenClosure56 = function() use ($renderingContext, $self) {
+$array57 = array (
+);return $renderingContext->getVariableProvider()->getByPath('footerPartners', $array57);
 };
-$arguments61 = array();
-$arguments61['value'] = NULL;
+$arguments55 = array();
+$arguments55['value'] = NULL;
 
-$output0 .= isset($arguments61['value']) ? $arguments61['value'] : $renderChildrenClosure62();
+$output0 .= isset($arguments55['value']) ? $arguments55['value'] : $renderChildrenClosure56();
 
 $output0 .= '
 
@@ -345,14 +321,14 @@ $output0 .= '
     <div class="secondary-menu">
         ';
 // Rendering ViewHelper TYPO3Fluid\Fluid\ViewHelpers\Format\RawViewHelper
-$renderChildrenClosure65 = function() use ($renderingContext, $self) {
-$array66 = array (
-);return $renderingContext->getVariableProvider()->getByPath('footerSecondaryMenu', $array66);
+$renderChildrenClosure59 = function() use ($renderingContext, $self) {
+$array60 = array (
+);return $renderingContext->getVariableProvider()->getByPath('footerSecondaryMenu', $array60);
 };
-$arguments64 = array();
-$arguments64['value'] = NULL;
+$arguments58 = array();
+$arguments58['value'] = NULL;
 
-$output0 .= isset($arguments64['value']) ? $arguments64['value'] : $renderChildrenClosure65();
+$output0 .= isset($arguments58['value']) ? $arguments58['value'] : $renderChildrenClosure59();
 
 $output0 .= '
 
