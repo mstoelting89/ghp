@@ -25,7 +25,7 @@ page {
 
     # Einbindung CSS
     includeCSS {
-        bootstrap = fileadmin/vendors/bootstrap/dist/css/bootstrap.min.css
+        bootstrap = fileadmin/vendors/bootstrap/dist/css/bootstrap.css
         //bootstrap = fileadmin/vendors/bootstrap/css/bootstrap.css
         fontawesome = fileadmin/vendors/fortawesome/css/all.min.css
         main = fileadmin/css/style.css
