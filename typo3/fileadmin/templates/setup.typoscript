@@ -1,3 +1,17 @@
+# Allgemeine Konfiguration
+config {
+    # Neuer Parameter L wird in URL eingebaut
+    linkVars = L
+    # darf nur einmal in der URL vorkommen
+    uniqueLinkVars = 1
+    # Defaultwert ist 0
+    sys_language_uid = 0
+    # Auswahl Sprache
+    language = de
+    # Uhrzeit wird auf Sprache eingestellt
+    locale_all = de_DE
+}
+
 # Default PAGE object:
 page = PAGE
 
@@ -11,7 +25,7 @@ page {
 
     # Einbindung CSS
     includeCSS {
-        bootstrap = fileadmin/vendors/bootstrap/dist/css/bootstrap.min.css
+        bootstrap = fileadmin/vendors/bootstrap/dist/css/bootstrap.css
         fontawesome = fileadmin/vendors/fortawesome/css/all.min.css
         main = fileadmin/css/style.css
     }
@@ -68,9 +82,18 @@ page {
             logo.file = fileadmin/images/images/f2e0a4ac-3cbf-43e1-bfa0-d9b075e276df.jpg
             logo.file.height = 70
 
+            /*
             contentTrailer = TEXT
             contentTrailer.wrap = <h1> | </h1>
             contentTrailer.value = Mit jeder Gitarre ein Lächeln
+            */
+            # Holen der Überschirft auf dem Trailer
+            contentTrailer = CONTENT
+            contentTrailer {
+                table = tt_content
+                select.orderBy = sorting
+                select.where = colPos=5
+            }
 
             # Einbindung fixer Footer
             footerLabel = TEXT
@@ -120,9 +143,9 @@ page {
                 }
             }
 
-            # Einbindung des Contents
+            # Einbindung des Contents in der Hauptspalte
             //contentMain < styles.content.get
-            //Alternative:
+            # Alternative:
             # Inhalte werden aus tt_content Tabelle gezogen
             contentMain = CONTENT
             contentMain {
@@ -132,6 +155,19 @@ page {
                 # Spalte "Normal"
                 select.where = colPos=0
                 select.languageField = sys_language_uid
+            }
+
+            # Einbindung des Contents in der rechten Spalte
+            contentMargin = COA
+            contentMargin {
+                10 < styles.content.get
+                10.select.orderBy = sorting
+                # colPos=2 ist der Bezeichner in der Tabelle für die Randspalte (angegeben im List-Backend)
+                10.select.where = colPos=2
+
+                20 < styles.content.get
+                20.select.where = colPos=2
+                20.select.pidInList = 14
             }
 
             # Einbindung Footer-Menü
@@ -190,6 +226,18 @@ page {
                     }
                 }
             }
+
+            language = TEXT
+            language {
+                value = English
+                # Neuer Link mit Verweis auf aktuelle Seite + zusätzlichen Parameter L=1
+                typolink {
+                    ATagBeforeWrap = 1
+                    wrap = <i class="glyphicon glyphicon-globe"></i>&nbsp;|
+                    parameter.data = page:uid
+                    additionalParams = &L=1
+                }
+            }
         }
     }
 }
@@ -206,3 +254,19 @@ plugin.tx_form.settings {
         100 = fileadmin/forms.yaml
     }
 }
+
+# Mehrsprachigkeit
+# Wenn GB(GetPost-Parameter) L den Wert 1 hat
+[globalVar = GP:L=1]
+    config {
+        sys_language_uid = 1
+        language = en
+        locale_all = en_UK
+    }
+    # Deutsch wird als Übersetzung angeboten
+    page.10.variables.language {
+        value = Deutsch
+        typolink.additionalParams = &L=0
+    }
+[global]
+
