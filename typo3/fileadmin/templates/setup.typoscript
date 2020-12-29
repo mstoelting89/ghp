@@ -288,3 +288,16 @@ plugin.tx_form.settings {
     }
 [global]
 
+# Laden des eigenen Templates für die Login-Seite
+plugin.tx_felogin_pi1 {
+    templateFile = fileadmin/templates/ext/felogin/FrontendLogin.html
+}
+
+# Speichern des Loginforms in einer Fluid Variable
+/*page.10.variables.login < plugin.tx_felogin_pi1
+page.10.variables.login {
+    # Lagerort der Benutzer (PageId 16)
+    storagePid = 16
+    templateFile = fileadmin/templates/ext/felogin/FrontendLoginCompact.html
+}
+*/
