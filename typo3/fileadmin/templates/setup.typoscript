@@ -270,3 +270,19 @@ plugin.tx_form.settings {
     }
 [global]
 
+
+# Mehrsprachigkeit
+# Wenn GB(GetPost-Parameter) L den Wert 1 hat
+[globalVar = GP:L=1]
+    config {
+        sys_language_uid = 1
+        language = en
+        locale_all = en_UK
+    }
+    # Deutsch wird als Übersetzung angeboten
+    page.10.variables.language {
+        value = Deutsch
+        typolink.additionalParams = &L=0
+    }
+[global]
+
