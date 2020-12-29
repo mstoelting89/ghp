@@ -1,6 +1,6 @@
 <?php
 
-class Standard_action_index_98dd332e78356266c47e101a8463115bd88a7c2d extends \TYPO3Fluid\Fluid\Core\Compiler\AbstractCompiledTemplate {
+class Standard_action_index_3d344a94b2bcca9e7faacff0179e2f63011c5662 extends \TYPO3Fluid\Fluid\Core\Compiler\AbstractCompiledTemplate {
 
 public function getLayoutName(\TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface $renderingContext) {
 $self = $this;
@@ -89,9 +89,6 @@ $arguments8['value'] = NULL;
 $output0 .= isset($arguments8['value']) ? $arguments8['value'] : $renderChildrenClosure9();
 
 $output0 .= '
-                <button type="button" class="btn btn-default btn-lg">
-                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span> Markieren
-                </button>
             </div>
         </nav>
         <div class="header-title">
