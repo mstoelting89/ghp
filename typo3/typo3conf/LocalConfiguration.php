@@ -29,8 +29,9 @@ return [
     ],
     'EXT' => [
         'extConf' => [
-            'backend' => 'a:6:{s:9:"loginLogo";s:0:"";s:19:"loginHighlightColor";s:0:"";s:20:"loginBackgroundImage";s:0:"";s:13:"loginFootnote";s:0:"";s:11:"backendLogo";s:0:"";s:14:"backendFavicon";s:0:"";}',
+            'backend' => 'a:6:{s:14:"backendFavicon";s:0:"";s:11:"backendLogo";s:0:"";s:20:"loginBackgroundImage";s:0:"";s:13:"loginFootnote";s:0:"";s:19:"loginHighlightColor";s:0:"";s:9:"loginLogo";s:0:"";}',
             'extensionmanager' => 'a:2:{s:21:"automaticInstallation";s:1:"1";s:11:"offlineMode";s:1:"0";}',
+            'news' => 'a:18:{s:13:"prependAtCopy";s:1:"1";s:6:"tagPid";s:1:"1";s:12:"rteForTeaser";s:1:"0";s:22:"contentElementRelation";s:1:"1";s:21:"contentElementPreview";s:1:"1";s:13:"manualSorting";s:1:"0";s:19:"categoryRestriction";s:0:"";s:34:"categoryBeGroupTceFormsRestriction";s:1:"0";s:19:"dateTimeNotRequired";s:1:"0";s:11:"archiveDate";s:4:"date";s:12:"mediaPreview";s:5:"false";s:20:"advancedMediaPreview";s:1:"1";s:13:"slugBehaviour";s:6:"unique";s:24:"showAdministrationModule";s:1:"1";s:35:"hidePageTreeForAdministrationModule";s:1:"0";s:12:"showImporter";s:1:"0";s:18:"storageUidImporter";s:1:"1";s:22:"resourceFolderImporter";s:12:"/news_import";}',
         ],
     ],
     'EXTCONF' => [
@@ -52,6 +53,26 @@ return [
         'extensionmanager' => [
             'automaticInstallation' => '1',
             'offlineMode' => '0',
+        ],
+        'news' => [
+            'advancedMediaPreview' => '1',
+            'archiveDate' => 'date',
+            'categoryBeGroupTceFormsRestriction' => '0',
+            'categoryRestriction' => '',
+            'contentElementPreview' => '1',
+            'contentElementRelation' => '1',
+            'dateTimeNotRequired' => '0',
+            'hidePageTreeForAdministrationModule' => '0',
+            'manualSorting' => '0',
+            'mediaPreview' => 'false',
+            'prependAtCopy' => '1',
+            'resourceFolderImporter' => '/news_import',
+            'rteForTeaser' => '0',
+            'showAdministrationModule' => '1',
+            'showImporter' => '0',
+            'slugBehaviour' => 'unique',
+            'storageUidImporter' => '1',
+            'tagPid' => '1',
         ],
     ],
     'FE' => [

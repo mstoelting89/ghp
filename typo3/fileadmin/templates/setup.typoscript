@@ -249,6 +249,9 @@ lib.contentElement {
     partialRootPaths {
         10 = fileadmin/templates/content/partials
     }
+    templateRootPaths {
+        10 = fileadmin/templates/content/partials/templates
+    }
 }
 
 plugin.tx_form.settings {

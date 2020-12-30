@@ -92,6 +92,9 @@ return [
         'viewpage' => [
             'packagePath' => 'typo3/sysext/viewpage/',
         ],
+        'news' => [
+            'packagePath' => 'typo3conf/ext/news/',
+        ],
     ],
     'version' => 5,
 ];
