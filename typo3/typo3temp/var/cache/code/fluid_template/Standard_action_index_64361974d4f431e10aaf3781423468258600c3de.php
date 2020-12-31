@@ -1,6 +1,6 @@
 <?php
 
-class Standard_action_index_983b9c4ed14ffbdabd27cc2c76df97ea0b762d12 extends \TYPO3Fluid\Fluid\Core\Compiler\AbstractCompiledTemplate {
+class Standard_action_index_64361974d4f431e10aaf3781423468258600c3de extends \TYPO3Fluid\Fluid\Core\Compiler\AbstractCompiledTemplate {
 
 public function getLayoutName(\TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface $renderingContext) {
 $self = $this;
@@ -271,8 +271,6 @@ $output0 .= TYPO3Fluid\Fluid\ViewHelpers\IfViewHelper::renderStatic($arguments17
 $output0 .= '
     </div>
     <div class="sidebars">
-
-
         ';
 // Rendering ViewHelper TYPO3Fluid\Fluid\ViewHelpers\Format\RawViewHelper
 $renderChildrenClosure50 = function() use ($renderingContext, $self) {
