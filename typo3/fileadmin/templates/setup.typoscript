@@ -159,6 +159,13 @@ page {
                 select.languageField = sys_language_uid
             }
 
+            sidebars = COA
+            sidebars {
+                10 < styles.content.get
+                10.select.where = colPos = 0
+                10.select.pidInList = 23
+            }
+
             # Einbindung des Contents in der rechten Spalte
             contentMargin = COA
             contentMargin {
@@ -247,7 +254,7 @@ page {
 # Erweiterung des contentElement um einen weiteren rootpath
 lib.contentElement {
     partialRootPaths {
-        10 = fileadmin/templates/content/partials
+        10 = fileadmin/templates/content/Partials
     }
     templateRootPaths {
         10 = fileadmin/templates/content/Templates
