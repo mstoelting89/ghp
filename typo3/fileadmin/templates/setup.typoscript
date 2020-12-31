@@ -250,7 +250,7 @@ lib.contentElement {
         10 = fileadmin/templates/content/partials
     }
     templateRootPaths {
-        10 = fileadmin/templates/content/templates
+        10 = fileadmin/templates/content/Templates
     }
 }
 
