@@ -214,6 +214,13 @@ page {
 
             }
 
+            # Footer-Partners Einbindung - Bsp aktuell News-Einbindung
+            footerPartners < tt_content.list.20.news_pi1
+            footerPartners {
+                # Einbindung exta Template für diesen footer
+                view.templatesRootPaths.0 = fileadmin/templates/ext/news-footer/
+            }
+
             # Breadcrumb Leiste erstellen
             # Das COA-Objekt bietet die Möglichkeit mehrere Objekte innerhalb des Objektes zu realisieren (Hier Text und HMENU)
             menuBreadcrumb = COA
