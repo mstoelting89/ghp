@@ -10,6 +10,10 @@ config {
     language = de
     # Uhrzeit wird auf Sprache eingestellt
     locale_all = de_DE
+    # Suchindizierung aktivieren
+    index_enable = 1
+    # Indizierung auf externe Medien erweitern
+    index_externals = 1
 }
 
 # Default PAGE object:
@@ -221,6 +225,11 @@ page {
                 view.templateRootPaths.0 = fileadmin/templates/ext/news-footer/Templates/
                 view.partialRootPaths.0 = fileadmin/templates/ext/news-footer/Partials/
                 view.layoutRootPaths.0 = fileadmin/templates/ext/news-footer/Layout/
+
+                settings {
+                    defaultDetailPid = 21
+                    limit = 3
+                }
             }
 
             # Breadcrumb Leiste erstellen

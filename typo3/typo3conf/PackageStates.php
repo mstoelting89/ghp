@@ -65,6 +65,9 @@ return [
         'felogin' => [
             'packagePath' => 'typo3/sysext/felogin/',
         ],
+        'indexed_search' => [
+            'packagePath' => 'typo3/sysext/indexed_search/',
+        ],
         'info' => [
             'packagePath' => 'typo3/sysext/info/',
         ],

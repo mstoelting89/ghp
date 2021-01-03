@@ -8685,20 +8685,25 @@ return array (
               ),
               3 => 
               array (
+                0 => 'Indexed Search (Extbase & Fluid based) (indexed_search)',
+                1 => 'EXT:indexed_search/Configuration/TypoScript',
+              ),
+              4 => 
+              array (
                 0 => 'XML Sitemap (seo)',
                 1 => 'EXT:seo/Configuration/TypoScript/XmlSitemap',
               ),
-              4 => 
+              5 => 
               array (
                 0 => 'News (news)',
                 1 => 'EXT:news/Configuration/TypoScript',
               ),
-              5 => 
+              6 => 
               array (
                 0 => 'News Sitemap (news)',
                 1 => 'EXT:news/Configuration/TypoScript/Sitemap',
               ),
-              6 => 
+              7 => 
               array (
                 0 => 'News Styles Twitter Bootstrap (news)',
                 1 => 'EXT:news/Configuration/TypoScript/Styles/Twb',
@@ -10244,6 +10249,12 @@ return array (
               ),
               1 => 
               array (
+                0 => 'Indexed Search (Extbase & Fluid based)',
+                1 => 'indexedsearch_pi2',
+                2 => 'EXT:indexed_search/Resources/Public/Icons/Extension.png',
+              ),
+              2 => 
+              array (
                 0 => 'LLL:EXT:news/Resources/Private/Language/locallang_be.xlf:pi1_title',
                 1 => 'news_pi1',
                 2 => 'EXT:news/Resources/Public/Icons/Extension.svg',
@@ -11001,6 +11012,7 @@ return array (
           'subtype_value_field' => 'list_type',
           'subtypes_excludelist' => 
           array (
+            'indexedsearch_pi2' => 'layout,pages,recursive',
             'news_pi1' => 'recursive,select_key,pages',
           ),
           'subtypes_addlist' => 
@@ -11560,6 +11572,405 @@ return array (
         1 => 
         array (
           'showitem' => '',
+        ),
+      ),
+    ),
+    'index_config' => 
+    array (
+      'ctrl' => 
+      array (
+        'title' => 'LLL:EXT:indexed_search/Resources/Private/Language/locallang_db.xlf:index_config',
+        'label' => 'title',
+        'descriptionColumn' => 'description',
+        'tstamp' => 'tstamp',
+        'crdate' => 'crdate',
+        'cruser_id' => 'cruser_id',
+        'type' => 'type',
+        'default_sortby' => 'crdate',
+        'enablecolumns' => 
+        array (
+          'disabled' => 'hidden',
+          'starttime' => 'starttime',
+        ),
+        'typeicon_classes' => 
+        array (
+          'default' => 'mimetypes-x-index_config',
+        ),
+      ),
+      'interface' => 
+      array (
+        'showRecordFieldList' => 'hidden,starttime,title,description,type,depth,table2index,alternative_source_pid,get_params,chashcalc,filepath,extensions',
+      ),
+      'columns' => 
+      array (
+        'hidden' => 
+        array (
+          'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.enabled',
+          'config' => 
+          array (
+            'type' => 'check',
+            'renderType' => 'checkboxToggle',
+            'default' => 1,
+            'items' => 
+            array (
+              0 => 
+              array (
+                0 => '',
+                1 => '',
+                'invertStateDisplay' => true,
+              ),
+            ),
+          ),
+        ),
+        'starttime' => 
+        array (
+          'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.starttime',
+          'config' => 
+          array (
+            'type' => 'input',
+            'renderType' => 'inputDateTime',
+            'eval' => 'date,int',
+            'default' => 0,
+          ),
+        ),
+        'title' => 
+        array (
+          'label' => 'LLL:EXT:indexed_search/Resources/Private/Language/locallang_db.xlf:index_config.title',
+          'config' => 
+          array (
+            'type' => 'input',
+            'size' => 30,
+            'eval' => 'required',
+          ),
+        ),
+        'description' => 
+        array (
+          'label' => 'LLL:EXT:indexed_search/Resources/Private/Language/locallang_db.xlf:index_config.description',
+          'config' => 
+          array (
+            'type' => 'text',
+            'cols' => 30,
+            'rows' => 2,
+          ),
+        ),
+        'type' => 
+        array (
+          'label' => 'LLL:EXT:indexed_search/Resources/Private/Language/locallang_db.xlf:index_config.type',
+          'config' => 
+          array (
+            'type' => 'select',
+            'renderType' => 'selectSingle',
+            'items' => 
+            array (
+              0 => 
+              array (
+                0 => 'LLL:EXT:indexed_search/Resources/Private/Language/locallang_db.xlf:index_config.type.I.0',
+                1 => '0',
+              ),
+              1 => 
+              array (
+                0 => 'LLL:EXT:indexed_search/Resources/Private/Language/locallang_db.xlf:index_config.type.I.1',
+                1 => '1',
+              ),
+              2 => 
+              array (
+                0 => 'LLL:EXT:indexed_search/Resources/Private/Language/locallang_db.xlf:index_config.type.I.2',
+                1 => '2',
+              ),
+              3 => 
+              array (
+                0 => 'LLL:EXT:indexed_search/Resources/Private/Language/locallang_db.xlf:index_config.type.I.3',
+                1 => '3',
+              ),
+              4 => 
+              array (
+                0 => 'LLL:EXT:indexed_search/Resources/Private/Language/locallang_db.xlf:index_config.type.I.4',
+                1 => '4',
+              ),
+              5 => 
+              array (
+                0 => 'LLL:EXT:indexed_search/Resources/Private/Language/locallang_db.xlf:index_config.type.I.5',
+                1 => '5',
+              ),
+            ),
+            'size' => 1,
+            'maxitems' => 1,
+          ),
+        ),
+        'depth' => 
+        array (
+          'label' => 'LLL:EXT:indexed_search/Resources/Private/Language/locallang_db.xlf:index_config.depth',
+          'config' => 
+          array (
+            'type' => 'select',
+            'renderType' => 'selectSingle',
+            'items' => 
+            array (
+              0 => 
+              array (
+                0 => 'LLL:EXT:core/Resources/Private/Language/locallang_core.xlf:labels.depth_0',
+                1 => '0',
+              ),
+              1 => 
+              array (
+                0 => 'LLL:EXT:core/Resources/Private/Language/locallang_core.xlf:labels.depth_1',
+                1 => '1',
+              ),
+              2 => 
+              array (
+                0 => 'LLL:EXT:core/Resources/Private/Language/locallang_core.xlf:labels.depth_2',
+                1 => '2',
+              ),
+              3 => 
+              array (
+                0 => 'LLL:EXT:core/Resources/Private/Language/locallang_core.xlf:labels.depth_3',
+                1 => '3',
+              ),
+              4 => 
+              array (
+                0 => 'LLL:EXT:core/Resources/Private/Language/locallang_core.xlf:labels.depth_4',
+                1 => '4',
+              ),
+            ),
+            'size' => 1,
+            'maxitems' => 1,
+          ),
+        ),
+        'table2index' => 
+        array (
+          'label' => 'LLL:EXT:indexed_search/Resources/Private/Language/locallang_db.xlf:index_config.table2index',
+          'config' => 
+          array (
+            'type' => 'select',
+            'renderType' => 'selectSingle',
+            'items' => 
+            array (
+              0 => 
+              array (
+                0 => 'LLL:EXT:indexed_search/Resources/Private/Language/locallang_db.xlf:index_config.table2index.I.0',
+                1 => '0',
+              ),
+            ),
+            'special' => 'tables',
+            'size' => 1,
+            'maxitems' => 1,
+          ),
+        ),
+        'alternative_source_pid' => 
+        array (
+          'label' => 'LLL:EXT:indexed_search/Resources/Private/Language/locallang_db.xlf:index_config.alternative_source_pid',
+          'config' => 
+          array (
+            'type' => 'group',
+            'internal_type' => 'db',
+            'allowed' => 'pages',
+            'size' => 1,
+            'minitems' => 0,
+            'maxitems' => 1,
+          ),
+        ),
+        'indexcfgs' => 
+        array (
+          'label' => 'LLL:EXT:indexed_search/Resources/Private/Language/locallang_db.xlf:index_config.indexcfgs',
+          'config' => 
+          array (
+            'type' => 'group',
+            'internal_type' => 'db',
+            'allowed' => 'index_config,pages',
+            'size' => 5,
+            'minitems' => 0,
+            'maxitems' => 200,
+          ),
+        ),
+        'get_params' => 
+        array (
+          'label' => 'LLL:EXT:indexed_search/Resources/Private/Language/locallang_db.xlf:index_config.get_params',
+          'config' => 
+          array (
+            'type' => 'input',
+            'size' => 30,
+          ),
+        ),
+        'fieldlist' => 
+        array (
+          'label' => 'LLL:EXT:indexed_search/Resources/Private/Language/locallang_db.xlf:index_config.fields',
+          'config' => 
+          array (
+            'type' => 'input',
+            'size' => 30,
+          ),
+        ),
+        'externalUrl' => 
+        array (
+          'label' => 'LLL:EXT:indexed_search/Resources/Private/Language/locallang_db.xlf:index_config.externalUrl',
+          'config' => 
+          array (
+            'type' => 'input',
+            'size' => 30,
+          ),
+        ),
+        'chashcalc' => 
+        array (
+          'label' => 'LLL:EXT:indexed_search/Resources/Private/Language/locallang_db.xlf:index_config.chashcalc',
+          'config' => 
+          array (
+            'type' => 'check',
+            'renderType' => 'checkboxToggle',
+            'items' => 
+            array (
+              0 => 
+              array (
+                0 => '',
+                1 => '',
+              ),
+            ),
+          ),
+        ),
+        'filepath' => 
+        array (
+          'label' => 'LLL:EXT:indexed_search/Resources/Private/Language/locallang_db.xlf:index_config.filepath',
+          'config' => 
+          array (
+            'type' => 'input',
+            'size' => 30,
+          ),
+        ),
+        'extensions' => 
+        array (
+          'label' => 'LLL:EXT:indexed_search/Resources/Private/Language/locallang_db.xlf:index_config.extensions',
+          'config' => 
+          array (
+            'type' => 'input',
+            'size' => 30,
+          ),
+        ),
+        'url_deny' => 
+        array (
+          'label' => 'LLL:EXT:indexed_search/Resources/Private/Language/locallang_db.xlf:index_config.url_deny',
+          'config' => 
+          array (
+            'type' => 'text',
+            'cols' => 30,
+            'rows' => 2,
+          ),
+        ),
+        'records_indexonchange' => 
+        array (
+          'label' => 'LLL:EXT:indexed_search/Resources/Private/Language/locallang_db.xlf:index_config.records_indexonchange',
+          'config' => 
+          array (
+            'type' => 'check',
+            'renderType' => 'checkboxToggle',
+            'default' => 0,
+            'items' => 
+            array (
+              0 => 
+              array (
+                0 => '',
+                1 => '',
+              ),
+            ),
+          ),
+        ),
+        'timer_next_indexing' => 
+        array (
+          'label' => 'LLL:EXT:indexed_search/Resources/Private/Language/locallang_db.xlf:index_config.timer_next_indexing',
+          'config' => 
+          array (
+            'type' => 'input',
+            'renderType' => 'inputDateTime',
+            'eval' => 'datetime,int',
+            'default' => 0,
+          ),
+        ),
+        'timer_offset' => 
+        array (
+          'label' => 'LLL:EXT:indexed_search/Resources/Private/Language/locallang_db.xlf:index_config.timer_offset',
+          'config' => 
+          array (
+            'type' => 'input',
+            'renderType' => 'inputDateTime',
+            'eval' => 'time,int',
+            'default' => 3600,
+          ),
+        ),
+        'timer_frequency' => 
+        array (
+          'label' => 'LLL:EXT:indexed_search/Resources/Private/Language/locallang_db.xlf:index_config.timer_frequency',
+          'config' => 
+          array (
+            'type' => 'select',
+            'renderType' => 'selectSingle',
+            'items' => 
+            array (
+              0 => 
+              array (
+                0 => 'LLL:EXT:indexed_search/Resources/Private/Language/locallang_db.xlf:index_config.timer_frequency.I.0',
+                1 => '3600',
+              ),
+              1 => 
+              array (
+                0 => 'LLL:EXT:indexed_search/Resources/Private/Language/locallang_db.xlf:index_config.timer_frequency.I.1',
+                1 => '86400',
+              ),
+              2 => 
+              array (
+                0 => 'LLL:EXT:indexed_search/Resources/Private/Language/locallang_db.xlf:index_config.timer_frequency.I.2',
+                1 => '604800',
+              ),
+            ),
+            'size' => 1,
+            'maxitems' => 1,
+            'default' => 86400,
+          ),
+        ),
+        'recordsbatch' => 
+        array (
+          'label' => 'LLL:EXT:indexed_search/Resources/Private/Language/locallang_db.xlf:index_config.recordsbatch',
+          'config' => 
+          array (
+            'type' => 'input',
+            'size' => 8,
+            'max' => 20,
+            'eval' => 'int',
+            'default' => 0,
+          ),
+        ),
+        'set_id' => 
+        array (
+          'label' => 'LLL:EXT:indexed_search/Resources/Private/Language/locallang_db.xlf:index_config.set_id',
+          'config' => 
+          array (
+            'type' => 'input',
+            'readOnly' => true,
+          ),
+        ),
+      ),
+      'types' => 
+      array (
+        0 => 
+        array (
+          'showitem' => '--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,type,title,timer_next_indexing,timer_offset,timer_frequency,set_id,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access,hidden,starttime,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:notes,description,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended',
+        ),
+        1 => 
+        array (
+          'showitem' => '--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,type,title,timer_next_indexing,timer_offset,timer_frequency,set_id,table2index,alternative_source_pid,fieldlist,get_params,chashcalc,recordsbatch,records_indexonchange,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access,hidden,starttime,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:notes,description,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended',
+        ),
+        2 => 
+        array (
+          'showitem' => '--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,type,title,timer_next_indexing,timer_offset,timer_frequency,set_id,filepath,extensions,depth,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access,hidden,starttime,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:notes,description,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended',
+        ),
+        3 => 
+        array (
+          'showitem' => '--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,type,title,timer_next_indexing,timer_offset,timer_frequency,set_id,externalUrl,depth,url_deny,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access,hidden,starttime,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:notes,description,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended',
+        ),
+        4 => 
+        array (
+          'showitem' => '--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,type,title,timer_next_indexing,timer_offset,timer_frequency,set_id,alternative_source_pid;LLL:EXT:indexed_search/Resources/Private/Language/locallang_db.xlf:index_config.rootpage,depth,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access,hidden,starttime,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:notes,description,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended',
+        ),
+        5 => 
+        array (
+          'showitem' => '--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,type,title,indexcfgs,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access,hidden,starttime,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:notes,description,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended',
         ),
       ),
     ),

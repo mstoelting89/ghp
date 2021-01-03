@@ -674,6 +674,35 @@ defined('TYPO3_MODE') or die();
 );
 
 /**
+ * Extension: indexed_search
+ * File: /kunden/homepages/16/d764565842/htdocs/guitarheartsproject/ghp/typo3/typo3/sysext/indexed_search/ext_tables.php
+ */
+
+$_EXTKEY = 'indexed_search';
+$_EXTCONF = $GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf'][$_EXTKEY] ?? null;
+
+
+defined('TYPO3_MODE') or die();
+
+\TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerModule(
+    'TYPO3.CMS.IndexedSearch',
+    'web',
+    'isearch',
+    '',
+    [
+        'Administration' => 'index,pages,externalDocuments,statistic,statisticDetails,deleteIndexedItem,saveStopwordsKeywords,wordDetail',
+    ],
+    [
+        'access' => 'admin',
+        'icon'   => 'EXT:indexed_search/Resources/Public/Icons/module-indexed_search.svg',
+        'labels' => 'LLL:EXT:indexed_search/Resources/Private/Language/locallang_mod.xlf',
+    ]
+);
+
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('index_config');
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('index_config', 'EXT:indexed_search/Resources/Private/Language/locallang_csh_indexcfg.xlf');
+
+/**
  * Extension: info
  * File: /kunden/homepages/16/d764565842/htdocs/guitarheartsproject/ghp/typo3/typo3/sysext/info/ext_tables.php
  */
