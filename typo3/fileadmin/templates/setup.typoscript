@@ -220,6 +220,7 @@ page {
             footerPartners {
                 view.templateRootPaths.0 = fileadmin/templates/ext/news-footer/Templates/
                 view.partialRootPaths.0 = fileadmin/templates/ext/news-footer/Partials/
+                view.layoutRootPaths.0 = fileadmin/templates/ext/news-footer/Layout/
             }
 
             # Breadcrumb Leiste erstellen
