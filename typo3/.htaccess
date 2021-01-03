@@ -41,6 +41,9 @@
 #</FilesMatch>
 #AddEncoding gzip .gzip
 
+# Setting Errormessages on Dev
+SetEnv TYPO3_CONTEXT Development
+
 <IfModule mod_deflate.c>
 	# Force compression for mangled `Accept-Encoding` request headers
 	<IfModule mod_setenvif.c>

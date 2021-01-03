@@ -1,6 +1,6 @@
 <?php
 
-class partial_List_Item_e74885fe929d4f13a822e9a1c0b9e9ba4ae75b8b extends \TYPO3Fluid\Fluid\Core\Compiler\AbstractCompiledTemplate {
+class partial_List_Item_11cc8646d7d5d4f3a60d9ac2de6faca9925210de extends \TYPO3Fluid\Fluid\Core\Compiler\AbstractCompiledTemplate {
 
 public function getLayoutName(\TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface $renderingContext) {
 $self = $this;
@@ -136,14 +136,13 @@ $output0 .= GeorgRinger\News\ViewHelpers\LinkViewHelper::renderStatic($arguments
 $output0 .= '
 		</h3>
 	</div>
-	<!--
+
 	';
 // Rendering ViewHelper TYPO3Fluid\Fluid\ViewHelpers\IfViewHelper
 $renderChildrenClosure18 = function() use ($renderingContext, $self) {
 $output124 = '';
 
 $output124 .= '
-
 		';
 // Rendering ViewHelper TYPO3Fluid\Fluid\ViewHelpers\ThenViewHelper
 $renderChildrenClosure126 = function() use ($renderingContext, $self) {
@@ -1291,7 +1290,6 @@ return $output91;
 $output0 .= TYPO3Fluid\Fluid\ViewHelpers\IfViewHelper::renderStatic($arguments17, $renderChildrenClosure18, $renderingContext);
 
 $output0 .= '
-	-->
 
 	<!-- teaser -->
 	<div class="teaser-text">
