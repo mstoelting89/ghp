@@ -39,8 +39,13 @@
         </f:if>
     </div>
     <div class="sidebars">
-
-        {sidebars -> f:format.raw()}
+        <div class="sidebar-item">
+            <f:debug>{bewerben.header}</f:debug>
+            {bewerben -> f:format.raw()}
+        </div>
+        <div class="sidebar-item">
+            {spenden -> f:format.raw()}
+        </div>
     </div>
 
 </main>

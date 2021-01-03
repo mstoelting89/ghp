@@ -75,6 +75,12 @@ page {
 
         # Template-Datei wird eingebunden
         file = fileadmin/templates/main_template.html
+        partialRootPaths {
+            10 = fileadmin/templates/content/Partials
+        }
+        templateRootPaths {
+            10 = fileadmin/templates/content/Templates
+        }
 
         # Variablen aus der Templatedatei werden gesetzt
         variables {
@@ -159,8 +165,15 @@ page {
                 select.languageField = sys_language_uid
             }
 
-            sidebars = COA
-            sidebars {
+            # Einbindung der Sidebars
+            bewerben = COA
+            bewerben {
+                10 < styles.content.get
+                10.select.where = colPos = 0
+                10.select.pidInList = 24
+            }
+            spenden = COA
+            spenden {
                 10 < styles.content.get
                 10.select.where = colPos = 0
                 10.select.pidInList = 23
@@ -193,6 +206,12 @@ page {
                         linkWrap = <li>|</li>
                     }
                 }
+            }
+
+            # Footer-Partners Einbindung - Bsp aktuell News-Einbindung
+            footerPartners < tt_content.list.20.news_pi1
+            footerPartners {
+
             }
 
             # Breadcrumb Leiste erstellen

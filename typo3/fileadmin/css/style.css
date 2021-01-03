@@ -52,12 +52,18 @@ body {
     margin-left: .5rem;
     margin-right: .5rem;
 }
-/*
+
+.nav-item.nav-link {
+    padding-top:1.2rem;
+    height:100%
+}
+
 .nav-item:hover {
     background-color: #f7f7f7;
     opacity: .6;
-}*/
-
+    transition: .3s;
+}
+/*
 .nav-item a:hover {
     font-size: 22px;
     transition: .2s;
@@ -65,7 +71,7 @@ body {
 
 .nav-link {
     padding: 0;
-}
+}*/
 
 .nav-link a {
     color: #000;
