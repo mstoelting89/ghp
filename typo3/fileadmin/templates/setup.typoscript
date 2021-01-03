@@ -207,18 +207,19 @@ page {
                     }
                 }
             }
-
-            # Footer-Partners Einbindung - Bsp aktuell News-Einbindung
-            footerPartners < tt_content.list.20.news_pi1
-            footerPartners {
-                view.templateRootPaths.0 = fileadmin/templates/ext/news-footer/
-            }
-
+            /*
             # Footer-Partners Einbindung - Bsp aktuell News-Einbindung
             footerPartners < tt_content.list.20.news_pi1
             footerPartners {
                 # Einbindung exta Template für diesen footer
-                view.templatesRootPaths.0 = fileadmin/templates/ext/news-footer/
+                view.templateRootPaths.0 = fileadmin/templates/ext/news-footer/
+            } */
+
+            # Das News-Plugin im Fußbereich einfügen
+            footerPartners < tt_content.list.20.news_pi1
+            footerPartners {
+                view.templateRootPaths.0 = fileadmin/templates/ext/news-footer/Templates/
+                view.partialRootPaths.0 = fileadmin/templates/ext/news-footer/Partials/
             }
 
             # Breadcrumb Leiste erstellen
