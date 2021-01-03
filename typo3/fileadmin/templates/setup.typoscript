@@ -211,7 +211,7 @@ page {
             # Footer-Partners Einbindung - Bsp aktuell News-Einbindung
             footerPartners < tt_content.list.20.news_pi1
             footerPartners {
-
+                view.templateRootPaths.0 = fileadmin/templates/ext/news-footer/
             }
 
             # Footer-Partners Einbindung - Bsp aktuell News-Einbindung
