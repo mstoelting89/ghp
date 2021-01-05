@@ -1,6 +1,6 @@
 <?php
 
-class Standard_action_index_9067dd387d89061c5c0d2d6e24011878695dfd7a extends \TYPO3Fluid\Fluid\Core\Compiler\AbstractCompiledTemplate {
+class Standard_action_index_827d3fb1c50cdf3f44ea0c831d82f62bc823c543 extends \TYPO3Fluid\Fluid\Core\Compiler\AbstractCompiledTemplate {
 
 public function getLayoutName(\TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface $renderingContext) {
 $self = $this;
@@ -187,6 +187,7 @@ $output45 .= isset($arguments46['value']) ? $arguments46['value'] : $renderChild
 
 $output45 .= '</div>
                 <div class="test-beispiel">
+                    Hallo Welt
                 </div>
             ';
 return $output45;
@@ -265,6 +266,7 @@ $output26 .= isset($arguments27['value']) ? $arguments27['value'] : $renderChild
 
 $output26 .= '</div>
                 <div class="test-beispiel">
+                    Hallo Welt
                 </div>
             ';
 return $output26;
@@ -304,31 +306,40 @@ $output0 .= isset($arguments52['value']) ? $arguments52['value'] : $renderChildr
 $output0 .= '
         </div>
     </div>
-
 </main>
 
 <footer>
-    <div class="sub-text-footer pt-3 pb-3">
+    <div class="testeintrag">
         ';
-// Rendering ViewHelper TYPO3Fluid\Fluid\ViewHelpers\Format\RawViewHelper
+// Rendering ViewHelper TYPO3\CMS\Fluid\ViewHelpers\RenderViewHelper
 $renderChildrenClosure56 = function() use ($renderingContext, $self) {
-$array57 = array (
-);return $renderingContext->getVariableProvider()->getByPath('footerLabel', $array57);
+return NULL;
 };
 $arguments55 = array();
-$arguments55['value'] = NULL;
+$arguments55['section'] = NULL;
+$arguments55['partial'] = NULL;
+$arguments55['delegate'] = NULL;
+$arguments55['renderable'] = NULL;
+$arguments55['arguments'] = array (
+);
+$arguments55['optional'] = false;
+$arguments55['default'] = NULL;
+$arguments55['contentAs'] = NULL;
+$arguments55['debug'] = true;
+$arguments55['partial'] = 'test';
+$arguments55['arguments'] = $renderingContext->getVariableProvider()->getAll();
 
-$output0 .= isset($arguments55['value']) ? $arguments55['value'] : $renderChildrenClosure56();
+$output0 .= TYPO3\CMS\Fluid\ViewHelpers\RenderViewHelper::renderStatic($arguments55, $renderChildrenClosure56, $renderingContext);
 
 $output0 .= '
     </div>
 
-    <div class="partners">
+    <div class="sub-text-footer pt-3 pb-3">
         ';
 // Rendering ViewHelper TYPO3Fluid\Fluid\ViewHelpers\Format\RawViewHelper
 $renderChildrenClosure59 = function() use ($renderingContext, $self) {
 $array60 = array (
-);return $renderingContext->getVariableProvider()->getByPath('footerPartners', $array60);
+);return $renderingContext->getVariableProvider()->getByPath('footerLabel', $array60);
 };
 $arguments58 = array();
 $arguments58['value'] = NULL;
@@ -336,19 +347,34 @@ $arguments58['value'] = NULL;
 $output0 .= isset($arguments58['value']) ? $arguments58['value'] : $renderChildrenClosure59();
 
 $output0 .= '
-
     </div>
-    <div class="secondary-menu">
+
+    <div class="partners">
         ';
 // Rendering ViewHelper TYPO3Fluid\Fluid\ViewHelpers\Format\RawViewHelper
 $renderChildrenClosure62 = function() use ($renderingContext, $self) {
 $array63 = array (
-);return $renderingContext->getVariableProvider()->getByPath('footerSecondaryMenu', $array63);
+);return $renderingContext->getVariableProvider()->getByPath('footerPartners', $array63);
 };
 $arguments61 = array();
 $arguments61['value'] = NULL;
 
 $output0 .= isset($arguments61['value']) ? $arguments61['value'] : $renderChildrenClosure62();
+
+$output0 .= '
+
+    </div>
+    <div class="secondary-menu">
+        ';
+// Rendering ViewHelper TYPO3Fluid\Fluid\ViewHelpers\Format\RawViewHelper
+$renderChildrenClosure65 = function() use ($renderingContext, $self) {
+$array66 = array (
+);return $renderingContext->getVariableProvider()->getByPath('footerSecondaryMenu', $array66);
+};
+$arguments64 = array();
+$arguments64['value'] = NULL;
+
+$output0 .= isset($arguments64['value']) ? $arguments64['value'] : $renderChildrenClosure65();
 
 $output0 .= '
 

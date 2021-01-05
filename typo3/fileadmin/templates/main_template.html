@@ -36,6 +36,7 @@
             <f:else>
                 <div class="col-md-12 content-main">{contentMain -> f:format.raw()}</div>
                 <div class="test-beispiel">
+                    Hallo Welt
                 </div>
             </f:else>
         </f:if>
@@ -48,10 +49,13 @@
             {spenden -> f:format.raw()}
         </div>
     </div>
-
 </main>
 
 <footer>
+    <div class="testeintrag">
+        <f:render partial="test" arguments="{_all}" />
+    </div>
+
     <div class="sub-text-footer pt-3 pb-3">
         {footerLabel -> f:format.raw()}
     </div>
