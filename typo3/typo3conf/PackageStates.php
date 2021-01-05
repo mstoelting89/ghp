@@ -95,8 +95,14 @@ return [
         'viewpage' => [
             'packagePath' => 'typo3/sysext/viewpage/',
         ],
+        'extension_builder' => [
+            'packagePath' => 'typo3conf/ext/extension_builder/',
+        ],
         'news' => [
             'packagePath' => 'typo3conf/ext/news/',
+        ],
+        'own_blog' => [
+            'packagePath' => 'typo3conf/ext/own_blog/',
         ],
     ],
     'version' => 5,
