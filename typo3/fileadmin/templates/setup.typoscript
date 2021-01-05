@@ -348,3 +348,5 @@ page.10.variables.login {
     templateFile = fileadmin/templates/ext/felogin/FrontendLoginCompact.html
 }
 */
+
+plugin.tx_ownblog_pi.persistence.storagePid = 5
