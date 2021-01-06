@@ -3,7 +3,8 @@
 #
 CREATE TABLE tx_ownblog_domain_model_blog (
 
-	name varchar(255) DEFAULT '' NOT NULL,
+	title varchar(255) DEFAULT '' NOT NULL,
+	author varchar(255) DEFAULT '' NOT NULL,
 	date date DEFAULT NULL,
 	category varchar(255) DEFAULT '' NOT NULL,
 	blogtext text,

@@ -25,24 +25,49 @@ class BlogTest extends \TYPO3\TestingFramework\Core\Unit\UnitTestCase
     /**
      * @test
      */
-    public function getNameReturnsInitialValueForString()
+    public function getTitleReturnsInitialValueForString()
     {
         self::assertSame(
             '',
-            $this->subject->getName()
+            $this->subject->getTitle()
         );
     }
 
     /**
      * @test
      */
-    public function setNameForStringSetsName()
+    public function setTitleForStringSetsTitle()
     {
-        $this->subject->setName('Conceived at T3CON10');
+        $this->subject->setTitle('Conceived at T3CON10');
 
         self::assertAttributeEquals(
             'Conceived at T3CON10',
-            'name',
+            'title',
+            $this->subject
+        );
+    }
+
+    /**
+     * @test
+     */
+    public function getAuthorReturnsInitialValueForString()
+    {
+        self::assertSame(
+            '',
+            $this->subject->getAuthor()
+        );
+    }
+
+    /**
+     * @test
+     */
+    public function setAuthorForStringSetsAuthor()
+    {
+        $this->subject->setAuthor('Conceived at T3CON10');
+
+        self::assertAttributeEquals(
+            'Conceived at T3CON10',
+            'author',
             $this->subject
         );
     }

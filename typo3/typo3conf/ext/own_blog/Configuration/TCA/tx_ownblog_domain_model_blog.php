@@ -2,7 +2,7 @@
 return [
     'ctrl' => [
         'title' => 'LLL:EXT:own_blog/Resources/Private/Language/locallang_db.xlf:tx_ownblog_domain_model_blog',
-        'label' => 'name',
+        'label' => 'title',
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
         'cruser_id' => 'cruser_id',
@@ -16,14 +16,14 @@ return [
             'starttime' => 'starttime',
             'endtime' => 'endtime',
         ],
-        'searchFields' => 'name,category,blogtext',
+        'searchFields' => 'title,author,category,blogtext',
         'iconfile' => 'EXT:own_blog/Resources/Public/Icons/tx_ownblog_domain_model_blog.gif'
     ],
     'interface' => [
-        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, name, date, category, blogtext, picture',
+        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, author, date, category, blogtext, picture',
     ],
     'types' => [
-        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, name, date, category, blogtext, picture, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
+        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, author, date, category, blogtext, picture, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
     ],
     'columns' => [
         'sys_language_uid' => [
@@ -116,9 +116,18 @@ return [
             ],
         ],
 
-        'name' => [
+        'title' => [
             'exclude' => false,
-            'label' => 'LLL:EXT:own_blog/Resources/Private/Language/locallang_db.xlf:tx_ownblog_domain_model_blog.name',
+            'label' => 'LLL:EXT:own_blog/Resources/Private/Language/locallang_db.xlf:tx_ownblog_domain_model_blog.title',
+            'config' => [
+                'type' => 'input',
+                'size' => 30,
+                'eval' => 'trim'
+            ],
+        ],
+        'author' => [
+            'exclude' => false,
+            'label' => 'LLL:EXT:own_blog/Resources/Private/Language/locallang_db.xlf:tx_ownblog_domain_model_blog.author',
             'config' => [
                 'type' => 'input',
                 'size' => 30,

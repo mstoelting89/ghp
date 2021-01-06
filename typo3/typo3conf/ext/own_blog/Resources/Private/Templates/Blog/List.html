@@ -19,7 +19,8 @@ Otherwise your changes will be overwritten the next time you save the extension 
 
     <table  class="tx_ownblog" >
         <tr>
-            <th><f:translate key="tx_ownblog_domain_model_blog.name" /></th>
+            <th><f:translate key="tx_ownblog_domain_model_blog.title" /></th>
+            <th><f:translate key="tx_ownblog_domain_model_blog.author" /></th>
             <th><f:translate key="tx_ownblog_domain_model_blog.date" /></th>
             <th><f:translate key="tx_ownblog_domain_model_blog.category" /></th>
             <th><f:translate key="tx_ownblog_domain_model_blog.blogtext" /></th>
@@ -30,7 +31,8 @@ Otherwise your changes will be overwritten the next time you save the extension 
 
         <f:for each="{blogs}" as="blog">
             <tr>
-                <td><f:link.action action="show" arguments="{blog : blog}">{blog.name}</f:link.action></td>
+                <td><f:link.action action="show" arguments="{blog : blog}">{blog.title}</f:link.action></td>
+                <td><f:link.action action="show" arguments="{blog : blog}">{blog.author}</f:link.action></td>
                 <td><f:link.action action="show" arguments="{blog : blog}">{blog.date -> f:format.date()}</f:link.action></td>
                 <td><f:link.action action="show" arguments="{blog : blog}">{blog.category}</f:link.action></td>
                 <td><f:link.action action="show" arguments="{blog : blog}">{blog.blogtext}</f:link.action></td>

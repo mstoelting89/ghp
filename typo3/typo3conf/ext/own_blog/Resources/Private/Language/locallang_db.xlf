@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="EXT:own_blog/Resources/Private/Language/locallang_db" date="2021-01-05T21:19:37Z" product-name="own_blog">
+	<file source-language="en" datatype="plaintext" original="EXT:own_blog/Resources/Private/Language/locallang_db" date="2021-01-06T08:28:42Z" product-name="own_blog">
 		<header/>
 		<body>
 			<trans-unit id="tx_ownblog_domain_model_blog" resname="tx_ownblog_domain_model_blog">
 				<source>Blog</source>
 			</trans-unit>
-			<trans-unit id="tx_ownblog_domain_model_blog.name" resname="tx_ownblog_domain_model_blog.name">
-				<source>Name</source>
+			<trans-unit id="tx_ownblog_domain_model_blog.title" resname="tx_ownblog_domain_model_blog.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_ownblog_domain_model_blog.author" resname="tx_ownblog_domain_model_blog.author">
+				<source>Author</source>
 			</trans-unit>
 			<trans-unit id="tx_ownblog_domain_model_blog.date" resname="tx_ownblog_domain_model_blog.date">
 				<source>Date</source>

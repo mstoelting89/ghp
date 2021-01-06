@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="EXT:own_blog/Resources/Private/Language/locallang_csh" date="2021-01-05T21:19:37Z" product-name="own_blog">
+	<file source-language="en" datatype="plaintext" original="EXT:own_blog/Resources/Private/Language/locallang_csh" date="2021-01-06T08:28:42Z" product-name="own_blog">
 		<header/>
 		<body>
-			<trans-unit id="name.description" resname="name.description">
+			<trans-unit id="title.description" resname="title.description">
+				<source>title</source>
+			</trans-unit>
+			<trans-unit id="author.description" resname="author.description">
 				<source>Name des Eintrag Erstellers</source>
 			</trans-unit>
 			<trans-unit id="date.description" resname="date.description">

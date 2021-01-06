@@ -36,11 +36,22 @@
                         {
                             "allowedFileTypes": "",
                             "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": false,
+                            "propertyIsL10nModeExclude": false,
+                            "propertyIsRequired": false,
+                            "propertyName": "title",
+                            "propertyType": "String",
+                            "uid": "1009965438913"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
                             "propertyDescription": "Name des Eintrag Erstellers",
                             "propertyIsExcludeField": false,
                             "propertyIsL10nModeExclude": false,
                             "propertyIsRequired": true,
-                            "propertyName": "name",
+                            "propertyName": "author",
                             "propertyType": "String",
                             "uid": "1200988774993"
                         },
@@ -113,8 +124,8 @@
         },
         "extensionKey": "own_blog",
         "name": "Blog",
-        "originalExtensionKey": "",
-        "originalVendorName": "",
+        "originalExtensionKey": "own_blog",
+        "originalVendorName": "Pi",
         "persons": [],
         "plugins": [
             {
@@ -133,7 +144,7 @@
     "wires": [],
     "storagePath": "\/kunden\/homepages\/16\/d764565842\/htdocs\/guitarheartsproject\/ghp\/typo3\/typo3conf\/ext\/",
     "log": {
-        "last_modified": "2021-01-05 09:19",
+        "last_modified": "2021-01-06 08:28",
         "extension_builder_version": "9.10.3",
         "be_user": " (1)"
     }

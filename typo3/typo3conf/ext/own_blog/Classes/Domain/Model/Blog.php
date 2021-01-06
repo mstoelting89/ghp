@@ -24,7 +24,7 @@ class Blog extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * @var string
      * @TYPO3\CMS\Extbase\Annotation\Validate("NotEmpty")
      */
-    protected $name = '';
+    protected $author = '';
 
     /**
      * Veröffentlichungsdatum
@@ -58,25 +58,11 @@ class Blog extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     protected $picture = null;
 
     /**
-     * Returns the name
+     * title
      * 
-     * @return string $name
+     * @var string
      */
-    public function getName()
-    {
-        return $this->name;
-    }
-
-    /**
-     * Sets the name
-     * 
-     * @param string $name
-     * @return void
-     */
-    public function setName($name)
-    {
-        $this->name = $name;
-    }
+    protected $title = '';
 
     /**
      * Returns the date
@@ -160,5 +146,47 @@ class Blog extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     public function setPicture(\TYPO3\CMS\Extbase\Domain\Model\FileReference $picture)
     {
         $this->picture = $picture;
+    }
+
+    /**
+     * Returns the author
+     * 
+     * @return string author
+     */
+    public function getAuthor()
+    {
+        return $this->author;
+    }
+
+    /**
+     * Sets the author
+     * 
+     * @param string $author
+     * @return void
+     */
+    public function setAuthor($author)
+    {
+        $this->author = $author;
+    }
+
+    /**
+     * Returns the title
+     * 
+     * @return string $title
+     */
+    public function getTitle()
+    {
+        return $this->title;
+    }
+
+    /**
+     * Sets the title
+     * 
+     * @param string $title
+     * @return void
+     */
+    public function setTitle($title)
+    {
+        $this->title = $title;
     }
 }
