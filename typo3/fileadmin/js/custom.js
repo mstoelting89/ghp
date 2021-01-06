@@ -4,7 +4,6 @@ $(document).ready(function () {
    //if($(window).width() > 992) {
        $(window).on({
            'scroll': function (e) {
-               console.log("Hallo Welt " + $(this).scrollTop());
                if ($(this).scrollTop() > 40) {
                    $('.navbar').addClass('fixed-top');
                    console.log("Es wird gescrollt");
