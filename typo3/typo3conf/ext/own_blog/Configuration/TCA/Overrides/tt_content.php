@@ -5,7 +5,7 @@
     'tt_content',
     'CType',
     [
-        'LLL:EXT:examples/Resources/Private/Language/locallang.xlf:examples_newcontentelement_title',
+        'LLL:EXT:own_blog/Resources/Private/Language/locallang.xlf:examples_newcontentelement_title',
         'examples_newcontentelement',
         'content-text',
     ],
