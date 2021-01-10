@@ -15,7 +15,6 @@
 
 <main>
     <div class="container" style="display:flex;">
-        <f:debug>{bewerben}</f:debug>
         <f:if condition="{contentMargin}">
             <f:then>
                 <div class="col-md-8 content-main">{contentMain -> f:format.raw()}</div>
@@ -26,9 +25,9 @@
             </f:else>
         </f:if>
     </div>
-    <div class="sidebars">
-       <f:render partial="Nav/Sidebars"></f:render>
-    </div>
+
+    <f:render partial="Nav/Sidebars" arguments="{sidebars}"></f:render>
+
 </main>
 
 <footer>

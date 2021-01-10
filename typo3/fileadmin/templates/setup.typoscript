@@ -86,6 +86,15 @@ page {
             10 = fileadmin/templates/content/Templates/
         }
 
+        dataProcessing {
+            10 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+            10 {
+                special = directory
+                special.value = 22
+                as = sidebars
+            }
+        }
+
         # Variablen aus der Templatedatei werden gesetzt
         variables {
 
@@ -187,9 +196,6 @@ page {
                 20 = TEXT
                 20.data = DB:pages:24:title
             }
-
-            bewerbenTitel = TEXT
-            bewerbenTitel.data = DB:pages:24:title
 
             spenden = COA
             spenden {
