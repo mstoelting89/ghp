@@ -13940,7 +13940,7 @@ return array (
       'ctrl' => 
       array (
         'title' => 'LLL:EXT:own_blog/Resources/Private/Language/locallang_db.xlf:tx_ownblog_domain_model_blog',
-        'label' => 'name',
+        'label' => 'title',
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
         'cruser_id' => 'cruser_id',
@@ -13955,18 +13955,18 @@ return array (
           'starttime' => 'starttime',
           'endtime' => 'endtime',
         ),
-        'searchFields' => 'name,category,blogtext',
+        'searchFields' => 'title,author,category,blogtext',
         'iconfile' => 'EXT:own_blog/Resources/Public/Icons/tx_ownblog_domain_model_blog.gif',
       ),
       'interface' => 
       array (
-        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, name, date, category, blogtext, picture',
+        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, author, date, category, blogtext, picture',
       ),
       'types' => 
       array (
         1 => 
         array (
-          'showitem' => 'sys_language_uid,l10n_parent,l10n_diffsource,hidden,name,date,category,blogtext,picture,--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access,starttime,endtime',
+          'showitem' => 'sys_language_uid,l10n_parent,l10n_diffsource,hidden,title,author,date,category,blogtext,picture,--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access,starttime,endtime',
         ),
       ),
       'columns' => 
@@ -14086,10 +14086,21 @@ return array (
             ),
           ),
         ),
-        'name' => 
+        'title' => 
         array (
           'exclude' => false,
-          'label' => 'LLL:EXT:own_blog/Resources/Private/Language/locallang_db.xlf:tx_ownblog_domain_model_blog.name',
+          'label' => 'LLL:EXT:own_blog/Resources/Private/Language/locallang_db.xlf:tx_ownblog_domain_model_blog.title',
+          'config' => 
+          array (
+            'type' => 'input',
+            'size' => 30,
+            'eval' => 'trim',
+          ),
+        ),
+        'author' => 
+        array (
+          'exclude' => false,
+          'label' => 'LLL:EXT:own_blog/Resources/Private/Language/locallang_db.xlf:tx_ownblog_domain_model_blog.author',
           'config' => 
           array (
             'type' => 'input',

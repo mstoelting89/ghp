@@ -1,5 +1,0 @@
-a:2:{s:17:"error.extension.0";a:1:{i:0;a:2:{s:6:"source";s:86:"An extension key must have minimum 3, maximum 30 characters (not counting underscores)";s:6:"target";s:116:"Ein Extensionkey muß mindestens 3 und darf maximal 30 Zeichen lang sein (Unterstriche werden nicht berücksichtigt)";}}s:20:"descr_sourceLanguage";a:1:{i:0;a:2:{s:6:"source";s:220:"The source language for xliff files is the 2 letter language code in which the "source" of a label is defined.
-					In general it should be "en" for English. This label can later be translated into other languages. 
-				";s:6:"target";s:248:"Die Ausgangssprache für xliff Dateien ist der zweistellige Sprachcode, in dem die "Quelle" eines Labels definiert ist.
-					Im Allgemeinen sollte es für Englisch „en“ sein. Dieses Label kann später in andere Sprachen übersetzt werden. 
-				";}}}
