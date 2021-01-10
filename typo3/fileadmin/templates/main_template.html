@@ -2,6 +2,8 @@
 <header>
     <!--<div class="header-content" style="background-image: url({image})">-->
     <div class="header-content header-bg-image">
+        <f:render partial="Nav/Navbar.html" arguments="{_all}"></f:render>
+        <!--
         <nav class="navbar navbar-expand-lg navbar-light">
             <a class="navbar-brand" href="#">
                 {logo -> f:format.raw()}
@@ -12,11 +14,11 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 {menuPrimary -> f:format.raw()}
-                <!--<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                </ul>-->
+
                 {language -> f:format.raw()}
             </div>
         </nav>
+        -->
         <div class="header-title">
             {contentTrailer -> f:format.raw()}
         </div>
