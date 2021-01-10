@@ -2,23 +2,8 @@
 <header>
     <!--<div class="header-content" style="background-image: url({image})">-->
     <div class="header-content header-bg-image">
-        <f:render partial="Nav/Navbar.html" arguments="{_all}"></f:render>
-        <!--
-        <nav class="navbar navbar-expand-lg navbar-light">
-            <a class="navbar-brand" href="#">
-                {logo -> f:format.raw()}
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                {menuPrimary -> f:format.raw()}
+        <f:render partial="Nav/Navbar" arguments="{_all}"></f:render>
 
-                {language -> f:format.raw()}
-            </div>
-        </nav>
-        -->
         <div class="header-title">
             {contentTrailer -> f:format.raw()}
         </div>
@@ -30,6 +15,7 @@
 
 <main>
     <div class="container" style="display:flex;">
+        <f:debug>{bewerben}</f:debug>
         <f:if condition="{contentMargin}">
             <f:then>
                 <div class="col-md-8 content-main">{contentMain -> f:format.raw()}</div>
@@ -41,12 +27,7 @@
         </f:if>
     </div>
     <div class="sidebars">
-        <div class="sidebar-item">
-            {bewerben -> f:format.raw()}
-        </div>
-        <div class="sidebar-item">
-            {spenden -> f:format.raw()}
-        </div>
+
     </div>
 </main>
 

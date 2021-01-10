@@ -126,10 +126,12 @@ page {
                 1 = TMENU
                 1 {
 
+                    #Untermenü-Ebene wird immer angezeigt
+                    expAll = 1
+
                     # NO(rmale) Darstellung
                     NO = 1
                     NO {
-
                         # umschließung des Menü-Eintrags mit einem li-tag
                         wrapItemAndSub = <li class="nav-item nav-link">|</li>
                     }
@@ -153,6 +155,12 @@ page {
                         wrapItemAndSub = <li class="nav-item nav-link dropdown active">|</li>
                     }
                 }
+
+                # Einbindung Untermenü
+                2 < .1
+                2 {
+                    wrap = <ul class="dropdown-menu">|</ul>
+                }
             }
 
             # Einbindung des Contents in der Hauptspalte
@@ -175,7 +183,14 @@ page {
                 10 < styles.content.get
                 10.select.where = colPos = 0
                 10.select.pidInList = 24
+
+                20 = TEXT
+                20.data = DB:pages:24:title
             }
+
+            bewerbenTitel = TEXT
+            bewerbenTitel.data = DB:pages:24:title
+
             spenden = COA
             spenden {
                 10 < styles.content.get

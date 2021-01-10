@@ -35,14 +35,16 @@ Otherwise your changes will be overwritten the next time you save the extension 
                 <td><f:link.action action="show" arguments="{blog : blog}">{blog.author}</f:link.action></td>
                 <td><f:link.action action="show" arguments="{blog : blog}">{blog.date -> f:format.date()}</f:link.action></td>
                 <td><f:link.action action="show" arguments="{blog : blog}">{blog.category}</f:link.action></td>
-                <td><f:link.action action="show" arguments="{blog : blog}">{blog.blogtext}</f:link.action></td>
+                <td><f:link.action action="show" arguments="{blog : blog}">{blog.blogtext -> f:format.raw()}</f:link.action></td>
                 <td><f:link.action action="show" arguments="{blog : blog}">{blog.picture.originalResource.name}</f:link.action></td>
+                <!--
                 <td><f:link.action action="edit" arguments="{blog : blog}">Edit</f:link.action></td>
-                <td><f:link.action action="delete" arguments="{blog : blog}">Delete</f:link.action></td>
+                <td><f:link.action action="delete" arguments="{blog : blog}">Delete</f:link.action></td> -->
             </tr>
         </f:for>
     </table>
-
+    <!--
     <f:link.action action="new">New Blog</f:link.action>
+    -->
 </f:section>
 </html>

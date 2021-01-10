@@ -1,6 +1,7 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
 
 <nav class="navbar navbar-expand-lg navbar-light">
+
     <a class="navbar-brand" href="#">
         {logo -> f:format.raw()}
     </a>
@@ -10,8 +11,7 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
         {menuPrimary -> f:format.raw()}
-        <!--<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-        </ul>-->
+
         {language -> f:format.raw()}
     </div>
 </nav>
