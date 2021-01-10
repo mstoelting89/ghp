@@ -27,6 +27,12 @@
 			<trans-unit id="examples_newcontentelement_title" resname="examples_newcontentelement_title">
 				<source>Beispiel Content Element</source>
 			</trans-unit>
+			<trans-unit id="examples_newcontentelement_title" resname="examples_newcontentelement_title">
+				<source>Beispiel Content Element</source>
+			</trans-unit>
+			<trans-unit id="examples_newcontentelement_description" resname="examples_newcontentelement_description">
+				<source>Das erste Content Element als Beispiel</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
