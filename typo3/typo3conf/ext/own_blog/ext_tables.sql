@@ -8,6 +8,7 @@ CREATE TABLE tx_ownblog_domain_model_blog (
 	date date DEFAULT NULL,
 	category varchar(255) DEFAULT '' NOT NULL,
 	blogtext text,
-	picture int(11) unsigned NOT NULL default '0'
+	picture int(11) unsigned NOT NULL default '0',
+	code_language text DEFAULT '' NOT NULL
 
 );
