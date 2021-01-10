@@ -111,7 +111,6 @@ page {
             # Einbindung fixes Logo
             logo = IMAGE
             logo.file = fileadmin/images/images/f2e0a4ac-3cbf-43e1-bfa0-d9b075e276df.jpg
-            logo.file.height = 70
 
             /*
             contentTrailer = TEXT
@@ -139,7 +138,7 @@ page {
                 special.value = 2
 
                 # ul-tag kommt um das Menü herum
-                wrap = <ul class="navbar-nav mr-auto mt-2 mt-lg-0">|</ul>
+                wrap = <ul class="navbar-nav mt-2 mt-lg-0">|</ul>
 
                 # Darstellung des Menüs
                 1 = TMENU
@@ -160,7 +159,7 @@ page {
                     ACT {
                         wrapItemAndSub = <li class="nav-item nav-link active">|</li>
                     }
-
+                    /*
                     IFSUB < .NO
                     IFSUB {
                         wrapItemAndSub = <li class="nav-item nav-link dropdown">|</li>
@@ -173,6 +172,7 @@ page {
                     ACTIFSUB {
                         wrapItemAndSub = <li class="nav-item nav-link dropdown active">|</li>
                     }
+                    */
                 }
 
                 # Einbindung Untermenü
