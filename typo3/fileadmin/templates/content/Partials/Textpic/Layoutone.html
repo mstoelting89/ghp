@@ -12,7 +12,7 @@
         <f:if condition="{gallery.position.vertical} != 'below'">
             <f:render partial="Media/Gallery" arguments="{_all}" />
         </f:if>
-
+        <f:debug>{data.layout}</f:debug>
         <f:if condition="{data.bodytext}">
             <f:then>
                 <div class="ce-bodytext">

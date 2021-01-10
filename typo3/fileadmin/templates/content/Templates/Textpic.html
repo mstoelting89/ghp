@@ -1,13 +1,12 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
 <f:layout name="Default" />
-<f:debug>{data.layout}</f:debug>
+
 <f:switch expression="{data.layout}">
 	<f:case value="0">
-
-		<f:render partial="Textpic/0" arguments="{_all}"></f:render>
+		<f:render partial="Textpic/Layoutzero" arguments="{_all}"></f:render>
 	</f:case>
 	<f:case value="1">
-		<f:render partial="Textpic/1" arguments="{_all}"></f:render>
+		<f:render partial="Textpic/Layoutone" arguments="{_all}"></f:render>
 	</f:case>
 </f:switch>
 
