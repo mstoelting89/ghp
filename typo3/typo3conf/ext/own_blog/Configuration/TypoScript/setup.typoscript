@@ -24,6 +24,13 @@ plugin.tx_ownblog_pi {
     }
 }
 
+tt_content {
+  examples_newcontentelement =< lib.contentElement
+  examples_newcontentelement {
+    templateName = NewContentElement
+  }
+}
+
 # these classes are only used in auto-generated templates
 plugin.tx_ownblog._CSS_DEFAULT_STYLE (
     textarea.f3-form-error {
