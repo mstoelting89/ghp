@@ -13,4 +13,15 @@
     'after'
 );
 
+$iconRegistry = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Imaging\IconRegistry::class);
+
+// use same identifier as used in TSconfig for icon
+$iconRegistry->registerIcon(
+// use same identifier as used in TSconfig for icon
+    'examples_newcontentelement',
+    \TYPO3\CMS\Core\Imaging\IconProvider\FontawesomeIconProvider::class,
+    // font-awesome identifier ('external-link-square')
+    ['name' => 'external-link-alt']
+);
+
 
