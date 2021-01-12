@@ -1060,35 +1060,6 @@ $boot();
 unset($boot);
 
 /**
- * Extension: own_blog
- * File: /kunden/homepages/16/d764565842/htdocs/guitarheartsproject/ghp/typo3/typo3conf/ext/own_blog/ext_tables.php
- */
-
-$_EXTKEY = 'own_blog';
-$_EXTCONF = $GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf'][$_EXTKEY] ?? null;
-
-
-defined('TYPO3_MODE') || die('Access denied.');
-
-call_user_func(
-    function()
-    {
-
-        \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
-            'Pi.OwnBlog',
-            'Pi',
-            'Blog'
-        );
-
-        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile('own_blog', 'Configuration/TypoScript', 'Blog');
-
-        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_ownblog_domain_model_blog', 'EXT:own_blog/Resources/Private/Language/locallang_csh_tx_ownblog_domain_model_blog.xlf');
-        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_ownblog_domain_model_blog');
-
-    }
-);
-
-/**
  * Extension: pi_ghp
  * File: /kunden/homepages/16/d764565842/htdocs/guitarheartsproject/ghp/typo3/typo3conf/ext/pi_ghp/ext_tables.php
  */

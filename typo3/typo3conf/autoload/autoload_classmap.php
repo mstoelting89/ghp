@@ -208,7 +208,4 @@ return array(
     'Michael\\PiGhp\\Controller\\GuitarHeartsProjectController' => $typo3InstallDir . 'typo3conf/ext/pi_ghp/Classes/Controller/GuitarHeartsProjectController.php',
     'Michael\\PiGhp\\Domain\\Model\\GuitarHeartsProject' => $typo3InstallDir . 'typo3conf/ext/pi_ghp/Classes/Domain/Model/GuitarHeartsProject.php',
     'Michael\\PiGhp\\Domain\\Repository\\GuitarHeartsProjectRepository' => $typo3InstallDir . 'typo3conf/ext/pi_ghp/Classes/Domain/Repository/GuitarHeartsProjectRepository.php',
-    'Pi\\OwnBlog\\Controller\\BlogController' => $typo3InstallDir . 'typo3conf/ext/own_blog/Classes/Controller/BlogController.php',
-    'Pi\\OwnBlog\\Domain\\Model\\Blog' => $typo3InstallDir . 'typo3conf/ext/own_blog/Classes/Domain/Model/Blog.php',
-    'Pi\\OwnBlog\\Domain\\Repository\\BlogRepository' => $typo3InstallDir . 'typo3conf/ext/own_blog/Classes/Domain/Repository/BlogRepository.php',
 );
