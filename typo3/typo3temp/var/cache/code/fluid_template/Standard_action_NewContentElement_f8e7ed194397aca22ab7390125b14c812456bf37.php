@@ -1,6 +1,6 @@
 <?php
 
-class Standard_action_NewContentElement_d0591ad6150e7d49b8e5c6ad580b041e8f4a37c0 extends \TYPO3Fluid\Fluid\Core\Compiler\AbstractCompiledTemplate {
+class Standard_action_NewContentElement_f8e7ed194397aca22ab7390125b14c812456bf37 extends \TYPO3Fluid\Fluid\Core\Compiler\AbstractCompiledTemplate {
 
 public function getLayoutName(\TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface $renderingContext) {
 $self = $this;
@@ -36,7 +36,7 @@ $output0 = '';
 
 $output0 .= '
 
-<h2>Das ist der Output</h2>
+<h2>Das ist der Output unter fileadmin</h2>
 <div>';
 // Rendering ViewHelper TYPO3Fluid\Fluid\ViewHelpers\Format\RawViewHelper
 $renderChildrenClosure2 = function() use ($renderingContext, $self) {
