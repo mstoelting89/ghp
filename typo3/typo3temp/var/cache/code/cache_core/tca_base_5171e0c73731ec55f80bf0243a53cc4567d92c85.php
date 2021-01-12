@@ -14292,7 +14292,7 @@ return array (
       'ctrl' => 
       array (
         'title' => 'LLL:EXT:pi_ghp/Resources/Private/Language/locallang_db.xlf:tx_pighp_domain_model_guitarheartsproject',
-        'label' => 'uid',
+        'label' => 'name',
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
         'cruser_id' => 'cruser_id',
@@ -14308,18 +14308,18 @@ return array (
           'starttime' => 'starttime',
           'endtime' => 'endtime',
         ),
-        'searchFields' => '',
+        'searchFields' => 'name',
         'iconfile' => 'EXT:pi_ghp/Resources/Public/Icons/tx_pighp_domain_model_guitarheartsproject.gif',
       ),
       'interface' => 
       array (
-        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, ',
+        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, name',
       ),
       'types' => 
       array (
         1 => 
         array (
-          'showitem' => 'sys_language_uid,l10n_parent,l10n_diffsource,hidden,--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access,starttime,endtime',
+          'showitem' => 'sys_language_uid,l10n_parent,l10n_diffsource,hidden,name,--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access,starttime,endtime',
         ),
       ),
       'columns' => 
@@ -14437,6 +14437,17 @@ return array (
             array (
               'allowLanguageSynchronization' => true,
             ),
+          ),
+        ),
+        'name' => 
+        array (
+          'exclude' => true,
+          'label' => 'LLL:EXT:pi_ghp/Resources/Private/Language/locallang_db.xlf:tx_pighp_domain_model_guitarheartsproject.name',
+          'config' => 
+          array (
+            'type' => 'input',
+            'size' => 30,
+            'eval' => 'trim',
           ),
         ),
       ),

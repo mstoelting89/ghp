@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="EXT:pi_ghp/Resources/Private/Language/locallang_db" date="2021-01-12T08:37:04Z" product-name="pi_ghp">
+	<file source-language="en" datatype="plaintext" original="EXT:pi_ghp/Resources/Private/Language/locallang_db" date="2021-01-12T08:42:53Z" product-name="pi_ghp">
 		<header/>
 		<body>
 			<trans-unit id="tx_pighp_domain_model_guitarheartsproject" resname="tx_pighp_domain_model_guitarheartsproject">
 				<source>Guitar Hearts Project</source>
+			</trans-unit>
+			<trans-unit id="tx_pighp_domain_model_guitarheartsproject.name" resname="tx_pighp_domain_model_guitarheartsproject.name">
+				<source>Name</source>
 			</trans-unit>
 			<trans-unit id="tx_pi_ghp_pi.name" resname="tx_pi_ghp_pi.name">
 				<source>GuitarHeartsProcjectPlugin</source>
