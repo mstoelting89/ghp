@@ -104,6 +104,9 @@ return [
         'own_blog' => [
             'packagePath' => 'typo3conf/ext/own_blog/',
         ],
+        'pi_ghp' => [
+            'packagePath' => 'typo3conf/ext/pi_ghp/',
+        ],
     ],
     'version' => 5,
 ];
