@@ -19,6 +19,7 @@ call_user_func(
 
         // wizards
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig(
+            '<INCLUDE_TYPOSCRIPT: source="FILE:EXT:pi_ghp/Configuration/TsConfig/Page/Mod/Wizards/NewContentElement.tsconfig">',
             'mod {
                 wizards.newContentElement.wizardItems.plugins {
                     elements {
@@ -37,12 +38,12 @@ call_user_func(
            }'
         );
 		$iconRegistry = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Imaging\IconRegistry::class);
-		
+
 			$iconRegistry->registerIcon(
 				'pi_ghp-plugin-pi',
 				\TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
 				['source' => 'EXT:pi_ghp/Resources/Public/Icons/user_plugin_pi.svg']
 			);
-		
+
     }
 );

@@ -5,28 +5,16 @@
     'tt_content',
     'CType',
     [
-        'LLL:EXT:own_blog/Resources/Private/Language/locallang.xlf:examples_newcontentelement_title',
-        'examples_newcontentelement',
+        'LLL:EXT:pi_ghp/Resources/Private/Language/locallang.xlf:contentelement_ghp_title',
+        'contentelement_ghp',
         'content-text',
     ],
     'textmedia',
     'after'
 );
 
-
-$iconRegistry = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Imaging\IconRegistry::class);
-
-// use same identifier as used in TSconfig for icon
-$iconRegistry->registerIcon(
-// use same identifier as used in TSconfig for icon
-    'examples_newcontentelement',
-    \TYPO3\CMS\Core\Imaging\IconProvider\FontawesomeIconProvider::class,
-    // font-awesome identifier ('external-link-square')
-    ['name' => 'external-link-alt']
-);
-
 // Configure the default backend fields for the content element
-$GLOBALS['TCA']['tt_content']['types']['examples_newcontentelement'] = [
+$GLOBALS['TCA']['tt_content']['types']['contentelement_ghp'] = [
     'showitem' => '
          --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,
             --palette--;;general,
@@ -45,5 +33,3 @@ $GLOBALS['TCA']['tt_content']['types']['examples_newcontentelement'] = [
         ],
     ],
 ];
-
-

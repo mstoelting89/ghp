@@ -24,6 +24,13 @@ plugin.tx_pighp_pi {
     }
 }
 
+tt_content {
+  contentelement_ghp =< lib.contentElement
+  contentelement_ghp {
+    templateName = ContentElementGHP
+  }
+}
+
 # these classes are only used in auto-generated templates
 plugin.tx_pighp._CSS_DEFAULT_STYLE (
     textarea.f3-form-error {
