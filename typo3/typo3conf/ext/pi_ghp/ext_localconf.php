@@ -45,5 +45,6 @@ call_user_func(
 				['source' => 'EXT:pi_ghp/Resources/Public/Icons/user_plugin_pi.svg']
 			);
 
+
     }
 );
