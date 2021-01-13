@@ -29,6 +29,10 @@ tt_content {
   contentelement_ghp {
     templateName = NewContentElement_GHP
   }
+  sideHeaderContent =< lib.contentElement
+  sideHeaderContent {
+    templateName = SideHeaderContent
+  }
 }
 
 # these classes are only used in auto-generated templates

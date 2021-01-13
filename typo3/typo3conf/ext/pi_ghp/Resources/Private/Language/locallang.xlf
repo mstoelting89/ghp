@@ -15,6 +15,12 @@
 			<trans-unit id="contentelement_ghp_description" resname="contentelement_ghp_description">
 				<source>Dies ist ein individuelles ContentElement des Guitar Hearts Projects</source>
 			</trans-unit>
+			<trans-unit id="sideHeaderContent_title" resname="contentelement_ghp_title">
+				<source>Element Titel seitlich</source>
+			</trans-unit>
+			<trans-unit id="sideHeaderContent_description" resname="contentelement_ghp_description">
+				<source>Inhaltselement mit einem Titel an der Seite</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
