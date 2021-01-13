@@ -21,7 +21,7 @@
 </header>
 
 <main>
-    <div class="container" style="display:flex;">
+    <!--<div class="container" style="display:flex;">-->
         <f:if condition="{contentMargin}">
             <f:then>
                 <div class="col-md-8 content-main">{contentMain -> f:format.raw()}</div>
@@ -33,7 +33,7 @@
                 </div>
             </f:else>
         </f:if>
-    </div>
+    <!--</div>-->
     <f:render partial="Nav/Sidebars" arguments="{_all}"></f:render>
 
 

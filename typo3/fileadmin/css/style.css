@@ -98,7 +98,7 @@ body {
 .header-title {
     position:absolute;
     bottom:30vh;
-    left:10vh;
+    left:6vw;
     background-color: rgba(255,255,255,.8);
     color:#000;
     padding-top:1rem;
@@ -124,6 +124,15 @@ body {
 .breadcrumb {
     height:2rem;
     background-color: #E6E6E6;
+}
+
+/*************************************/
+/*          Content                  */
+/*************************************/
+
+.content-main {
+    margin-left: 6vw;
+    padding-left: 0px;
 }
 
 /*************************************/

@@ -1,6 +1,6 @@
 <?php
 
-class Standard_action_index_cc17990db5b45f98751edb454441517d47d2dd39 extends \TYPO3Fluid\Fluid\Core\Compiler\AbstractCompiledTemplate {
+class Standard_action_index_3cf5cf5a22918da43d83d69ba175bfb7292fa46c extends \TYPO3Fluid\Fluid\Core\Compiler\AbstractCompiledTemplate {
 
 public function getLayoutName(\TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface $renderingContext) {
 $self = $this;
@@ -66,8 +66,8 @@ $output0 .= TYPO3\CMS\Fluid\ViewHelpers\RenderViewHelper::renderStatic($argument
 
 $output0 .= '
 
-        <div class="header-title">
-            <div class="col-12 col-sm-12 col-md-4 ">
+        <div class="row header-title align-items-center">
+            <div class="col-4 col-md-4 col-lg-4 logo-align">
                 ';
 // Rendering ViewHelper TYPO3Fluid\Fluid\ViewHelpers\Format\RawViewHelper
 $renderChildrenClosure6 = function() use ($renderingContext, $self) {
@@ -81,7 +81,7 @@ $output0 .= isset($arguments5['value']) ? $arguments5['value'] : $renderChildren
 
 $output0 .= '
             </div>
-            <div class="col-12 col-sm-12 col-md-8 ">
+            <div class="col-12 col-md-12 col-lg-8">
                 ';
 // Rendering ViewHelper TYPO3Fluid\Fluid\ViewHelpers\Format\RawViewHelper
 $renderChildrenClosure9 = function() use ($renderingContext, $self) {
@@ -116,7 +116,7 @@ $output0 .= '
 </header>
 
 <main>
-    <div class="container" style="display:flex;">
+    <!--<div class="container" style="display:flex;">-->
         ';
 // Rendering ViewHelper TYPO3Fluid\Fluid\ViewHelpers\IfViewHelper
 $renderChildrenClosure15 = function() use ($renderingContext, $self) {
@@ -266,7 +266,7 @@ return $output23;
 $output0 .= TYPO3Fluid\Fluid\ViewHelpers\IfViewHelper::renderStatic($arguments14, $renderChildrenClosure15, $renderingContext);
 
 $output0 .= '
-    </div>
+    <!--</div>-->
     ';
 // Rendering ViewHelper TYPO3\CMS\Fluid\ViewHelpers\RenderViewHelper
 $renderChildrenClosure47 = function() use ($renderingContext, $self) {
