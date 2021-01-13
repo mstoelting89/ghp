@@ -112,9 +112,13 @@ body {
 }
 
 .header-title img {
-    align-self: center;
     height: 10vw;
     margin-right: 5vw;
+    width:auto;
+}
+
+.logo-align {
+    margin: 0 auto;
 }
 
 .breadcrumb {
