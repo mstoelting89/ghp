@@ -1,0 +1,23 @@
+{
+    "name": "verein/ghp",
+    "type": "typo3-cms-extension",
+    "description": "Site Package f\u00fcr das Guitar Hearts Project",
+    "authors": [],
+    "require": {
+        "typo3/cms-core": "^9.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Verein\\Ghp\\": "Classes"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Verein\\Ghp\\Tests\\": "Tests"
+        }
+    },
+    "replace": {
+        "verein/ghp": "self.version",
+        "typo3-ter/ghp": "self.version"
+    }
+}

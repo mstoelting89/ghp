@@ -19,8 +19,14 @@ call_user_func(
 
         // wizards
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig(
-            '<INCLUDE_TYPOSCRIPT: source="FILE:EXT:pi_ghp/Configuration/TsConfig/Page/Mod/Wizards/NewContentElement_GHP.tsconfig">',
-            '<INCLUDE_TYPOSCRIPT: source="FILE:EXT:pi_ghp/Configuration/TsConfig/Page/Mod/Wizards/SideHeaderContent.tsconfig">',
+            '<INCLUDE_TYPOSCRIPT: source="FILE:EXT:pi_ghp/Configuration/TsConfig/Page/Mod/Wizards/NewContentElement_GHP.tsconfig">'
+        );
+
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig(
+            '<INCLUDE_TYPOSCRIPT: source="FILE:EXT:pi_ghp/Configuration/TsConfig/Page/Mod/Wizards/SideHeaderContent.tsconfig">'
+        );
+
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig(
             'mod {
                 wizards.newContentElement.wizardItems.plugins {
                     elements {

@@ -33,6 +33,7 @@ $GLOBALS['TCA']['tt_content']['types']['sideHeaderContent'] = [
             --palette--;;general,
             header; Internal title (not displayed),
             bodytext;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:bodytext_formlabel,
+            name;title,
          --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access,
             --palette--;;hidden,
             --palette--;;access,
@@ -44,7 +45,18 @@ $GLOBALS['TCA']['tt_content']['types']['sideHeaderContent'] = [
                 'richtextConfiguration' => 'default',
             ],
         ],
+        'name' => [
+            'exclude' => false,
+            'label' => 'test',
+            'config' => [
+                'type' => 'input',
+                'size' => 20,
+                'eval' => 'trim,required',
+                'max' => 256
+            ],
+        ],
     ],
+
 ];
 
 // Configure the default backend fields for the content element
