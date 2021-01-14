@@ -962,6 +962,26 @@ if (TYPO3_MODE === 'BE') {
 }
 
 /**
+ * Extension: ghp
+ * File: /kunden/homepages/16/d764565842/htdocs/guitarheartsproject/ghp/typo3/typo3conf/ext/ghp/ext_tables.php
+ */
+
+$_EXTKEY = 'ghp';
+$_EXTCONF = $GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf'][$_EXTKEY] ?? null;
+
+
+defined('TYPO3_MODE') || die('Access denied.');
+
+call_user_func(
+    function()
+    {
+
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile('ghp', 'Configuration/TypoScript', 'Guitarheartsproject');
+
+    }
+);
+
+/**
  * Extension: news
  * File: /kunden/homepages/16/d764565842/htdocs/guitarheartsproject/ghp/typo3/typo3conf/ext/news/ext_tables.php
  */
