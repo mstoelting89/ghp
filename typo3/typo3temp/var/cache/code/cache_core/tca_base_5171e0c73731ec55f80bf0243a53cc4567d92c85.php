@@ -8985,151 +8985,139 @@ return array (
               ),
               6 => 
               array (
-                0 => 'LLL:EXT:pi_ghp/Resources/Private/Language/locallang.xlf:contentelement_ghp_title',
-                1 => 'contentelement_ghp',
-                2 => 'content-text',
-              ),
-              7 => 
-              array (
-                0 => 'LLL:EXT:pi_ghp/Resources/Private/Language/locallang.xlf:sideHeaderContent_title',
-                1 => 'sideHeaderContent',
-                2 => 'content-text',
-              ),
-              8 => 
-              array (
                 0 => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:CType.div.lists',
                 1 => '--div--',
               ),
-              9 => 
+              7 => 
               array (
                 0 => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:CType.I.4',
                 1 => 'bullets',
                 2 => 'content-bullets',
               ),
-              10 => 
+              8 => 
               array (
                 0 => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:CType.I.5',
                 1 => 'table',
                 2 => 'content-table',
               ),
-              11 => 
+              9 => 
               array (
                 0 => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:CType.I.6',
                 1 => 'uploads',
                 2 => 'content-special-uploads',
               ),
-              12 => 
+              10 => 
               array (
                 0 => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:CType.div.menu',
                 1 => '--div--',
               ),
-              13 => 
+              11 => 
               array (
                 0 => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:CType.menu_abstract',
                 1 => 'menu_abstract',
                 2 => 'content-menu-abstract',
               ),
-              14 => 
+              12 => 
               array (
                 0 => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:CType.menu_categorized_content',
                 1 => 'menu_categorized_content',
                 2 => 'content-menu-categorized',
               ),
-              15 => 
+              13 => 
               array (
                 0 => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:CType.menu_categorized_pages',
                 1 => 'menu_categorized_pages',
                 2 => 'content-menu-categorized',
               ),
-              16 => 
+              14 => 
               array (
                 0 => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:CType.menu_pages',
                 1 => 'menu_pages',
                 2 => 'content-menu-pages',
               ),
-              17 => 
+              15 => 
               array (
                 0 => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:CType.menu_subpages',
                 1 => 'menu_subpages',
                 2 => 'content-menu-pages',
               ),
-              18 => 
+              16 => 
               array (
                 0 => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:CType.menu_recently_updated',
                 1 => 'menu_recently_updated',
                 2 => 'content-menu-recently-updated',
               ),
-              19 => 
+              17 => 
               array (
                 0 => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:CType.menu_related_pages',
                 1 => 'menu_related_pages',
                 2 => 'content-menu-related',
               ),
-              20 => 
+              18 => 
               array (
                 0 => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:CType.menu_section',
                 1 => 'menu_section',
                 2 => 'content-menu-section',
               ),
-              21 => 
+              19 => 
               array (
                 0 => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:CType.menu_section_pages',
                 1 => 'menu_section_pages',
                 2 => 'content-menu-section',
               ),
-              22 => 
+              20 => 
               array (
                 0 => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:CType.menu_sitemap',
                 1 => 'menu_sitemap',
                 2 => 'content-menu-sitemap',
               ),
-              23 => 
+              21 => 
               array (
                 0 => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:CType.menu_sitemap_pages',
                 1 => 'menu_sitemap_pages',
                 2 => 'content-menu-sitemap-pages',
               ),
-              24 => 
+              22 => 
               array (
                 0 => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:CType.div.special',
                 1 => '--div--',
               ),
-              25 => 
+              23 => 
               array (
                 0 => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:CType.I.13',
                 1 => 'shortcut',
                 2 => 'content-special-shortcut',
               ),
-              26 => 
+              24 => 
               array (
                 0 => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:CType.I.14',
                 1 => 'list',
                 2 => 'content-plugin',
               ),
-              27 => 
+              25 => 
               array (
                 0 => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:CType.I.16',
                 1 => 'div',
                 2 => 'content-special-div',
               ),
-              28 => 
+              26 => 
               array (
                 0 => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:CType.I.17',
                 1 => 'html',
                 2 => 'content-special-html',
               ),
-              29 => 
+              27 => 
               array (
                 0 => 'Form',
                 1 => 'form_formframework',
                 2 => 'content-form',
               ),
-              30 => 
+              28 => 
               array (
                 0 => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:CType.div.forms',
                 1 => '--div--',
               ),
-              31 => 
+              29 => 
               array (
                 0 => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:CType.I.10',
                 1 => 'login',
@@ -11146,48 +11134,6 @@ return array (
         'login' => 
         array (
           'showitem' => '--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,--palette--;;general,--palette--;;headers,pi_flexform,--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.appearance,--palette--;;frames,--palette--;;appearanceLinks,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language,--palette--;;language,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access,--palette--;;hidden,--palette--;;access,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:categories,categories,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:notes,rowDescription,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended',
-        ),
-        'sideHeaderContent' => 
-        array (
-          'showitem' => '--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,--palette--;;general,header;Internal title (not displayed),bodytext;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:bodytext_formlabel,name;title,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access,--palette--;;hidden,--palette--;;access',
-          'columnsOverrides' => 
-          array (
-            'bodytext' => 
-            array (
-              'config' => 
-              array (
-                'enableRichtext' => true,
-                'richtextConfiguration' => 'default',
-              ),
-            ),
-            'name' => 
-            array (
-              'exclude' => false,
-              'label' => 'test',
-              'config' => 
-              array (
-                'type' => 'input',
-                'size' => 20,
-                'eval' => 'trim,required',
-                'max' => 256,
-              ),
-            ),
-          ),
-        ),
-        'contentelement_ghp' => 
-        array (
-          'showitem' => '--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,--palette--;;general,header;Internal title (not displayed),bodytext;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:bodytext_formlabel,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access,--palette--;;hidden,--palette--;;access',
-          'columnsOverrides' => 
-          array (
-            'bodytext' => 
-            array (
-              'config' => 
-              array (
-                'enableRichtext' => true,
-                'richtextConfiguration' => 'default',
-              ),
-            ),
-          ),
         ),
       ),
       'palettes' => 
@@ -13986,171 +13932,6 @@ return array (
           'showitem' => '
                 sys_language_uid;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:sys_language_uid_formlabel,l10n_parent, l10n_diffsource,
             ',
-        ),
-      ),
-    ),
-    'tx_pighp_domain_model_guitarheartsproject' => 
-    array (
-      'ctrl' => 
-      array (
-        'title' => 'LLL:EXT:pi_ghp/Resources/Private/Language/locallang_db.xlf:tx_pighp_domain_model_guitarheartsproject',
-        'label' => 'name',
-        'tstamp' => 'tstamp',
-        'crdate' => 'crdate',
-        'cruser_id' => 'cruser_id',
-        'sortby' => 'sorting',
-        'versioningWS' => true,
-        'languageField' => 'sys_language_uid',
-        'transOrigPointerField' => 'l10n_parent',
-        'transOrigDiffSourceField' => 'l10n_diffsource',
-        'delete' => 'deleted',
-        'enablecolumns' => 
-        array (
-          'disabled' => 'hidden',
-          'starttime' => 'starttime',
-          'endtime' => 'endtime',
-        ),
-        'searchFields' => 'name',
-        'iconfile' => 'EXT:pi_ghp/Resources/Public/Icons/tx_pighp_domain_model_guitarheartsproject.gif',
-      ),
-      'interface' => 
-      array (
-        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, name',
-      ),
-      'types' => 
-      array (
-        1 => 
-        array (
-          'showitem' => 'sys_language_uid,l10n_parent,l10n_diffsource,hidden,name,--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access,starttime,endtime',
-        ),
-      ),
-      'columns' => 
-      array (
-        'sys_language_uid' => 
-        array (
-          'exclude' => true,
-          'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.language',
-          'config' => 
-          array (
-            'type' => 'select',
-            'renderType' => 'selectSingle',
-            'special' => 'languages',
-            'items' => 
-            array (
-              0 => 
-              array (
-                0 => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.allLanguages',
-                1 => -1,
-                2 => 'flags-multiple',
-              ),
-            ),
-            'default' => 0,
-          ),
-        ),
-        'l10n_parent' => 
-        array (
-          'displayCond' => 'FIELD:sys_language_uid:>:0',
-          'exclude' => true,
-          'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.l18n_parent',
-          'config' => 
-          array (
-            'type' => 'select',
-            'renderType' => 'selectSingle',
-            'default' => 0,
-            'items' => 
-            array (
-              0 => 
-              array (
-                0 => '',
-                1 => 0,
-              ),
-            ),
-            'foreign_table' => 'tx_pighp_domain_model_guitarheartsproject',
-            'foreign_table_where' => 'AND `tx_pighp_domain_model_guitarheartsproject`.`pid`=###CURRENT_PID### AND `tx_pighp_domain_model_guitarheartsproject`.`sys_language_uid` IN (-1,0)',
-          ),
-        ),
-        'l10n_diffsource' => 
-        array (
-          'config' => 
-          array (
-            'type' => 'passthrough',
-          ),
-        ),
-        't3ver_label' => 
-        array (
-          'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.versionLabel',
-          'config' => 
-          array (
-            'type' => 'input',
-            'size' => 30,
-            'max' => 255,
-          ),
-        ),
-        'hidden' => 
-        array (
-          'exclude' => true,
-          'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.visible',
-          'config' => 
-          array (
-            'type' => 'check',
-            'renderType' => 'checkboxToggle',
-            'items' => 
-            array (
-              0 => 
-              array (
-                0 => '',
-                1 => '',
-                'invertStateDisplay' => true,
-              ),
-            ),
-          ),
-        ),
-        'starttime' => 
-        array (
-          'exclude' => true,
-          'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.starttime',
-          'config' => 
-          array (
-            'type' => 'input',
-            'renderType' => 'inputDateTime',
-            'eval' => 'datetime,int',
-            'default' => 0,
-            'behaviour' => 
-            array (
-              'allowLanguageSynchronization' => true,
-            ),
-          ),
-        ),
-        'endtime' => 
-        array (
-          'exclude' => true,
-          'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.endtime',
-          'config' => 
-          array (
-            'type' => 'input',
-            'renderType' => 'inputDateTime',
-            'eval' => 'datetime,int',
-            'default' => 0,
-            'range' => 
-            array (
-              'upper' => 2145913200,
-            ),
-            'behaviour' => 
-            array (
-              'allowLanguageSynchronization' => true,
-            ),
-          ),
-        ),
-        'name' => 
-        array (
-          'exclude' => true,
-          'label' => 'LLL:EXT:pi_ghp/Resources/Private/Language/locallang_db.xlf:tx_pighp_domain_model_guitarheartsproject.name',
-          'config' => 
-          array (
-            'type' => 'input',
-            'size' => 30,
-            'eval' => 'trim',
-          ),
         ),
       ),
     ),
