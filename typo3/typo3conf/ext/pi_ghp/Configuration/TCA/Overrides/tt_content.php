@@ -77,5 +77,15 @@ $GLOBALS['TCA']['tt_content']['types']['contentelement_ghp'] = [
                 'richtextConfiguration' => 'default',
             ],
         ],
+        'name' => [
+            'exclude' => false,
+            'label' => 'test',
+            'config' => [
+                'type' => 'input',
+                'size' => 20,
+                'eval' => 'trim,required',
+                'max' => 256
+            ],
+        ],
     ],
 ];
