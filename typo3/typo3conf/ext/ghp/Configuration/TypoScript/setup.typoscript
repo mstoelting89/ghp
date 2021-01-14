@@ -345,6 +345,12 @@ plugin.tx_form.settings {
     }
 }
 
+module.tx_forms.settings {
+  yamlConfigurations {
+    100 = EXT:ghp/Configuration/Yaml/Forms-Backend.yaml
+  }
+}
+
 # Mehrsprachigkeit
 # Wenn GB(GetPost-Parameter) L den Wert 1 hat
 [globalVar = GP:L=1]
