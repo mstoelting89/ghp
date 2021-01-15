@@ -1110,4 +1110,33 @@ $boot = function () {
 $boot();
 unset($boot);
 
+/**
+ * Extension: pi_ghp
+ * File: /kunden/homepages/16/d764565842/htdocs/guitarheartsproject/ghp/typo3/typo3conf/ext/pi_ghp/ext_tables.php
+ */
+
+$_EXTKEY = 'pi_ghp';
+$_EXTCONF = $GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf'][$_EXTKEY] ?? null;
+
+
+defined('TYPO3_MODE') || die('Access denied.');
+
+call_user_func(
+    function()
+    {
+
+        \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
+            'Michael.PiGhp',
+            'Pi',
+            'GuitarHeartsProcjectPlugin'
+        );
+
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile('pi_ghp', 'Configuration/TypoScript', 'ghp_plugin');
+
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_pighp_domain_model_guitarheartsproject', 'EXT:pi_ghp/Resources/Private/Language/locallang_csh_tx_pighp_domain_model_guitarheartsproject.xlf');
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_pighp_domain_model_guitarheartsproject');
+
+    }
+);
+
 #

@@ -205,4 +205,7 @@ return array(
     'GeorgRinger\\News\\ViewHelpers\\Widget\\Controller\\PaginateController' => $typo3InstallDir . 'typo3conf/ext/news/Classes/ViewHelpers/Widget/Controller/PaginateController.php',
     'GeorgRinger\\News\\ViewHelpers\\Widget\\PaginateViewHelper' => $typo3InstallDir . 'typo3conf/ext/news/Classes/ViewHelpers/Widget/PaginateViewHelper.php',
     'GeorgRinger\\News\\Xclass\\InlineRecordContainerForNews' => $typo3InstallDir . 'typo3conf/ext/news/Classes/Xclass/InlineRecordContainerForNews.php',
+    'Michael\\PiGhp\\Controller\\GuitarHeartsProjectController' => $typo3InstallDir . 'typo3conf/ext/pi_ghp/Classes/Controller/GuitarHeartsProjectController.php',
+    'Michael\\PiGhp\\Domain\\Model\\GuitarHeartsProject' => $typo3InstallDir . 'typo3conf/ext/pi_ghp/Classes/Domain/Model/GuitarHeartsProject.php',
+    'Michael\\PiGhp\\Domain\\Repository\\GuitarHeartsProjectRepository' => $typo3InstallDir . 'typo3conf/ext/pi_ghp/Classes/Domain/Repository/GuitarHeartsProjectRepository.php',
 );

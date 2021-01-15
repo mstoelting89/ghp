@@ -107,6 +107,9 @@ return [
         'news' => [
             'packagePath' => 'typo3conf/ext/news/',
         ],
+        'pi_ghp' => [
+            'packagePath' => 'typo3conf/ext/pi_ghp/',
+        ],
     ],
     'version' => 5,
 ];
