@@ -9,6 +9,7 @@ return array (
   'typo3/cms-frontend/page-argument-validator' => 'TYPO3\\CMS\\Frontend\\Middleware\\PageArgumentValidator',
   'typo3/cms-frontend/maintenance-mode' => 'TYPO3\\CMS\\Frontend\\Middleware\\MaintenanceMode',
   'typo3/cms-frontend/page-resolver' => 'TYPO3\\CMS\\Frontend\\Middleware\\PageResolver',
+  'typo3/cms-workspaces/preview' => 'TYPO3\\CMS\\Workspaces\\Middleware\\WorkspacePreview',
   'typo3/cms-frontend/preview-simulator' => 'TYPO3\\CMS\\Frontend\\Middleware\\PreviewSimulator',
   'typo3/cms-redirects/redirecthandler' => 'TYPO3\\CMS\\Redirects\\Http\\Middleware\\RedirectHandler',
   'typo3/cms-frontend/static-route-resolver' => 'TYPO3\\CMS\\Frontend\\Middleware\\StaticRouteResolver',

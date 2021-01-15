@@ -931,6 +931,37 @@ defined('TYPO3_MODE') or die();
 );
 
 /**
+ * Extension: workspaces
+ * File: /kunden/homepages/16/d764565842/htdocs/guitarheartsproject/ghp/typo3/typo3/sysext/workspaces/ext_tables.php
+ */
+
+$_EXTKEY = 'workspaces';
+$_EXTCONF = $GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf'][$_EXTKEY] ?? null;
+
+
+defined('TYPO3_MODE') or die();
+
+// Registers the workspaces Backend Module
+\TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerModule(
+    'TYPO3.CMS.Workspaces',
+    'web',
+    'workspaces',
+    'before:info',
+    [
+        // An array holding the controller-action-combinations that are accessible
+        'Review' => 'index,fullIndex,singleIndex'
+    ],
+    [
+        'access' => 'user,group',
+        'icon' => 'EXT:workspaces/Resources/Public/Icons/module-workspaces.svg',
+        'labels' => 'LLL:EXT:workspaces/Resources/Private/Language/locallang_mod.xlf',
+        'navigationComponentId' => 'TYPO3/CMS/Backend/PageTree/PageTreeElement'
+    ]
+);
+
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('sys_workspace_stage', 'EXT:workspaces/Resources/Private/Language/locallang_csh_sysws_stage.xlf');
+
+/**
  * Extension: extension_builder
  * File: /kunden/homepages/16/d764565842/htdocs/guitarheartsproject/ghp/typo3/typo3conf/ext/extension_builder/ext_tables.php
  */

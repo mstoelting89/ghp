@@ -12447,6 +12447,642 @@ return array (
         ),
       ),
     ),
+    'sys_workspace' => 
+    array (
+      'ctrl' => 
+      array (
+        'label' => 'title',
+        'tstamp' => 'tstamp',
+        'title' => 'LLL:EXT:workspaces/Resources/Private/Language/locallang_db.xlf:sys_workspace',
+        'descriptionColumn' => 'description',
+        'adminOnly' => true,
+        'rootLevel' => 1,
+        'delete' => 'deleted',
+        'typeicon_classes' => 
+        array (
+          'default' => 'mimetypes-x-sys_workspace',
+        ),
+        'versioningWS_alwaysAllowLiveEdit' => true,
+      ),
+      'columns' => 
+      array (
+        'title' => 
+        array (
+          'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.title',
+          'config' => 
+          array (
+            'type' => 'input',
+            'size' => 20,
+            'max' => 30,
+            'eval' => 'required,trim,unique',
+          ),
+        ),
+        'description' => 
+        array (
+          'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.description',
+          'config' => 
+          array (
+            'type' => 'text',
+            'rows' => 5,
+            'cols' => 30,
+          ),
+        ),
+        'adminusers' => 
+        array (
+          'label' => 'LLL:EXT:workspaces/Resources/Private/Language/locallang_db.xlf:sys_workspace.adminusers',
+          'config' => 
+          array (
+            'type' => 'group',
+            'internal_type' => 'db',
+            'allowed' => 'be_users,be_groups',
+            'prepend_tname' => true,
+            'size' => 3,
+            'maxitems' => 10,
+            'autoSizeMax' => 10,
+          ),
+        ),
+        'members' => 
+        array (
+          'label' => 'LLL:EXT:workspaces/Resources/Private/Language/locallang_db.xlf:sys_workspace.members',
+          'config' => 
+          array (
+            'type' => 'group',
+            'internal_type' => 'db',
+            'allowed' => 'be_users,be_groups',
+            'prepend_tname' => true,
+            'size' => 3,
+            'maxitems' => 100,
+            'autoSizeMax' => 10,
+          ),
+        ),
+        'db_mountpoints' => 
+        array (
+          'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:db_mountpoints',
+          'config' => 
+          array (
+            'type' => 'group',
+            'internal_type' => 'db',
+            'allowed' => 'pages',
+            'size' => 3,
+            'maxitems' => 25,
+            'autoSizeMax' => 10,
+          ),
+        ),
+        'file_mountpoints' => 
+        array (
+          'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:file_mountpoints',
+          'config' => 
+          array (
+            'type' => 'select',
+            'renderType' => 'selectCheckBox',
+            'foreign_table' => 'sys_filemounts',
+            'foreign_table_where' => ' ORDER BY sys_filemounts.title',
+            'size' => 3,
+            'maxitems' => 25,
+            'autoSizeMax' => 10,
+          ),
+        ),
+        'publish_time' => 
+        array (
+          'label' => 'LLL:EXT:workspaces/Resources/Private/Language/locallang_db.xlf:sys_workspace.publish_time',
+          'config' => 
+          array (
+            'type' => 'input',
+            'renderType' => 'inputDateTime',
+            'eval' => 'datetime,int',
+            'default' => 0,
+          ),
+        ),
+        'unpublish_time' => 
+        array (
+          'label' => 'LLL:EXT:workspaces/Resources/Private/Language/locallang_db.xlf:sys_workspace.unpublish_time',
+          'config' => 
+          array (
+            'type' => 'input',
+            'renderType' => 'inputDateTime',
+            'eval' => 'datetime,int',
+            'default' => 0,
+            'range' => 
+            array (
+              'upper' => 2145913200,
+            ),
+          ),
+        ),
+        'freeze' => 
+        array (
+          'label' => 'LLL:EXT:workspaces/Resources/Private/Language/locallang_db.xlf:sys_workspace.freeze',
+          'config' => 
+          array (
+            'type' => 'check',
+            'renderType' => 'checkboxToggle',
+            'default' => 0,
+            'items' => 
+            array (
+              0 => 
+              array (
+                0 => '',
+                1 => '',
+              ),
+            ),
+          ),
+        ),
+        'live_edit' => 
+        array (
+          'label' => 'LLL:EXT:workspaces/Resources/Private/Language/locallang_db.xlf:sys_workspace.live_edit',
+          'config' => 
+          array (
+            'type' => 'check',
+            'renderType' => 'checkboxToggle',
+            'default' => 0,
+            'items' => 
+            array (
+              0 => 
+              array (
+                0 => '',
+                1 => '',
+              ),
+            ),
+          ),
+        ),
+        'swap_modes' => 
+        array (
+          'label' => 'LLL:EXT:workspaces/Resources/Private/Language/locallang_db.xlf:sys_workspace.swap_modes',
+          'config' => 
+          array (
+            'type' => 'select',
+            'renderType' => 'selectSingle',
+            'default' => 2,
+            'items' => 
+            array (
+              0 => 
+              array (
+                0 => 'LLL:EXT:workspaces/Resources/Private/Language/locallang_db.xlf:sys_workspace.swap_modes.0',
+                1 => 0,
+              ),
+              1 => 
+              array (
+                0 => 'LLL:EXT:workspaces/Resources/Private/Language/locallang_db.xlf:sys_workspace.swap_modes.1',
+                1 => 1,
+              ),
+              2 => 
+              array (
+                0 => 'LLL:EXT:workspaces/Resources/Private/Language/locallang_db.xlf:sys_workspace.swap_modes.2',
+                1 => 2,
+              ),
+            ),
+          ),
+        ),
+        'publish_access' => 
+        array (
+          'label' => 'LLL:EXT:workspaces/Resources/Private/Language/locallang_db.xlf:sys_workspace.publish_access',
+          'config' => 
+          array (
+            'type' => 'check',
+            'items' => 
+            array (
+              0 => 
+              array (
+                0 => 'LLL:EXT:workspaces/Resources/Private/Language/locallang_db.xlf:sys_workspace.publish_access.1',
+                1 => 0,
+              ),
+              1 => 
+              array (
+                0 => 'LLL:EXT:workspaces/Resources/Private/Language/locallang_db.xlf:sys_workspace.publish_access.2',
+                1 => 0,
+              ),
+            ),
+          ),
+        ),
+        'stagechg_notification' => 
+        array (
+          'label' => 'LLL:EXT:workspaces/Resources/Private/Language/locallang_db.xlf:sys_workspace.stagechg_notification',
+          'config' => 
+          array (
+            'type' => 'select',
+            'renderType' => 'selectSingle',
+            'items' => 
+            array (
+              0 => 
+              array (
+                0 => 'LLL:EXT:workspaces/Resources/Private/Language/locallang_db.xlf:sys_workspace.stagechg_notification.0',
+                1 => 0,
+              ),
+              1 => 
+              array (
+                0 => 'LLL:EXT:workspaces/Resources/Private/Language/locallang_db.xlf:sys_workspace.stagechg_notification.1',
+                1 => 1,
+              ),
+              2 => 
+              array (
+                0 => 'LLL:EXT:workspaces/Resources/Private/Language/locallang_db.xlf:sys_workspace.stagechg_notification.10',
+                1 => 10,
+              ),
+            ),
+          ),
+        ),
+        'custom_stages' => 
+        array (
+          'exclude' => true,
+          'label' => 'LLL:EXT:workspaces/Resources/Private/Language/locallang_db.xlf:sys_workspace.custom_stages',
+          'config' => 
+          array (
+            'type' => 'inline',
+            'foreign_table' => 'sys_workspace_stage',
+            'appearance' => 'useSortable,expandSingle',
+            'foreign_field' => 'parentid',
+            'foreign_table_field' => 'parenttable',
+            'minitems' => 0,
+          ),
+          'default' => 0,
+        ),
+        'edit_notification_defaults' => 
+        array (
+          'label' => 'LLL:EXT:workspaces/Resources/Private/Language/locallang_db.xlf:sys_workspace_stage.notification_defaults',
+          'config' => 
+          array (
+            'type' => 'group',
+            'internal_type' => 'db',
+            'allowed' => 'be_users,be_groups',
+            'prepend_tname' => true,
+            'size' => 3,
+            'maxitems' => 100,
+            'autoSizeMax' => 20,
+          ),
+        ),
+        'edit_allow_notificaton_settings' => 
+        array (
+          'label' => 'LLL:EXT:workspaces/Resources/Private/Language/locallang_db.xlf:sys_workspace.settingsDialog',
+          'config' => 
+          array (
+            'type' => 'check',
+            'items' => 
+            array (
+              0 => 
+              array (
+                0 => 'LLL:EXT:workspaces/Resources/Private/Language/locallang_db.xlf:sys_workspace.settingsDialog.showDialog',
+                1 => '',
+              ),
+              1 => 
+              array (
+                0 => 'LLL:EXT:workspaces/Resources/Private/Language/locallang_db.xlf:sys_workspace.settingsDialog.changeablePreselection',
+                1 => '',
+              ),
+            ),
+            'default' => 3,
+            'cols' => 1,
+          ),
+        ),
+        'edit_notification_preselection' => 
+        array (
+          'label' => 'LLL:EXT:workspaces/Resources/Private/Language/locallang_db.xlf:sys_workspace.preselection',
+          'config' => 
+          array (
+            'type' => 'check',
+            'items' => 
+            array (
+              0 => 
+              array (
+                0 => 'LLL:EXT:workspaces/Resources/Private/Language/locallang_db.xlf:sys_workspace.preselection.owners',
+                1 => '',
+              ),
+              1 => 
+              array (
+                0 => 'LLL:EXT:workspaces/Resources/Private/Language/locallang_db.xlf:sys_workspace.preselection.members',
+                1 => '',
+              ),
+              2 => 
+              array (
+                0 => 'LLL:EXT:workspaces/Resources/Private/Language/locallang_db.xlf:sys_workspace.preselection.editors',
+                1 => '',
+              ),
+            ),
+            'default' => 2,
+            'cols' => 1,
+          ),
+        ),
+        'publish_notification_defaults' => 
+        array (
+          'label' => 'LLL:EXT:workspaces/Resources/Private/Language/locallang_db.xlf:sys_workspace_stage.notification_defaults',
+          'config' => 
+          array (
+            'type' => 'group',
+            'internal_type' => 'db',
+            'allowed' => 'be_users,be_groups',
+            'prepend_tname' => true,
+            'size' => 3,
+            'maxitems' => 100,
+            'autoSizeMax' => 20,
+          ),
+        ),
+        'publish_allow_notificaton_settings' => 
+        array (
+          'label' => 'LLL:EXT:workspaces/Resources/Private/Language/locallang_db.xlf:sys_workspace.settingsDialog',
+          'config' => 
+          array (
+            'type' => 'check',
+            'items' => 
+            array (
+              0 => 
+              array (
+                0 => 'LLL:EXT:workspaces/Resources/Private/Language/locallang_db.xlf:sys_workspace.settingsDialog.showDialog',
+                1 => '',
+              ),
+              1 => 
+              array (
+                0 => 'LLL:EXT:workspaces/Resources/Private/Language/locallang_db.xlf:sys_workspace.settingsDialog.changeablePreselection',
+                1 => '',
+              ),
+            ),
+            'default' => 3,
+            'cols' => 1,
+          ),
+        ),
+        'publish_notification_preselection' => 
+        array (
+          'label' => 'LLL:EXT:workspaces/Resources/Private/Language/locallang_db.xlf:sys_workspace.preselection',
+          'config' => 
+          array (
+            'type' => 'check',
+            'items' => 
+            array (
+              0 => 
+              array (
+                0 => 'LLL:EXT:workspaces/Resources/Private/Language/locallang_db.xlf:sys_workspace.preselection.owners',
+                1 => '',
+              ),
+              1 => 
+              array (
+                0 => 'LLL:EXT:workspaces/Resources/Private/Language/locallang_db.xlf:sys_workspace.preselection.members',
+                1 => '',
+              ),
+              2 => 
+              array (
+                0 => 'LLL:EXT:workspaces/Resources/Private/Language/locallang_db.xlf:sys_workspace.preselection.editors',
+                1 => '',
+              ),
+            ),
+            'default' => 1,
+            'cols' => 1,
+          ),
+        ),
+        'execute_notification_defaults' => 
+        array (
+          'label' => 'LLL:EXT:workspaces/Resources/Private/Language/locallang_db.xlf:sys_workspace_stage.notification_defaults',
+          'config' => 
+          array (
+            'type' => 'group',
+            'internal_type' => 'db',
+            'allowed' => 'be_users,be_groups',
+            'prepend_tname' => true,
+            'size' => 3,
+            'maxitems' => 100,
+            'autoSizeMax' => 20,
+          ),
+        ),
+        'execute_allow_notificaton_settings' => 
+        array (
+          'label' => 'LLL:EXT:workspaces/Resources/Private/Language/locallang_db.xlf:sys_workspace.settingsDialog',
+          'config' => 
+          array (
+            'type' => 'check',
+            'items' => 
+            array (
+              0 => 
+              array (
+                0 => 'LLL:EXT:workspaces/Resources/Private/Language/locallang_db.xlf:sys_workspace.settingsDialog.showDialog',
+                1 => '',
+              ),
+              1 => 
+              array (
+                0 => 'LLL:EXT:workspaces/Resources/Private/Language/locallang_db.xlf:sys_workspace.settingsDialog.changeablePreselection',
+                1 => '',
+              ),
+            ),
+            'default' => 3,
+            'cols' => 1,
+          ),
+        ),
+        'execute_notification_preselection' => 
+        array (
+          'label' => 'LLL:EXT:workspaces/Resources/Private/Language/locallang_db.xlf:sys_workspace.preselection',
+          'config' => 
+          array (
+            'type' => 'check',
+            'items' => 
+            array (
+              0 => 
+              array (
+                0 => 'LLL:EXT:workspaces/Resources/Private/Language/locallang_db.xlf:sys_workspace.preselection.owners',
+                1 => '',
+              ),
+              1 => 
+              array (
+                0 => 'LLL:EXT:workspaces/Resources/Private/Language/locallang_db.xlf:sys_workspace.preselection.members',
+                1 => '',
+              ),
+              2 => 
+              array (
+                0 => 'LLL:EXT:workspaces/Resources/Private/Language/locallang_db.xlf:sys_workspace.preselection.editors',
+                1 => '',
+              ),
+            ),
+            'default' => 3,
+            'cols' => 1,
+          ),
+        ),
+      ),
+      'palettes' => 
+      array (
+        'main' => 
+        array (
+          'showitem' => 'title,freeze',
+        ),
+        'memberlist' => 
+        array (
+          'label' => 'LLL:EXT:workspaces/Resources/Private/Language/locallang_db.xlf:tabs.users',
+          'showitem' => 'adminusers,members',
+        ),
+        'stage.edit' => 
+        array (
+          'label' => 'LLL:EXT:workspaces/Resources/Private/Language/locallang_db.xlf:sys_workspace.palette.stage.edit',
+          'showitem' => 'edit_allow_notificaton_settings, edit_notification_preselection,',
+        ),
+        'stage.publish' => 
+        array (
+          'label' => 'LLL:EXT:workspaces/Resources/Private/Language/locallang_db.xlf:sys_workspace.palette.stage.publish',
+          'showitem' => 'publish_allow_notificaton_settings, publish_notification_preselection,',
+        ),
+        'stage.execute' => 
+        array (
+          'label' => 'LLL:EXT:workspaces/Resources/Private/Language/locallang_db.xlf:sys_workspace.palette.stage.execute',
+          'showitem' => 'execute_allow_notificaton_settings, execute_notification_preselection,',
+        ),
+      ),
+      'types' => 
+      array (
+        0 => 
+        array (
+          'showitem' => '--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,--palette--;;main,stagechg_notification,--palette--;;memberlist,--div--;LLL:EXT:workspaces/Resources/Private/Language/locallang_db.xlf:tabs.internal_stages,--palette--;LLL:EXT:workspaces/Resources/Private/Language/locallang_db.xlf:tabs.notification_settings,--palette--;;stage.edit,edit_notification_defaults,--palette--;;stage.publish,publish_notification_defaults,--palette--;;stage.execute,execute_notification_defaults,--div--;LLL:EXT:workspaces/Resources/Private/Language/locallang_db.xlf:tabs.custom_stages,custom_stages,--div--;LLL:EXT:workspaces/Resources/Private/Language/locallang_db.xlf:tabs.mountpoints,db_mountpoints,file_mountpoints,--div--;LLL:EXT:workspaces/Resources/Private/Language/locallang_db.xlf:tabs.publish_access,live_edit,swap_modes,publish_access,publish_time,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:notes,description,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended',
+        ),
+      ),
+    ),
+    'sys_workspace_stage' => 
+    array (
+      'ctrl' => 
+      array (
+        'label' => 'title',
+        'tstamp' => 'tstamp',
+        'sortby' => 'sorting',
+        'title' => 'LLL:EXT:workspaces/Resources/Private/Language/locallang_db.xlf:sys_workspace_stage',
+        'adminOnly' => true,
+        'rootLevel' => 1,
+        'hideTable' => true,
+        'delete' => 'deleted',
+        'typeicon_classes' => 
+        array (
+          'default' => 'mimetypes-x-sys_workspace',
+        ),
+        'versioningWS_alwaysAllowLiveEdit' => true,
+      ),
+      'columns' => 
+      array (
+        'title' => 
+        array (
+          'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.title',
+          'config' => 
+          array (
+            'type' => 'input',
+            'size' => 20,
+            'max' => 30,
+            'eval' => 'required,trim',
+          ),
+        ),
+        'responsible_persons' => 
+        array (
+          'label' => 'LLL:EXT:workspaces/Resources/Private/Language/locallang_db.xlf:sys_workspace_stage.responsible_persons',
+          'config' => 
+          array (
+            'type' => 'group',
+            'internal_type' => 'db',
+            'allowed' => 'be_users,be_groups',
+            'prepend_tname' => true,
+            'size' => 3,
+            'maxitems' => 100,
+            'autoSizeMax' => 20,
+          ),
+        ),
+        'default_mailcomment' => 
+        array (
+          'label' => 'LLL:EXT:workspaces/Resources/Private/Language/locallang_db.xlf:sys_workspace_stage.default_mailcomment',
+          'config' => 
+          array (
+            'type' => 'text',
+            'rows' => 5,
+            'cols' => 30,
+          ),
+        ),
+        'parentid' => 
+        array (
+          'label' => 'LLL:EXT:workspaces/Resources/Private/Language/locallang_db.xlf:sys_workspace_stage.parentid',
+          'config' => 
+          array (
+            'type' => 'passthrough',
+          ),
+        ),
+        'parenttable' => 
+        array (
+          'label' => 'LLL:EXT:workspaces/Resources/Private/Language/locallang_db.xlf:sys_workspace_stage.parenttable',
+          'config' => 
+          array (
+            'type' => 'passthrough',
+          ),
+        ),
+        'notification_defaults' => 
+        array (
+          'label' => 'LLL:EXT:workspaces/Resources/Private/Language/locallang_db.xlf:sys_workspace_stage.notification_defaults',
+          'config' => 
+          array (
+            'type' => 'group',
+            'internal_type' => 'db',
+            'allowed' => 'be_users,be_groups',
+            'prepend_tname' => true,
+            'size' => 3,
+            'maxitems' => 100,
+            'autoSizeMax' => 20,
+          ),
+        ),
+        'allow_notificaton_settings' => 
+        array (
+          'label' => 'LLL:EXT:workspaces/Resources/Private/Language/locallang_db.xlf:sys_workspace.settingsDialog',
+          'config' => 
+          array (
+            'type' => 'check',
+            'items' => 
+            array (
+              0 => 
+              array (
+                0 => 'LLL:EXT:workspaces/Resources/Private/Language/locallang_db.xlf:sys_workspace.settingsDialog.showDialog',
+                1 => '',
+              ),
+              1 => 
+              array (
+                0 => 'LLL:EXT:workspaces/Resources/Private/Language/locallang_db.xlf:sys_workspace.settingsDialog.changeablePreselection',
+                1 => '',
+              ),
+            ),
+            'default' => 3,
+            'cols' => 1,
+          ),
+        ),
+        'notification_preselection' => 
+        array (
+          'label' => 'LLL:EXT:workspaces/Resources/Private/Language/locallang_db.xlf:sys_workspace.preselection',
+          'config' => 
+          array (
+            'type' => 'check',
+            'items' => 
+            array (
+              0 => 
+              array (
+                0 => 'LLL:EXT:workspaces/Resources/Private/Language/locallang_db.xlf:sys_workspace.preselection.owners',
+                1 => '',
+              ),
+              1 => 
+              array (
+                0 => 'LLL:EXT:workspaces/Resources/Private/Language/locallang_db.xlf:sys_workspace.preselection.members',
+                1 => '',
+              ),
+              2 => 
+              array (
+                0 => 'LLL:EXT:workspaces/Resources/Private/Language/locallang_db.xlf:sys_workspace.preselection.editors',
+                1 => '',
+              ),
+              3 => 
+              array (
+                0 => 'LLL:EXT:workspaces/Resources/Private/Language/locallang_db.xlf:sys_workspace.preselection.responsiblePersons',
+                1 => '',
+              ),
+            ),
+            'default' => 8,
+            'cols' => 1,
+          ),
+        ),
+      ),
+      'palettes' => 
+      array (
+        'stage' => 
+        array (
+          'showitem' => 'allow_notificaton_settings, notification_preselection,',
+        ),
+      ),
+      'types' => 
+      array (
+        0 => 
+        array (
+          'showitem' => '--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,title,responsible_persons,--div--;LLL:EXT:workspaces/Resources/Private/Language/locallang_db.xlf:tabs.notification_settings,--palette--;;stage,notification_defaults,default_mailcomment,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended',
+        ),
+      ),
+    ),
     'tx_news_domain_model_link' => 
     array (
       'ctrl' => 
