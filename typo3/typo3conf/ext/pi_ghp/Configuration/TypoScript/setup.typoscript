@@ -29,19 +29,19 @@ page {
 
   # Einbindung CSS
   includeCSS {
-    bootstrap = EXT:ghp/Resources/Public/vendors/bootstrap/dist/css/bootstrap.css
+    bootstrap = EXT:pi_ghp/Resources/Public/vendors/bootstrap/dist/css/bootstrap.css
     //bootstrap = fileadmin/vendors/bootstrap/css/bootstrap.css
-    fontawesome = EXT:ghp/Resources/Public/vendors/fortawesome/css/all.min.css
-    main = EXT:ghp/Resources/Public/css/style.css
+    fontawesome = EXT:pi_ghp/Resources/Public/vendors/fortawesome/css/all.min.css
+    main = EXT:pi_ghp/Resources/Public/css/style.css
   }
 
   # Einbindung JS
   includeJS {
-    jquery = EXT:ghp/Resources/Public/vendors/jquery/dist/jquery.min.js
-    main = EXT:ghp/Resources/Public/js/custom.js
-    bootstrapJS = EXT:ghp/Resources/Public/vendors/bootstrap/dist/js/bootstrap.bundle.js
+    jquery = EXT:pi_ghp/Resources/Public/vendors/jquery/dist/jquery.min.js
+    main = EXT:pi_ghp/Resources/Public/js/custom.js
+    bootstrapJS = EXT:pi_ghp/Resources/Public/vendors/bootstrap/dist/js/bootstrap.bundle.js
     //bootstrapJS = fileadmin/vendors/bootstrap/js/bootstrap.js
-    fontawesomeJS = EXT:ghp/Resources/Public/vendors/fortawesome/js/all.min.js
+    fontawesomeJS = EXT:pi_ghp/Resources/Public/vendors/fortawesome/js/all.min.js
   }
 
   # Header Hintergrundbild dynamische hinterlegung
