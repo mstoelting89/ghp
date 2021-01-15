@@ -1,0 +1,7 @@
+TYPO3:
+  CMS:
+    persistenceManager:
+      allowSaveToExtensionPaths: true
+      allowDeleteFromExtensionPaths: true
+      allowedExtentionPaths:
+        EXT:pi_ghp/Resources/Private/Forms/
