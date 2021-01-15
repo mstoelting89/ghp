@@ -101,9 +101,6 @@ return [
         'extension_builder' => [
             'packagePath' => 'typo3conf/ext/extension_builder/',
         ],
-        'ghp' => [
-            'packagePath' => 'typo3conf/ext/ghp/',
-        ],
         'news' => [
             'packagePath' => 'typo3conf/ext/news/',
         ],

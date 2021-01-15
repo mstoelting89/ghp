@@ -8,5 +8,4 @@ return array(
     'EBT\\ExtensionBuilder\\' => array($typo3InstallDir . 'typo3conf/ext/extension_builder/Classes'),
     'GeorgRinger\\News\\' => array($typo3InstallDir . 'typo3conf/ext/news/Classes'),
     'Michael\\PiGhp\\' => array($typo3InstallDir . 'typo3conf/ext/pi_ghp/Classes'),
-    'Verein\\Ghp\\' => array($typo3InstallDir . 'typo3conf/ext/ghp/Classes'),
 );
