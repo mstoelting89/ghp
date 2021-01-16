@@ -114,6 +114,7 @@ page {
 
       logoScroll = IMAGE
       logoScroll.file = fileadmin/images/images/BilderLars/ghp_text_white.png
+      logoScroll.file.width = 200px;
 
       /*
       contentTrailer = TEXT
@@ -434,6 +435,10 @@ tt_content {
   sideHeaderContent =< lib.contentElement
   sideHeaderContent {
     templateName = SideHeaderContent
+  }
+  ghp_info_card =< lib.contentElement
+  ghp_info_card {
+    templateName = Ghp_info_card
   }
 }
 

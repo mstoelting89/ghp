@@ -19,6 +19,10 @@ call_user_func(
 
         // wizards
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig(
+            '<INCLUDE_TYPOSCRIPT: source="FILE:EXT:pi_ghp/Configuration/TsConfig/Page/Mod/Wizards/ghp_info_card.tsconfig">'
+        );
+
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig(
             '<INCLUDE_TYPOSCRIPT: source="FILE:EXT:pi_ghp/Configuration/TsConfig/Page/Mod/Wizards/NewContentElement_GHP.tsconfig">'
         );
 

@@ -1,0 +1,16 @@
+mod.wizards.newContentElement.wizardItems {
+  // add the content element to the tab "common"
+  common {
+    elements {
+      ghp_info_card {
+        iconIdentifier = content-text
+        title = LLL:EXT:pi_ghp/Resources/Private/Language/locallang.xlf:ghp_info_card_title
+        description = LLL:EXT:pi_ghp/Resources/Private/Language/locallang.xlf:ghp_info_card_description
+        tt_content_defValues {
+          CType = ghp_info_card
+        }
+      }
+    }
+    show := addToList(ghp_info_card)
+  }
+}
