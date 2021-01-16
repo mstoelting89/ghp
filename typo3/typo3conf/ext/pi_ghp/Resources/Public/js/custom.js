@@ -5,10 +5,9 @@ $(document).ready(function () {
        $(window).on({
            'scroll': function (e) {
                if ($(this).scrollTop() > 40) {
-                   $('.navbar').addClass('fixed-top');
-                   console.log("Es wird gescrollt");
+                   $('.navbar').addClass('fixed-top navbar-ghp');
                } else {
-                   $('.navbar').removeClass('fixed-top');
+                   $('.navbar').removeClass('fixed-top navbar-ghp');
                }
            }
        })

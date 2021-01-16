@@ -11149,7 +11149,7 @@ return array (
         ),
         'sideHeaderContent' => 
         array (
-          'showitem' => '--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,--palette--;;general,title;Eigener Titel,header;Titel,bodytext;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:bodytext_formlabel,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access,--palette--;;hidden,--palette--;;access',
+          'showitem' => '--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,--palette--;;general,title;Eigener Titel,header;Titel,header_position;Titelposition,header_layout;Titelgröße,bodytext;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:bodytext_formlabel,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access,--palette--;;hidden,--palette--;;access',
           'columnsOverrides' => 
           array (
             'bodytext' => 
@@ -11184,6 +11184,89 @@ return array (
                 'max' => 256,
               ),
             ),
+            'header_layout' => 
+            array (
+              'exclude' => true,
+              'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.type',
+              'config' => 
+              array (
+                'type' => 'select',
+                'renderType' => 'selectSingle',
+                'items' => 
+                array (
+                  0 => 
+                  array (
+                    0 => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.default_value',
+                    1 => '0',
+                  ),
+                  1 => 
+                  array (
+                    0 => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:header_layout.I.1',
+                    1 => '1',
+                  ),
+                  2 => 
+                  array (
+                    0 => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:header_layout.I.2',
+                    1 => '2',
+                  ),
+                  3 => 
+                  array (
+                    0 => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:header_layout.I.3',
+                    1 => '3',
+                  ),
+                  4 => 
+                  array (
+                    0 => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:header_layout.I.4',
+                    1 => '4',
+                  ),
+                  5 => 
+                  array (
+                    0 => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:header_layout.I.5',
+                    1 => '5',
+                  ),
+                  6 => 
+                  array (
+                    0 => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:header_layout.I.6',
+                    1 => '100',
+                  ),
+                ),
+                'default' => 0,
+              ),
+            ),
+            'header_position' => 
+            array (
+              'label' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:header_position',
+              'exclude' => true,
+              'config' => 
+              array (
+                'type' => 'select',
+                'renderType' => 'selectSingle',
+                'items' => 
+                array (
+                  0 => 
+                  array (
+                    0 => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.default_value',
+                    1 => '',
+                  ),
+                  1 => 
+                  array (
+                    0 => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:header_position.I.1',
+                    1 => 'center',
+                  ),
+                  2 => 
+                  array (
+                    0 => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:header_position.I.2',
+                    1 => 'right',
+                  ),
+                  3 => 
+                  array (
+                    0 => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:header_position.I.3',
+                    1 => 'left',
+                  ),
+                ),
+                'default' => '',
+              ),
+            ),
           ),
         ),
         'contentelement_ghp' => 
@@ -11207,7 +11290,19 @@ return array (
               array (
                 'type' => 'input',
                 'size' => 20,
-                'eval' => 'trim,required',
+                'eval' => 'trim',
+                'max' => 256,
+              ),
+            ),
+            'title' => 
+            array (
+              'config' => 
+              array (
+                'foreign_table' => 'tx_pighp_domain_model_guitarheartsproject',
+                'foreign_field' => 'title',
+                'type' => 'input',
+                'size' => 20,
+                'eval' => 'trim',
                 'max' => 256,
               ),
             ),

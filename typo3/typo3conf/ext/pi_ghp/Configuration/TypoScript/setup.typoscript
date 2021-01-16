@@ -110,7 +110,7 @@ page {
 
       # Einbindung fixes Logo
       logo = IMAGE
-      logo.file = fileadmin/images/images/f2e0a4ac-3cbf-43e1-bfa0-d9b075e276df.jpg
+      logo.file = fileadmin/images/images/BilderLars/1548x1026.png
 
       /*
       contentTrailer = TEXT

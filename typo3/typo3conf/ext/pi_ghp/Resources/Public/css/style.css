@@ -87,6 +87,10 @@ body {
 
 }
 
+.navbar-ghp {
+    background-color: #b20027;
+}
+
 .header-content {
     background-size: cover;
     background-repeat: no-repeat;
