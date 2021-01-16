@@ -112,6 +112,10 @@ page {
       logo = IMAGE
       logo.file = fileadmin/images/images/BilderLars/1548x1026.png
 
+      logoScroll = IMAGE
+      logoScroll.file = fileadmin/images/images/BilderLars/ghp_text_white.png
+      logoScroll.file.width = 200px;
+
       /*
       contentTrailer = TEXT
       contentTrailer.wrap = <h1> | </h1>

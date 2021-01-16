@@ -39,6 +39,7 @@ body {
     padding: 0;
     /*background-color: rgba(255,255,255, .7);*/
     background-color: transparent;
+    border-radius: 0 0 5px 5px;
 }
 
 #navbarNav ul {
@@ -89,6 +90,10 @@ body {
 
 .navbar-ghp {
     background-color: #b20027;
+}
+
+.navbar-brand {
+    display:none;
 }
 
 .header-content {

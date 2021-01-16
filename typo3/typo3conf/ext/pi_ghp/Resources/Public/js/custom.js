@@ -5,9 +5,11 @@ $(document).ready(function () {
        $(window).on({
            'scroll': function (e) {
                if ($(this).scrollTop() > 40) {
-                   $('.navbar').addClass('fixed-top navbar-ghp');
+                 $('.navbar-brand').show();
+                 $('.navbar').addClass('fixed-top navbar-ghp');
                } else {
-                   $('.navbar').removeClass('fixed-top navbar-ghp');
+                 $('.navbar-brand').hide();
+                 $('.navbar').removeClass('fixed-top navbar-ghp');
                }
            }
        })
