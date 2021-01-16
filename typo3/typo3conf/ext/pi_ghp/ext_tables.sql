@@ -3,6 +3,5 @@
 #
 CREATE TABLE tx_pighp_domain_model_guitarheartsproject (
 
-	name varchar(255) DEFAULT '' NOT NULL
-
+	title varchar(255) DEFAULT '' NOT NULL
 );

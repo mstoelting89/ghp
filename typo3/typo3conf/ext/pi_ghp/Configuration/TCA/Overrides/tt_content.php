@@ -31,9 +31,8 @@ $GLOBALS['TCA']['tt_content']['types']['sideHeaderContent'] = [
     'showitem' => '
          --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,
             --palette--;;general,
-            header; Internal title (not displayed),
             bodytext;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:bodytext_formlabel,
-            name;title,
+            title; Titel
          --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access,
             --palette--;;hidden,
             --palette--;;access,
@@ -45,7 +44,7 @@ $GLOBALS['TCA']['tt_content']['types']['sideHeaderContent'] = [
                 'richtextConfiguration' => 'default',
             ],
         ],
-        'name' => [
+        'title' => [
             'exclude' => false,
             'label' => 'test',
             'config' => [

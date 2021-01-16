@@ -9,7 +9,7 @@ namespace Michael\PiGhp\Domain\Model;
  * For the full copyright and license information, please read the
  * LICENSE.txt file that was distributed with this source code.
  *
- *  (c) 2021 
+ *  (c) 2021
  *
  ***/
 /**
@@ -20,29 +20,29 @@ class GuitarHeartsProject extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 
     /**
      * name
-     * 
+     *
      * @var string
      */
-    protected $name = '';
+    protected $title = '';
 
     /**
      * Returns the name
-     * 
+     *
      * @return string $name
      */
-    public function getName()
+    public function getTitle()
     {
-        return $this->name;
+        return $this->title;
     }
 
     /**
      * Sets the name
-     * 
+     *
      * @param string $name
      * @return void
      */
-    public function setName($name)
+    public function setTitle($title)
     {
-        $this->name = $name;
+        $this->title = $title;
     }
 }
