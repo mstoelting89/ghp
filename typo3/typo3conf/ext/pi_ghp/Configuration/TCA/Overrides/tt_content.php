@@ -48,6 +48,7 @@ $GLOBALS['TCA']['tt_content']['types']['ghp_info_card'] = [
             header; Titel;,
             header_position; Titelposition;,
             header_layout; Titelgröße;,
+            image; Bild;,
             bodytext;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:bodytext_formlabel,
          --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access,
             --palette--;;hidden,
@@ -145,6 +146,50 @@ $GLOBALS['TCA']['tt_content']['types']['ghp_info_card'] = [
                 ],
                 'default' => ''
             ]
+        ],
+        'image' => [
+            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.images',
+            'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig('image', [
+                'appearance' => [
+                    'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:images.addFileReference'
+                ],
+                // custom configuration for displaying fields in the overlay/reference table
+                // to use the imageoverlayPalette instead of the basicoverlayPalette
+                'overrideChildTca' => [
+                    'types' => [
+                        '0' => [
+                            'showitem' => '
+                                --palette--;;imageoverlayPalette,
+                                --palette--;;filePalette'
+                        ],
+                        \TYPO3\CMS\Core\Resource\File::FILETYPE_TEXT => [
+                            'showitem' => '
+                                --palette--;;imageoverlayPalette,
+                                --palette--;;filePalette'
+                        ],
+                        \TYPO3\CMS\Core\Resource\File::FILETYPE_IMAGE => [
+                            'showitem' => '
+                                --palette--;;imageoverlayPalette,
+                                --palette--;;filePalette'
+                        ],
+                        \TYPO3\CMS\Core\Resource\File::FILETYPE_AUDIO => [
+                            'showitem' => '
+                                --palette--;;audioOverlayPalette,
+                                --palette--;;filePalette'
+                        ],
+                        \TYPO3\CMS\Core\Resource\File::FILETYPE_VIDEO => [
+                            'showitem' => '
+                                --palette--;;videoOverlayPalette,
+                                --palette--;;filePalette'
+                        ],
+                        \TYPO3\CMS\Core\Resource\File::FILETYPE_APPLICATION => [
+                            'showitem' => '
+                                --palette--;;imageoverlayPalette,
+                                --palette--;;filePalette'
+                        ]
+                    ],
+                ],
+            ], $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext'])
         ],
     ],
 

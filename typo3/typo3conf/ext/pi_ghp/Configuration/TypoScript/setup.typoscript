@@ -439,7 +439,29 @@ tt_content {
   ghp_info_card =< lib.contentElement
   ghp_info_card {
     templateName = Ghp_info_card
-  }
+
+    dataProcessing {
+      10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+      10 {
+        references.fieldName = image
+      }
+
+      20 = TYPO3\CMS\Frontend\DataProcessing\GalleryProcessor
+      20 {
+        maxGalleryWidth = {$styles.content.ghp_info_card.maxW}
+        maxGalleryWidthInText = {$styles.content.ghp_info_card.maxWInText}
+        columnSpacing = {$styles.content.ghp_info_card.columnSpacing}
+        borderWidth = {$styles.content.ghp_info_card.borderWidth}
+        borderPadding = {$styles.content.ghp_info_card.borderPadding}
+      }
+
+    }
+    stdWrap {
+      editIcons = tt_content: header [header_layout], bodytext, image [imageorient|imagewidth|imageheight], [imagecols|imageborder], image_zoom
+      editIcons {
+        iconTitle.data = LLL:EXT:fluid_styled_content/Resources/Private/Language/FrontendEditing.xlf:editIcon.textpic
+
+      }
 }
 
 # these classes are only used in auto-generated templates
