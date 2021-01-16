@@ -436,6 +436,10 @@ tt_content {
   sideHeaderContent {
     templateName = SideHeaderContent
   }
+  ghp_info_card =< lib.contentElement
+  ghp_info_card {
+    templateName = Ghp_info_card
+  }
 }
 
 # these classes are only used in auto-generated templates
