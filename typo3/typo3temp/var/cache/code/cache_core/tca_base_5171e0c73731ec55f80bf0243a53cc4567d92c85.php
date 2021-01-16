@@ -11149,7 +11149,7 @@ return array (
         ),
         'sideHeaderContent' => 
         array (
-          'showitem' => '--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,--palette--;;general,header;Internal title (not displayed),bodytext;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:bodytext_formlabel,name;title,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access,--palette--;;hidden,--palette--;;access',
+          'showitem' => '--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,--palette--;;general,title;Eigener Titel,header;Titel,bodytext;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:bodytext_formlabel,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access,--palette--;;hidden,--palette--;;access',
           'columnsOverrides' => 
           array (
             'bodytext' => 
@@ -11160,7 +11160,7 @@ return array (
                 'richtextConfiguration' => 'default',
               ),
             ),
-            'name' => 
+            'header' => 
             array (
               'exclude' => false,
               'label' => 'test',
@@ -11168,7 +11168,19 @@ return array (
               array (
                 'type' => 'input',
                 'size' => 20,
-                'eval' => 'trim,required',
+                'eval' => 'trim',
+                'max' => 256,
+              ),
+            ),
+            'title' => 
+            array (
+              'config' => 
+              array (
+                'foreign_table' => 'tx_pighp_domain_model_guitarheartsproject',
+                'foreign_field' => 'title',
+                'type' => 'input',
+                'size' => 20,
+                'eval' => 'trim',
                 'max' => 256,
               ),
             ),

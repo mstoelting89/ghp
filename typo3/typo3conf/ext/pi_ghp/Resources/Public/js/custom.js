@@ -28,5 +28,10 @@ $(document).ready(function () {
        $(this).parent().toggleClass('active');
 
        //$('div[class^="sidebar-item"]:not(.active)').
+   });
+
+   $('.firstWord').each(function () {
+     var title = $(this).text().split(' ');
+     $(this).html('<span class="word-highlight">' + title.shift() + ' </span>' + title.join(' '));
    })
 });

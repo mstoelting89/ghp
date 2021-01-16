@@ -1,6 +1,6 @@
 <?php
 
-class Standard_action_index_a468c6c6770d1107dbcaccea9e1de872c2730054 extends \TYPO3Fluid\Fluid\Core\Compiler\AbstractCompiledTemplate {
+class Standard_action_index_19c0c26dcf7a135c51c6ea7806c213ec8f1460f2 extends \TYPO3Fluid\Fluid\Core\Compiler\AbstractCompiledTemplate {
 
 public function getLayoutName(\TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface $renderingContext) {
 $self = $this;
@@ -168,7 +168,6 @@ $output42 = '';
 
 $output42 .= '
                 <div class="col-md-12 content-main">
-                    <h1>Helllllo</h1>
                     ';
 // Rendering ViewHelper TYPO3Fluid\Fluid\ViewHelpers\Format\RawViewHelper
 $renderChildrenClosure44 = function() use ($renderingContext, $self) {
@@ -247,7 +246,6 @@ $output23 = '';
 
 $output23 .= '
                 <div class="col-md-12 content-main">
-                    <h1>Helllllo</h1>
                     ';
 // Rendering ViewHelper TYPO3Fluid\Fluid\ViewHelpers\Format\RawViewHelper
 $renderChildrenClosure25 = function() use ($renderingContext, $self) {

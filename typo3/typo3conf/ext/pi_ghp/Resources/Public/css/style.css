@@ -133,6 +133,7 @@ body {
 .content-main {
     margin-left: 6vw;
     padding-left: 0px;
+    padding-right: 10vw;
 }
 
 /*************************************/
@@ -316,6 +317,24 @@ footer .secondary-menu li {
 footer .secondary-menu a {
     text-decoration: none;
     color: #fff;
+}
+
+/*************************************/
+/*     Style Content Elemente        */
+/*************************************/
+
+.firstWord {
+    font-size:1.5rem;
+}
+
+.word-highlight {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #b20027;
+}
+
+.side-content-element {
+    margin-top:5rem;
 }
 
 /*************************************/

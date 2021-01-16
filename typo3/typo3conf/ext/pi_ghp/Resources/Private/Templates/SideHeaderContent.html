@@ -1,3 +1,11 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
 
-<h2>Wird dies mit angezeigt: {data.name}</h2>
+<div class="row side-content-element">
+    <div class="col-md-3 flex align-self-center">
+        <div class="firstWord">{data.header->f:format.raw()}</div>
+    </div>
+    <div class="col-md-9">
+        {data.bodytext->f:format.raw()}
+    </div>
+</div>
+

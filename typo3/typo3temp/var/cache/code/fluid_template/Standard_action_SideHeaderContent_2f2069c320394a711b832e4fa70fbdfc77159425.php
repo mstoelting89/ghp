@@ -1,6 +1,6 @@
 <?php
 
-class Standard_action_NewContentElement_GHP_19bb6a03b5ad6e6e34c92c2f02236a3879e6dcfc extends \TYPO3Fluid\Fluid\Core\Compiler\AbstractCompiledTemplate {
+class Standard_action_SideHeaderContent_2f2069c320394a711b832e4fa70fbdfc77159425 extends \TYPO3Fluid\Fluid\Core\Compiler\AbstractCompiledTemplate {
 
 public function getLayoutName(\TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface $renderingContext) {
 $self = $this;
@@ -36,12 +36,13 @@ $output0 = '';
 
 $output0 .= '
 
-<h2>Das ist der Output unter fileadmin aber jetzt mit dem richtig TemplateNamen</h2>
-<div>';
+<div class="row side-content-element">
+    <div class="col-md-3 flex align-self-center">
+        <div class="firstWord">';
 // Rendering ViewHelper TYPO3Fluid\Fluid\ViewHelpers\Format\RawViewHelper
 $renderChildrenClosure2 = function() use ($renderingContext, $self) {
 $array3 = array (
-);return $renderingContext->getVariableProvider()->getByPath('data.bodytext', $array3);
+);return $renderingContext->getVariableProvider()->getByPath('data.header', $array3);
 };
 $arguments1 = array();
 $arguments1['value'] = NULL;
@@ -49,6 +50,22 @@ $arguments1['value'] = NULL;
 $output0 .= isset($arguments1['value']) ? $arguments1['value'] : $renderChildrenClosure2();
 
 $output0 .= '</div>
+    </div>
+    <div class="col-md-9">
+        ';
+// Rendering ViewHelper TYPO3Fluid\Fluid\ViewHelpers\Format\RawViewHelper
+$renderChildrenClosure5 = function() use ($renderingContext, $self) {
+$array6 = array (
+);return $renderingContext->getVariableProvider()->getByPath('data.bodytext', $array6);
+};
+$arguments4 = array();
+$arguments4['value'] = NULL;
+
+$output0 .= isset($arguments4['value']) ? $arguments4['value'] : $renderChildrenClosure5();
+
+$output0 .= '
+    </div>
+</div>
 
 ';
 
