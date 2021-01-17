@@ -133,6 +133,34 @@ page {
       footerLabel = TEXT
       footerLabel.value = The Guitar Hearts Project e.V. <br>guitarheartsproject@outlook.de <br>067719344061 <br>Langgasse 17, 56348 Bornich, Germany <br><br>©2020 The Guitar Hearts Project e.V.
 
+      # Navbar versuch mit Ankern
+      contentNavigation = CONTENT
+      contentNavigation {
+        table = tt_content
+        select {
+          pidInList = this
+          orderBy = sorting
+          where = (not hidden) AND (not deleted)
+        }
+        renderObj = TEXT
+        renderObj {
+          field = header
+
+          wrap = |
+          typolink {
+            parameter.field = uid
+            additionalParams = &L=0
+          }
+
+          /*
+          # nur wenn Überschrift vorhanden ist
+          if.isTrue.field=header
+          */
+        }
+        wrap = |
+      }
+
+
       # Einbindung Navbar
       menuPrimary = HMENU
       menuPrimary {

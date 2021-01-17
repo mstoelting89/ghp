@@ -10922,6 +10922,44 @@ return array (
             'type' => 'passthrough',
           ),
         ),
+        'fade_in' => 
+        array (
+          'label' => 'Fade In Effekt',
+          'config' => 
+          array (
+            'type' => 'select',
+            'renderType' => 'selectSingle',
+            'items' => 
+            array (
+              0 => 
+              array (
+                0 => 'Keiner',
+                1 => '0',
+              ),
+              1 => 
+              array (
+                0 => 'Oben',
+                1 => '1',
+              ),
+              2 => 
+              array (
+                0 => 'Links',
+                1 => '2',
+              ),
+              3 => 
+              array (
+                0 => 'Rechts',
+                1 => '3',
+              ),
+              4 => 
+              array (
+                0 => 'Unten',
+                1 => '4',
+              ),
+            ),
+            'default' => '0',
+          ),
+        ),
         't3_origuid' => 
         array (
           'config' => 
@@ -11155,7 +11193,7 @@ return array (
         ),
         'ghp_info_card' => 
         array (
-          'showitem' => '--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,--palette--;;general,title;Eigener Titel,header;Titel,header_position;Titelposition,header_layout;Titelgröße,image;Bild,bodytext;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:bodytext_formlabel,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access,--palette--;;hidden,--palette--;;access',
+          'showitem' => '--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,--palette--;;general,header;Titel,header_position;Titelposition,header_layout;Titelgröße,space_before_class;Abstand oben,space_after_class;Abstand unten,image;Bild,fade_in;Fade In Effekt,bodytext;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:bodytext_formlabel,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access,--palette--;;hidden,--palette--;;access',
           'columnsOverrides' => 
           array (
             'bodytext' => 
@@ -11163,7 +11201,45 @@ return array (
               'config' => 
               array (
                 'enableRichtext' => true,
-                'richtextConfiguration' => 'default',
+                'richtextConfiguration' => 'full',
+              ),
+            ),
+            'fade_in' => 
+            array (
+              'label' => 'Fade In Effekt',
+              'config' => 
+              array (
+                'type' => 'select',
+                'renderType' => 'selectSingle',
+                'items' => 
+                array (
+                  0 => 
+                  array (
+                    0 => 'Keiner',
+                    1 => '0',
+                  ),
+                  1 => 
+                  array (
+                    0 => 'Oben',
+                    1 => '1',
+                  ),
+                  2 => 
+                  array (
+                    0 => 'Links',
+                    1 => '2',
+                  ),
+                  3 => 
+                  array (
+                    0 => 'Rechts',
+                    1 => '3',
+                  ),
+                  4 => 
+                  array (
+                    0 => 'Unten',
+                    1 => '4',
+                  ),
+                ),
+                'default' => '0',
               ),
             ),
             'header' => 
@@ -11377,13 +11453,101 @@ return array (
                   ),
                   'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:images.addFileReference',
                 ),
+              ),
+            ),
+            'space_before_class' => 
+            array (
+              'exclude' => true,
+              'label' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:space_before_class',
+              'config' => 
+              array (
+                'type' => 'select',
+                'renderType' => 'selectSingle',
+                'items' => 
+                array (
+                  0 => 
+                  array (
+                    0 => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:space_class_none',
+                    1 => '',
+                  ),
+                  1 => 
+                  array (
+                    0 => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:space_class_extra_small',
+                    1 => 'extra-small',
+                  ),
+                  2 => 
+                  array (
+                    0 => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:space_class_small',
+                    1 => 'small',
+                  ),
+                  3 => 
+                  array (
+                    0 => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:space_class_medium',
+                    1 => 'medium',
+                  ),
+                  4 => 
+                  array (
+                    0 => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:space_class_large',
+                    1 => 'large',
+                  ),
+                  5 => 
+                  array (
+                    0 => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:space_class_extra_large',
+                    1 => 'extra-large',
+                  ),
+                ),
+                'default' => '',
+              ),
+            ),
+            'space_after_class' => 
+            array (
+              'exclude' => true,
+              'label' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:space_after_class',
+              'config' => 
+              array (
+                'type' => 'select',
+                'renderType' => 'selectSingle',
+                'items' => 
+                array (
+                  0 => 
+                  array (
+                    0 => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:space_class_none',
+                    1 => '',
+                  ),
+                  1 => 
+                  array (
+                    0 => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:space_class_extra_small',
+                    1 => 'extra-small',
+                  ),
+                  2 => 
+                  array (
+                    0 => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:space_class_small',
+                    1 => 'small',
+                  ),
+                  3 => 
+                  array (
+                    0 => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:space_class_medium',
+                    1 => 'medium',
+                  ),
+                  4 => 
+                  array (
+                    0 => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:space_class_large',
+                    1 => 'large',
+                  ),
+                  5 => 
+                  array (
+                    0 => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:space_class_extra_large',
+                    1 => 'extra-large',
+                  ),
+                ),
+                'default' => '',
               ),
             ),
           ),
         ),
         'sideHeaderContent' => 
         array (
-          'showitem' => '--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,--palette--;;general,title;Eigener Titel,header;Titel,header_position;Titelposition,header_layout;Titelgröße,bodytext;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:bodytext_formlabel,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access,--palette--;;hidden,--palette--;;access',
+          'showitem' => '--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,--palette--;;general,header;Titel,header_position;Titelposition,header_layout;Titelgröße,title;EigenerTitel,space_before_class;Abstand oben,space_after_class;Abstand unten,bodytext;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:bodytext_formlabel,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access,--palette--;;hidden,--palette--;;access',
           'columnsOverrides' => 
           array (
             'bodytext' => 
@@ -11605,6 +11769,94 @@ return array (
                   ),
                   'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:images.addFileReference',
                 ),
+              ),
+            ),
+            'space_before_class' => 
+            array (
+              'exclude' => true,
+              'label' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:space_before_class',
+              'config' => 
+              array (
+                'type' => 'select',
+                'renderType' => 'selectSingle',
+                'items' => 
+                array (
+                  0 => 
+                  array (
+                    0 => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:space_class_none',
+                    1 => '',
+                  ),
+                  1 => 
+                  array (
+                    0 => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:space_class_extra_small',
+                    1 => 'extra-small',
+                  ),
+                  2 => 
+                  array (
+                    0 => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:space_class_small',
+                    1 => 'small',
+                  ),
+                  3 => 
+                  array (
+                    0 => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:space_class_medium',
+                    1 => 'medium',
+                  ),
+                  4 => 
+                  array (
+                    0 => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:space_class_large',
+                    1 => 'large',
+                  ),
+                  5 => 
+                  array (
+                    0 => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:space_class_extra_large',
+                    1 => 'extra-large',
+                  ),
+                ),
+                'default' => '',
+              ),
+            ),
+            'space_after_class' => 
+            array (
+              'exclude' => true,
+              'label' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:space_after_class',
+              'config' => 
+              array (
+                'type' => 'select',
+                'renderType' => 'selectSingle',
+                'items' => 
+                array (
+                  0 => 
+                  array (
+                    0 => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:space_class_none',
+                    1 => '',
+                  ),
+                  1 => 
+                  array (
+                    0 => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:space_class_extra_small',
+                    1 => 'extra-small',
+                  ),
+                  2 => 
+                  array (
+                    0 => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:space_class_small',
+                    1 => 'small',
+                  ),
+                  3 => 
+                  array (
+                    0 => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:space_class_medium',
+                    1 => 'medium',
+                  ),
+                  4 => 
+                  array (
+                    0 => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:space_class_large',
+                    1 => 'large',
+                  ),
+                  5 => 
+                  array (
+                    0 => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:space_class_extra_large',
+                    1 => 'extra-large',
+                  ),
+                ),
+                'default' => '',
               ),
             ),
           ),
@@ -11625,7 +11877,7 @@ return array (
             'name' => 
             array (
               'exclude' => false,
-              'label' => 'test',
+              'label' => 'Hello',
               'config' => 
               array (
                 'type' => 'input',
@@ -15089,7 +15341,7 @@ return array (
       'ctrl' => 
       array (
         'title' => 'LLL:EXT:pi_ghp/Resources/Private/Language/locallang_db.xlf:tx_pighp_domain_model_guitarheartsproject',
-        'label' => 'name',
+        'label' => 'title',
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
         'cruser_id' => 'cruser_id',
@@ -15105,7 +15357,7 @@ return array (
           'starttime' => 'starttime',
           'endtime' => 'endtime',
         ),
-        'searchFields' => 'name',
+        'searchFields' => 'title',
         'iconfile' => 'EXT:pi_ghp/Resources/Public/Icons/tx_pighp_domain_model_guitarheartsproject.gif',
       ),
       'interface' => 
@@ -15245,6 +15497,18 @@ return array (
             'type' => 'input',
             'size' => 30,
             'eval' => 'trim',
+          ),
+        ),
+        'title' => 
+        array (
+          'config' => 
+          array (
+            'foreign_table' => 'tx_pighp_domain_model_guitarheartsproject',
+            'foreign_field' => 'title',
+            'type' => 'input',
+            'size' => 20,
+            'eval' => 'trim',
+            'max' => 256,
           ),
         ),
       ),

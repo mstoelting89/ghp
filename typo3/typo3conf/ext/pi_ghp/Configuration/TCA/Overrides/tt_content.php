@@ -1,4 +1,53 @@
 <?php
+defined('TYPO3_MODE') or die();
+
+$fields = array (
+        'fade_in' => [
+            'label' => 'Fade In Effekt',
+            'config' => [
+                'type' => 'select',
+                'renderType' => 'selectSingle',
+                'items' => [
+                    [
+                        'Keiner',
+                        '0'
+                    ],
+                    [
+                        'Oben',
+                        '1'
+                    ],
+                    [
+                        'Links',
+                        '2'
+                    ],
+                    [
+                        'Rechts',
+                        '3'
+                    ],
+                    [
+                        'Unten',
+                        '4'
+                    ]
+                ],
+                'default' => '0'
+            ]
+        ]
+    );
+
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('tt_content', $fields);
+
+$newField = array (
+    'title' => [
+        'config' => [
+            'type' => 'input',
+            'size' => 20,
+            'eval' => 'trim',
+            'max' => 256
+        ]
+    ]
+);
+
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('tx_pighp_domain_model_guitarheartsproject', $newField);
 
 // Adding SideHeaderContent Content element
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTcaSelectItem(
@@ -44,11 +93,13 @@ $GLOBALS['TCA']['tt_content']['types']['ghp_info_card'] = [
     'showitem' => '
          --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,
             --palette--;;general,
-            title; Eigener Titel,
             header; Titel;,
             header_position; Titelposition;,
             header_layout; Titelgröße;,
+            space_before_class; Abstand oben;,
+            space_after_class; Abstand unten;,
             image; Bild;,
+            fade_in; Fade In Effekt;,
             bodytext;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:bodytext_formlabel,
          --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access,
             --palette--;;hidden,
@@ -58,8 +109,38 @@ $GLOBALS['TCA']['tt_content']['types']['ghp_info_card'] = [
         'bodytext' => [
             'config' => [
                 'enableRichtext' => true,
-                'richtextConfiguration' => 'default',
+                'richtextConfiguration' => 'full',
             ],
+        ],
+        'fade_in' => [
+            'label' => 'Fade In Effekt',
+            'config' => [
+                'type' => 'select',
+                'renderType' => 'selectSingle',
+                'items' => [
+                    [
+                        'Keiner',
+                        '0'
+                    ],
+                    [
+                      'Oben',
+                      '1'
+                    ],
+                    [
+                        'Links',
+                        '2'
+                    ],
+                    [
+                        'Rechts',
+                        '3'
+                    ],
+                    [
+                        'Unten',
+                        '4'
+                    ]
+                ],
+                'default' => '0'
+            ]
         ],
         'header' => [
             'exclude' => false,
@@ -190,6 +271,40 @@ $GLOBALS['TCA']['tt_content']['types']['ghp_info_card'] = [
                     ],
                 ],
             ], $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext'])
+        ],
+        'space_before_class' => [
+            'exclude' => true,
+            'label' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:space_before_class',
+            'config' => [
+                'type' => 'select',
+                'renderType' => 'selectSingle',
+                'items' => [
+                    ['LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:space_class_none', ''],
+                    ['LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:space_class_extra_small', 'extra-small'],
+                    ['LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:space_class_small', 'small'],
+                    ['LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:space_class_medium', 'medium'],
+                    ['LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:space_class_large', 'large'],
+                    ['LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:space_class_extra_large', 'extra-large'],
+                ],
+                'default' => ''
+            ]
+        ],
+        'space_after_class' => [
+            'exclude' => true,
+            'label' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:space_after_class',
+            'config' => [
+                'type' => 'select',
+                'renderType' => 'selectSingle',
+                'items' => [
+                    ['LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:space_class_none', ''],
+                    ['LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:space_class_extra_small', 'extra-small'],
+                    ['LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:space_class_small', 'small'],
+                    ['LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:space_class_medium', 'medium'],
+                    ['LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:space_class_large', 'large'],
+                    ['LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:space_class_extra_large', 'extra-large'],
+                ],
+                'default' => ''
+            ]
         ],
     ],
 
@@ -200,10 +315,12 @@ $GLOBALS['TCA']['tt_content']['types']['sideHeaderContent'] = [
     'showitem' => '
          --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,
             --palette--;;general,
-            title; Eigener Titel,
             header; Titel;,
             header_position; Titelposition;,
             header_layout; Titelgröße;,
+            title; EigenerTitel;,
+            space_before_class; Abstand oben;,
+            space_after_class; Abstand unten;,
             bodytext;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:bodytext_formlabel,
          --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access,
             --palette--;;hidden,
@@ -345,6 +462,40 @@ $GLOBALS['TCA']['tt_content']['types']['sideHeaderContent'] = [
                     ],
                 ],
             ], $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext'])
+        ],
+        'space_before_class' => [
+            'exclude' => true,
+            'label' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:space_before_class',
+            'config' => [
+                'type' => 'select',
+                'renderType' => 'selectSingle',
+                'items' => [
+                    ['LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:space_class_none', ''],
+                    ['LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:space_class_extra_small', 'extra-small'],
+                    ['LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:space_class_small', 'small'],
+                    ['LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:space_class_medium', 'medium'],
+                    ['LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:space_class_large', 'large'],
+                    ['LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:space_class_extra_large', 'extra-large'],
+                ],
+                'default' => ''
+            ]
+        ],
+        'space_after_class' => [
+            'exclude' => true,
+            'label' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:space_after_class',
+            'config' => [
+                'type' => 'select',
+                'renderType' => 'selectSingle',
+                'items' => [
+                    ['LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:space_class_none', ''],
+                    ['LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:space_class_extra_small', 'extra-small'],
+                    ['LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:space_class_small', 'small'],
+                    ['LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:space_class_medium', 'medium'],
+                    ['LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:space_class_large', 'large'],
+                    ['LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:space_class_extra_large', 'extra-large'],
+                ],
+                'default' => ''
+            ]
         ],
     ],
 
@@ -370,7 +521,7 @@ $GLOBALS['TCA']['tt_content']['types']['contentelement_ghp'] = [
         ],
         'name' => [
             'exclude' => false,
-            'label' => 'test',
+            'label' => 'Hello',
             'config' => [
                 'type' => 'input',
                 'size' => 20,

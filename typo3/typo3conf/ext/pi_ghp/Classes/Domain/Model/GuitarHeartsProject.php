@@ -26,9 +26,16 @@ class GuitarHeartsProject extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     protected $title = '';
 
     /**
-     * Returns the name
+     * fade_in
      *
-     * @return string $name
+     * @var string
+     */
+    protected $fade_in = '';
+
+    /**
+     * Returns the title
+     *
+     * @return string $title
      */
     public function getTitle()
     {
@@ -36,13 +43,34 @@ class GuitarHeartsProject extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
-     * Sets the name
+     * Sets the title
      *
-     * @param string $name
+     * @param string $title
      * @return void
      */
     public function setTitle($title)
     {
         $this->title = $title;
+    }
+
+    /**
+     * Returns the fade_in
+     *
+     * @return string $fade_in
+     */
+    public function getFade_in()
+    {
+        return $this->fade_in;
+    }
+
+    /**
+     * Sets the fade_in
+     *
+     * @param string $fade_in
+     * @return void
+     */
+    public function setFade_in($fade_in)
+    {
+        $this->fade_in = $fade_in;
     }
 }
