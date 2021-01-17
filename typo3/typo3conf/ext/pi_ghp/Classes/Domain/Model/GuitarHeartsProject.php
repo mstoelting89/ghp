@@ -53,24 +53,4 @@ class GuitarHeartsProject extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
         $this->title = $title;
     }
 
-    /**
-     * Returns the fade_in
-     *
-     * @return string $fade_in
-     */
-    public function getFade_in()
-    {
-        return $this->fade_in;
-    }
-
-    /**
-     * Sets the fade_in
-     *
-     * @param string $fade_in
-     * @return void
-     */
-    public function setFade_in($fade_in)
-    {
-        $this->fade_in = $fade_in;
-    }
 }

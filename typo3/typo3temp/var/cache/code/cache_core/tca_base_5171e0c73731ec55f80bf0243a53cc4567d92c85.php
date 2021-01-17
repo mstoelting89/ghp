@@ -11258,8 +11258,6 @@ return array (
             array (
               'config' => 
               array (
-                'foreign_table' => 'tx_pighp_domain_model_guitarheartsproject',
-                'foreign_field' => 'title',
                 'type' => 'input',
                 'size' => 20,
                 'eval' => 'trim',
@@ -11555,7 +11553,45 @@ return array (
               'config' => 
               array (
                 'enableRichtext' => true,
-                'richtextConfiguration' => 'default',
+                'richtextConfiguration' => 'full',
+              ),
+            ),
+            'fade_in' => 
+            array (
+              'label' => 'Fade In Effekt',
+              'config' => 
+              array (
+                'type' => 'select',
+                'renderType' => 'selectSingle',
+                'items' => 
+                array (
+                  0 => 
+                  array (
+                    0 => 'Keiner',
+                    1 => '0',
+                  ),
+                  1 => 
+                  array (
+                    0 => 'Oben',
+                    1 => '1',
+                  ),
+                  2 => 
+                  array (
+                    0 => 'Links',
+                    1 => '2',
+                  ),
+                  3 => 
+                  array (
+                    0 => 'Rechts',
+                    1 => '3',
+                  ),
+                  4 => 
+                  array (
+                    0 => 'Unten',
+                    1 => '4',
+                  ),
+                ),
+                'default' => '0',
               ),
             ),
             'header' => 
@@ -11574,8 +11610,6 @@ return array (
             array (
               'config' => 
               array (
-                'foreign_table' => 'tx_pighp_domain_model_guitarheartsproject',
-                'foreign_field' => 'title',
                 'type' => 'input',
                 'size' => 20,
                 'eval' => 'trim',
@@ -11890,8 +11924,6 @@ return array (
             array (
               'config' => 
               array (
-                'foreign_table' => 'tx_pighp_domain_model_guitarheartsproject',
-                'foreign_field' => 'title',
                 'type' => 'input',
                 'size' => 20,
                 'eval' => 'trim',
@@ -15503,8 +15535,6 @@ return array (
         array (
           'config' => 
           array (
-            'foreign_table' => 'tx_pighp_domain_model_guitarheartsproject',
-            'foreign_field' => 'title',
             'type' => 'input',
             'size' => 20,
             'eval' => 'trim',

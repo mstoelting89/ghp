@@ -154,8 +154,6 @@ $GLOBALS['TCA']['tt_content']['types']['ghp_info_card'] = [
         ],
         'title' => [
             'config' => [
-                'foreign_table' => 'tx_pighp_domain_model_guitarheartsproject',
-                'foreign_field' => 'title',
                 'type' => 'input',
                 'size' => 20,
                 'eval' => 'trim',
@@ -375,8 +373,6 @@ $GLOBALS['TCA']['tt_content']['types']['sideHeaderContent'] = [
         ],
         'title' => [
             'config' => [
-                'foreign_table' => 'tx_pighp_domain_model_guitarheartsproject',
-                'foreign_field' => 'title',
                 'type' => 'input',
                 'size' => 20,
                 'eval' => 'trim',
@@ -561,8 +557,6 @@ $GLOBALS['TCA']['tt_content']['types']['contentelement_ghp'] = [
         ],
         'title' => [
             'config' => [
-                'foreign_table' => 'tx_pighp_domain_model_guitarheartsproject',
-                'foreign_field' => 'title',
                 'type' => 'input',
                 'size' => 20,
                 'eval' => 'trim',

@@ -1,4 +1,17 @@
 <?php
+$newField = array (
+    'title' => [
+        'config' => [
+            'type' => 'input',
+            'size' => 20,
+            'eval' => 'trim',
+            'max' => 256
+        ]
+    ]
+);
+
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('tx_pighp_domain_model_guitarheartsproject', $newField);
+
 return [
     'ctrl' => [
         'title' => 'LLL:EXT:pi_ghp/Resources/Private/Language/locallang_db.xlf:tx_pighp_domain_model_guitarheartsproject',
