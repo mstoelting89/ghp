@@ -330,8 +330,38 @@ $GLOBALS['TCA']['tt_content']['types']['sideHeaderContent'] = [
         'bodytext' => [
             'config' => [
                 'enableRichtext' => true,
-                'richtextConfiguration' => 'default',
+                'richtextConfiguration' => 'full',
             ],
+        ],
+        'fade_in' => [
+            'label' => 'Fade In Effekt',
+            'config' => [
+                'type' => 'select',
+                'renderType' => 'selectSingle',
+                'items' => [
+                    [
+                        'Keiner',
+                        '0'
+                    ],
+                    [
+                      'Oben',
+                      '1'
+                    ],
+                    [
+                        'Links',
+                        '2'
+                    ],
+                    [
+                        'Rechts',
+                        '3'
+                    ],
+                    [
+                        'Unten',
+                        '4'
+                    ]
+                ],
+                'default' => '0'
+            ]
         ],
         'header' => [
             'exclude' => false,
