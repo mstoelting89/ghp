@@ -1,6 +1,6 @@
 <?php
 
-class partial_DropIn_Before_All_9f156a7686e46cb7a2fb442266d3172bec6614be extends \TYPO3Fluid\Fluid\Core\Compiler\AbstractCompiledTemplate {
+class layout_Default_html_6f6d15ac81d73d013b63de962dd8a4f04373f842 extends \TYPO3Fluid\Fluid\Core\Compiler\AbstractCompiledTemplate {
 
 public function getLayoutName(\TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface $renderingContext) {
 $self = $this;
@@ -24,6 +24,10 @@ $renderingContext->getViewHelperResolver()->addNamespaces(array (
   array (
     0 => 'TYPO3\\CMS\\Form\\ViewHelpers',
   ),
+  'n' => 
+  array (
+    0 => 'GeorgRinger\\News\\ViewHelpers',
+  ),
 ));
 }
 
@@ -32,23 +36,10 @@ $renderingContext->getViewHelperResolver()->addNamespaces(array (
  */
 public function render(\TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface $renderingContext) {
 $self = $this;
-$output0 = '';
 
-$output0 .= '
-';
-// Rendering ViewHelper TYPO3Fluid\Fluid\ViewHelpers\CommentViewHelper
-$renderChildrenClosure2 = function() use ($renderingContext, $self) {
-return 'DropIn Placeholder. Will be rendered before any other output inside the wrapping container.';
-};
-$arguments1 = array();
-
-$output0 .= NULL;
-
-$output0 .= '
+return '
 
 ';
-
-return $output0;
 }
 
 

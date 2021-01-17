@@ -1,6 +1,6 @@
 <?php
 
-class Standard_action_index_c492c1c8e8f241caf6b35379720faca3efe355d1 extends \TYPO3Fluid\Fluid\Core\Compiler\AbstractCompiledTemplate {
+class Standard_action_index_bcf118b31fbe2d2ee73bb8d3e85c6c98c542eca2 extends \TYPO3Fluid\Fluid\Core\Compiler\AbstractCompiledTemplate {
 
 public function getLayoutName(\TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface $renderingContext) {
 $self = $this;
@@ -24,6 +24,10 @@ $renderingContext->getViewHelperResolver()->addNamespaces(array (
   array (
     0 => 'TYPO3\\CMS\\Form\\ViewHelpers',
   ),
+  'n' => 
+  array (
+    0 => 'GeorgRinger\\News\\ViewHelpers',
+  ),
 ));
 }
 
@@ -35,15 +39,15 @@ $self = $this;
 $output0 = '';
 
 $output0 .= '
-<header>
-    <!--<div class="header-content" style="background-image: url(';
+    <header>
+        <!--<div class="header-content" style="background-image: url(';
 $array1 = array (
 );
 $output0 .= call_user_func_array( function ($var) { return (is_string($var) || (is_object($var) && method_exists($var, '__toString')) ? htmlspecialchars((string) $var, ENT_QUOTES) : $var); }, [$renderingContext->getVariableProvider()->getByPath('image', $array1)]);
 
 $output0 .= ')">-->
-    <div class="header-content header-bg-image">
-        ';
+        <div class="header-content header-bg-image">
+            ';
 // Rendering ViewHelper TYPO3\CMS\Fluid\ViewHelpers\RenderViewHelper
 $renderChildrenClosure3 = function() use ($renderingContext, $self) {
 return NULL;
@@ -67,9 +71,9 @@ $output0 .= TYPO3\CMS\Fluid\ViewHelpers\RenderViewHelper::renderStatic($argument
 $output0 .= '
 
 
-        <div class="row header-title align-items-center">
-            <div class="col-4 col-md-4 col-lg-4 logo-align">
-                ';
+            <div class="row header-title align-items-center">
+                <div class="col-4 col-md-4 col-lg-4 logo-align">
+                    ';
 // Rendering ViewHelper TYPO3Fluid\Fluid\ViewHelpers\Format\RawViewHelper
 $renderChildrenClosure6 = function() use ($renderingContext, $self) {
 $array7 = array (
@@ -81,9 +85,9 @@ $arguments5['value'] = NULL;
 $output0 .= isset($arguments5['value']) ? $arguments5['value'] : $renderChildrenClosure6();
 
 $output0 .= '
-            </div>
-            <div class="col-12 col-md-12 col-lg-8">
-                ';
+                </div>
+                <div class="col-12 col-md-12 col-lg-8">
+                    ';
 // Rendering ViewHelper TYPO3Fluid\Fluid\ViewHelpers\Format\RawViewHelper
 $renderChildrenClosure9 = function() use ($renderingContext, $self) {
 $array10 = array (
@@ -95,12 +99,12 @@ $arguments8['value'] = NULL;
 $output0 .= isset($arguments8['value']) ? $arguments8['value'] : $renderChildrenClosure9();
 
 $output0 .= '
+                </div>
             </div>
         </div>
-    </div>
-    <!--
-    <div class="breadcrumb-container">
-        ';
+        <!--
+        <div class="breadcrumb-container">
+            ';
 // Rendering ViewHelper TYPO3Fluid\Fluid\ViewHelpers\Format\RawViewHelper
 $renderChildrenClosure12 = function() use ($renderingContext, $self) {
 $array13 = array (
@@ -112,12 +116,12 @@ $arguments11['value'] = NULL;
 $output0 .= isset($arguments11['value']) ? $arguments11['value'] : $renderChildrenClosure12();
 
 $output0 .= '
-    </div>
-    -->
-</header>
+        </div>
+        -->
+    </header>
 
-<main>
-    <!--<div class="container" style="display:flex;">-->
+    <main>
+        <!--<div class="container" style="display:flex;">-->
         ';
 // Rendering ViewHelper TYPO3Fluid\Fluid\ViewHelpers\IfViewHelper
 $renderChildrenClosure15 = function() use ($renderingContext, $self) {
@@ -291,8 +295,8 @@ return $output23;
 $output0 .= TYPO3Fluid\Fluid\ViewHelpers\IfViewHelper::renderStatic($arguments14, $renderChildrenClosure15, $renderingContext);
 
 $output0 .= '
-    <!--</div>-->
-    ';
+        <!--</div>-->
+        ';
 // Rendering ViewHelper TYPO3\CMS\Fluid\ViewHelpers\RenderViewHelper
 $renderChildrenClosure53 = function() use ($renderingContext, $self) {
 return NULL;
@@ -314,13 +318,11 @@ $arguments52['arguments'] = $renderingContext->getVariableProvider()->getAll();
 $output0 .= TYPO3\CMS\Fluid\ViewHelpers\RenderViewHelper::renderStatic($arguments52, $renderChildrenClosure53, $renderingContext);
 
 $output0 .= '
+    </main>
 
-
-</main>
-
-<footer>
-    <div class="sub-text-footer pt-3 pb-3">
-        ';
+    <footer>
+        <div class="sub-text-footer pt-3 pb-3">
+            ';
 // Rendering ViewHelper TYPO3Fluid\Fluid\ViewHelpers\Format\RawViewHelper
 $renderChildrenClosure56 = function() use ($renderingContext, $self) {
 $array57 = array (
@@ -332,10 +334,10 @@ $arguments55['value'] = NULL;
 $output0 .= isset($arguments55['value']) ? $arguments55['value'] : $renderChildrenClosure56();
 
 $output0 .= '
-    </div>
+        </div>
 
-    <div class="partners">
-        ';
+        <div class="partners">
+            ';
 // Rendering ViewHelper TYPO3Fluid\Fluid\ViewHelpers\Format\RawViewHelper
 $renderChildrenClosure59 = function() use ($renderingContext, $self) {
 $array60 = array (
@@ -348,9 +350,9 @@ $output0 .= isset($arguments58['value']) ? $arguments58['value'] : $renderChildr
 
 $output0 .= '
 
-    </div>
-    <div class="secondary-menu">
-        ';
+        </div>
+        <div class="secondary-menu">
+            ';
 // Rendering ViewHelper TYPO3Fluid\Fluid\ViewHelpers\Format\RawViewHelper
 $renderChildrenClosure62 = function() use ($renderingContext, $self) {
 $array63 = array (
@@ -363,10 +365,10 @@ $output0 .= isset($arguments61['value']) ? $arguments61['value'] : $renderChildr
 
 $output0 .= '
 
-    </div>
-</footer>
-</body>
-</html>
+        </div>
+    </footer>
+
+
 ';
 
 return $output0;

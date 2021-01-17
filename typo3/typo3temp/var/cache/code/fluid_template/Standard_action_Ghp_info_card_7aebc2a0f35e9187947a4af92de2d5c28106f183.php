@@ -1,6 +1,6 @@
 <?php
 
-class Standard_action_Ghp_info_card_21fabf253e7fac28bbbe4656c1f89db90c817838 extends \TYPO3Fluid\Fluid\Core\Compiler\AbstractCompiledTemplate {
+class Standard_action_Ghp_info_card_7aebc2a0f35e9187947a4af92de2d5c28106f183 extends \TYPO3Fluid\Fluid\Core\Compiler\AbstractCompiledTemplate {
 
 public function getLayoutName(\TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface $renderingContext) {
 $self = $this;
@@ -393,6 +393,158 @@ return '
 });
 }
 }, array($arguments35));
+
+$output0 .= '
+';
+// Rendering ViewHelper TYPO3Fluid\Fluid\ViewHelpers\SwitchViewHelper
+$renderChildrenClosure64 = function() use ($renderingContext, $self) {
+$output78 = '';
+
+$output78 .= '
+    ';
+// Rendering ViewHelper TYPO3Fluid\Fluid\ViewHelpers\CaseViewHelper
+$renderChildrenClosure80 = function() use ($renderingContext, $self) {
+return '
+        <div class="row ghp-mb-0"></div>
+    ';
+};
+$arguments79 = array();
+$arguments79['value'] = NULL;
+$arguments79['value'] = '';
+
+$output78 .= '';
+
+$output78 .= '
+    ';
+// Rendering ViewHelper TYPO3Fluid\Fluid\ViewHelpers\CaseViewHelper
+$renderChildrenClosure82 = function() use ($renderingContext, $self) {
+return '
+        <div class="row ghp-mb-1"></div>
+    ';
+};
+$arguments81 = array();
+$arguments81['value'] = NULL;
+$arguments81['value'] = 'extra-small';
+
+$output78 .= '';
+
+$output78 .= '
+    ';
+// Rendering ViewHelper TYPO3Fluid\Fluid\ViewHelpers\CaseViewHelper
+$renderChildrenClosure84 = function() use ($renderingContext, $self) {
+return '
+        <div class="row ghp-mb-2"></div>
+    ';
+};
+$arguments83 = array();
+$arguments83['value'] = NULL;
+$arguments83['value'] = 'small';
+
+$output78 .= '';
+
+$output78 .= '
+    ';
+// Rendering ViewHelper TYPO3Fluid\Fluid\ViewHelpers\CaseViewHelper
+$renderChildrenClosure86 = function() use ($renderingContext, $self) {
+return '
+        <div class="row ghp-mb-3"></div>
+    ';
+};
+$arguments85 = array();
+$arguments85['value'] = NULL;
+$arguments85['value'] = 'medium';
+
+$output78 .= '';
+
+$output78 .= '
+    ';
+// Rendering ViewHelper TYPO3Fluid\Fluid\ViewHelpers\CaseViewHelper
+$renderChildrenClosure88 = function() use ($renderingContext, $self) {
+return '
+        <div class="row ghp-mb-4"></div>
+    ';
+};
+$arguments87 = array();
+$arguments87['value'] = NULL;
+$arguments87['value'] = 'large';
+
+$output78 .= '';
+
+$output78 .= '
+    ';
+// Rendering ViewHelper TYPO3Fluid\Fluid\ViewHelpers\CaseViewHelper
+$renderChildrenClosure90 = function() use ($renderingContext, $self) {
+return '
+        <div class="row ghp-mb-5"></div>
+    ';
+};
+$arguments89 = array();
+$arguments89['value'] = NULL;
+$arguments89['value'] = 'extra-large';
+
+$output78 .= '';
+
+$output78 .= '
+';
+return $output78;
+};
+$arguments63 = array();
+$arguments63['expression'] = NULL;
+$array77 = array (
+);$arguments63['expression'] = $renderingContext->getVariableProvider()->getByPath('data.space_after_class', $array77);
+
+$output0 .= call_user_func_array(function($arguments) use ($renderingContext, $self) {
+switch ($arguments['expression']) {
+case call_user_func(function() use ($renderingContext, $self) {
+
+return '';
+}): return call_user_func(function() use ($renderingContext, $self) {
+return '
+        <div class="row ghp-mb-0"></div>
+    ';
+});
+case call_user_func(function() use ($renderingContext, $self) {
+
+return 'extra-small';
+}): return call_user_func(function() use ($renderingContext, $self) {
+return '
+        <div class="row ghp-mb-1"></div>
+    ';
+});
+case call_user_func(function() use ($renderingContext, $self) {
+
+return 'small';
+}): return call_user_func(function() use ($renderingContext, $self) {
+return '
+        <div class="row ghp-mb-2"></div>
+    ';
+});
+case call_user_func(function() use ($renderingContext, $self) {
+
+return 'medium';
+}): return call_user_func(function() use ($renderingContext, $self) {
+return '
+        <div class="row ghp-mb-3"></div>
+    ';
+});
+case call_user_func(function() use ($renderingContext, $self) {
+
+return 'large';
+}): return call_user_func(function() use ($renderingContext, $self) {
+return '
+        <div class="row ghp-mb-4"></div>
+    ';
+});
+case call_user_func(function() use ($renderingContext, $self) {
+
+return 'extra-large';
+}): return call_user_func(function() use ($renderingContext, $self) {
+return '
+        <div class="row ghp-mb-5"></div>
+    ';
+});
+}
+}, array($arguments63));
 
 $output0 .= '
 ';
