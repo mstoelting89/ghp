@@ -78,15 +78,12 @@ page {
   10 {
 
     # Template-Datei wird eingebunden
-    //file = EXT:pi_ghp/Resources/Private/Templates/main_template.html
+    file = EXT:pi_ghp/Resources/Private/Templates/main_template.html
     partialRootPaths {
       10 = EXT:pi_ghp/Resources/Private/Partials/
     }
     templateRootPaths {
       10 = EXT:pi_ghp/Resources/Private/Templates/
-    }
-    layoutRootPaths {
-      10 = EXT:pi_ghp/Resources/Private/Layouts/
     }
 
     dataProcessing {
@@ -361,9 +358,6 @@ lib.contentElement {
   }
   templateRootPaths {
     10 = EXT:pi_ghp/Resources/Private/Templates/
-  }
-  layoutRootPaths {
-    10 = EXT:pi_ghp/Resources/Private/Layouts/
   }
 }
 
