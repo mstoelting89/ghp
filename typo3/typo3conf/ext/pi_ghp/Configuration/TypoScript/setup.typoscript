@@ -427,6 +427,8 @@ plugin.tx_pighp_pi {
     }
 }
 
+
+
 tt_content {
   contentelement_ghp =< lib.contentElement
   contentelement_ghp {

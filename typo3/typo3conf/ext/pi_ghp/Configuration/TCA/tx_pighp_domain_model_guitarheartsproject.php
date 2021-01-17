@@ -2,7 +2,7 @@
 return [
     'ctrl' => [
         'title' => 'LLL:EXT:pi_ghp/Resources/Private/Language/locallang_db.xlf:tx_pighp_domain_model_guitarheartsproject',
-        'label' => 'name',
+        'label' => 'title',
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
         'cruser_id' => 'cruser_id',
@@ -17,7 +17,7 @@ return [
             'starttime' => 'starttime',
             'endtime' => 'endtime',
         ],
-        'searchFields' => 'name',
+        'searchFields' => 'title',
         'iconfile' => 'EXT:pi_ghp/Resources/Public/Icons/tx_pighp_domain_model_guitarheartsproject.gif'
     ],
     'interface' => [
@@ -126,6 +126,16 @@ return [
                 'eval' => 'trim'
             ],
         ],
-    
+
+        'title' => [
+            'exclude' => true,
+            'label' => 'LLL:EXT:pi_ghp/Resources/Private/Language/locallang_db.xlf:tx_pighp_domain_model_guitarheartsproject.title',
+            'config' => [
+                'type' => 'input',
+                'size' => 30,
+                'eval' => 'trim'
+            ],
+        ],
+
     ],
 ];
