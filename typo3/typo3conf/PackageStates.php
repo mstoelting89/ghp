@@ -107,6 +107,9 @@ return [
         'pi_ghp' => [
             'packagePath' => 'typo3conf/ext/pi_ghp/',
         ],
+        'teme' => [
+            'packagePath' => 'typo3conf/ext/teme/',
+        ],
     ],
     'version' => 5,
 ];

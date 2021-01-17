@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="EXT:teme/Resources/Private/Language/locallang" date="2021-01-17T13:59:24Z" product-name="teme">
+		<header/>
+		<body>
+			<trans-unit id="tx_teme_domain_model_textex" resname="tx_teme_domain_model_textex">
+				<source>Text Ex</source>
+			</trans-unit>
+			<trans-unit id="tx_teme_domain_model_textex.title" resname="tx_teme_domain_model_textex.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_teme_domain_model_textex.content" resname="tx_teme_domain_model_textex.content">
+				<source>Content</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

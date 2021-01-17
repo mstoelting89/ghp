@@ -1,0 +1,23 @@
+{
+    "name": "me/teme",
+    "type": "typo3-cms-extension",
+    "description": "",
+    "authors": [],
+    "require": {
+        "typo3/cms-core": "^9.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Me\\Teme\\": "Classes"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Me\\Teme\\Tests\\": "Tests"
+        }
+    },
+    "replace": {
+        "me/teme": "self.version",
+        "typo3-ter/teme": "self.version"
+    }
+}

@@ -11501,6 +11501,112 @@ return array (
                 'default' => '',
               ),
             ),
+            'image' => 
+            array (
+              'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.images',
+              'config' => 
+              array (
+                'type' => 'inline',
+                'foreign_table' => 'sys_file_reference',
+                'foreign_field' => 'uid_foreign',
+                'foreign_sortby' => 'sorting_foreign',
+                'foreign_table_field' => 'tablenames',
+                'foreign_match_fields' => 
+                array (
+                  'fieldname' => 'image',
+                ),
+                'foreign_label' => 'uid_local',
+                'foreign_selector' => 'uid_local',
+                'overrideChildTca' => 
+                array (
+                  'columns' => 
+                  array (
+                    'uid_local' => 
+                    array (
+                      'config' => 
+                      array (
+                        'appearance' => 
+                        array (
+                          'elementBrowserType' => 'file',
+                          'elementBrowserAllowed' => 'gif,jpg,jpeg,tif,tiff,bmp,pcx,tga,png,pdf,ai,svg',
+                        ),
+                      ),
+                    ),
+                  ),
+                  'types' => 
+                  array (
+                    0 => 
+                    array (
+                      'showitem' => '
+                                --palette--;;imageoverlayPalette,
+                                --palette--;;filePalette',
+                    ),
+                    1 => 
+                    array (
+                      'showitem' => '
+                                --palette--;;imageoverlayPalette,
+                                --palette--;;filePalette',
+                    ),
+                    2 => 
+                    array (
+                      'showitem' => '
+                                --palette--;;imageoverlayPalette,
+                                --palette--;;filePalette',
+                    ),
+                    3 => 
+                    array (
+                      'showitem' => '
+                                --palette--;;audioOverlayPalette,
+                                --palette--;;filePalette',
+                    ),
+                    4 => 
+                    array (
+                      'showitem' => '
+                                --palette--;;videoOverlayPalette,
+                                --palette--;;filePalette',
+                    ),
+                    5 => 
+                    array (
+                      'showitem' => '
+                                --palette--;;imageoverlayPalette,
+                                --palette--;;filePalette',
+                    ),
+                  ),
+                ),
+                'filter' => 
+                array (
+                  0 => 
+                  array (
+                    'userFunc' => 'TYPO3\\CMS\\Core\\Resource\\Filter\\FileExtensionFilter->filterInlineChildren',
+                    'parameters' => 
+                    array (
+                      'allowedFileExtensions' => 'gif,jpg,jpeg,tif,tiff,bmp,pcx,tga,png,pdf,ai,svg',
+                      'disallowedFileExtensions' => '',
+                    ),
+                  ),
+                ),
+                'appearance' => 
+                array (
+                  'useSortable' => true,
+                  'headerThumbnail' => 
+                  array (
+                    'field' => 'uid_local',
+                    'width' => '45',
+                    'height' => '45c',
+                  ),
+                  'enabledControls' => 
+                  array (
+                    'info' => true,
+                    'new' => false,
+                    'dragdrop' => true,
+                    'sort' => false,
+                    'hide' => true,
+                    'delete' => true,
+                  ),
+                  'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:images.addFileReference',
+                ),
+              ),
+            ),
           ),
         ),
         'contentelement_ghp' => 
@@ -15138,6 +15244,191 @@ return array (
           array (
             'type' => 'input',
             'size' => 30,
+            'eval' => 'trim',
+          ),
+        ),
+      ),
+    ),
+    'tx_teme_domain_model_textex' => 
+    array (
+      'ctrl' => 
+      array (
+        'title' => 'LLL:EXT:teme/Resources/Private/Language/locallang_db.xlf:tx_teme_domain_model_textex',
+        'label' => 'title',
+        'tstamp' => 'tstamp',
+        'crdate' => 'crdate',
+        'cruser_id' => 'cruser_id',
+        'versioningWS' => true,
+        'languageField' => 'sys_language_uid',
+        'transOrigPointerField' => 'l10n_parent',
+        'transOrigDiffSourceField' => 'l10n_diffsource',
+        'delete' => 'deleted',
+        'enablecolumns' => 
+        array (
+          'disabled' => 'hidden',
+          'starttime' => 'starttime',
+          'endtime' => 'endtime',
+        ),
+        'searchFields' => 'title,content',
+        'iconfile' => 'EXT:teme/Resources/Public/Icons/tx_teme_domain_model_textex.gif',
+      ),
+      'interface' => 
+      array (
+        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, content',
+      ),
+      'types' => 
+      array (
+        1 => 
+        array (
+          'showitem' => 'sys_language_uid,l10n_parent,l10n_diffsource,hidden,title,content,--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access,starttime,endtime',
+        ),
+      ),
+      'columns' => 
+      array (
+        'sys_language_uid' => 
+        array (
+          'exclude' => true,
+          'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.language',
+          'config' => 
+          array (
+            'type' => 'select',
+            'renderType' => 'selectSingle',
+            'special' => 'languages',
+            'items' => 
+            array (
+              0 => 
+              array (
+                0 => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.allLanguages',
+                1 => -1,
+                2 => 'flags-multiple',
+              ),
+            ),
+            'default' => 0,
+          ),
+        ),
+        'l10n_parent' => 
+        array (
+          'displayCond' => 'FIELD:sys_language_uid:>:0',
+          'exclude' => true,
+          'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.l18n_parent',
+          'config' => 
+          array (
+            'type' => 'select',
+            'renderType' => 'selectSingle',
+            'default' => 0,
+            'items' => 
+            array (
+              0 => 
+              array (
+                0 => '',
+                1 => 0,
+              ),
+            ),
+            'foreign_table' => 'tx_teme_domain_model_textex',
+            'foreign_table_where' => 'AND `tx_teme_domain_model_textex`.`pid`=###CURRENT_PID### AND `tx_teme_domain_model_textex`.`sys_language_uid` IN (-1,0)',
+          ),
+        ),
+        'l10n_diffsource' => 
+        array (
+          'config' => 
+          array (
+            'type' => 'passthrough',
+          ),
+        ),
+        't3ver_label' => 
+        array (
+          'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.versionLabel',
+          'config' => 
+          array (
+            'type' => 'input',
+            'size' => 30,
+            'max' => 255,
+          ),
+        ),
+        'hidden' => 
+        array (
+          'exclude' => true,
+          'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.visible',
+          'config' => 
+          array (
+            'type' => 'check',
+            'renderType' => 'checkboxToggle',
+            'items' => 
+            array (
+              0 => 
+              array (
+                0 => '',
+                1 => '',
+                'invertStateDisplay' => true,
+              ),
+            ),
+          ),
+        ),
+        'starttime' => 
+        array (
+          'exclude' => true,
+          'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.starttime',
+          'config' => 
+          array (
+            'type' => 'input',
+            'renderType' => 'inputDateTime',
+            'eval' => 'datetime,int',
+            'default' => 0,
+            'behaviour' => 
+            array (
+              'allowLanguageSynchronization' => true,
+            ),
+          ),
+        ),
+        'endtime' => 
+        array (
+          'exclude' => true,
+          'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.endtime',
+          'config' => 
+          array (
+            'type' => 'input',
+            'renderType' => 'inputDateTime',
+            'eval' => 'datetime,int',
+            'default' => 0,
+            'range' => 
+            array (
+              'upper' => 2145913200,
+            ),
+            'behaviour' => 
+            array (
+              'allowLanguageSynchronization' => true,
+            ),
+          ),
+        ),
+        'title' => 
+        array (
+          'exclude' => true,
+          'label' => 'LLL:EXT:teme/Resources/Private/Language/locallang_db.xlf:tx_teme_domain_model_textex.title',
+          'config' => 
+          array (
+            'type' => 'input',
+            'size' => 30,
+            'eval' => 'trim',
+          ),
+        ),
+        'content' => 
+        array (
+          'exclude' => true,
+          'label' => 'LLL:EXT:teme/Resources/Private/Language/locallang_db.xlf:tx_teme_domain_model_textex.content',
+          'config' => 
+          array (
+            'type' => 'text',
+            'enableRichtext' => true,
+            'richtextConfiguration' => 'default',
+            'fieldControl' => 
+            array (
+              'fullScreenRichtext' => 
+              array (
+                'disabled' => false,
+              ),
+            ),
+            'cols' => 40,
+            'rows' => 15,
             'eval' => 'trim',
           ),
         ),
