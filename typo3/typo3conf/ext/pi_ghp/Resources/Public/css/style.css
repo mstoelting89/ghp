@@ -10,6 +10,11 @@ body {
     width:100px;
     height:inherit;
 }
+
+.navbar-toggler-icon {
+    border-radius:5px;
+}
+
 .navbar-nav {
    /* position:absolute;
     right:50px;*/
@@ -54,6 +59,7 @@ body {
 
 .navbar-toggler {
     z-index:10000;
+    font-size:1.75rem;
 }
 
 .nav-item {
@@ -95,6 +101,10 @@ body {
 .navbar-brand {
     display:none;
 }
+.custom-toggler .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
 
 .header-content {
     background-size: cover;
@@ -106,7 +116,6 @@ body {
 
 .header-title {
     position:absolute;
-    bottom:30vh;
     left:6vw;
     background-color: rgba(255,255,255,.8);
     color:#000;
@@ -114,8 +123,8 @@ body {
     padding-left:1rem;
     padding-right:3rem;
     padding-bottom:3rem;
-    min-width: 60vw;
-    max-width: 60vw;
+    min-width: 96vw;
+    max-width: 96vw;
     display:flex;
     border-radius: 5px;
 }
@@ -244,6 +253,100 @@ body {
 /*************************************/
 
 .sidebars {
+    position:relative;
+    z-index: 20000;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.sidebar-item {
+    background-color: #b20027;
+    border-radius: 5px;
+    transition: all 2s ease-in-out;
+    margin-right:3rem;
+    position: relative;
+    flex-grow: 1;
+}
+
+.sidebar-title {
+    text-align: center;
+    color: #fff;
+    padding: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.sidebar-content {
+    position:absolute;
+    max-height:30rem;
+    min-height:30rem;
+    width:320px;
+    background-color: #fff;
+    border:2px  solid #b20027;
+    display:none;
+    transition: all 2s ease-in-out;
+    right:0;
+}
+
+.sidebar-content.active {
+    display:block;
+}
+
+.fade-in {
+    animation: fadeIn ease 2s;
+    -webkit-animation: fadeIn ease 2s;
+    -moz-animation: fadeIn ease 2s;
+    -o-animation: fadeIn ease 2s;
+    -ms-animation: fadeIn ease 2s;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity:0;
+    }
+    100% {
+        opacity:1;
+    }
+}
+
+@-moz-keyframes fadeIn {
+    0% {
+        opacity:0;
+    }
+    100% {
+        opacity:1;
+    }
+}
+
+@-webkit-keyframes fadeIn {
+    0% {
+        opacity:0;
+    }
+    100% {
+        opacity:1;
+    }
+}
+
+@-o-keyframes fadeIn {
+    0% {
+        opacity:0;
+    }
+    100% {
+        opacity:1;
+    }
+}
+
+@-ms-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+/*
+.sidebars {
     position:fixed;
     bottom:0;
     right:0;
@@ -293,6 +396,7 @@ body {
     background-color:#fff;
     border: 2px solid black;
 }
+*/
 
 /*************************************/
 /*          Footer                   */
@@ -407,10 +511,9 @@ footer .secondary-menu a {
     /*************************************/
     /*          Sidebar                  */
     /*************************************/
-
+    /*
     .sidebars {
         position:fixed;
-        /*top:0;*/
         bottom:30vh;
         right:0;
         left:inherit;
@@ -456,10 +559,6 @@ footer .secondary-menu a {
     .sidebar-content {
         position: relative;
         display: inline-block;
-        /*max-height: 70vh;
-        min-height: 70vh;
-        margin-top: -40vh;
-        margin-bottom: -40vh;*/
         max-height: 30rem;
         min-height: 30rem;
         margin-top: -17rem;
@@ -471,7 +570,7 @@ footer .secondary-menu a {
         z-index:3000;
         border: 2px solid black;
     }
-
+    */
     /*************************************/
     /*          Blog-Posts               */
     /*************************************/
@@ -491,6 +590,8 @@ footer .secondary-menu a {
     }
 }
 
+
+
 /*************************************/
 /*          Desktop                  */
 /*************************************/
@@ -503,5 +604,21 @@ footer .secondary-menu a {
 
     #navbarNav {
         height:70px;
+    }
+
+    .header-title {
+        position:absolute;
+        bottom:30vh;
+        left:6vw;
+        background-color: rgba(255,255,255,.8);
+        color:#000;
+        padding-top:1rem;
+        padding-left:1rem;
+        padding-right:3rem;
+        padding-bottom:3rem;
+        min-width: 60vw;
+        max-width: 60vw;
+        display:flex;
+        border-radius: 5px;
     }
 }

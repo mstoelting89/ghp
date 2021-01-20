@@ -1,7 +1,7 @@
-<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
-      xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers"
-      data-namespace-typo3-fluid="true">
 
+<f:layout name="Default" />
+
+<f:section name="Header">
     <header>
         <!--<div class="header-content" style="background-image: url({image})">-->
         <div class="header-content header-bg-image">
@@ -23,6 +23,10 @@
         </div>
         -->
     </header>
+</f:section>
+
+<f:section name="Main">
+
 
     <main>
         <!--<div class="container" style="display:flex;">-->
@@ -32,16 +36,17 @@
                 <div class="col-md-4 content-margin">{contentMargin -> f:format.raw()}</div>
             </f:then>
             <f:else>
-                <div class="col-md-12 content-main">
+                <div class="col-md-11 content-main">
                     {contentMain -> f:format.raw()}
                 </div>
-                {contentNavigation -> f:format.raw()}
+
             </f:else>
         </f:if>
         <!--</div>-->
-        <f:render partial="Nav/Sidebars" arguments="{_all}"></f:render>
-    </main>
 
+    </main>
+</f:section>
+<f:section name="Footer">
     <footer>
         <div class="sub-text-footer pt-3 pb-3">
             {footerLabel -> f:format.raw()}
@@ -56,5 +61,4 @@
 
         </div>
     </footer>
-
-</html>
+</f:section>

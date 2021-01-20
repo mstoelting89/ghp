@@ -4,13 +4,19 @@
     <a class="navbar-brand" href="#">
         {logoScroll -> f:format.raw()}
     </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+    <button class="custom-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+        <span class="custom-toggler navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
 
         {menuPrimary -> f:format.raw()}
 
     </div>
+    <div class="sidebars justify-content-end">
+        <f:render partial="Nav/Sidebars" arguments="{_all}"></f:render>
+    </div>
 </nav>
+
+
+

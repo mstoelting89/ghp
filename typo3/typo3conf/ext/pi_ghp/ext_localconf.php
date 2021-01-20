@@ -9,11 +9,11 @@ call_user_func(
             'Michael.PiGhp',
             'Pi',
             [
-                'GuitarHeartsProject' => 'list, show'
+                \Michael\PiGhp\Controller\GuitarHeartsProjectController::class => 'list, show'
             ],
             // non-cacheable actions
             [
-                'GuitarHeartsProject' => ''
+                \Michael\PiGhp\Controller\GuitarHeartsProjectController::class => ''
             ]
         );
 
@@ -36,6 +36,44 @@ call_user_func(
         );
 
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig(
+            'mod.wizards.newContentElement.wizardItems {
+              // add the content element to the tab "common"
+              plugins {
+                elements {
+                  TitleCard {
+                    iconIdentifier = content-text
+                    title = Titel
+                    description = Beschreibung
+                    tt_content_defValues {
+                        CType = list
+                        list_type = pighp_titlecard
+                    }
+                  }
+                }
+                show := addToList(pighp_titelcard)
+              }
+            }'
+
+        );
+        /*
+                    'mod {
+                        wizards.newContentElement.wizardItems.common {
+                            elements {
+                                TitleCard {
+                                    iconIdentifier = pi_ghp-plugin-pi
+                                    title = Titel Card
+                                    description = Card und so
+                                    tt_content_defValues {
+                                        CType = list
+                                        list_type = pighp_titelcard
+                                    }
+                                }
+                            }
+                            show = *
+                        }
+                    }'
+                    */
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig(
             'mod {
                 wizards.newContentElement.wizardItems.plugins {
                     elements {
@@ -51,6 +89,7 @@ call_user_func(
                     }
                     show = *
                 }
+
            }'
         );
 		$iconRegistry = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Imaging\IconRegistry::class);
@@ -61,6 +100,19 @@ call_user_func(
 				['source' => 'EXT:pi_ghp/Resources/Public/Icons/user_plugin_pi.svg']
 			);
 
+        \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+            'Michael.PiGhp',
+            'TitleCard',
+            [
+                \Michael\PiGhp\Controller\GuitarHeartsProjectController::class => 'card'
+            ],
+            // non-cacheable actions
+            [
+                \Michael\PiGhp\Controller\GuitarHeartsProjectController::class => ''
+            ]
+        );
 
     }
+
+
 );

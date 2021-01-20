@@ -1,0 +1,68 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+<f:layout name="Default" />
+
+<f:section name="Header">
+    <header>
+        <!--<div class="header-content" style="background-image: url({image})">-->
+        <div class="header-content header-bg-image">
+            <f:render partial="Nav/Navbar" arguments="{_all}"></f:render>
+
+
+            <div class="row header-title align-items-center">
+                <div class="col-4 col-md-4 col-lg-4 logo-align">
+                    {logo -> f:format.raw()}
+                </div>
+                <div class="col-12 col-md-12 col-lg-8">
+                    {contentTrailer -> f:format.raw()}
+                </div>
+            </div>
+        </div>
+        <!--
+        <div class="breadcrumb-container">
+            {menuBreadcrumb -> f:format.raw()}
+        </div>
+        -->
+    </header>
+</f:section>
+
+<f:section name="Main">
+
+
+    <main>
+        <!--<div class="container" style="display:flex;">-->
+        <f:if condition="{contentMargin}">
+            <f:then>
+                <div class="col-md-8 content-main">{contentMain -> f:format.raw()}</div>
+                <div class="col-md-4 content-margin">{contentMargin -> f:format.raw()}</div>
+            </f:then>
+            <f:else>
+                <div class="col-md-11 content-main">
+                    {contentMain -> f:format.raw()}
+                </div>
+
+            </f:else>
+        </f:if>
+        <!--</div>-->
+
+    </main>
+</f:section>
+<f:section name="Footer">
+    <footer>
+        <div class="sub-text-footer pt-3 pb-3">
+            {footerLabel -> f:format.raw()}
+        </div>
+
+        <div class="partners">
+            {footerPartners -> f:format.raw()}
+
+        </div>
+        <div class="secondary-menu">
+            {footerSecondaryMenu -> f:format.raw()}
+
+        </div>
+    </footer>
+</f:section>
+
+</html>
