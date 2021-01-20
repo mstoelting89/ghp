@@ -456,6 +456,64 @@ tt_content {
         iconTitle.data = LLL:EXT:fluid_styled_content/Resources/Private/Language/FrontendEditing.xlf:editIcon.textpic
 
       }
+
+      /****
+      * Hier beginngen die Probleme
+      */
+      /*
+      # Einbindung des Contents in der Hauptspalte
+      //contentMain < styles.content.get
+      # Alternative:
+      # Inhalte werden aus tt_content Tabelle gezogen
+      contentMain = CONTENT
+      contentMain {
+      table = tt_content
+      # Datensätze werden in Backend-Reihenfolge ausgelesenssh
+      select.orderBy = sorting
+      select.where = colPos=0
+      select.languageField = sys_language_uid
+      }
+
+      # Holen der Überschirft auf dem Trailer
+      contentTrailer = CONTENT
+      contentTrailer {
+        table = tt_content
+        select.orderBy = sorting
+        select.where = colPos=5
+      }
+
+      bewerben = COA
+      bewerben {
+      10 < styles.content.get
+      10.select.where = colPos = 0
+      10.select.pidInList = 24
+
+      20 = TEXT
+      20.data = DB:pages:24:title
+      }
+
+      spenden = COA
+      spenden {
+        10 < styles.content.get
+        10.select.where = colPos = 0
+        10.select.pidInList = 23
+      }
+      */
+      # Einbindung der Sidebars
+
+
+      # Einbindung des Contents in der rechten Spalte
+      contentMargin = COA
+      contentMargin {
+        10 < styles.content.get
+        10.select.orderBy = sorting
+        10.select.where = colPos=2
+
+        20 < styles.content.get
+        20.select.where = colPos=2
+        20.select.pidInList = 14
+      }
+
     }
   }
 }
