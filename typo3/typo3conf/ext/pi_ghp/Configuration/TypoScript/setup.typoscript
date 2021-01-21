@@ -255,7 +255,7 @@ page {
       * Hier beginngen die Probleme
       */
 
-        /*
+
       # Einbindung des Contents in der Hauptspalte
       //contentMain < styles.content.get
       # Alternative:
@@ -307,12 +307,12 @@ page {
         20.select.where = colPos=2
         20.select.pidInList = 14
       }
-*/
+
     }
   }
 }
 
-
+/*
 lib.dynamicContent = COA
 lib.dynamicContent {
 
@@ -350,7 +350,6 @@ lib.dynamicContent {
   20 {
 
     table = tt_content
-  /*
     select {
       includeRecordsWithoutDefaultTranslation = 1
       orderBy = sorting
@@ -364,12 +363,12 @@ lib.dynamicContent {
       dataWrap = {register:wrap}
       required = 1
     }
-*/
+
   }
 
   90 = RESTORE_REGISTER
 }
-
+*/
 lib.contentElement {
   partialRootPaths {
     10 = EXT:pi_ghp/Resources/Private/Partials/
