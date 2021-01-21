@@ -250,24 +250,6 @@ page {
           additionalParams = &L=1
         }
       }
-
-      /****
-      * Hier beginngen die Probleme
-      */
-
-
-      # Einbindung des Contents in der Hauptspalte
-      //contentMain < styles.content.get
-      # Alternative:
-      # Inhalte werden aus tt_content Tabelle gezogen
-      contentMain = CONTENT
-      contentMain {
-      table = tt_content
-      select.orderBy = sorting
-      select.where = colPos=0
-      select.languageField = sys_language_uid
-      }
-
       # Holen der Überschirft auf dem Trailer
       contentTrailer = CONTENT
       contentTrailer {
@@ -275,8 +257,6 @@ page {
         select.orderBy = sorting
         select.where = colPos=5
       }
-
-
 
       spenden = COA
       spenden {
@@ -294,6 +274,22 @@ page {
 
         20 = TEXT
         20.data = DB:pages:24:title
+      }
+      /****
+      * Hier beginngen die Probleme
+      */
+
+
+      # Einbindung des Contents in der Hauptspalte
+      //contentMain < styles.content.get
+      # Alternative:
+      # Inhalte werden aus tt_content Tabelle gezogen
+      contentMain = CONTENT
+      contentMain {
+        table = tt_content
+        select.orderBy = sorting
+        select.where = colPos=0
+        select.languageField = sys_language_uid
       }
 
       # Einbindung des Contents in der rechten Spalte
