@@ -9,11 +9,11 @@ call_user_func(
             'Michael.PiGhp',
             'Pi',
             [
-                \Michael\PiGhp\Controller\GuitarHeartsProjectController::class => 'list, show'
+                'GuitarHeartsProjectController' => 'list, show'
             ],
             // non-cacheable actions
             [
-                \Michael\PiGhp\Controller\GuitarHeartsProjectController::class => ''
+                'GuitarHeartsProjectController' => ''
             ]
         );
 
@@ -104,11 +104,11 @@ call_user_func(
             'Michael.PiGhp',
             'TitleCard',
             [
-                \Michael\PiGhp\Controller\GuitarHeartsProjectController::class => 'card'
+               'GuitarHeartsProjectController' => 'card'
             ],
             // non-cacheable actions
             [
-                \Michael\PiGhp\Controller\GuitarHeartsProjectController::class => ''
+                'GuitarHeartsProjectController' => ''
             ]
         );
 
