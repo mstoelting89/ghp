@@ -38,7 +38,21 @@ call_user_func(
         );
 
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig(
-            '<INCLUDE_TYPOSCRIPT: source="FILE:EXT:pi_ghp/Configuration/TsConfig/Page/Mod/Wizards/SideHeaderContent.tsconfig">'
+            'mod {
+                wizards.newContentElement.wizardItems.common {
+                    elements {
+                      sideHeaderContent {
+                        iconIdentifier = content-text
+                        title = LLL:EXT:ghp/Resources/Private/Language/locallang.xlf:sideHeaderContent_title
+                        description = LLL:EXT:ghp/Resources/Private/Language/locallang.xlf:sideHeaderContent_description
+                        tt_content_defValues {
+                          CType = sideHeaderContent
+                        }
+                      }
+                    }
+                     show := addToList(sideHeaderContent)
+                }
+            }'
         );
 
 		$iconRegistry = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Imaging\IconRegistry::class);

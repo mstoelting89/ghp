@@ -902,14 +902,33 @@ call_user_func(
                 }
            }'
         );
+
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig(
+            'mod {
+                wizards.newContentElement.wizardItems.common {
+                    elements {
+                      sideHeaderContent {
+                        iconIdentifier = content-text
+                        title = LLL:EXT:ghp/Resources/Private/Language/locallang.xlf:sideHeaderContent_title
+                        description = LLL:EXT:ghp/Resources/Private/Language/locallang.xlf:sideHeaderContent_description
+                        tt_content_defValues {
+                          CType = sideHeaderContent
+                        }
+                      }
+                    }
+                     show := addToList(sideHeaderContent)
+                }
+            }'
+        );
+
 		$iconRegistry = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Imaging\IconRegistry::class);
-		
+
 			$iconRegistry->registerIcon(
 				'ghp-plugin-pi',
 				\TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
 				['source' => 'EXT:ghp/Resources/Public/Icons/user_plugin_pi.svg']
 			);
-		
+
     }
 );
 
