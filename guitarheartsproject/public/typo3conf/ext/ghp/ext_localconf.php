@@ -38,7 +38,7 @@ call_user_func(
         );
 
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig(
-            '<INCLUDE_TYPOSCRIPT: source="FILE:EXT:pi_ghp/Configuration/TsConfig/Page/Mod/Wizards/SideHeaderContent.tsconfig">'
+            '<INCLUDE_TYPOSCRIPT: source="FILE:EXT:ghp/Configuration/TsConfig/Page/Mod/Wizards/SideHeaderContent.tsconfig">'
         );
 
 		$iconRegistry = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Imaging\IconRegistry::class);
