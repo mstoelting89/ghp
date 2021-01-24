@@ -91,13 +91,22 @@ page {
     layoutRootPaths {
       10 = EXT:ghp/Resources/Private/Layouts/
     }
+    dataProcessing {
+      10 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+      10 {
+        special = directory
+        special.value = 4
+        as = sidebars
+      }
+    }
+
     variables {
       # Einbindung fixes Logo
       logo = IMAGE
-      logo.file = fileadmin/images/images/BilderLars/1548x1026.png
+      logo.file = fileadmin/images/BilderLars/1548x1026.png
 
       logoScroll = IMAGE
-      logoScroll.file = fileadmin/images/images/BilderLars/ghp_text_white.png
+      logoScroll.file = fileadmin/images/BilderLars/ghp_text_white.png
       logoScroll.file.width = 200px;
 
       # Einbindung Navbar
@@ -137,6 +146,31 @@ page {
         2 {
           wrap = <ul class="dropdown-menu">|</ul>
         }
+      }
+
+      contentTrailer = CONTENT
+      contentTrailer {
+        table = tt_content
+        select.orderBy = sorting
+        select.where = colPos=5
+      }
+
+      spenden = COA
+      spenden {
+        10 < styles.content.get
+        10.select.where = colPos = 0
+        10.select.pidInList = 6
+      }
+
+      # Einbindung der Sidebars
+      bewerben = COA
+      bewerben {
+        10 < styles.content.get
+        10.select.where = colPos = 0
+        10.select.pidInList = 5
+
+        20 = TEXT
+        20.data = DB:pages:5:title
       }
 
       contentMain = CONTENT
@@ -182,6 +216,16 @@ lib.contentElement {
   templateRootPaths {
     10 = EXT:ghp/Resources/Private/Templates/
   }
+}
+
+lib.sidebarcontent = CONTENT
+lib.sidebarcontent {
+  table = tt_content
+  select.pidInList = {field:uid}
+  select.pidInList.insertData = 1
+
+  renderObj = TEXT
+  renderObj.field = bodytext
 }
 
 # these classes are only used in auto-generated templates

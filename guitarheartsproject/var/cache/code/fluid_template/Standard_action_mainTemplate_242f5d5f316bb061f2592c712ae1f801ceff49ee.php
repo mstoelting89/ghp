@@ -1,6 +1,6 @@
 <?php
 
-class Standard_action_mainTemplate_07334af26b216ce9a37f18ba92cb1f7ff9927ce4 extends \TYPO3Fluid\Fluid\Core\Compiler\AbstractCompiledTemplate {
+class Standard_action_mainTemplate_242f5d5f316bb061f2592c712ae1f801ceff49ee extends \TYPO3Fluid\Fluid\Core\Compiler\AbstractCompiledTemplate {
 
 public function getLayoutName(\TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface $renderingContext) {
 $self = $this;
@@ -72,7 +72,6 @@ $output0 .= '
 
             <div class="row header-title align-items-center">
                 <div class="col-4 col-md-4 col-lg-4 logo-align">
-                    <!--
                     ';
 // Rendering ViewHelper TYPO3Fluid\Fluid\ViewHelpers\Format\RawViewHelper
 $renderChildrenClosure6 = function() use ($renderingContext, $self) {
@@ -85,10 +84,8 @@ $arguments5['value'] = NULL;
 $output0 .= isset($arguments5['value']) ? $arguments5['value'] : $renderChildrenClosure6();
 
 $output0 .= '
-                     -->
                 </div>
                 <div class="col-12 col-md-12 col-lg-8">
-                <!--
                     ';
 // Rendering ViewHelper TYPO3Fluid\Fluid\ViewHelpers\Format\RawViewHelper
 $renderChildrenClosure9 = function() use ($renderingContext, $self) {
@@ -101,7 +98,6 @@ $arguments8['value'] = NULL;
 $output0 .= isset($arguments8['value']) ? $arguments8['value'] : $renderChildrenClosure9();
 
 $output0 .= '
-                     -->
                 </div>
             </div>
         </div>
@@ -431,7 +427,6 @@ $output62 .= '
 
             <div class="row header-title align-items-center">
                 <div class="col-4 col-md-4 col-lg-4 logo-align">
-                    <!--
                     ';
 // Rendering ViewHelper TYPO3Fluid\Fluid\ViewHelpers\Format\RawViewHelper
 $renderChildrenClosure68 = function() use ($renderingContext, $self) {
@@ -444,10 +439,8 @@ $arguments67['value'] = NULL;
 $output62 .= isset($arguments67['value']) ? $arguments67['value'] : $renderChildrenClosure68();
 
 $output62 .= '
-                     -->
                 </div>
                 <div class="col-12 col-md-12 col-lg-8">
-                <!--
                     ';
 // Rendering ViewHelper TYPO3Fluid\Fluid\ViewHelpers\Format\RawViewHelper
 $renderChildrenClosure71 = function() use ($renderingContext, $self) {
@@ -460,7 +453,6 @@ $arguments70['value'] = NULL;
 $output62 .= isset($arguments70['value']) ? $arguments70['value'] : $renderChildrenClosure71();
 
 $output62 .= '
-                     -->
                 </div>
             </div>
         </div>
