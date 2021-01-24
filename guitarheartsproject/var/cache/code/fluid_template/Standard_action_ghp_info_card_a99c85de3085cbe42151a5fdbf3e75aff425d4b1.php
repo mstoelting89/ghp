@@ -1,6 +1,6 @@
 <?php
 
-class Standard_action_ghp_info_card_e036b5006bd0cc5521049f14207c9b34848b63df extends \TYPO3Fluid\Fluid\Core\Compiler\AbstractCompiledTemplate {
+class Standard_action_ghp_info_card_a99c85de3085cbe42151a5fdbf3e75aff425d4b1 extends \TYPO3Fluid\Fluid\Core\Compiler\AbstractCompiledTemplate {
 
 public function getLayoutName(\TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface $renderingContext) {
 $self = $this;
@@ -192,38 +192,69 @@ $output0 .= '
 <div class="row info-items">
     <div class="col-md-5 flex align-self-center">
         ';
-// Rendering ViewHelper TYPO3\CMS\Fluid\ViewHelpers\MediaViewHelper
+// Rendering ViewHelper TYPO3Fluid\Fluid\ViewHelpers\IfViewHelper
 $renderChildrenClosure30 = function() use ($renderingContext, $self) {
+$output34 = '';
+
+$output34 .= '
+            ';
+// Rendering ViewHelper TYPO3\CMS\Fluid\ViewHelpers\MediaViewHelper
+$renderChildrenClosure36 = function() use ($renderingContext, $self) {
 return NULL;
 };
-$arguments29 = array();
-$arguments29['additionalAttributes'] = NULL;
-$arguments29['data'] = NULL;
-$arguments29['class'] = NULL;
-$arguments29['dir'] = NULL;
-$arguments29['id'] = NULL;
-$arguments29['lang'] = NULL;
-$arguments29['style'] = NULL;
-$arguments29['title'] = NULL;
-$arguments29['accesskey'] = NULL;
-$arguments29['tabindex'] = NULL;
-$arguments29['onclick'] = NULL;
-$arguments29['alt'] = NULL;
-$arguments29['file'] = NULL;
-$arguments29['additionalConfig'] = array (
+$arguments35 = array();
+$arguments35['additionalAttributes'] = NULL;
+$arguments35['data'] = NULL;
+$arguments35['class'] = NULL;
+$arguments35['dir'] = NULL;
+$arguments35['id'] = NULL;
+$arguments35['lang'] = NULL;
+$arguments35['style'] = NULL;
+$arguments35['title'] = NULL;
+$arguments35['accesskey'] = NULL;
+$arguments35['tabindex'] = NULL;
+$arguments35['onclick'] = NULL;
+$arguments35['alt'] = NULL;
+$arguments35['file'] = NULL;
+$arguments35['additionalConfig'] = array (
 );
-$arguments29['width'] = NULL;
-$arguments29['height'] = NULL;
-$arguments29['cropVariant'] = 'default';
-$arguments29['fileExtension'] = NULL;
-$arguments29['loading'] = NULL;
-$arguments29['class'] = 'image-embed-item';
-$array31 = array (
-);$arguments29['file'] = $renderingContext->getVariableProvider()->getByPath('files.0', $array31);
-$arguments29['width'] = 400;
-$arguments29['height'] = 400;
+$arguments35['width'] = NULL;
+$arguments35['height'] = NULL;
+$arguments35['cropVariant'] = 'default';
+$arguments35['fileExtension'] = NULL;
+$arguments35['loading'] = NULL;
+$arguments35['class'] = 'image-embed-item';
+$array37 = array (
+);$arguments35['file'] = $renderingContext->getVariableProvider()->getByPath('files.0', $array37);
+$arguments35['width'] = 400;
+$arguments35['height'] = 400;
 
-$output0 .= TYPO3\CMS\Fluid\ViewHelpers\MediaViewHelper::renderStatic($arguments29, $renderChildrenClosure30, $renderingContext);
+$output34 .= TYPO3\CMS\Fluid\ViewHelpers\MediaViewHelper::renderStatic($arguments35, $renderChildrenClosure36, $renderingContext);
+
+$output34 .= '
+        ';
+return $output34;
+};
+$arguments29 = array();
+$arguments29['then'] = NULL;
+$arguments29['else'] = NULL;
+$arguments29['condition'] = false;
+// Rendering Boolean node
+// Rendering Array
+$array31 = array();
+$array32 = array (
+);$array31['0'] = $renderingContext->getVariableProvider()->getByPath('files.0', $array32);
+
+$expression33 = function($context) {return TYPO3Fluid\Fluid\Core\Parser\BooleanParser::convertNodeToBoolean($context["node0"]);};
+$arguments29['condition'] = TYPO3Fluid\Fluid\Core\Parser\SyntaxTree\BooleanNode::convertToBoolean(
+					$expression33(
+						TYPO3Fluid\Fluid\Core\Parser\SyntaxTree\BooleanNode::gatherContext($renderingContext, $array31)
+					),
+					$renderingContext
+				);
+$arguments29['__thenClosure'] = $renderChildrenClosure30;
+
+$output0 .= TYPO3Fluid\Fluid\ViewHelpers\IfViewHelper::renderStatic($arguments29, $renderChildrenClosure30, $renderingContext);
 
 $output0 .= '
     </div>
@@ -232,14 +263,14 @@ $output0 .= '
     <div class="col-md-5">
         ';
 // Rendering ViewHelper TYPO3Fluid\Fluid\ViewHelpers\Format\RawViewHelper
-$renderChildrenClosure33 = function() use ($renderingContext, $self) {
-$array34 = array (
-);return $renderingContext->getVariableProvider()->getByPath('data.bodytext', $array34);
+$renderChildrenClosure39 = function() use ($renderingContext, $self) {
+$array40 = array (
+);return $renderingContext->getVariableProvider()->getByPath('data.bodytext', $array40);
 };
-$arguments32 = array();
-$arguments32['value'] = NULL;
+$arguments38 = array();
+$arguments38['value'] = NULL;
 
-$output0 .= isset($arguments32['value']) ? $arguments32['value'] : $renderChildrenClosure33();
+$output0 .= isset($arguments38['value']) ? $arguments38['value'] : $renderChildrenClosure39();
 
 $output0 .= '
     </div>
@@ -247,101 +278,101 @@ $output0 .= '
 
 ';
 // Rendering ViewHelper TYPO3Fluid\Fluid\ViewHelpers\SwitchViewHelper
-$renderChildrenClosure36 = function() use ($renderingContext, $self) {
-$output50 = '';
+$renderChildrenClosure42 = function() use ($renderingContext, $self) {
+$output56 = '';
 
-$output50 .= '
-    ';
-// Rendering ViewHelper TYPO3Fluid\Fluid\ViewHelpers\CaseViewHelper
-$renderChildrenClosure52 = function() use ($renderingContext, $self) {
-return '
-        <div class="row ghp-mb-0"></div>
-    ';
-};
-$arguments51 = array();
-$arguments51['value'] = NULL;
-$arguments51['value'] = '';
-
-$output50 .= '';
-
-$output50 .= '
-    ';
-// Rendering ViewHelper TYPO3Fluid\Fluid\ViewHelpers\CaseViewHelper
-$renderChildrenClosure54 = function() use ($renderingContext, $self) {
-return '
-        <div class="row ghp-mb-1"></div>
-    ';
-};
-$arguments53 = array();
-$arguments53['value'] = NULL;
-$arguments53['value'] = 'extra-small';
-
-$output50 .= '';
-
-$output50 .= '
-    ';
-// Rendering ViewHelper TYPO3Fluid\Fluid\ViewHelpers\CaseViewHelper
-$renderChildrenClosure56 = function() use ($renderingContext, $self) {
-return '
-        <div class="row ghp-mb-2"></div>
-    ';
-};
-$arguments55 = array();
-$arguments55['value'] = NULL;
-$arguments55['value'] = 'small';
-
-$output50 .= '';
-
-$output50 .= '
+$output56 .= '
     ';
 // Rendering ViewHelper TYPO3Fluid\Fluid\ViewHelpers\CaseViewHelper
 $renderChildrenClosure58 = function() use ($renderingContext, $self) {
 return '
-        <div class="row ghp-mb-3"></div>
+        <div class="row ghp-mb-0"></div>
     ';
 };
 $arguments57 = array();
 $arguments57['value'] = NULL;
-$arguments57['value'] = 'medium';
+$arguments57['value'] = '';
 
-$output50 .= '';
+$output56 .= '';
 
-$output50 .= '
+$output56 .= '
     ';
 // Rendering ViewHelper TYPO3Fluid\Fluid\ViewHelpers\CaseViewHelper
 $renderChildrenClosure60 = function() use ($renderingContext, $self) {
 return '
-        <div class="row ghp-mb-4"></div>
+        <div class="row ghp-mb-1"></div>
     ';
 };
 $arguments59 = array();
 $arguments59['value'] = NULL;
-$arguments59['value'] = 'large';
+$arguments59['value'] = 'extra-small';
 
-$output50 .= '';
+$output56 .= '';
 
-$output50 .= '
+$output56 .= '
     ';
 // Rendering ViewHelper TYPO3Fluid\Fluid\ViewHelpers\CaseViewHelper
 $renderChildrenClosure62 = function() use ($renderingContext, $self) {
 return '
-        <div class="row ghp-mb-5"></div>
+        <div class="row ghp-mb-2"></div>
     ';
 };
 $arguments61 = array();
 $arguments61['value'] = NULL;
-$arguments61['value'] = 'extra-large';
+$arguments61['value'] = 'small';
 
-$output50 .= '';
+$output56 .= '';
 
-$output50 .= '
-';
-return $output50;
+$output56 .= '
+    ';
+// Rendering ViewHelper TYPO3Fluid\Fluid\ViewHelpers\CaseViewHelper
+$renderChildrenClosure64 = function() use ($renderingContext, $self) {
+return '
+        <div class="row ghp-mb-3"></div>
+    ';
 };
-$arguments35 = array();
-$arguments35['expression'] = NULL;
-$array49 = array (
-);$arguments35['expression'] = $renderingContext->getVariableProvider()->getByPath('data.space_after_class', $array49);
+$arguments63 = array();
+$arguments63['value'] = NULL;
+$arguments63['value'] = 'medium';
+
+$output56 .= '';
+
+$output56 .= '
+    ';
+// Rendering ViewHelper TYPO3Fluid\Fluid\ViewHelpers\CaseViewHelper
+$renderChildrenClosure66 = function() use ($renderingContext, $self) {
+return '
+        <div class="row ghp-mb-4"></div>
+    ';
+};
+$arguments65 = array();
+$arguments65['value'] = NULL;
+$arguments65['value'] = 'large';
+
+$output56 .= '';
+
+$output56 .= '
+    ';
+// Rendering ViewHelper TYPO3Fluid\Fluid\ViewHelpers\CaseViewHelper
+$renderChildrenClosure68 = function() use ($renderingContext, $self) {
+return '
+        <div class="row ghp-mb-5"></div>
+    ';
+};
+$arguments67 = array();
+$arguments67['value'] = NULL;
+$arguments67['value'] = 'extra-large';
+
+$output56 .= '';
+
+$output56 .= '
+';
+return $output56;
+};
+$arguments41 = array();
+$arguments41['expression'] = NULL;
+$array55 = array (
+);$arguments41['expression'] = $renderingContext->getVariableProvider()->getByPath('data.space_after_class', $array55);
 
 $output0 .= call_user_func_array(function($arguments) use ($renderingContext, $self) {
 switch ($arguments['expression']) {
@@ -394,106 +425,106 @@ return '
     ';
 });
 }
-}, array($arguments35));
+}, array($arguments41));
 
 $output0 .= '
 ';
 // Rendering ViewHelper TYPO3Fluid\Fluid\ViewHelpers\SwitchViewHelper
-$renderChildrenClosure64 = function() use ($renderingContext, $self) {
-$output78 = '';
+$renderChildrenClosure70 = function() use ($renderingContext, $self) {
+$output84 = '';
 
-$output78 .= '
-    ';
-// Rendering ViewHelper TYPO3Fluid\Fluid\ViewHelpers\CaseViewHelper
-$renderChildrenClosure80 = function() use ($renderingContext, $self) {
-return '
-        <div class="row ghp-mb-0"></div>
-    ';
-};
-$arguments79 = array();
-$arguments79['value'] = NULL;
-$arguments79['value'] = '';
-
-$output78 .= '';
-
-$output78 .= '
-    ';
-// Rendering ViewHelper TYPO3Fluid\Fluid\ViewHelpers\CaseViewHelper
-$renderChildrenClosure82 = function() use ($renderingContext, $self) {
-return '
-        <div class="row ghp-mb-1"></div>
-    ';
-};
-$arguments81 = array();
-$arguments81['value'] = NULL;
-$arguments81['value'] = 'extra-small';
-
-$output78 .= '';
-
-$output78 .= '
-    ';
-// Rendering ViewHelper TYPO3Fluid\Fluid\ViewHelpers\CaseViewHelper
-$renderChildrenClosure84 = function() use ($renderingContext, $self) {
-return '
-        <div class="row ghp-mb-2"></div>
-    ';
-};
-$arguments83 = array();
-$arguments83['value'] = NULL;
-$arguments83['value'] = 'small';
-
-$output78 .= '';
-
-$output78 .= '
+$output84 .= '
     ';
 // Rendering ViewHelper TYPO3Fluid\Fluid\ViewHelpers\CaseViewHelper
 $renderChildrenClosure86 = function() use ($renderingContext, $self) {
 return '
-        <div class="row ghp-mb-3"></div>
+        <div class="row ghp-mb-0"></div>
     ';
 };
 $arguments85 = array();
 $arguments85['value'] = NULL;
-$arguments85['value'] = 'medium';
+$arguments85['value'] = '';
 
-$output78 .= '';
+$output84 .= '';
 
-$output78 .= '
+$output84 .= '
     ';
 // Rendering ViewHelper TYPO3Fluid\Fluid\ViewHelpers\CaseViewHelper
 $renderChildrenClosure88 = function() use ($renderingContext, $self) {
 return '
-        <div class="row ghp-mb-4"></div>
+        <div class="row ghp-mb-1"></div>
     ';
 };
 $arguments87 = array();
 $arguments87['value'] = NULL;
-$arguments87['value'] = 'large';
+$arguments87['value'] = 'extra-small';
 
-$output78 .= '';
+$output84 .= '';
 
-$output78 .= '
+$output84 .= '
     ';
 // Rendering ViewHelper TYPO3Fluid\Fluid\ViewHelpers\CaseViewHelper
 $renderChildrenClosure90 = function() use ($renderingContext, $self) {
 return '
-        <div class="row ghp-mb-5"></div>
+        <div class="row ghp-mb-2"></div>
     ';
 };
 $arguments89 = array();
 $arguments89['value'] = NULL;
-$arguments89['value'] = 'extra-large';
+$arguments89['value'] = 'small';
 
-$output78 .= '';
+$output84 .= '';
 
-$output78 .= '
-';
-return $output78;
+$output84 .= '
+    ';
+// Rendering ViewHelper TYPO3Fluid\Fluid\ViewHelpers\CaseViewHelper
+$renderChildrenClosure92 = function() use ($renderingContext, $self) {
+return '
+        <div class="row ghp-mb-3"></div>
+    ';
 };
-$arguments63 = array();
-$arguments63['expression'] = NULL;
-$array77 = array (
-);$arguments63['expression'] = $renderingContext->getVariableProvider()->getByPath('data.space_after_class', $array77);
+$arguments91 = array();
+$arguments91['value'] = NULL;
+$arguments91['value'] = 'medium';
+
+$output84 .= '';
+
+$output84 .= '
+    ';
+// Rendering ViewHelper TYPO3Fluid\Fluid\ViewHelpers\CaseViewHelper
+$renderChildrenClosure94 = function() use ($renderingContext, $self) {
+return '
+        <div class="row ghp-mb-4"></div>
+    ';
+};
+$arguments93 = array();
+$arguments93['value'] = NULL;
+$arguments93['value'] = 'large';
+
+$output84 .= '';
+
+$output84 .= '
+    ';
+// Rendering ViewHelper TYPO3Fluid\Fluid\ViewHelpers\CaseViewHelper
+$renderChildrenClosure96 = function() use ($renderingContext, $self) {
+return '
+        <div class="row ghp-mb-5"></div>
+    ';
+};
+$arguments95 = array();
+$arguments95['value'] = NULL;
+$arguments95['value'] = 'extra-large';
+
+$output84 .= '';
+
+$output84 .= '
+';
+return $output84;
+};
+$arguments69 = array();
+$arguments69['expression'] = NULL;
+$array83 = array (
+);$arguments69['expression'] = $renderingContext->getVariableProvider()->getByPath('data.space_after_class', $array83);
 
 $output0 .= call_user_func_array(function($arguments) use ($renderingContext, $self) {
 switch ($arguments['expression']) {
@@ -546,7 +577,7 @@ return '
     ';
 });
 }
-}, array($arguments63));
+}, array($arguments69));
 
 $output0 .= '
 ';
