@@ -7,7 +7,7 @@ defined('TYPO3_MODE') or die();
     'tt_content',
     'CType',
     [
-        'LLL:EXT:pi_ghp/Resources/Private/Language/locallang.xlf:sideHeaderContent_title',
+        'LLL:EXT:ghp/Resources/Private/Language/locallang.xlf:sideHeaderContent_title',
         'sideHeaderContent',
         'content-text',
     ],
