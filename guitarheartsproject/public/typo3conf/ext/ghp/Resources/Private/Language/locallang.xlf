@@ -16,6 +16,13 @@
 			<trans-unit id="sideHeaderContent_description" resname="sideHeaderContent_description">
 				<source>Inhalt mit Titel an der Seite</source>
 			</trans-unit>
+
+			<trans-unit id="ghp_info_card_title" resname="ghp_info_card_title">
+				<source>Info Card</source>
+			</trans-unit>
+			<trans-unit id="ghp_info_card_description" resname="ghp_info_card_description">
+				<source>Inhaltselement für eine Info Card</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
