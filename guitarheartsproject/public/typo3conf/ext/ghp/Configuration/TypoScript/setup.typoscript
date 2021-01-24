@@ -261,3 +261,11 @@ plugin.tx_ghp._CSS_DEFAULT_STYLE (
         color:green;
     }
 )
+
+tt_content {
+  sideHeaderContent =< lib.contentElement
+  sideHeaderContent {
+    templateName = SideHeaderContent
+  }
+
+}
