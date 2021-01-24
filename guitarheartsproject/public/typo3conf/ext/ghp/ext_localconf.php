@@ -36,13 +36,18 @@ call_user_func(
                 }
            }'
         );
+
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig(
+            '<INCLUDE_TYPOSCRIPT: source="FILE:EXT:pi_ghp/Configuration/TsConfig/Page/Mod/Wizards/SideHeaderContent.tsconfig">'
+        );
+
 		$iconRegistry = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Imaging\IconRegistry::class);
-		
+
 			$iconRegistry->registerIcon(
 				'ghp-plugin-pi',
 				\TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
 				['source' => 'EXT:ghp/Resources/Public/Icons/user_plugin_pi.svg']
 			);
-		
+
     }
 );
