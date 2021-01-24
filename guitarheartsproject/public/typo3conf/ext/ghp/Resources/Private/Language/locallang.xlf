@@ -9,6 +9,13 @@
 			<trans-unit id="tx_ghp_domain_model_guitarheartsproject.titel" resname="tx_ghp_domain_model_guitarheartsproject.titel">
 				<source>Titel</source>
 			</trans-unit>
+
+			<trans-unit id="sideHeaderContent_title" resname="sideHeaderContent_title">
+				<source>Side Header Content</source>
+			</trans-unit>
+			<trans-unit id="sideHeaderContent_description" resname="sideHeaderContent_description">
+				<source>Inhalt mit Titel an der Seite</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
