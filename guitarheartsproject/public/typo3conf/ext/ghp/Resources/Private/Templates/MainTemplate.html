@@ -12,22 +12,13 @@
 
             <div class="row header-title align-items-center">
                 <div class="col-4 col-md-4 col-lg-4 logo-align">
-                    <!--
                     {logo -> f:format.raw()}
-                     -->
                 </div>
                 <div class="col-12 col-md-12 col-lg-8">
-                <!--
                     {contentTrailer -> f:format.raw()}
-                     -->
                 </div>
             </div>
         </div>
-        <!--
-        <div class="breadcrumb-container">
-            {menuBreadcrumb -> f:format.raw()}
-        </div>
-        -->
     </header>
 
 </f:section>
@@ -35,25 +26,9 @@
 <f:section name="Main">
 
     <main>
-        <!--<div class="container" style="display:flex;">-->
-        <f:if condition="{contentMargin}">
-            <f:then>
-                <!--
-                <div class="col-md-8 content-main">{contentMain -> f:format.raw()}</div>
-                <div class="col-md-4 content-margin">{contentMargin -> f:format.raw()}</div>
-                 -->
-            </f:then>
-            <f:else>
-                <div class="col-md-11 content-main">
-
-                    {contentMain -> f:format.raw()}
-
-                </div>
-
-            </f:else>
-        </f:if>
-        <!--</div>-->
-
+        <div class="col-md-11 content-main">
+            {contentMain -> f:format.raw()}
+        </div>
     </main>
 
 </f:section>
