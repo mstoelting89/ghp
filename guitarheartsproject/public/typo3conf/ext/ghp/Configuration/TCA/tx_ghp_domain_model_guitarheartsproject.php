@@ -20,10 +20,10 @@ return [
         'iconfile' => 'EXT:ghp/Resources/Public/Icons/tx_ghp_domain_model_guitarheartsproject.gif'
     ],
     'interface' => [
-        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, titel',
+        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, titel, fadeIn',
     ],
     'types' => [
-        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, titel, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
+        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, titel, fadeIn, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
     ],
     'columns' => [
         'sys_language_uid' => [
@@ -124,6 +124,15 @@ return [
                 'eval' => 'trim'
             ],
         ],
-    
+        'fadeIn' => [
+            'exclude' => false,
+            'label' => 'LLL:EXT:ghp/Resources/Private/Language/locallang_db.xlf:tx_ghp_domain_model_guitarheartsproject.titel',
+            'config' => [
+                'type' => 'input',
+                'size' => 30,
+                'eval' => 'trim'
+            ],
+        ],
+
     ],
 ];
