@@ -1,3 +1,106 @@
+# Allgemeine Konfiguration
+config {
+  # Neuer Parameter L wird in URL eingebaut
+  linkVars = L
+  # darf nur einmal in der URL vorkommen
+  uniqueLinkVars = 1
+  # Defaultwert ist 0
+  sys_language_uid = 0
+  # Auswahl Sprache
+  language = de
+  # Uhrzeit wird auf Sprache eingestellt
+  locale_all = de_DE
+  # Suchindizierung aktivieren
+  index_enable = 1
+  # Indizierung auf externe Medien erweitern
+  index_externals = 1
+}
+
+# Default PAGE object:
+page = PAGE
+
+page {
+
+  # Meta Tags
+  page.config.doctype = html5
+  meta.author = Michael Stoelting
+  meta.description = Dies ist die Webseite des Guitar Hearts Project
+  meta.viewport = width=device-width, initial-scale=1
+
+  # Einbindung CSS
+  includeCSS {
+    bootstrap = EXT:pi_ghp/Resources/Public/vendors/bootstrap/dist/css/bootstrap.css
+    //bootstrap = fileadmin/vendors/bootstrap/css/bootstrap.css
+    fontawesome = EXT:pi_ghp/Resources/Public/vendors/fortawesome/css/all.min.css
+    main = EXT:pi_ghp/Resources/Public/css/style.css
+  }
+
+  # Einbindung JS
+  includeJS {
+    jquery = EXT:pi_ghp/Resources/Public/vendors/jquery/dist/jquery.min.js
+    main = EXT:pi_ghp/Resources/Public/js/custom.js
+    bootstrapJS = EXT:pi_ghp/Resources/Public/vendors/bootstrap/dist/js/bootstrap.bundle.js
+    //bootstrapJS = fileadmin/vendors/bootstrap/js/bootstrap.js
+    fontawesomeJS = EXT:pi_ghp/Resources/Public/vendors/fortawesome/js/all.min.js
+  }
+
+  headerData {
+    10 = IMAGE
+    10 {
+      file {
+        import = 1
+        import {
+
+          # Import der Daten aus der Templatedatei
+          data = levelmedia:-1,slide
+
+          # Auswahl erstes Angezeigtes Bild
+          listNum = 0
+        }
+
+
+        treatIdAsReference = 1
+        width = 1920
+      }
+
+      # Einbindung der CSS-Klasse mit dem Hintergrundbild in den Header
+      layoutKey = cssbg
+      layout {
+        cssbg {
+          # SRC ist das Attribut src des img tags welches vorher eingebunden wurde
+          element = <style type="text/css">.header-bg-image { background-image: url(###SRC###); }</style>
+        }
+      }
+    }
+  }
+
+  # Inititalisierung des Fluid-Templates
+  10 = FLUIDTEMPLATE
+  10 {
+
+    # Template-Datei wird eingebunden
+    templateName = MainTemplate
+    partialRootPaths {
+      10 = EXT:ghp/Resources/Private/Partials/
+    }
+    templateRootPaths {
+      10 = EXT:ghp/Resources/Private/Templates/
+    }
+    layoutRootPaths {
+      10 = EXT:ghp/Resources/Private/Layouts/
+    }
+    /*
+    dataProcessing {
+      10 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+      10 {
+        special = directory
+        special.value = 22
+        as = sidebars
+      }
+    }
+    */
+
+}
 
 plugin.tx_ghp_pi {
     view {
