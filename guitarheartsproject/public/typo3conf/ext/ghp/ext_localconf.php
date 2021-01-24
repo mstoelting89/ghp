@@ -62,8 +62,8 @@ call_user_func(
                         elements {
                             ghp_info_card {
                                 iconIdentifier = content-text
-                                title = LLL:EXT:pi_ghp/Resources/Private/Language/locallang.xlf:ghp_info_card_title
-                                description = LLL:EXT:pi_ghp/Resources/Private/Language/locallang.xlf:ghp_info_card_description
+                                title = LLL:EXT:ghp/Resources/Private/Language/locallang.xlf:ghp_info_card_title
+                                description = LLL:EXT:ghp/Resources/Private/Language/locallang.xlf:ghp_info_card_description
                                 tt_content_defValues {
                                     CType = ghp_info_card
                                 }

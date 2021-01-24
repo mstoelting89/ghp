@@ -907,16 +907,36 @@ call_user_func(
             'mod {
                 wizards.newContentElement.wizardItems.common {
                     elements {
-                      sideHeaderContent {
-                        iconIdentifier = content-text
-                        title = LLL:EXT:ghp/Resources/Private/Language/locallang.xlf:sideHeaderContent_title
-                        description = LLL:EXT:ghp/Resources/Private/Language/locallang.xlf:sideHeaderContent_description
-                        tt_content_defValues {
-                          CType = sideHeaderContent
+                        sideHeaderContent {
+                            iconIdentifier = content-text
+                            title = LLL:EXT:ghp/Resources/Private/Language/locallang.xlf:sideHeaderContent_title
+                            description = LLL:EXT:ghp/Resources/Private/Language/locallang.xlf:sideHeaderContent_description
+                            tt_content_defValues {
+                                CType = sideHeaderContent
+                            }
                         }
-                      }
                     }
-                     show := addToList(sideHeaderContent)
+                    show := addToList(sideHeaderContent)
+                }
+            }'
+        );
+
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig(
+            'mod {
+                wizards.newContentElement.wizardItems {
+                    common {
+                        elements {
+                            ghp_info_card {
+                                iconIdentifier = content-text
+                                title = LLL:EXT:ghp/Resources/Private/Language/locallang.xlf:ghp_info_card_title
+                                description = LLL:EXT:ghp/Resources/Private/Language/locallang.xlf:ghp_info_card_description
+                                tt_content_defValues {
+                                    CType = ghp_info_card
+                                }
+                            }
+                        }
+                        show := addToList(ghp_info_card)
+                    }
                 }
             }'
         );

@@ -8895,165 +8895,171 @@ return array (
               ),
               6 => 
               array (
-                0 => 'LLL:EXT:pi_ghp/Resources/Private/Language/locallang.xlf:sideHeaderContent_title',
-                1 => 'sideHeaderContent',
+                0 => 'LLL:EXT:ghp/Resources/Private/Language/locallang.xlf:ghp_info_card_title',
+                1 => 'ghp_info_card',
                 2 => 'content-text',
               ),
               7 => 
+              array (
+                0 => 'LLL:EXT:ghp/Resources/Private/Language/locallang.xlf:sideHeaderContent_title',
+                1 => 'sideHeaderContent',
+                2 => 'content-text',
+              ),
+              8 => 
               array (
                 0 => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:CType.div.lists',
                 1 => '--div--',
                 2 => NULL,
                 3 => 'lists',
               ),
-              8 => 
+              9 => 
               array (
                 0 => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:CType.I.4',
                 1 => 'bullets',
                 2 => 'content-bullets',
                 3 => 'lists',
               ),
-              9 => 
+              10 => 
               array (
                 0 => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:CType.I.5',
                 1 => 'table',
                 2 => 'content-table',
                 3 => 'lists',
               ),
-              10 => 
+              11 => 
               array (
                 0 => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:CType.I.6',
                 1 => 'uploads',
                 2 => 'content-special-uploads',
                 3 => 'lists',
               ),
-              11 => 
+              12 => 
               array (
                 0 => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:CType.div.menu',
                 1 => '--div--',
                 2 => NULL,
                 3 => 'menu',
               ),
-              12 => 
+              13 => 
               array (
                 0 => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:CType.menu_abstract',
                 1 => 'menu_abstract',
                 2 => 'content-menu-abstract',
                 3 => 'menu',
               ),
-              13 => 
+              14 => 
               array (
                 0 => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:CType.menu_categorized_content',
                 1 => 'menu_categorized_content',
                 2 => 'content-menu-categorized',
                 3 => 'menu',
               ),
-              14 => 
+              15 => 
               array (
                 0 => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:CType.menu_categorized_pages',
                 1 => 'menu_categorized_pages',
                 2 => 'content-menu-categorized',
                 3 => 'menu',
               ),
-              15 => 
+              16 => 
               array (
                 0 => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:CType.menu_pages',
                 1 => 'menu_pages',
                 2 => 'content-menu-pages',
                 3 => 'menu',
               ),
-              16 => 
+              17 => 
               array (
                 0 => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:CType.menu_subpages',
                 1 => 'menu_subpages',
                 2 => 'content-menu-pages',
                 3 => 'menu',
               ),
-              17 => 
+              18 => 
               array (
                 0 => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:CType.menu_recently_updated',
                 1 => 'menu_recently_updated',
                 2 => 'content-menu-recently-updated',
                 3 => 'menu',
               ),
-              18 => 
+              19 => 
               array (
                 0 => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:CType.menu_related_pages',
                 1 => 'menu_related_pages',
                 2 => 'content-menu-related',
                 3 => 'menu',
               ),
-              19 => 
+              20 => 
               array (
                 0 => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:CType.menu_section',
                 1 => 'menu_section',
                 2 => 'content-menu-section',
                 3 => 'menu',
               ),
-              20 => 
+              21 => 
               array (
                 0 => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:CType.menu_section_pages',
                 1 => 'menu_section_pages',
                 2 => 'content-menu-section',
                 3 => 'menu',
               ),
-              21 => 
+              22 => 
               array (
                 0 => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:CType.menu_sitemap',
                 1 => 'menu_sitemap',
                 2 => 'content-menu-sitemap',
                 3 => 'menu',
               ),
-              22 => 
+              23 => 
               array (
                 0 => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:CType.menu_sitemap_pages',
                 1 => 'menu_sitemap_pages',
                 2 => 'content-menu-sitemap-pages',
                 3 => 'menu',
               ),
-              23 => 
+              24 => 
               array (
                 0 => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:CType.div.special',
                 1 => '--div--',
                 2 => NULL,
                 3 => 'special',
               ),
-              24 => 
+              25 => 
               array (
                 0 => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:CType.I.13',
                 1 => 'shortcut',
                 2 => 'content-special-shortcut',
                 3 => 'special',
               ),
-              25 => 
+              26 => 
               array (
                 0 => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:CType.I.14',
                 1 => 'list',
                 2 => 'content-plugin',
                 3 => 'special',
               ),
-              26 => 
+              27 => 
               array (
                 0 => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:CType.I.16',
                 1 => 'div',
                 2 => 'content-special-div',
                 3 => 'special',
               ),
-              27 => 
+              28 => 
               array (
                 0 => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:CType.I.17',
                 1 => 'html',
                 2 => 'content-special-html',
                 3 => 'special',
               ),
-              28 => 
+              29 => 
               array (
                 0 => 'Form',
                 1 => 'form_formframework',
                 2 => 'content-form',
                 3 => 'forms',
               ),
-              29 => 
+              30 => 
               array (
                 0 => 'Login Form',
                 1 => 'felogin_login',
@@ -11490,9 +11496,373 @@ return array (
             header; Titel;,
             header_position; Titelposition;,
             header_layout; Titelgröße;,
-            title; EigenerTitel;,
             space_before_class; Abstand oben;,
             space_after_class; Abstand unten;,
+            bodytext;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:bodytext_formlabel,
+         --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access,
+            --palette--;;hidden,
+            --palette--;;access,
+      ',
+          'columnsOverrides' => 
+          array (
+            'bodytext' => 
+            array (
+              'config' => 
+              array (
+                'enableRichtext' => true,
+                'richtextConfiguration' => 'full',
+              ),
+            ),
+            'fade_in' => 
+            array (
+              'label' => 'Fade In Effekt',
+              'config' => 
+              array (
+                'type' => 'select',
+                'renderType' => 'selectSingle',
+                'items' => 
+                array (
+                  0 => 
+                  array (
+                    0 => 'Keiner',
+                    1 => '0',
+                  ),
+                  1 => 
+                  array (
+                    0 => 'Oben',
+                    1 => '1',
+                  ),
+                  2 => 
+                  array (
+                    0 => 'Links',
+                    1 => '2',
+                  ),
+                  3 => 
+                  array (
+                    0 => 'Rechts',
+                    1 => '3',
+                  ),
+                  4 => 
+                  array (
+                    0 => 'Unten',
+                    1 => '4',
+                  ),
+                ),
+                'default' => '0',
+              ),
+            ),
+            'header' => 
+            array (
+              'exclude' => false,
+              'label' => 'test',
+              'config' => 
+              array (
+                'type' => 'input',
+                'size' => 20,
+                'eval' => 'trim',
+                'max' => 256,
+              ),
+            ),
+            'title' => 
+            array (
+              'config' => 
+              array (
+                'type' => 'input',
+                'size' => 20,
+                'eval' => 'trim',
+                'max' => 256,
+              ),
+            ),
+            'header_layout' => 
+            array (
+              'exclude' => true,
+              'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.type',
+              'config' => 
+              array (
+                'type' => 'select',
+                'renderType' => 'selectSingle',
+                'items' => 
+                array (
+                  0 => 
+                  array (
+                    0 => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.default_value',
+                    1 => '0',
+                  ),
+                  1 => 
+                  array (
+                    0 => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:header_layout.I.1',
+                    1 => '1',
+                  ),
+                  2 => 
+                  array (
+                    0 => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:header_layout.I.2',
+                    1 => '2',
+                  ),
+                  3 => 
+                  array (
+                    0 => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:header_layout.I.3',
+                    1 => '3',
+                  ),
+                  4 => 
+                  array (
+                    0 => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:header_layout.I.4',
+                    1 => '4',
+                  ),
+                  5 => 
+                  array (
+                    0 => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:header_layout.I.5',
+                    1 => '5',
+                  ),
+                  6 => 
+                  array (
+                    0 => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:header_layout.I.6',
+                    1 => '100',
+                  ),
+                ),
+                'default' => 0,
+              ),
+            ),
+            'header_position' => 
+            array (
+              'label' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:header_position',
+              'exclude' => true,
+              'config' => 
+              array (
+                'type' => 'select',
+                'renderType' => 'selectSingle',
+                'items' => 
+                array (
+                  0 => 
+                  array (
+                    0 => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.default_value',
+                    1 => '',
+                  ),
+                  1 => 
+                  array (
+                    0 => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:header_position.I.1',
+                    1 => 'center',
+                  ),
+                  2 => 
+                  array (
+                    0 => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:header_position.I.2',
+                    1 => 'right',
+                  ),
+                  3 => 
+                  array (
+                    0 => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:header_position.I.3',
+                    1 => 'left',
+                  ),
+                ),
+                'default' => '',
+              ),
+            ),
+            'image' => 
+            array (
+              'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.images',
+              'config' => 
+              array (
+                'type' => 'inline',
+                'foreign_table' => 'sys_file_reference',
+                'foreign_field' => 'uid_foreign',
+                'foreign_sortby' => 'sorting_foreign',
+                'foreign_table_field' => 'tablenames',
+                'foreign_match_fields' => 
+                array (
+                  'fieldname' => 'image',
+                ),
+                'foreign_label' => 'uid_local',
+                'foreign_selector' => 'uid_local',
+                'overrideChildTca' => 
+                array (
+                  'columns' => 
+                  array (
+                    'uid_local' => 
+                    array (
+                      'config' => 
+                      array (
+                        'appearance' => 
+                        array (
+                          'elementBrowserType' => 'file',
+                          'elementBrowserAllowed' => 'gif,jpg,jpeg,tif,tiff,bmp,pcx,tga,png,pdf,ai,svg',
+                        ),
+                      ),
+                    ),
+                  ),
+                  'types' => 
+                  array (
+                    0 => 
+                    array (
+                      'showitem' => '
+                                --palette--;;imageoverlayPalette,
+                                --palette--;;filePalette',
+                    ),
+                    1 => 
+                    array (
+                      'showitem' => '
+                                --palette--;;imageoverlayPalette,
+                                --palette--;;filePalette',
+                    ),
+                    2 => 
+                    array (
+                      'showitem' => '
+                                --palette--;;imageoverlayPalette,
+                                --palette--;;filePalette',
+                    ),
+                    3 => 
+                    array (
+                      'showitem' => '
+                                --palette--;;audioOverlayPalette,
+                                --palette--;;filePalette',
+                    ),
+                    4 => 
+                    array (
+                      'showitem' => '
+                                --palette--;;videoOverlayPalette,
+                                --palette--;;filePalette',
+                    ),
+                    5 => 
+                    array (
+                      'showitem' => '
+                                --palette--;;imageoverlayPalette,
+                                --palette--;;filePalette',
+                    ),
+                  ),
+                ),
+                'filter' => 
+                array (
+                  0 => 
+                  array (
+                    'userFunc' => 'TYPO3\\CMS\\Core\\Resource\\Filter\\FileExtensionFilter->filterInlineChildren',
+                    'parameters' => 
+                    array (
+                      'allowedFileExtensions' => 'gif,jpg,jpeg,tif,tiff,bmp,pcx,tga,png,pdf,ai,svg',
+                      'disallowedFileExtensions' => '',
+                    ),
+                  ),
+                ),
+                'appearance' => 
+                array (
+                  'useSortable' => true,
+                  'headerThumbnail' => 
+                  array (
+                    'field' => 'uid_local',
+                    'height' => '45m',
+                  ),
+                  'enabledControls' => 
+                  array (
+                    'info' => true,
+                    'new' => false,
+                    'dragdrop' => true,
+                    'sort' => false,
+                    'hide' => true,
+                    'delete' => true,
+                  ),
+                  'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:images.addFileReference',
+                ),
+              ),
+            ),
+            'space_before_class' => 
+            array (
+              'exclude' => true,
+              'label' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:space_before_class',
+              'config' => 
+              array (
+                'type' => 'select',
+                'renderType' => 'selectSingle',
+                'items' => 
+                array (
+                  0 => 
+                  array (
+                    0 => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:space_class_none',
+                    1 => '',
+                  ),
+                  1 => 
+                  array (
+                    0 => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:space_class_extra_small',
+                    1 => 'extra-small',
+                  ),
+                  2 => 
+                  array (
+                    0 => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:space_class_small',
+                    1 => 'small',
+                  ),
+                  3 => 
+                  array (
+                    0 => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:space_class_medium',
+                    1 => 'medium',
+                  ),
+                  4 => 
+                  array (
+                    0 => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:space_class_large',
+                    1 => 'large',
+                  ),
+                  5 => 
+                  array (
+                    0 => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:space_class_extra_large',
+                    1 => 'extra-large',
+                  ),
+                ),
+                'default' => '',
+              ),
+            ),
+            'space_after_class' => 
+            array (
+              'exclude' => true,
+              'label' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:space_after_class',
+              'config' => 
+              array (
+                'type' => 'select',
+                'renderType' => 'selectSingle',
+                'items' => 
+                array (
+                  0 => 
+                  array (
+                    0 => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:space_class_none',
+                    1 => '',
+                  ),
+                  1 => 
+                  array (
+                    0 => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:space_class_extra_small',
+                    1 => 'extra-small',
+                  ),
+                  2 => 
+                  array (
+                    0 => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:space_class_small',
+                    1 => 'small',
+                  ),
+                  3 => 
+                  array (
+                    0 => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:space_class_medium',
+                    1 => 'medium',
+                  ),
+                  4 => 
+                  array (
+                    0 => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:space_class_large',
+                    1 => 'large',
+                  ),
+                  5 => 
+                  array (
+                    0 => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:space_class_extra_large',
+                    1 => 'extra-large',
+                  ),
+                ),
+                'default' => '',
+              ),
+            ),
+          ),
+        ),
+        'ghp_info_card' => 
+        array (
+          'showitem' => '
+         --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,
+            --palette--;;general,
+            header; Titel;,
+            header_position; Titelposition;,
+            header_layout; Titelgröße;,
+            space_before_class; Abstand oben;,
+            space_after_class; Abstand unten;,
+            image; Bild;,
+            fade_in; Fade In Effekt;,
             bodytext;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:bodytext_formlabel,
          --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access,
             --palette--;;hidden,
