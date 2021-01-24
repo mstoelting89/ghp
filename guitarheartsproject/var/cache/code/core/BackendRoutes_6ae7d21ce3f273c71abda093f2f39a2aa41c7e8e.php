@@ -530,5 +530,11 @@ return array (
     'target' => 'TYPO3\\CMS\\T3editor\\Controller\\CodeCompletionController::loadCompletions',
     'ajax' => true,
   ),
+  'ajax_ExtensionBuilder::wiringEditorSmdEndpoint' => 
+  array (
+    'path' => '/ajax/extensionBuilder/wireEditor',
+    'target' => 'EBT\\ExtensionBuilder\\Configuration\\ExtensionBuilderConfigurationManager::getWiringEditorSmd',
+    'ajax' => true,
+  ),
 );
 #

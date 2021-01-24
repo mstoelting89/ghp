@@ -9,6 +9,7 @@
 		"sort-packages": true
 	},
 	"require": {
+		"friendsoftypo3/extension-builder": "dev-v10-compatibility",
 		"helhum/typo3-console": "^6.0.0",
 		"typo3/cms-about": "^10.4",
 		"typo3/cms-backend": "^10.4",
@@ -38,8 +39,8 @@
 	},
 	"scripts":{
 		"typo3-cms-scripts": [
-			"typo3cms install:fixfolderstructure",
-			"typo3cms install:generatepackagestates"
+			"/usr/bin/php7.4-cli /kunden/homepages/16/d764565842/htdocs/guitarheartsproject/ghp/guitarheartsproject/vendor/bin/typo3cms install:fixfolderstructure",
+			"/usr/bin/php7.4-cli /kunden/homepages/16/d764565842/htdocs/guitarheartsproject/ghp/guitarheartsproject/vendor/bin/typo3cms install:generatepackagestates"
 		],
 		"post-autoload-dump": [
 			"@typo3-cms-scripts"

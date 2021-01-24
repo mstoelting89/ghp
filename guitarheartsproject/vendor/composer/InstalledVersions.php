@@ -24,12 +24,12 @@ class InstalledVersions
 private static $installed = array (
   'root' => 
   array (
-    'pretty_version' => 'v10.4.1',
-    'version' => '10.4.1.0',
+    'pretty_version' => 'dev-main',
+    'version' => 'dev-main',
     'aliases' => 
     array (
     ),
-    'reference' => NULL,
+    'reference' => 'd6e8977dd60fc7851985d6df678403b7e2e05e74',
     'name' => 'typo3/cms-base-distribution',
   ),
   'versions' => 
@@ -105,6 +105,15 @@ private static $installed = array (
       array (
       ),
       'reference' => '0dbf5d78455d4d6a41d186da50adc1122ec066f4',
+    ),
+    'friendsoftypo3/extension-builder' => 
+    array (
+      'pretty_version' => 'dev-v10-compatibility',
+      'version' => 'dev-v10-compatibility',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '182132f8fdfa0d837b4ba756646dd81472beb466',
     ),
     'guzzlehttp/guzzle' => 
     array (
@@ -636,6 +645,13 @@ private static $installed = array (
       ),
       'reference' => 'bbce94f14d73732340740366fcbe63363663a403',
     ),
+    'typo3-ter/extension-builder' => 
+    array (
+      'replaced' => 
+      array (
+        0 => 'dev-v10-compatibility',
+      ),
+    ),
     'typo3-ter/typo3-console' => 
     array (
       'replaced' => 
@@ -672,12 +688,12 @@ private static $installed = array (
     ),
     'typo3/cms-base-distribution' => 
     array (
-      'pretty_version' => 'v10.4.1',
-      'version' => '10.4.1.0',
+      'pretty_version' => 'dev-main',
+      'version' => 'dev-main',
       'aliases' => 
       array (
       ),
-      'reference' => NULL,
+      'reference' => 'd6e8977dd60fc7851985d6df678403b7e2e05e74',
     ),
     'typo3/cms-belog' => 
     array (

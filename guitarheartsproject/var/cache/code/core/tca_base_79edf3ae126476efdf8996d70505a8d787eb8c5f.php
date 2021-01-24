@@ -12251,6 +12251,165 @@ return array (
         ),
       ),
     ),
+    'tx_ghp_domain_model_guitarheartsproject' => 
+    array (
+      'ctrl' => 
+      array (
+        'title' => 'LLL:EXT:ghp/Resources/Private/Language/locallang_db.xlf:tx_ghp_domain_model_guitarheartsproject',
+        'label' => 'titel',
+        'tstamp' => 'tstamp',
+        'crdate' => 'crdate',
+        'cruser_id' => 'cruser_id',
+        'versioningWS' => true,
+        'languageField' => 'sys_language_uid',
+        'transOrigPointerField' => 'l10n_parent',
+        'transOrigDiffSourceField' => 'l10n_diffsource',
+        'delete' => 'deleted',
+        'enablecolumns' => 
+        array (
+          'disabled' => 'hidden',
+          'starttime' => 'starttime',
+          'endtime' => 'endtime',
+        ),
+        'searchFields' => 'titel',
+        'iconfile' => 'EXT:ghp/Resources/Public/Icons/tx_ghp_domain_model_guitarheartsproject.gif',
+      ),
+      'types' => 
+      array (
+        1 => 
+        array (
+          'showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, titel, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime',
+        ),
+      ),
+      'columns' => 
+      array (
+        'sys_language_uid' => 
+        array (
+          'exclude' => true,
+          'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.language',
+          'config' => 
+          array (
+            'type' => 'select',
+            'renderType' => 'selectSingle',
+            'special' => 'languages',
+            'items' => 
+            array (
+              0 => 
+              array (
+                0 => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.allLanguages',
+                1 => -1,
+                2 => 'flags-multiple',
+              ),
+            ),
+            'default' => 0,
+          ),
+        ),
+        'l10n_parent' => 
+        array (
+          'displayCond' => 'FIELD:sys_language_uid:>:0',
+          'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.l18n_parent',
+          'config' => 
+          array (
+            'type' => 'select',
+            'renderType' => 'selectSingle',
+            'default' => 0,
+            'items' => 
+            array (
+              0 => 
+              array (
+                0 => '',
+                1 => 0,
+              ),
+            ),
+            'foreign_table' => 'tx_ghp_domain_model_guitarheartsproject',
+            'foreign_table_where' => 'AND `tx_ghp_domain_model_guitarheartsproject`.`pid`=###CURRENT_PID### AND `tx_ghp_domain_model_guitarheartsproject`.`sys_language_uid` IN (-1,0)',
+          ),
+        ),
+        'l10n_diffsource' => 
+        array (
+          'config' => 
+          array (
+            'type' => 'passthrough',
+          ),
+        ),
+        't3ver_label' => 
+        array (
+          'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.versionLabel',
+          'config' => 
+          array (
+            'type' => 'input',
+            'size' => 30,
+            'max' => 255,
+          ),
+        ),
+        'hidden' => 
+        array (
+          'exclude' => true,
+          'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.visible',
+          'config' => 
+          array (
+            'type' => 'check',
+            'renderType' => 'checkboxToggle',
+            'items' => 
+            array (
+              0 => 
+              array (
+                0 => '',
+                1 => '',
+                'invertStateDisplay' => true,
+              ),
+            ),
+          ),
+        ),
+        'starttime' => 
+        array (
+          'exclude' => true,
+          'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.starttime',
+          'config' => 
+          array (
+            'type' => 'input',
+            'renderType' => 'inputDateTime',
+            'eval' => 'datetime,int',
+            'default' => 0,
+            'behaviour' => 
+            array (
+              'allowLanguageSynchronization' => true,
+            ),
+          ),
+        ),
+        'endtime' => 
+        array (
+          'exclude' => true,
+          'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.endtime',
+          'config' => 
+          array (
+            'type' => 'input',
+            'renderType' => 'inputDateTime',
+            'eval' => 'datetime,int',
+            'default' => 0,
+            'range' => 
+            array (
+              'upper' => 2145913200,
+            ),
+            'behaviour' => 
+            array (
+              'allowLanguageSynchronization' => true,
+            ),
+          ),
+        ),
+        'titel' => 
+        array (
+          'exclude' => false,
+          'label' => 'LLL:EXT:ghp/Resources/Private/Language/locallang_db.xlf:tx_ghp_domain_model_guitarheartsproject.titel',
+          'config' => 
+          array (
+            'type' => 'input',
+            'size' => 30,
+            'eval' => 'trim',
+          ),
+        ),
+      ),
+    ),
   ),
   'categoryRegistry' => 'O:40:"TYPO3\\CMS\\Core\\Category\\CategoryRegistry":4:{s:11:"' . "\0" . '*' . "\0" . 'registry";a:3:{s:5:"pages";a:1:{s:10:"categories";a:1:{s:8:"position";s:18:"replace:categories";}}s:17:"sys_file_metadata";a:1:{s:10:"categories";a:1:{s:8:"position";s:18:"replace:categories";}}s:10:"tt_content";a:1:{s:10:"categories";a:1:{s:8:"position";s:18:"replace:categories";}}}s:13:"' . "\0" . '*' . "\0" . 'extensions";a:1:{s:4:"core";a:3:{s:5:"pages";a:1:{s:10:"categories";s:10:"categories";}s:17:"sys_file_metadata";a:1:{s:10:"categories";s:10:"categories";}s:10:"tt_content";a:1:{s:10:"categories";s:10:"categories";}}}s:20:"' . "\0" . '*' . "\0" . 'addedCategoryTabs";a:3:{s:5:"pages";s:5:"pages";s:17:"sys_file_metadata";s:17:"sys_file_metadata";s:10:"tt_content";s:10:"tt_content";}s:11:"' . "\0" . '*' . "\0" . 'template";s:60:"
 

@@ -833,4 +833,58 @@ defined('TYPO3_MODE') or die();
     ]
 );
 
+/**
+ * Extension: extension_builder
+ * File: /homepages/16/d764565842/htdocs/guitarheartsproject/ghp/guitarheartsproject/public/typo3conf/ext/extension_builder/ext_tables.php
+ */
+
+
+defined('TYPO3_MODE') || die();
+
+if (TYPO3_MODE === 'BE') {
+    /**
+     * Register Backend Module
+     */
+    \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerModule(
+        'ExtensionBuilder',
+        'tools',
+        'extensionbuilder',
+        '',
+        [
+            \EBT\ExtensionBuilder\Controller\BuilderModuleController::class => 'index,domainmodelling,dispatchRpc',
+        ],
+        [
+            'access' => 'user,group',
+            'icon' => 'EXT:extension_builder/Resources/Public/Icons/Extension.svg',
+            'labels' => 'LLL:EXT:extension_builder/Resources/Private/Language/locallang_mod.xlf',
+        ]
+    );
+}
+
+/**
+ * Extension: ghp
+ * File: /homepages/16/d764565842/htdocs/guitarheartsproject/ghp/guitarheartsproject/public/typo3conf/ext/ghp/ext_tables.php
+ */
+
+
+defined('TYPO3_MODE') || die('Access denied.');
+
+call_user_func(
+    function()
+    {
+
+        \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
+            'Ghp',
+            'Pi',
+            'GuitarHearsProject'
+        );
+
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile('ghp', 'Configuration/TypoScript', 'Guitarheartsproject');
+
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_ghp_domain_model_guitarheartsproject', 'EXT:ghp/Resources/Private/Language/locallang_csh_tx_ghp_domain_model_guitarheartsproject.xlf');
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_ghp_domain_model_guitarheartsproject');
+
+    }
+);
+
 #

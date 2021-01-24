@@ -83,6 +83,12 @@ return [
         'viewpage' => [
             'packagePath' => 'typo3/sysext/viewpage/',
         ],
+        'extension_builder' => [
+            'packagePath' => 'typo3conf/ext/extension_builder/',
+        ],
+        'ghp' => [
+            'packagePath' => 'typo3conf/ext/ghp/',
+        ],
     ],
     'version' => 5,
 ];

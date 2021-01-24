@@ -679,6 +679,75 @@
             "install-path": "../egulias/email-validator"
         },
         {
+            "name": "friendsoftypo3/extension-builder",
+            "version": "dev-v10-compatibility",
+            "version_normalized": "dev-v10-compatibility",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/FriendsOfTYPO3/extension_builder.git",
+                "reference": "182132f8fdfa0d837b4ba756646dd81472beb466"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/FriendsOfTYPO3/extension_builder/zipball/182132f8fdfa0d837b4ba756646dd81472beb466",
+                "reference": "182132f8fdfa0d837b4ba756646dd81472beb466",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "nikic/php-parser": "^4.5",
+                "typo3/cms-backend": "^10.4.10"
+            },
+            "replace": {
+                "typo3-ter/extension-builder": "self.version"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2",
+                "nimut/testing-framework": "^5.0",
+                "sebastian/diff": "^3.0"
+            },
+            "time": "2021-01-03T10:29:16+00:00",
+            "type": "typo3-cms-extension",
+            "extra": {
+                "typo3/cms": {
+                    "cms-package-dir": "{$vendor-dir}/typo3/cms",
+                    "web-dir": ".Build/Web"
+                }
+            },
+            "installation-source": "source",
+            "autoload": {
+                "psr-4": {
+                    "EBT\\ExtensionBuilder\\": "Classes/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Nico de Haen",
+                    "role": "Developer"
+                },
+                {
+                    "name": "extension_builder Development Team",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Tool to kickstart and maintain TYPO3 extensions",
+            "homepage": "https://github.com/FriendsOfTYPO3/extension_builder",
+            "keywords": [
+                "extension",
+                "extension_builder",
+                "typo3"
+            ],
+            "support": {
+                "issues": "https://github.com/FriendsOfTYPO3/extension_builder/issues",
+                "source": "https://github.com/FriendsOfTYPO3/extension_builder/tree/v10-compatibility"
+            },
+            "install-path": "../../public/typo3conf/ext/extension_builder"
+        },
+        {
             "name": "guzzlehttp/guzzle",
             "version": "6.5.5",
             "version_normalized": "6.5.5.0",

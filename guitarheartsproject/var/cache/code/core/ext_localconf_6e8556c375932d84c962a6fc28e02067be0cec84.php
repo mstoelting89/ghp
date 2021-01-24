@@ -859,4 +859,59 @@ defined('TYPO3_MODE') or die();
 $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_tcemain.php']['clearCachePostProc']['tstemplate'] = \TYPO3\CMS\Tstemplate\Hooks\DataHandlerClearCachePostProcHook::class . '->clearPageCacheIfNecessary';
 
 
+/**
+ * Extension: ghp
+ * File: /homepages/16/d764565842/htdocs/guitarheartsproject/ghp/guitarheartsproject/public/typo3conf/ext/ghp/ext_localconf.php
+ */
+
+
+defined('TYPO3_MODE') || die('Access denied.');
+
+call_user_func(
+    function()
+    {
+
+        \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+            'Ghp',
+            'Pi',
+            [
+                \Mst\Ghp\Controller\GuitarHeartsProjectController::class => 'list, show'
+            ],
+            // non-cacheable actions
+            [
+                \Mst\Ghp\Controller\GuitarHeartsProjectController::class => ''
+            ]
+        );
+
+        // wizards
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig(
+            'mod {
+                wizards.newContentElement.wizardItems.plugins {
+                    elements {
+                        pi {
+                            iconIdentifier = ghp-plugin-pi
+                            title = LLL:EXT:ghp/Resources/Private/Language/locallang_db.xlf:tx_ghp_pi.name
+                            description = LLL:EXT:ghp/Resources/Private/Language/locallang_db.xlf:tx_ghp_pi.description
+                            tt_content_defValues {
+                                CType = list
+                                list_type = ghp_pi
+                            }
+                        }
+                    }
+                    show = *
+                }
+           }'
+        );
+		$iconRegistry = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Imaging\IconRegistry::class);
+		
+			$iconRegistry->registerIcon(
+				'ghp-plugin-pi',
+				\TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
+				['source' => 'EXT:ghp/Resources/Public/Icons/user_plugin_pi.svg']
+			);
+		
+    }
+);
+
+
 #
