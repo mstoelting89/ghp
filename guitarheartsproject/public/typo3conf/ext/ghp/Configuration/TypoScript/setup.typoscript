@@ -14,6 +14,8 @@ config {
   index_enable = 1
   # Indizierung auf externe Medien erweitern
   index_externals = 1
+
+  contentObjectExceptionHandler = 0
 }
 
 # Default PAGE object:
@@ -89,16 +91,62 @@ page {
     layoutRootPaths {
       10 = EXT:ghp/Resources/Private/Layouts/
     }
-    /*
-    dataProcessing {
-      10 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
-      10 {
+    variables {
+      # Einbindung fixes Logo
+      logo = IMAGE
+      logo.file = fileadmin/images/images/BilderLars/1548x1026.png
+
+      logoScroll = IMAGE
+      logoScroll.file = fileadmin/images/images/BilderLars/ghp_text_white.png
+      logoScroll.file.width = 200px;
+
+      # Einbindung Navbar
+      menuPrimary = HMENU
+      menuPrimary {
+
+        # Ordner Struktur als Vorgabe (alle Unterseiten von ID=2 werden als Menü dargestellt)
         special = directory
-        special.value = 22
-        as = sidebars
+        special.value = 3
+
+        # ul-tag kommt um das Menü herum
+        wrap = <ul class="navbar-nav mt-2 mt-lg-0">|</ul>
+
+        # Darstellung des Menüs
+        1 = TMENU
+        1 {
+
+          #Untermenü-Ebene wird immer angezeigt
+          expAll = 1
+
+          # NO(rmale) Darstellung
+          NO = 1
+          NO {
+            # umschließung des Menü-Eintrags mit einem li-tag
+            wrapItemAndSub = <li class="nav-item nav-link">|</li>
+          }
+
+          # ACT(ive) hat gleiche Eigenschaften wie NO
+          ACT < .NO
+          ACT {
+            wrapItemAndSub = <li class="nav-item nav-link active">|</li>
+          }
+        }
+
+        # Einbindung Untermenü
+        2 < .1
+        2 {
+          wrap = <ul class="dropdown-menu">|</ul>
+        }
       }
+
+      contentMain = CONTENT
+      contentMain < styles.content.get
+
+      footerLabel = TEXT
+      footerLabel.value = The Guitar Hearts Project e.V. <br>guitarheartsproject@outlook.de <br>067719344061 <br>Langgasse 17, 56348 Bornich, Germany <br><br>©2020 The Guitar Hearts Project e.V.
+
     }
-    */
+  }
 
 }
 
@@ -125,6 +173,15 @@ plugin.tx_ghp_pi {
     mvc {
         #callDefaultActionIfActionCantBeResolved = 1
     }
+}
+
+lib.contentElement {
+  partialRootPaths {
+    10 = EXT:ghp/Resources/Private/Partials/
+  }
+  templateRootPaths {
+    10 = EXT:ghp/Resources/Private/Templates/
+  }
 }
 
 # these classes are only used in auto-generated templates

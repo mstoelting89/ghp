@@ -1,7 +1,7 @@
 <?php
 return [
     'BE' => [
-        'debug' => false,
+        'debug' => true,
         'explicitADmode' => 'explicitAllow',
         'installToolPassword' => '$argon2i$v=19$m=65536,t=16,p=1$bUN3SU0zeHFqR1VZdFFubw$AirlnVtoo8V2Xl/Gg8QzQt8JNSTIiCfuTOEWj7q6jOc',
         'loginSecurityLevel' => 'normal',
@@ -54,7 +54,7 @@ return [
         ],
     ],
     'FE' => [
-        'debug' => false,
+        'debug' => true,
         'disableNoCacheParameter' => true,
         'passwordHashing' => [
             'className' => 'TYPO3\\CMS\\Core\\Crypto\\PasswordHashing\\Argon2iPasswordHash',
@@ -77,7 +77,7 @@ return [
                     'writerConfiguration' => [
                         'notice' => [
                             'TYPO3\CMS\Core\Log\Writer\FileWriter' => [
-                                'disabled' => true,
+                                'disabled' => false,
                             ],
                         ],
                     ],
@@ -125,10 +125,10 @@ return [
                 ],
             ],
         ],
-        'devIPmask' => '',
-        'displayErrors' => 0,
+        'devIPmask' => '*',
+        'displayErrors' => 1,
         'encryptionKey' => '91613df0975f5bfdc25c7814948488ef01fdab3be83e8ac5b7d60ae5f7c159337cae4b25ae8353d4485c24fcbd0fbe27',
-        'exceptionalErrors' => 4096,
+        'exceptionalErrors' => 12290,
         'features' => [
             'felogin.extbase' => true,
             'fluidBasedPageModule' => true,

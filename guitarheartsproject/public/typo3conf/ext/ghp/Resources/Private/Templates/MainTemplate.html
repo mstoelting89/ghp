@@ -5,13 +5,10 @@
 <f:layout name="Default" />
 
 <f:section name="Header">
-
     <header>
         <!--<div class="header-content" style="background-image: url({image})">-->
         <div class="header-content header-bg-image">
-            <!--
             <f:render partial="Nav/Navbar" arguments="{_all}"></f:render>
-            -->
 
             <div class="row header-title align-items-center">
                 <div class="col-4 col-md-4 col-lg-4 logo-align">
@@ -48,9 +45,9 @@
             </f:then>
             <f:else>
                 <div class="col-md-11 content-main">
-                <!--
+
                     {contentMain -> f:format.raw()}
-                     -->
+
                 </div>
 
             </f:else>
