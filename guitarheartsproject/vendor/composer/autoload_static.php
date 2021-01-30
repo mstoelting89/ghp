@@ -121,6 +121,7 @@ class ComposerStaticInitfdec5930a03065e17dd82993156040a0
             'GuzzleHttp\\Promise\\' => 19,
             'GuzzleHttp\\' => 11,
             'GridElementsTeam\\Gridelements\\' => 30,
+            'GeorgRinger\\News\\' => 17,
         ),
         'E' => 
         array (
@@ -447,6 +448,10 @@ class ComposerStaticInitfdec5930a03065e17dd82993156040a0
         'GridElementsTeam\\Gridelements\\' => 
         array (
             0 => __DIR__ . '/../..' . '/public/typo3conf/ext/gridelements/Classes',
+        ),
+        'GeorgRinger\\News\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/public/typo3conf/ext/news/Classes',
         ),
         'Egulias\\EmailValidator\\' => 
         array (

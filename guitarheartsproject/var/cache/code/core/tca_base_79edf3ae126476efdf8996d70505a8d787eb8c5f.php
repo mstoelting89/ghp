@@ -1454,6 +1454,7 @@ return array (
           'page-contentFromPid-root' => 'apps-pagetree-page-content-from-page-root',
           'page-contentFromPid-hideinmenu' => 'apps-pagetree-page-content-from-page-hideinmenu',
           'default' => 'apps-pagetree-page-default',
+          'contains-newsplugins' => 'apps-pagetree-page-contains-news',
         ),
         'searchFields' => 'title,nav_title,subtitle,url,slug,keywords,description,abstract,author,author_email',
       ),
@@ -2438,6 +2439,18 @@ return array (
                 1 => 'fe_users',
                 2 => 'status-user-frontend',
               ),
+              2 => 
+              array (
+                0 => 'LLL:EXT:news/Resources/Private/Language/locallang_be.xlf:news-folder',
+                1 => 'news',
+                2 => 'apps-pagetree-folder-contains-news',
+              ),
+              3 => 
+              array (
+                0 => 'LLL:EXT:news/Resources/Private/Language/locallang_be.xlf:news-page',
+                1 => 'newsplugins',
+                2 => 'apps-pagetree-page-contains-news',
+              ),
             ),
             'default' => '',
           ),
@@ -2580,6 +2593,11 @@ return array (
             'size' => 10,
             'items' => 
             array (
+              0 => 
+              array (
+                0 => 'EXT:news :: Restrict pages to news records (news)',
+                1 => 'EXT:news/Configuration/TSconfig/Page/news_only.txt',
+              ),
             ),
             'softref' => 'ext_fileref',
           ),
@@ -3579,24 +3597,23 @@ return array (
         array (
           'ignoreRootLevelRestriction' => true,
         ),
+        'label_userFunc' => 'GeorgRinger\\News\\Hooks\\Labels->getUserLabelCategory',
       ),
       'types' => 
       array (
         1 => 
         array (
-          'showitem' => '
-                --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,
-                    title, parent,
+          'showitem' => '--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,
+                    title, slug, parent,
                 --div--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_category.tabs.items,
                     items,
                 --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language,
                     --palette--;;language,
                 --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access,
-                    hidden,--palette--;;timeRestriction,
+                    hidden,--palette--;;timeRestriction, --div--;LLL:EXT:news/Resources/Private/Language/locallang_db.xlf:tx_news_domain_model_category.tabs.seo, seo_title, seo_description, seo_headline, seo_text,
                 --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:notes,
-                    description,
-                --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended,
-            ',
+                    --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.tabs.options, images, description, single_pid, shortcut,
+                --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended',
         ),
       ),
       'palettes' => 
@@ -3783,6 +3800,10 @@ return array (
               array (
                 0 => 'categories',
               ),
+              'tx_news_domain_model_news' => 
+              array (
+                0 => 'categories',
+              ),
             ),
             'size' => 10,
             'fieldWizard' => 
@@ -3792,6 +3813,243 @@ return array (
                 'disabled' => true,
               ),
             ),
+          ),
+        ),
+        'pid' => 
+        array (
+          'label' => 'pid',
+          'config' => 
+          array (
+            'type' => 'passthrough',
+          ),
+        ),
+        'sorting' => 
+        array (
+          'label' => 'sorting',
+          'config' => 
+          array (
+            'type' => 'passthrough',
+          ),
+        ),
+        'crdate' => 
+        array (
+          'label' => 'crdate',
+          'config' => 
+          array (
+            'type' => 'passthrough',
+          ),
+        ),
+        'tstamp' => 
+        array (
+          'label' => 'tstamp',
+          'config' => 
+          array (
+            'type' => 'passthrough',
+          ),
+        ),
+        'images' => 
+        array (
+          'exclude' => true,
+          'label' => 'LLL:EXT:news/Resources/Private/Language/locallang_db.xlf:tx_news_domain_model_category.image',
+          'config' => 
+          array (
+            'type' => 'inline',
+            'foreign_table' => 'sys_file_reference',
+            'foreign_field' => 'uid_foreign',
+            'foreign_sortby' => 'sorting_foreign',
+            'foreign_table_field' => 'tablenames',
+            'foreign_match_fields' => 
+            array (
+              'fieldname' => 'images',
+              'tablenames' => 'sys_category',
+              'table_local' => 'sys_file',
+            ),
+            'foreign_label' => 'uid_local',
+            'foreign_selector' => 'uid_local',
+            'overrideChildTca' => 
+            array (
+              'columns' => 
+              array (
+                'uid_local' => 
+                array (
+                  'config' => 
+                  array (
+                    'appearance' => 
+                    array (
+                      'elementBrowserType' => 'file',
+                      'elementBrowserAllowed' => 'gif,jpg,jpeg,tif,tiff,bmp,pcx,tga,png,pdf,ai,svg',
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            'filter' => 
+            array (
+              0 => 
+              array (
+                'userFunc' => 'TYPO3\\CMS\\Core\\Resource\\Filter\\FileExtensionFilter->filterInlineChildren',
+                'parameters' => 
+                array (
+                  'allowedFileExtensions' => 'gif,jpg,jpeg,tif,tiff,bmp,pcx,tga,png,pdf,ai,svg',
+                  'disallowedFileExtensions' => '',
+                ),
+              ),
+            ),
+            'appearance' => 
+            array (
+              'useSortable' => true,
+              'headerThumbnail' => 
+              array (
+                'field' => 'uid_local',
+                'height' => '45m',
+              ),
+              'enabledControls' => 
+              array (
+                'info' => true,
+                'new' => false,
+                'dragdrop' => true,
+                'sort' => false,
+                'hide' => true,
+                'delete' => true,
+              ),
+              'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:images.addFileReference',
+              'showPossibleLocalizationRecords' => true,
+              'showRemovedLocalizationRecords' => true,
+              'showAllLocalizationLink' => true,
+              'showSynchronizationLink' => true,
+            ),
+            'behaviour' => 
+            array (
+              'allowLanguageSynchronization' => true,
+            ),
+          ),
+        ),
+        'single_pid' => 
+        array (
+          'exclude' => true,
+          'label' => 'LLL:EXT:news/Resources/Private/Language/locallang_db.xlf:tx_news_domain_model_category.single_pid',
+          'config' => 
+          array (
+            'type' => 'group',
+            'internal_type' => 'db',
+            'allowed' => 'pages',
+            'size' => 1,
+            'maxitems' => 1,
+            'default' => 0,
+            'suggestOptions' => 
+            array (
+              'default' => 
+              array (
+                'searchWholePhrase' => true,
+              ),
+            ),
+            'behaviour' => 
+            array (
+              'allowLanguageSynchronization' => true,
+            ),
+          ),
+        ),
+        'shortcut' => 
+        array (
+          'exclude' => true,
+          'label' => 'LLL:EXT:news/Resources/Private/Language/locallang_db.xlf:tx_news_domain_model_category.shortcut',
+          'config' => 
+          array (
+            'type' => 'group',
+            'internal_type' => 'db',
+            'allowed' => 'pages',
+            'size' => 1,
+            'maxitems' => 1,
+            'default' => 0,
+            'suggestOptions' => 
+            array (
+              'default' => 
+              array (
+                'searchWholePhrase' => true,
+              ),
+            ),
+            'behaviour' => 
+            array (
+              'allowLanguageSynchronization' => true,
+            ),
+          ),
+        ),
+        'import_id' => 
+        array (
+          'label' => 'LLL:EXT:news/Resources/Private/Language/locallang_db.xlf:tx_news_domain_model_news.import_id',
+          'config' => 
+          array (
+            'type' => 'passthrough',
+          ),
+        ),
+        'import_source' => 
+        array (
+          'label' => 'LLL:EXT:news/Resources/Private/Language/locallang_db.xlf:tx_news_domain_model_news.import_source',
+          'config' => 
+          array (
+            'type' => 'passthrough',
+          ),
+        ),
+        'seo_headline' => 
+        array (
+          'exclude' => true,
+          'label' => 'LLL:EXT:news/Resources/Private/Language/locallang_db.xlf:tx_news_domain_model_category.seo.seo_headline',
+          'config' => 
+          array (
+            'type' => 'input',
+          ),
+        ),
+        'seo_title' => 
+        array (
+          'exclude' => true,
+          'label' => 'LLL:EXT:news/Resources/Private/Language/locallang_db.xlf:tx_news_domain_model_category.seo.seo_title',
+          'config' => 
+          array (
+            'type' => 'input',
+          ),
+        ),
+        'seo_description' => 
+        array (
+          'exclude' => true,
+          'label' => 'LLL:EXT:news/Resources/Private/Language/locallang_db.xlf:tx_news_domain_model_category.seo.seo_description',
+          'config' => 
+          array (
+            'type' => 'text',
+          ),
+        ),
+        'seo_text' => 
+        array (
+          'exclude' => true,
+          'label' => 'LLL:EXT:news/Resources/Private/Language/locallang_db.xlf:tx_news_domain_model_category.seo.seo_text',
+          'config' => 
+          array (
+            'type' => 'text',
+            'enableRichtext' => true,
+          ),
+        ),
+        'slug' => 
+        array (
+          'exclude' => true,
+          'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:pages.slug',
+          'displayCond' => 'VERSION:IS:false',
+          'config' => 
+          array (
+            'type' => 'slug',
+            'size' => 50,
+            'generatorOptions' => 
+            array (
+              'fields' => 
+              array (
+                0 => 'title',
+              ),
+              'replacements' => 
+              array (
+                '/' => '-',
+              ),
+            ),
+            'fallbackCharacter' => '-',
+            'eval' => 'unique',
+            'default' => '',
           ),
         ),
         't3_origuid' => 
@@ -5196,6 +5454,38 @@ return array (
             ),
           ),
         ),
+        'showinpreview' => 
+        array (
+          'exclude' => true,
+          'label' => 'LLL:EXT:news/Resources/Private/Language/locallang_db.xlf:tx_news_domain_model_media.showinviews',
+          'config' => 
+          array (
+            'type' => 'select',
+            'renderType' => 'selectSingle',
+            'items' => 
+            array (
+              0 => 
+              array (
+                0 => 'LLL:EXT:news/Resources/Private/Language/locallang_db.xlf:tx_news_domain_model_media.showinviews.0',
+                1 => 0,
+                2 => '',
+              ),
+              1 => 
+              array (
+                0 => 'LLL:EXT:news/Resources/Private/Language/locallang_db.xlf:tx_news_domain_model_media.showinviews.1',
+                1 => 1,
+                2 => '',
+              ),
+              2 => 
+              array (
+                0 => 'LLL:EXT:news/Resources/Private/Language/locallang_db.xlf:tx_news_domain_model_media.showinviews.2',
+                1 => 2,
+                2 => '',
+              ),
+            ),
+            'default' => 0,
+          ),
+        ),
       ),
       'types' => 
       array (
@@ -5269,6 +5559,10 @@ return array (
         array (
           'showitem' => 'uid_local, hidden, sys_language_uid, l10n_parent',
           'isHiddenPalette' => true,
+        ),
+        'newsPalette' => 
+        array (
+          'showitem' => 'showinpreview',
         ),
       ),
     ),
@@ -8620,6 +8914,21 @@ return array (
                 0 => 'Gridelements w/DataProcessing (recommended) (gridelements)',
                 1 => 'EXT:gridelements/Configuration/TypoScript/DataProcessingLibContentElement',
               ),
+              6 => 
+              array (
+                0 => 'News (news)',
+                1 => 'EXT:news/Configuration/TypoScript',
+              ),
+              7 => 
+              array (
+                0 => 'News Sitemap (news)',
+                1 => 'EXT:news/Configuration/TypoScript/Sitemap',
+              ),
+              8 => 
+              array (
+                0 => 'News Styles Twitter Bootstrap (news)',
+                1 => 'EXT:news/Configuration/TypoScript/Styles/Twb',
+              ),
             ),
             'softref' => 'ext_fileref',
           ),
@@ -10212,6 +10521,13 @@ return array (
                 2 => '',
                 3 => 'none',
               ),
+              1 => 
+              array (
+                0 => 'LLL:EXT:news/Resources/Private/Language/locallang_be.xlf:pi1_title',
+                1 => 'news_pi1',
+                2 => 'EXT:news/Resources/Public/Icons/Extension.svg',
+                3 => 'default',
+              ),
             ),
             'itemGroups' => 
             array (
@@ -10436,7 +10752,7 @@ return array (
           array (
             'type' => 'group',
             'internal_type' => 'db',
-            'allowed' => 'tt_content,pages',
+            'allowed' => 'tt_content,pages,tx_news_domain_model_news',
             'size' => 5,
             'maxitems' => 200,
             'minitems' => 0,
@@ -10511,6 +10827,7 @@ return array (
               '*,form_formframework' => 'FILE:EXT:form/Configuration/FlexForms/FormFramework.xml',
               '*,felogin_login' => 'FILE:EXT:felogin/Configuration/FlexForms/Login.xml',
               '*,gridelements_pi1' => '',
+              'news_pi1,list' => 'FILE:EXT:news/Configuration/FlexForms/flexform_news.xml',
             ),
             'search' => 
             array (
@@ -10956,6 +11273,22 @@ return array (
           ),
           'onChange' => 'reload',
         ),
+        'crdate' => 
+        array (
+          'label' => 'crdate',
+          'config' => 
+          array (
+            'type' => 'passthrough',
+          ),
+        ),
+        'tstamp' => 
+        array (
+          'label' => 'tstamp',
+          'config' => 
+          array (
+            'type' => 'passthrough',
+          ),
+        ),
         't3_origuid' => 
         array (
           'config' => 
@@ -11219,6 +11552,14 @@ return array (
                     rowDescription,
                 --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended, --div--;LLL:EXT:gridelements/Resources/Private/Language/locallang_db.xlf:gridElements, tx_gridelements_container, tx_gridelements_columns',
           'subtype_value_field' => 'list_type',
+          'subtypes_excludelist' => 
+          array (
+            'news_pi1' => 'recursive,select_key,pages',
+          ),
+          'subtypes_addlist' => 
+          array (
+            'news_pi1' => 'pi_flexform',
+          ),
         ),
         'menu_categorized_pages' => 
         array (
@@ -13671,6 +14012,1687 @@ return array (
 					--div--;LLL:EXT:gridelements/Resources/Private/Language/locallang_db.xml:tx_gridelements_backend_layout.div.configuration, top_level_layout, alias, config,
 					--palette--;LLL:EXT:gridelements/Resources/Private/Language/locallang_db.xml:tx_gridelements_backend_layout.ce_configuration;flexform,
 					--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.visibility;visibility',
+        ),
+      ),
+    ),
+    'tx_news_domain_model_link' => 
+    array (
+      'ctrl' => 
+      array (
+        'title' => 'LLL:EXT:news/Resources/Private/Language/locallang_db.xlf:tx_news_domain_model_link',
+        'descriptionColumn' => 'description',
+        'label' => 'title',
+        'label_alt' => 'uri',
+        'label_alt_force' => true,
+        'tstamp' => 'tstamp',
+        'crdate' => 'crdate',
+        'cruser_id' => 'cruser_id',
+        'languageField' => 'sys_language_uid',
+        'transOrigPointerField' => 'l10n_parent',
+        'transOrigDiffSourceField' => 'l10n_diffsource',
+        'translationSource' => 'l10n_source',
+        'versioningWS' => true,
+        'origUid' => 't3_origuid',
+        'default_sortby' => 'ORDER BY sorting',
+        'sortby' => 'sorting',
+        'delete' => 'deleted',
+        'enablecolumns' => 
+        array (
+          'disabled' => 'hidden',
+        ),
+        'typeicon_classes' => 
+        array (
+          'default' => 'ext-news-link',
+        ),
+        'hideTable' => true,
+      ),
+      'interface' => 
+      array (
+      ),
+      'columns' => 
+      array (
+        'pid' => 
+        array (
+          'label' => 'pid',
+          'config' => 
+          array (
+            'type' => 'passthrough',
+          ),
+        ),
+        'crdate' => 
+        array (
+          'label' => 'crdate',
+          'config' => 
+          array (
+            'type' => 'input',
+            'renderType' => 'inputDateTime',
+            'eval' => 'datetime',
+          ),
+        ),
+        'tstamp' => 
+        array (
+          'label' => 'tstamp',
+          'config' => 
+          array (
+            'type' => 'input',
+            'renderType' => 'inputDateTime',
+            'eval' => 'datetime',
+          ),
+        ),
+        'sys_language_uid' => 
+        array (
+          'exclude' => true,
+          'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.language',
+          'config' => 
+          array (
+            'type' => 'select',
+            'renderType' => 'selectSingle',
+            'special' => 'languages',
+            'items' => 
+            array (
+              0 => 
+              array (
+                0 => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.allLanguages',
+                1 => -1,
+                2 => 'flags-multiple',
+              ),
+            ),
+            'default' => 0,
+          ),
+        ),
+        'l10n_parent' => 
+        array (
+          'displayCond' => 'FIELD:sys_language_uid:>:0',
+          'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.l18n_parent',
+          'config' => 
+          array (
+            'type' => 'select',
+            'renderType' => 'selectSingle',
+            'items' => 
+            array (
+              0 => 
+              array (
+                0 => '',
+                1 => 0,
+              ),
+            ),
+            'foreign_table' => 'tx_news_domain_model_link',
+            'foreign_table_where' => 'AND tx_news_domain_model_link.pid=###CURRENT_PID### AND tx_news_domain_model_link.sys_language_uid IN (-1,0)',
+            'default' => 0,
+          ),
+        ),
+        'l10n_source' => 
+        array (
+          'config' => 
+          array (
+            'type' => 'passthrough',
+          ),
+        ),
+        'l10n_diffsource' => 
+        array (
+          'config' => 
+          array (
+            'type' => 'passthrough',
+            'default' => '',
+          ),
+        ),
+        'hidden' => 
+        array (
+          'exclude' => true,
+          'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.hidden',
+          'config' => 
+          array (
+            'type' => 'check',
+            'default' => 0,
+          ),
+        ),
+        'title' => 
+        array (
+          'exclude' => false,
+          'label' => 'LLL:EXT:news/Resources/Private/Language/locallang_db.xlf:tx_news_domain_model_link.title',
+          'config' => 
+          array (
+            'type' => 'input',
+            'size' => 30,
+            'behaviour' => 
+            array (
+              'allowLanguageSynchronization' => true,
+            ),
+          ),
+        ),
+        'description' => 
+        array (
+          'exclude' => true,
+          'label' => 'LLL:EXT:news/Resources/Private/Language/locallang_db.xlf:tx_news_domain_model_link.description',
+          'config' => 
+          array (
+            'type' => 'text',
+            'cols' => 30,
+            'rows' => 5,
+            'behaviour' => 
+            array (
+              'allowLanguageSynchronization' => true,
+            ),
+          ),
+        ),
+        'uri' => 
+        array (
+          'exclude' => false,
+          'label' => 'LLL:EXT:news/Resources/Private/Language/locallang_db.xlf:tx_news_domain_model_link.uri',
+          'config' => 
+          array (
+            'type' => 'input',
+            'renderType' => 'inputLink',
+            'placeholder' => 'LLL:EXT:news/Resources/Private/Language/locallang_db.xlf:tx_news_domain_model_link.uri.placeholder',
+            'size' => 30,
+            'eval' => 'trim,required',
+            'softref' => 'typolink',
+            'behaviour' => 
+            array (
+              'allowLanguageSynchronization' => true,
+            ),
+          ),
+        ),
+        't3_origuid' => 
+        array (
+          'config' => 
+          array (
+            'type' => 'passthrough',
+            'default' => 0,
+          ),
+        ),
+      ),
+      'types' => 
+      array (
+        0 => 
+        array (
+          'showitem' => 'uri, --palette--;;paletteCore,title, --palette--;;paletteDescription',
+        ),
+      ),
+      'palettes' => 
+      array (
+        'paletteCore' => 
+        array (
+          'showitem' => 'hidden,sys_language_uid,l10n_parent, l10n_diffsource,',
+        ),
+        'paletteDescription' => 
+        array (
+          'showitem' => 'description',
+        ),
+      ),
+    ),
+    'tx_news_domain_model_news' => 
+    array (
+      'ctrl' => 
+      array (
+        'title' => 'LLL:EXT:news/Resources/Private/Language/locallang_db.xlf:tx_news_domain_model_news',
+        'descriptionColumn' => 'notes',
+        'label' => 'title',
+        'prependAtCopy' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.prependAtCopy',
+        'hideAtCopy' => true,
+        'tstamp' => 'tstamp',
+        'crdate' => 'crdate',
+        'cruser_id' => 'cruser_id',
+        'versioningWS' => true,
+        'origUid' => 't3_origuid',
+        'editlock' => 'editlock',
+        'type' => 'type',
+        'typeicon_column' => 'type',
+        'typeicon_classes' => 
+        array (
+          'default' => 'ext-news-type-default',
+          1 => 'ext-news-type-internal',
+          2 => 'ext-news-type-external',
+        ),
+        'useColumnsForDefaultValues' => 'type',
+        'languageField' => 'sys_language_uid',
+        'transOrigPointerField' => 'l10n_parent',
+        'transOrigDiffSourceField' => 'l10n_diffsource',
+        'translationSource' => 'l10n_source',
+        'default_sortby' => 'ORDER BY datetime DESC',
+        'sortby' => '',
+        'delete' => 'deleted',
+        'enablecolumns' => 
+        array (
+          'disabled' => 'hidden',
+          'starttime' => 'starttime',
+          'endtime' => 'endtime',
+          'fe_group' => 'fe_group',
+        ),
+        'iconfile' => 'EXT:news/Resources/Public/Icons/news_domain_model_news.svg',
+        'searchFields' => 'uid,title',
+        'thumbnail' => 'fal_media',
+      ),
+      'interface' => 
+      array (
+      ),
+      'columns' => 
+      array (
+        'sys_language_uid' => 
+        array (
+          'exclude' => true,
+          'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.language',
+          'config' => 
+          array (
+            'type' => 'select',
+            'renderType' => 'selectSingle',
+            'special' => 'languages',
+            'items' => 
+            array (
+              0 => 
+              array (
+                0 => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.allLanguages',
+                1 => -1,
+                2 => 'flags-multiple',
+              ),
+            ),
+            'default' => 0,
+          ),
+        ),
+        'l10n_parent' => 
+        array (
+          'displayCond' => 'FIELD:sys_language_uid:>:0',
+          'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.l18n_parent',
+          'config' => 
+          array (
+            'type' => 'group',
+            'internal_type' => 'db',
+            'allowed' => 'tx_news_domain_model_news',
+            'size' => 1,
+            'maxitems' => 1,
+            'minitems' => 0,
+            'default' => 0,
+          ),
+        ),
+        'l10n_source' => 
+        array (
+          'config' => 
+          array (
+            'type' => 'passthrough',
+          ),
+        ),
+        'l10n_diffsource' => 
+        array (
+          'config' => 
+          array (
+            'type' => 'passthrough',
+            'default' => '',
+          ),
+        ),
+        'hidden' => 
+        array (
+          'exclude' => true,
+          'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.hidden',
+          'config' => 
+          array (
+            'type' => 'check',
+            'renderType' => 'checkboxToggle',
+            'default' => 0,
+            'items' => 
+            array (
+              0 => 
+              array (
+                0 => '',
+                1 => '',
+              ),
+            ),
+          ),
+        ),
+        'cruser_id' => 
+        array (
+          'label' => 'cruser_id',
+          'config' => 
+          array (
+            'type' => 'passthrough',
+          ),
+        ),
+        'pid' => 
+        array (
+          'label' => 'pid',
+          'config' => 
+          array (
+            'type' => 'passthrough',
+          ),
+        ),
+        'crdate' => 
+        array (
+          'label' => 'crdate',
+          'config' => 
+          array (
+            'type' => 'input',
+            'renderType' => 'inputDateTime',
+            'eval' => 'datetime',
+          ),
+        ),
+        'tstamp' => 
+        array (
+          'label' => 'tstamp',
+          'config' => 
+          array (
+            'type' => 'input',
+            'renderType' => 'inputDateTime',
+            'eval' => 'datetime',
+          ),
+        ),
+        'sorting' => 
+        array (
+          'label' => 'sorting',
+          'config' => 
+          array (
+            'type' => 'passthrough',
+          ),
+        ),
+        'starttime' => 
+        array (
+          'exclude' => true,
+          'label' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:starttime_formlabel',
+          'config' => 
+          array (
+            'type' => 'input',
+            'renderType' => 'inputDateTime',
+            'size' => 16,
+            'eval' => 'datetime,int',
+            'default' => 0,
+            'behaviour' => 
+            array (
+              'allowLanguageSynchronization' => true,
+            ),
+          ),
+        ),
+        'endtime' => 
+        array (
+          'exclude' => true,
+          'label' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:endtime_formlabel',
+          'config' => 
+          array (
+            'type' => 'input',
+            'renderType' => 'inputDateTime',
+            'size' => 16,
+            'eval' => 'datetime,int',
+            'default' => 0,
+            'behaviour' => 
+            array (
+              'allowLanguageSynchronization' => true,
+            ),
+          ),
+        ),
+        'fe_group' => 
+        array (
+          'exclude' => true,
+          'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.fe_group',
+          'config' => 
+          array (
+            'type' => 'select',
+            'renderType' => 'selectMultipleSideBySide',
+            'size' => 5,
+            'maxitems' => 20,
+            'items' => 
+            array (
+              0 => 
+              array (
+                0 => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.hide_at_login',
+                1 => -1,
+              ),
+              1 => 
+              array (
+                0 => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.any_login',
+                1 => -2,
+              ),
+              2 => 
+              array (
+                0 => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.usergroups',
+                1 => '--div--',
+              ),
+            ),
+            'exclusiveKeys' => '-1,-2',
+            'foreign_table' => 'fe_groups',
+            'foreign_table_where' => 'ORDER BY fe_groups.title',
+          ),
+        ),
+        'title' => 
+        array (
+          'exclude' => false,
+          'l10n_mode' => 'prefixLangTitle',
+          'label' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:header_formlabel',
+          'config' => 
+          array (
+            'type' => 'input',
+            'size' => 60,
+            'max' => 255,
+            'eval' => 'required',
+          ),
+        ),
+        'alternative_title' => 
+        array (
+          'exclude' => true,
+          'label' => 'LLL:EXT:news/Resources/Private/Language/locallang_db.xlf:tx_news_domain_model_news.alternative_title',
+          'config' => 
+          array (
+            'type' => 'input',
+            'size' => 30,
+          ),
+        ),
+        'teaser' => 
+        array (
+          'exclude' => true,
+          'label' => 'LLL:EXT:news/Resources/Private/Language/locallang_db.xlf:tx_news_domain_model_news.teaser',
+          'config' => 
+          array (
+            'type' => 'text',
+            'cols' => 60,
+            'rows' => 5,
+            'enableRichtext' => false,
+          ),
+        ),
+        'bodytext' => 
+        array (
+          'exclude' => false,
+          'label' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:bodytext_formlabel',
+          'config' => 
+          array (
+            'type' => 'text',
+            'cols' => 30,
+            'rows' => 5,
+            'softref' => 'rtehtmlarea_images,typolink_tag,images,email[subst],url',
+            'enableRichtext' => true,
+          ),
+        ),
+        'datetime' => 
+        array (
+          'exclude' => false,
+          'label' => 'LLL:EXT:news/Resources/Private/Language/locallang_db.xlf:tx_news_domain_model_news.datetime',
+          'config' => 
+          array (
+            'type' => 'input',
+            'renderType' => 'inputDateTime',
+            'size' => 16,
+            'eval' => 'datetime,int,required',
+          ),
+        ),
+        'archive' => 
+        array (
+          'exclude' => true,
+          'l10n_mode' => 'copy',
+          'label' => 'LLL:EXT:news/Resources/Private/Language/locallang_db.xlf:tx_news_domain_model_news.archive',
+          'config' => 
+          array (
+            'type' => 'input',
+            'renderType' => 'inputDateTime',
+            'size' => 30,
+            'eval' => 'date,int',
+            'default' => 0,
+          ),
+        ),
+        'author' => 
+        array (
+          'exclude' => true,
+          'label' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.author_formlabel',
+          'config' => 
+          array (
+            'type' => 'input',
+            'size' => 30,
+            'behaviour' => 
+            array (
+              'allowLanguageSynchronization' => true,
+            ),
+          ),
+        ),
+        'author_email' => 
+        array (
+          'exclude' => true,
+          'label' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.author_email_formlabel',
+          'config' => 
+          array (
+            'type' => 'input',
+            'size' => 30,
+            'behaviour' => 
+            array (
+              'allowLanguageSynchronization' => true,
+            ),
+          ),
+        ),
+        'categories' => 
+        array (
+          'exclude' => true,
+          'label' => 'LLL:EXT:news/Resources/Private/Language/locallang_db.xlf:tx_news_domain_model_news.categories',
+          'config' => 
+          array (
+            'type' => 'select',
+            'renderType' => 'selectTree',
+            'treeConfig' => 
+            array (
+              'parentField' => 'parent',
+              'appearance' => 
+              array (
+                'showHeader' => true,
+                'expandAll' => true,
+                'maxLevels' => 99,
+              ),
+            ),
+            'MM' => 'sys_category_record_mm',
+            'MM_match_fields' => 
+            array (
+              'fieldname' => 'categories',
+              'tablenames' => 'tx_news_domain_model_news',
+            ),
+            'MM_opposite_field' => 'items',
+            'foreign_table' => 'sys_category',
+            'foreign_table_where' => ' AND (sys_category.sys_language_uid = 0 OR sys_category.l10n_parent = 0) ORDER BY sys_category.sorting',
+            'size' => 10,
+            'minitems' => 0,
+            'maxitems' => 99,
+            'behaviour' => 
+            array (
+              'allowLanguageSynchronization' => true,
+            ),
+          ),
+        ),
+        'related' => 
+        array (
+          'exclude' => true,
+          'label' => 'LLL:EXT:news/Resources/Private/Language/locallang_db.xlf:tx_news_domain_model_news.related',
+          'config' => 
+          array (
+            'type' => 'group',
+            'internal_type' => 'db',
+            'allowed' => 'tx_news_domain_model_news',
+            'foreign_table' => 'tx_news_domain_model_news',
+            'MM_opposite_field' => 'related_from',
+            'size' => 5,
+            'minitems' => 0,
+            'maxitems' => 100,
+            'MM' => 'tx_news_domain_model_news_related_mm',
+            'suggestOptions' => 
+            array (
+              'default' => 
+              array (
+                'suggestOptions' => true,
+                'addWhere' => ' AND tx_news_domain_model_news.uid != ###THIS_UID###',
+              ),
+            ),
+            'behaviour' => 
+            array (
+              'allowLanguageSynchronization' => true,
+            ),
+          ),
+        ),
+        'related_from' => 
+        array (
+          'exclude' => true,
+          'label' => 'LLL:EXT:news/Resources/Private/Language/locallang_db.xlf:tx_news_domain_model_news.related_from',
+          'config' => 
+          array (
+            'type' => 'group',
+            'internal_type' => 'db',
+            'foreign_table' => 'tx_news_domain_model_news',
+            'allowed' => 'tx_news_domain_model_news',
+            'size' => 5,
+            'maxitems' => 100,
+            'MM' => 'tx_news_domain_model_news_related_mm',
+            'readOnly' => 1,
+          ),
+        ),
+        'related_links' => 
+        array (
+          'exclude' => true,
+          'label' => 'LLL:EXT:news/Resources/Private/Language/locallang_db.xlf:tx_news_domain_model_news.related_links',
+          'config' => 
+          array (
+            'type' => 'inline',
+            'allowed' => 'tx_news_domain_model_link',
+            'foreign_table' => 'tx_news_domain_model_link',
+            'foreign_sortby' => 'sorting',
+            'foreign_field' => 'parent',
+            'size' => 5,
+            'minitems' => 0,
+            'maxitems' => 100,
+            'appearance' => 
+            array (
+              'collapseAll' => true,
+              'expandSingle' => true,
+              'levelLinksPosition' => 'bottom',
+              'useSortable' => true,
+              'showPossibleLocalizationRecords' => true,
+              'showRemovedLocalizationRecords' => true,
+              'showAllLocalizationLink' => true,
+              'showSynchronizationLink' => true,
+              'enabledControls' => 
+              array (
+                'info' => false,
+              ),
+            ),
+            'behaviour' => 
+            array (
+              'allowLanguageSynchronization' => true,
+            ),
+          ),
+        ),
+        'type' => 
+        array (
+          'exclude' => false,
+          'label' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.doktype_formlabel',
+          'config' => 
+          array (
+            'type' => 'select',
+            'renderType' => 'selectSingle',
+            'items' => 
+            array (
+              0 => 
+              array (
+                0 => 'LLL:EXT:news/Resources/Private/Language/locallang_db.xlf:tx_news_domain_model_news.type.I.0',
+                1 => 0,
+                2 => 'ext-news-type-default',
+              ),
+              1 => 
+              array (
+                0 => 'LLL:EXT:news/Resources/Private/Language/locallang_db.xlf:tx_news_domain_model_news.type.I.1',
+                1 => 1,
+                2 => 'ext-news-type-internal',
+              ),
+              2 => 
+              array (
+                0 => 'LLL:EXT:news/Resources/Private/Language/locallang_db.xlf:tx_news_domain_model_news.type.I.2',
+                1 => 2,
+                2 => 'ext-news-type-external',
+              ),
+            ),
+            'fieldWizard' => 
+            array (
+              'selectIcons' => 
+              array (
+                'disabled' => false,
+              ),
+            ),
+            'size' => 1,
+            'maxitems' => 1,
+          ),
+        ),
+        'keywords' => 
+        array (
+          'exclude' => true,
+          'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.keywords',
+          'config' => 
+          array (
+            'type' => 'text',
+            'placeholder' => 'LLL:EXT:news/Resources/Private/Language/locallang_db.xlf:tx_news_domain_model_news.keywords.placeholder',
+            'cols' => 30,
+            'rows' => 5,
+            'behaviour' => 
+            array (
+              'allowLanguageSynchronization' => true,
+            ),
+          ),
+        ),
+        'description' => 
+        array (
+          'exclude' => true,
+          'label' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.description_formlabel',
+          'config' => 
+          array (
+            'type' => 'text',
+            'cols' => 30,
+            'rows' => 5,
+            'behaviour' => 
+            array (
+              'allowLanguageSynchronization' => true,
+            ),
+          ),
+        ),
+        'internalurl' => 
+        array (
+          'exclude' => false,
+          'label' => 'LLL:EXT:news/Resources/Private/Language/locallang_db.xlf:tx_news_domain_model_news.type.I.1',
+          'config' => 
+          array (
+            'type' => 'input',
+            'renderType' => 'inputLink',
+            'size' => 30,
+            'max' => 255,
+            'eval' => 'trim,required',
+            'softref' => 'typolink',
+          ),
+        ),
+        'externalurl' => 
+        array (
+          'exclude' => false,
+          'label' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.doktype.I.8',
+          'config' => 
+          array (
+            'type' => 'input',
+            'size' => 50,
+            'eval' => 'required',
+            'softref' => 'typolink',
+          ),
+        ),
+        'istopnews' => 
+        array (
+          'exclude' => true,
+          'label' => 'LLL:EXT:news/Resources/Private/Language/locallang_db.xlf:tx_news_domain_model_news.istopnews',
+          'config' => 
+          array (
+            'type' => 'check',
+            'renderType' => 'checkboxToggle',
+            'default' => 0,
+            'items' => 
+            array (
+              0 => 
+              array (
+                0 => '',
+                1 => '',
+              ),
+            ),
+          ),
+        ),
+        'editlock' => 
+        array (
+          'exclude' => true,
+          'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:editlock',
+          'config' => 
+          array (
+            'type' => 'check',
+            'renderType' => 'checkboxToggle',
+            'default' => 0,
+            'items' => 
+            array (
+              0 => 
+              array (
+                0 => '',
+                1 => '',
+              ),
+            ),
+            'behaviour' => 
+            array (
+              'allowLanguageSynchronization' => true,
+            ),
+          ),
+        ),
+        'content_elements' => 
+        array (
+          'exclude' => true,
+          'label' => 'LLL:EXT:news/Resources/Private/Language/locallang_db.xlf:tx_news_domain_model_news.content_elements',
+          'config' => 
+          array (
+            'type' => 'inline',
+            'allowed' => 'tt_content',
+            'foreign_table' => 'tt_content',
+            'foreign_sortby' => 'sorting',
+            'foreign_field' => 'tx_news_related_news',
+            'minitems' => 0,
+            'maxitems' => 99,
+            'appearance' => 
+            array (
+              'useXclassedVersion' => true,
+              'collapseAll' => true,
+              'expandSingle' => true,
+              'levelLinksPosition' => 'bottom',
+              'useSortable' => true,
+              'showPossibleLocalizationRecords' => true,
+              'showRemovedLocalizationRecords' => true,
+              'showAllLocalizationLink' => true,
+              'showSynchronizationLink' => true,
+              'enabledControls' => 
+              array (
+                'info' => false,
+              ),
+            ),
+            'behaviour' => 
+            array (
+              'allowLanguageSynchronization' => true,
+            ),
+          ),
+        ),
+        'tags' => 
+        array (
+          'exclude' => true,
+          'label' => 'LLL:EXT:news/Resources/Private/Language/locallang_db.xlf:tx_news_domain_model_news.tags',
+          'config' => 
+          array (
+            'type' => 'group',
+            'internal_type' => 'db',
+            'allowed' => 'tx_news_domain_model_tag',
+            'MM' => 'tx_news_domain_model_news_tag_mm',
+            'foreign_table' => 'tx_news_domain_model_tag',
+            'foreign_table_where' => ' AND (tx_news_domain_model_tag.sys_language_uid IN (-1,0) OR tx_news_domain_model_tag.l10n_parent = 0) ORDER BY tx_news_domain_model_tag.title',
+            'size' => 10,
+            'minitems' => 0,
+            'maxitems' => 99,
+            'fieldInformation' => 
+            array (
+              'tagInformation' => 
+              array (
+                'renderType' => 'NewsStaticText',
+                'options' => 
+                array (
+                  'labels' => 
+                  array (
+                    0 => 
+                    array (
+                      'label' => '',
+                      'bold' => true,
+                      'italic' => true,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            'suggestOptions' => 
+            array (
+              'default' => 
+              array (
+                'minimumCharacters' => 2,
+                'searchWholePhrase' => true,
+                'receiverClass' => 'GeorgRinger\\News\\Backend\\Wizard\\SuggestWizardReceiver',
+              ),
+            ),
+            'fieldControl' => 
+            array (
+              'editPopup' => 
+              array (
+                'disabled' => false,
+                'options' => 
+                array (
+                  'type' => 'popup',
+                  'title' => 'LLL:EXT:news/Resources/Private/Language/locallang_db.xlf:tx_news_domain_model_news.tags.edit',
+                  'module' => 
+                  array (
+                    'name' => 'wizard_edit',
+                  ),
+                  'popup_onlyOpenIfSelected' => true,
+                  'icon' => 'actions-open',
+                  'JSopenParams' => 'height=350,width=580,status=0,menubar=0,scrollbars=1',
+                ),
+              ),
+              'listModule' => 
+              array (
+                'disabled' => false,
+                'options' => 
+                array (
+                  'type' => 'script',
+                  'title' => 'LLL:EXT:news/Resources/Private/Language/locallang_db.xlf:tx_news_domain_model_news.tags.list',
+                  'icon' => 'actions-system-list-open',
+                  'params' => 
+                  array (
+                    'table' => 'tx_news_domain_model_tag',
+                    'pid' => 1,
+                  ),
+                  'module' => 
+                  array (
+                    'name' => 'wizard_list',
+                  ),
+                ),
+              ),
+            ),
+            'behaviour' => 
+            array (
+              'allowLanguageSynchronization' => true,
+            ),
+          ),
+        ),
+        'path_segment' => 
+        array (
+          'exclude' => true,
+          'label' => 'LLL:EXT:news/Resources/Private/Language/locallang_db.xlf:tx_news_domain_model_news.path_segment',
+          'displayCond' => 'VERSION:IS:false',
+          'config' => 
+          array (
+            'type' => 'slug',
+            'size' => 50,
+            'generatorOptions' => 
+            array (
+              'fields' => 
+              array (
+                0 => 'title',
+              ),
+              'replacements' => 
+              array (
+                '/' => '-',
+              ),
+            ),
+            'fallbackCharacter' => '-',
+            'eval' => 'unique',
+            'default' => '',
+          ),
+        ),
+        'import_id' => 
+        array (
+          'label' => 'LLL:EXT:news/Resources/Private/Language/locallang_db.xlf:tx_news_domain_model_news.import_id',
+          'config' => 
+          array (
+            'type' => 'passthrough',
+          ),
+        ),
+        'import_source' => 
+        array (
+          'label' => 'LLL:EXT:news/Resources/Private/Language/locallang_db.xlf:tx_news_domain_model_news.import_source',
+          'config' => 
+          array (
+            'type' => 'passthrough',
+          ),
+        ),
+        'fal_media' => 
+        array (
+          'exclude' => true,
+          'label' => 'LLL:EXT:news/Resources/Private/Language/locallang_db.xlf:tx_news_domain_model_news.fal_media',
+          'config' => 
+          array (
+            'type' => 'inline',
+            'foreign_table' => 'sys_file_reference',
+            'foreign_field' => 'uid_foreign',
+            'foreign_sortby' => 'sorting_foreign',
+            'foreign_table_field' => 'tablenames',
+            'foreign_match_fields' => 
+            array (
+              'fieldname' => 'fal_media',
+              'tablenames' => 'tx_news_domain_model_news',
+              'table_local' => 'sys_file',
+            ),
+            'foreign_label' => 'uid_local',
+            'foreign_selector' => 'uid_local',
+            'overrideChildTca' => 
+            array (
+              'columns' => 
+              array (
+                'uid_local' => 
+                array (
+                  'config' => 
+                  array (
+                    'appearance' => 
+                    array (
+                      'elementBrowserType' => 'file',
+                      'elementBrowserAllowed' => 'gif,jpg,jpeg,bmp,png,pdf,svg,ai,mp3,wav,mp4,ogg,flac,opus,webm,youtube,vimeo',
+                    ),
+                  ),
+                ),
+              ),
+              'types' => 
+              array (
+                0 => 
+                array (
+                  'showitem' => '
+                                    --palette--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;newsPalette,
+                                    --palette--;;imageoverlayPalette,
+                                    --palette--;;filePalette',
+                ),
+                1 => 
+                array (
+                  'showitem' => '
+                                    --palette--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;newsPalette,
+                                    --palette--;;imageoverlayPalette,
+                                    --palette--;;filePalette',
+                ),
+                2 => 
+                array (
+                  'showitem' => '
+                                    --palette--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;newsPalette,
+                                    --palette--;;imageoverlayPalette,
+                                    --palette--;;filePalette',
+                ),
+                3 => 
+                array (
+                  'showitem' => '
+                                    --palette--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;newsPalette,
+                                    --palette--;;audioOverlayPalette,
+                                    --palette--;;filePalette',
+                ),
+                4 => 
+                array (
+                  'showitem' => '
+                                    --palette--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;newsPalette,
+                                    --palette--;;videoOverlayPalette,
+                                    --palette--;;filePalette',
+                ),
+                5 => 
+                array (
+                  'showitem' => '
+                                    --palette--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;newsPalette,
+                                    --palette--;;imageoverlayPalette,
+                                    --palette--;;filePalette',
+                ),
+              ),
+            ),
+            'filter' => 
+            array (
+              0 => 
+              array (
+                'userFunc' => 'TYPO3\\CMS\\Core\\Resource\\Filter\\FileExtensionFilter->filterInlineChildren',
+                'parameters' => 
+                array (
+                  'allowedFileExtensions' => 'gif,jpg,jpeg,bmp,png,pdf,svg,ai,mp3,wav,mp4,ogg,flac,opus,webm,youtube,vimeo',
+                  'disallowedFileExtensions' => '',
+                ),
+              ),
+            ),
+            'appearance' => 
+            array (
+              'useSortable' => true,
+              'headerThumbnail' => 
+              array (
+                'field' => 'uid_local',
+                'height' => '45m',
+              ),
+              'enabledControls' => 
+              array (
+                'info' => true,
+                'new' => false,
+                'dragdrop' => true,
+                'sort' => false,
+                'hide' => true,
+                'delete' => true,
+              ),
+              'createNewRelationLinkTitle' => 'LLL:EXT:news/Resources/Private/Language/locallang_db.xlf:tx_news_domain_model_news.fal_media.add',
+              'showPossibleLocalizationRecords' => true,
+              'showRemovedLocalizationRecords' => true,
+              'showAllLocalizationLink' => true,
+              'showSynchronizationLink' => true,
+            ),
+            'behaviour' => 
+            array (
+              'allowLanguageSynchronization' => true,
+            ),
+          ),
+        ),
+        'fal_related_files' => 
+        array (
+          'exclude' => true,
+          'label' => 'LLL:EXT:news/Resources/Private/Language/locallang_db.xlf:tx_news_domain_model_news.fal_related_files',
+          'config' => 
+          array (
+            'type' => 'inline',
+            'foreign_table' => 'sys_file_reference',
+            'foreign_field' => 'uid_foreign',
+            'foreign_sortby' => 'sorting_foreign',
+            'foreign_table_field' => 'tablenames',
+            'foreign_match_fields' => 
+            array (
+              'fieldname' => 'fal_related_files',
+              'tablenames' => 'tx_news_domain_model_news',
+              'table_local' => 'sys_file',
+            ),
+            'foreign_label' => 'uid_local',
+            'foreign_selector' => 'uid_local',
+            'overrideChildTca' => 
+            array (
+              'columns' => 
+              array (
+                'uid_local' => 
+                array (
+                  'config' => 
+                  array (
+                    'appearance' => 
+                    array (
+                      'elementBrowserType' => 'file',
+                      'elementBrowserAllowed' => '',
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            'filter' => 
+            array (
+              0 => 
+              array (
+                'userFunc' => 'TYPO3\\CMS\\Core\\Resource\\Filter\\FileExtensionFilter->filterInlineChildren',
+                'parameters' => 
+                array (
+                  'allowedFileExtensions' => '',
+                  'disallowedFileExtensions' => '',
+                ),
+              ),
+            ),
+            'appearance' => 
+            array (
+              'useSortable' => true,
+              'headerThumbnail' => 
+              array (
+                'field' => 'uid_local',
+                'height' => '45m',
+              ),
+              'enabledControls' => 
+              array (
+                'info' => true,
+                'new' => false,
+                'dragdrop' => true,
+                'sort' => false,
+                'hide' => true,
+                'delete' => true,
+              ),
+              'createNewRelationLinkTitle' => 'LLL:EXT:news/Resources/Private/Language/locallang_db.xlf:tx_news_domain_model_news.fal_related_files.add',
+              'showPossibleLocalizationRecords' => true,
+              'showRemovedLocalizationRecords' => true,
+              'showAllLocalizationLink' => true,
+              'showSynchronizationLink' => true,
+            ),
+            'behaviour' => 
+            array (
+              'allowLanguageSynchronization' => true,
+            ),
+            'inline' => 
+            array (
+              'inlineOnlineMediaAddButtonStyle' => 'display:none',
+            ),
+          ),
+        ),
+        'notes' => 
+        array (
+          'label' => 'LLL:EXT:news/Resources/Private/Language/locallang_db.xlf:notes',
+          'config' => 
+          array (
+            'type' => 'text',
+            'rows' => 10,
+            'cols' => 48,
+          ),
+        ),
+        'sitemap_changefreq' => 
+        array (
+          'config' => 
+          array (
+            'items' => 
+            array (
+              0 => 
+              array (
+                0 => 'LLL:EXT:seo/Resources/Private/Language/locallang_tca.xlf:pages.sitemap_changefreq.none',
+                1 => '',
+              ),
+              1 => 
+              array (
+                0 => 'LLL:EXT:seo/Resources/Private/Language/locallang_tca.xlf:pages.sitemap_changefreq.always',
+                1 => 'always',
+              ),
+              2 => 
+              array (
+                0 => 'LLL:EXT:seo/Resources/Private/Language/locallang_tca.xlf:pages.sitemap_changefreq.hourly',
+                1 => 'hourly',
+              ),
+              3 => 
+              array (
+                0 => 'LLL:EXT:seo/Resources/Private/Language/locallang_tca.xlf:pages.sitemap_changefreq.daily',
+                1 => 'daily',
+              ),
+              4 => 
+              array (
+                0 => 'LLL:EXT:seo/Resources/Private/Language/locallang_tca.xlf:pages.sitemap_changefreq.weekly',
+                1 => 'weekly',
+              ),
+              5 => 
+              array (
+                0 => 'LLL:EXT:seo/Resources/Private/Language/locallang_tca.xlf:pages.sitemap_changefreq.monthly',
+                1 => 'monthly',
+              ),
+              6 => 
+              array (
+                0 => 'LLL:EXT:seo/Resources/Private/Language/locallang_tca.xlf:pages.sitemap_changefreq.yearly',
+                1 => 'yearly',
+              ),
+              7 => 
+              array (
+                0 => 'LLL:EXT:seo/Resources/Private/Language/locallang_tca.xlf:pages.sitemap_changefreq.never',
+                1 => 'never',
+              ),
+            ),
+            'renderType' => 'selectSingle',
+            'type' => 'select',
+          ),
+          'exclude' => true,
+          'label' => 'LLL:EXT:seo/Resources/Private/Language/locallang_tca.xlf:pages.sitemap_changefreq',
+        ),
+        'sitemap_priority' => 
+        array (
+          'config' => 
+          array (
+            'items' => 
+            array (
+              0 => 
+              array (
+                0 => '0.0',
+                1 => '0.0',
+              ),
+              1 => 
+              array (
+                0 => '0.1',
+                1 => '0.1',
+              ),
+              2 => 
+              array (
+                0 => '0.2',
+                1 => '0.2',
+              ),
+              3 => 
+              array (
+                0 => '0.3',
+                1 => '0.3',
+              ),
+              4 => 
+              array (
+                0 => '0.4',
+                1 => '0.4',
+              ),
+              5 => 
+              array (
+                0 => '0.5',
+                1 => '0.5',
+              ),
+              6 => 
+              array (
+                0 => '0.6',
+                1 => '0.6',
+              ),
+              7 => 
+              array (
+                0 => '0.7',
+                1 => '0.7',
+              ),
+              8 => 
+              array (
+                0 => '0.8',
+                1 => '0.8',
+              ),
+              9 => 
+              array (
+                0 => '0.9',
+                1 => '0.9',
+              ),
+              10 => 
+              array (
+                0 => '1.0',
+                1 => '1.0',
+              ),
+            ),
+            'renderType' => 'selectSingle',
+            'type' => 'select',
+            'default' => '0.5',
+          ),
+          'exclude' => true,
+          'label' => 'LLL:EXT:seo/Resources/Private/Language/locallang_tca.xlf:pages.sitemap_priority',
+        ),
+        't3_origuid' => 
+        array (
+          'config' => 
+          array (
+            'type' => 'passthrough',
+            'default' => 0,
+          ),
+        ),
+      ),
+      'types' => 
+      array (
+        0 => 
+        array (
+          'showitem' => '--palette--;;paletteCore,title,--palette--;;paletteSlug,teaser,
+                    --palette--;;paletteDate,
+                    bodytext,
+                --div--;LLL:EXT:news/Resources/Private/Language/locallang_db.xlf:tx_news_domain_model_news.content_elements,
+                    content_elements,
+                --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.media,
+                    fal_media,fal_related_files,
+                --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:categories,
+                    categories,
+                --div--;LLL:EXT:news/Resources/Private/Language/locallang_db.xlf:tx_news_domain_model_news.tabs.relations,
+                    related,related_from,
+                    related_links,tags,
+                --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.tabs.metadata,
+                    --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.editorial;paletteAuthor,
+                    --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.metatags;metatags,
+                    --palette--;LLL:EXT:news/Resources/Private/Language/locallang_db.xlf:tx_news_domain_model_news.palettes.alternativeTitles;alternativeTitles, --palette--;;sitemap,
+                --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language,
+                    --palette--;;paletteLanguage,
+                --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access,
+                    --palette--;;paletteHidden,
+                    --palette--;;paletteAccess,
+                --div--;LLL:EXT:news/Resources/Private/Language/locallang_db.xlf:notes,
+                    notes,
+                --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.tabs.extended',
+        ),
+        1 => 
+        array (
+          'showitem' => '--palette--;;paletteCore,title,--palette--;;paletteSlug,teaser,
+                    internalurl,
+                    --palette--;;paletteDate,
+                --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.media,
+                    fal_media,fal_related_files,
+                --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:categories,
+                    categories,
+                --div--;LLL:EXT:news/Resources/Private/Language/locallang_db.xlf:tx_news_domain_model_news.tabs.relations,
+                    related,related_from,
+                    related_links,tags,
+                --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.tabs.metadata,
+                    --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.editorial;paletteAuthor,
+                    --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.metatags;metatags,
+                    --palette--;LLL:EXT:news/Resources/Private/Language/locallang_db.xlf:tx_news_domain_model_news.palettes.alternativeTitles;alternativeTitles, --palette--;;sitemap,
+                --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language,
+                    --palette--;;paletteLanguage,
+                --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access,
+                    --palette--;;paletteHidden,
+                    --palette--;;paletteAccess,
+                --div--;LLL:EXT:news/Resources/Private/Language/locallang_db.xlf:notes,
+                    notes,
+                --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.tabs.extended',
+        ),
+        2 => 
+        array (
+          'showitem' => '--palette--;;paletteCore,title,--palette--;;paletteSlug,teaser,
+                    externalurl,
+                    --palette--;;paletteDate,
+                --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.media,
+                    fal_media,fal_related_files,
+                --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:categories,
+                    categories,
+                --div--;LLL:EXT:news/Resources/Private/Language/locallang_db.xlf:tx_news_domain_model_news.tabs.relations,
+                    related,related_from,
+                    related_links,tags,
+                --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.tabs.metadata,
+                    --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.editorial;paletteAuthor,
+                    --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.metatags;metatags,
+                    --palette--;LLL:EXT:news/Resources/Private/Language/locallang_db.xlf:tx_news_domain_model_news.palettes.alternativeTitles;alternativeTitles, --palette--;;sitemap,
+                --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language,
+                    --palette--;;paletteLanguage,
+                --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access,
+                    --palette--;;paletteHidden,
+                    --palette--;;paletteAccess,
+                --div--;LLL:EXT:news/Resources/Private/Language/locallang_db.xlf:notes,
+                    notes,
+                --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.tabs.extended',
+        ),
+      ),
+      'palettes' => 
+      array (
+        'paletteAuthor' => 
+        array (
+          'showitem' => 'author,author_email,',
+        ),
+        'paletteDate' => 
+        array (
+          'label' => 'LLL:EXT:news/Resources/Private/Language/locallang_db.xlf:tx_news_domain_model_news.palettes.dates',
+          'showitem' => 'datetime,archive,',
+        ),
+        'paletteCore' => 
+        array (
+          'showitem' => 'type,istopnews,',
+        ),
+        'metatags' => 
+        array (
+          'showitem' => 'keywords,description,',
+        ),
+        'alternativeTitles' => 
+        array (
+          'showitem' => 'alternative_title',
+        ),
+        'paletteHidden' => 
+        array (
+          'showitem' => '
+                hidden
+            ',
+        ),
+        'paletteAccess' => 
+        array (
+          'label' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.access',
+          'showitem' => '
+                starttime;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:starttime_formlabel,
+                endtime;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:endtime_formlabel,
+                --linebreak--,
+                fe_group;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:fe_group_formlabel,
+                --linebreak--,editlock
+            ',
+        ),
+        'paletteLanguage' => 
+        array (
+          'showitem' => '
+                sys_language_uid;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:sys_language_uid_formlabel,l10n_parent, l10n_diffsource,
+            ',
+        ),
+        'paletteSlug' => 
+        array (
+          'showitem' => '
+                path_segment
+            ',
+        ),
+        'sitemap' => 
+        array (
+          'label' => 'LLL:EXT:seo/Resources/Private/Language/locallang_tca.xlf:pages.palettes.sitemap',
+          'showitem' => 'sitemap_changefreq,sitemap_priority',
+        ),
+      ),
+    ),
+    'tx_news_domain_model_tag' => 
+    array (
+      'ctrl' => 
+      array (
+        'title' => 'LLL:EXT:news/Resources/Private/Language/locallang_db.xlf:tx_news_domain_model_tag',
+        'descriptionColumn' => 'notes',
+        'label' => 'title',
+        'tstamp' => 'tstamp',
+        'crdate' => 'crdate',
+        'cruser_id' => 'cruser_id',
+        'languageField' => 'sys_language_uid',
+        'transOrigPointerField' => 'l10n_parent',
+        'transOrigDiffSourceField' => 'l10n_diffsource',
+        'translationSource' => 'l10n_source',
+        'default_sortby' => 'ORDER BY title',
+        'delete' => 'deleted',
+        'enablecolumns' => 
+        array (
+          'disabled' => 'hidden',
+        ),
+        'typeicon_classes' => 
+        array (
+          'default' => 'ext-news-tag',
+        ),
+        'searchFields' => 'uid,title',
+      ),
+      'interface' => 
+      array (
+      ),
+      'columns' => 
+      array (
+        'sys_language_uid' => 
+        array (
+          'exclude' => true,
+          'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.language',
+          'config' => 
+          array (
+            'type' => 'select',
+            'renderType' => 'selectSingle',
+            'special' => 'languages',
+            'items' => 
+            array (
+              0 => 
+              array (
+                0 => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.allLanguages',
+                1 => -1,
+                2 => 'flags-multiple',
+              ),
+            ),
+            'default' => 0,
+          ),
+        ),
+        'l10n_parent' => 
+        array (
+          'displayCond' => 'FIELD:sys_language_uid:>:0',
+          'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.l18n_parent',
+          'config' => 
+          array (
+            'type' => 'select',
+            'renderType' => 'selectSingle',
+            'items' => 
+            array (
+              0 => 
+              array (
+                0 => '',
+                1 => 0,
+              ),
+            ),
+            'foreign_table' => 'tx_news_domain_model_tag',
+            'foreign_table_where' => 'AND tx_news_domain_model_tag.pid=###CURRENT_PID### AND tx_news_domain_model_tag.sys_language_uid IN (-1,0)',
+            'fieldWizard' => 
+            array (
+              'selectIcons' => 
+              array (
+                'disabled' => true,
+              ),
+            ),
+            'default' => 0,
+          ),
+        ),
+        'l10n_source' => 
+        array (
+          'config' => 
+          array (
+            'type' => 'passthrough',
+          ),
+        ),
+        'l10n_diffsource' => 
+        array (
+          'config' => 
+          array (
+            'type' => 'passthrough',
+            'default' => '',
+          ),
+        ),
+        'pid' => 
+        array (
+          'label' => 'pid',
+          'config' => 
+          array (
+            'type' => 'passthrough',
+          ),
+        ),
+        'crdate' => 
+        array (
+          'label' => 'crdate',
+          'config' => 
+          array (
+            'type' => 'input',
+            'renderType' => 'inputDateTime',
+            'eval' => 'datetime',
+          ),
+        ),
+        'tstamp' => 
+        array (
+          'label' => 'tstamp',
+          'config' => 
+          array (
+            'type' => 'input',
+            'renderType' => 'inputDateTime',
+            'eval' => 'datetime',
+          ),
+        ),
+        'hidden' => 
+        array (
+          'exclude' => true,
+          'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.hidden',
+          'config' => 
+          array (
+            'type' => 'check',
+            'default' => 0,
+          ),
+        ),
+        'title' => 
+        array (
+          'exclude' => false,
+          'label' => 'LLL:EXT:news/Resources/Private/Language/locallang_db.xlf:tx_news_domain_model_tag.title',
+          'config' => 
+          array (
+            'type' => 'input',
+            'size' => 30,
+            'eval' => 'required,unique,trim',
+          ),
+        ),
+        'slug' => 
+        array (
+          'exclude' => true,
+          'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:pages.slug',
+          'displayCond' => 'VERSION:IS:false',
+          'config' => 
+          array (
+            'type' => 'slug',
+            'size' => 50,
+            'generatorOptions' => 
+            array (
+              'fields' => 
+              array (
+                0 => 'title',
+              ),
+              'replacements' => 
+              array (
+                '/' => '-',
+              ),
+            ),
+            'fallbackCharacter' => '-',
+            'eval' => 'unique',
+            'default' => '',
+          ),
+        ),
+        'seo_headline' => 
+        array (
+          'exclude' => true,
+          'label' => 'LLL:EXT:news/Resources/Private/Language/locallang_db.xlf:tx_news_domain_model_tag.seo.seo_headline',
+          'config' => 
+          array (
+            'type' => 'input',
+          ),
+        ),
+        'seo_title' => 
+        array (
+          'exclude' => true,
+          'label' => 'LLL:EXT:news/Resources/Private/Language/locallang_db.xlf:tx_news_domain_model_tag.seo.seo_title',
+          'config' => 
+          array (
+            'type' => 'input',
+          ),
+        ),
+        'seo_description' => 
+        array (
+          'exclude' => true,
+          'label' => 'LLL:EXT:news/Resources/Private/Language/locallang_db.xlf:tx_news_domain_model_tag.seo.seo_description',
+          'config' => 
+          array (
+            'type' => 'text',
+          ),
+        ),
+        'seo_text' => 
+        array (
+          'exclude' => true,
+          'label' => 'LLL:EXT:news/Resources/Private/Language/locallang_db.xlf:tx_news_domain_model_tag.seo.seo_text',
+          'config' => 
+          array (
+            'type' => 'text',
+            'enableRichtext' => true,
+          ),
+        ),
+        'notes' => 
+        array (
+          'label' => 'LLL:EXT:news/Resources/Private/Language/locallang_db.xlf:notes',
+          'config' => 
+          array (
+            'type' => 'text',
+            'rows' => 10,
+            'cols' => 48,
+          ),
+        ),
+      ),
+      'types' => 
+      array (
+        0 => 
+        array (
+          'showitem' => 'title, slug, --palette--;;paletteCore,
+            --div--;LLL:EXT:news/Resources/Private/Language/locallang_db.xlf:tx_news_domain_model_tag.tabs.seo, seo_title, seo_description, seo_headline, seo_text,
+            --div--;LLL:EXT:news/Resources/Private/Language/locallang_db.xlf:notes,
+                    notes,
+			--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.tabs.extended,
+            --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language,
+                --palette--;;paletteLanguage,',
+        ),
+      ),
+      'palettes' => 
+      array (
+        'paletteCore' => 
+        array (
+          'showitem' => 'hidden,',
+        ),
+        'paletteLanguage' => 
+        array (
+          'showitem' => '
+                sys_language_uid;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:sys_language_uid_formlabel,l10n_parent, l10n_diffsource,
+            ',
         ),
       ),
     ),

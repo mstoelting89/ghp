@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => 'ec2f8c739b3931d46b59577a7011b786595fcb72',
+    'reference' => '9c2f7e176f1201a3ecb9b06605ef4681b37bfa95',
     'name' => 'typo3/cms-base-distribution',
   ),
   'versions' => 
@@ -91,6 +91,15 @@
       array (
       ),
       'reference' => '182132f8fdfa0d837b4ba756646dd81472beb466',
+    ),
+    'georgringer/news' => 
+    array (
+      'pretty_version' => '8.5.2',
+      'version' => '8.5.2.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '24ddcb09ab7a566a3bc19bea5cb80d78ad673951',
     ),
     'gridelementsteam/gridelements' => 
     array (
@@ -649,6 +658,13 @@
         0 => '10.0.0',
       ),
     ),
+    'typo3-ter/news' => 
+    array (
+      'replaced' => 
+      array (
+        0 => '8.5.2',
+      ),
+    ),
     'typo3-ter/typo3-console' => 
     array (
       'replaced' => 
@@ -690,7 +706,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => 'ec2f8c739b3931d46b59577a7011b786595fcb72',
+      'reference' => '9c2f7e176f1201a3ecb9b06605ef4681b37bfa95',
     ),
     'typo3/cms-belog' => 
     array (
