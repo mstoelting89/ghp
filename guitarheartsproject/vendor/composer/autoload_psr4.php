@@ -82,6 +82,7 @@ return array(
     'GuzzleHttp\\Promise\\' => array($vendorDir . '/guzzlehttp/promises/src'),
     'GuzzleHttp\\' => array($vendorDir . '/guzzlehttp/guzzle/src'),
     'GridElementsTeam\\Gridelements\\' => array($baseDir . '/public/typo3conf/ext/gridelements/Classes'),
+    'GeorgRinger\\News\\' => array($baseDir . '/public/typo3conf/ext/news/Classes'),
     'Egulias\\EmailValidator\\' => array($vendorDir . '/egulias/email-validator/src'),
     'EBT\\ExtensionBuilder\\' => array($baseDir . '/public/typo3conf/ext/extension_builder/Classes'),
     'Doctrine\\Instantiator\\' => array($vendorDir . '/doctrine/instantiator/src/Doctrine/Instantiator'),
