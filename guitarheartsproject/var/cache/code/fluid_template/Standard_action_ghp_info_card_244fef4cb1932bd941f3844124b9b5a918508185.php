@@ -1,6 +1,6 @@
 <?php
 
-class Standard_action_ghp_info_card_609a081d00f6d81f3655899352c8ea1d1b5d2353 extends \TYPO3Fluid\Fluid\Core\Compiler\AbstractCompiledTemplate {
+class Standard_action_ghp_info_card_244fef4cb1932bd941f3844124b9b5a918508185 extends \TYPO3Fluid\Fluid\Core\Compiler\AbstractCompiledTemplate {
 
 public function getLayoutName(\TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface $renderingContext) {
 $self = $this;
@@ -188,8 +188,8 @@ return '
 }, array($arguments1));
 
 $output0 .= '
-<div class="row info-items">
-    <div class="col-md-5 flex align-self-center">
+<div class="info-items">
+    <div class="image-info-card">
         ';
 // Rendering ViewHelper TYPO3Fluid\Fluid\ViewHelpers\IfViewHelper
 $renderChildrenClosure30 = function() use ($renderingContext, $self) {
@@ -225,8 +225,6 @@ $arguments35['loading'] = NULL;
 $arguments35['class'] = 'image-embed-item';
 $array37 = array (
 );$arguments35['file'] = $renderingContext->getVariableProvider()->getByPath('files.0', $array37);
-$arguments35['width'] = 400;
-$arguments35['height'] = 400;
 
 $output34 .= TYPO3\CMS\Fluid\ViewHelpers\MediaViewHelper::renderStatic($arguments35, $renderChildrenClosure36, $renderingContext);
 
@@ -258,120 +256,146 @@ $output0 .= TYPO3Fluid\Fluid\ViewHelpers\IfViewHelper::renderStatic($arguments29
 $output0 .= '
     </div>
 </div>
-<div class="row">
-    <div class="col-md-5">
-        ';
-// Rendering ViewHelper TYPO3Fluid\Fluid\ViewHelpers\Format\RawViewHelper
+
+<div class="mt-15 info-card-header">
+    ';
+// Rendering ViewHelper TYPO3\CMS\Fluid\ViewHelpers\RenderViewHelper
 $renderChildrenClosure39 = function() use ($renderingContext, $self) {
-$array40 = array (
-);return $renderingContext->getVariableProvider()->getByPath('data.bodytext', $array40);
+return NULL;
 };
 $arguments38 = array();
-$arguments38['value'] = NULL;
+$arguments38['section'] = NULL;
+$arguments38['partial'] = NULL;
+$arguments38['delegate'] = NULL;
+$arguments38['renderable'] = NULL;
+$arguments38['arguments'] = array (
+);
+$arguments38['optional'] = false;
+$arguments38['default'] = NULL;
+$arguments38['contentAs'] = NULL;
+$arguments38['debug'] = true;
+$arguments38['partial'] = 'Header/All';
+$arguments38['arguments'] = $renderingContext->getVariableProvider()->getAll();
 
-$output0 .= isset($arguments38['value']) ? $arguments38['value'] : $renderChildrenClosure39();
+$output0 .= TYPO3\CMS\Fluid\ViewHelpers\RenderViewHelper::renderStatic($arguments38, $renderChildrenClosure39, $renderingContext);
 
 $output0 .= '
-    </div>
 </div>
+
+
+<div class="mt-15">
+    ';
+// Rendering ViewHelper TYPO3Fluid\Fluid\ViewHelpers\Format\RawViewHelper
+$renderChildrenClosure42 = function() use ($renderingContext, $self) {
+$array43 = array (
+);return $renderingContext->getVariableProvider()->getByPath('data.bodytext', $array43);
+};
+$arguments41 = array();
+$arguments41['value'] = NULL;
+
+$output0 .= isset($arguments41['value']) ? $arguments41['value'] : $renderChildrenClosure42();
+
+$output0 .= '
+</div>
+
 
 ';
 // Rendering ViewHelper TYPO3Fluid\Fluid\ViewHelpers\SwitchViewHelper
-$renderChildrenClosure42 = function() use ($renderingContext, $self) {
-$output56 = '';
+$renderChildrenClosure45 = function() use ($renderingContext, $self) {
+$output59 = '';
 
-$output56 .= '
+$output59 .= '
     ';
 // Rendering ViewHelper TYPO3Fluid\Fluid\ViewHelpers\CaseViewHelper
-$renderChildrenClosure58 = function() use ($renderingContext, $self) {
+$renderChildrenClosure61 = function() use ($renderingContext, $self) {
 return '
         <div class="row ghp-mb-0"></div>
     ';
 };
-$arguments57 = array();
-$arguments57['value'] = NULL;
-$arguments57['value'] = '';
+$arguments60 = array();
+$arguments60['value'] = NULL;
+$arguments60['value'] = '';
 
-$output56 .= '';
+$output59 .= '';
 
-$output56 .= '
+$output59 .= '
     ';
 // Rendering ViewHelper TYPO3Fluid\Fluid\ViewHelpers\CaseViewHelper
-$renderChildrenClosure60 = function() use ($renderingContext, $self) {
+$renderChildrenClosure63 = function() use ($renderingContext, $self) {
 return '
         <div class="row ghp-mb-1"></div>
     ';
 };
-$arguments59 = array();
-$arguments59['value'] = NULL;
-$arguments59['value'] = 'extra-small';
+$arguments62 = array();
+$arguments62['value'] = NULL;
+$arguments62['value'] = 'extra-small';
 
-$output56 .= '';
+$output59 .= '';
 
-$output56 .= '
+$output59 .= '
     ';
 // Rendering ViewHelper TYPO3Fluid\Fluid\ViewHelpers\CaseViewHelper
-$renderChildrenClosure62 = function() use ($renderingContext, $self) {
+$renderChildrenClosure65 = function() use ($renderingContext, $self) {
 return '
         <div class="row ghp-mb-2"></div>
     ';
 };
-$arguments61 = array();
-$arguments61['value'] = NULL;
-$arguments61['value'] = 'small';
+$arguments64 = array();
+$arguments64['value'] = NULL;
+$arguments64['value'] = 'small';
 
-$output56 .= '';
+$output59 .= '';
 
-$output56 .= '
+$output59 .= '
     ';
 // Rendering ViewHelper TYPO3Fluid\Fluid\ViewHelpers\CaseViewHelper
-$renderChildrenClosure64 = function() use ($renderingContext, $self) {
+$renderChildrenClosure67 = function() use ($renderingContext, $self) {
 return '
         <div class="row ghp-mb-3"></div>
     ';
 };
-$arguments63 = array();
-$arguments63['value'] = NULL;
-$arguments63['value'] = 'medium';
+$arguments66 = array();
+$arguments66['value'] = NULL;
+$arguments66['value'] = 'medium';
 
-$output56 .= '';
+$output59 .= '';
 
-$output56 .= '
+$output59 .= '
     ';
 // Rendering ViewHelper TYPO3Fluid\Fluid\ViewHelpers\CaseViewHelper
-$renderChildrenClosure66 = function() use ($renderingContext, $self) {
+$renderChildrenClosure69 = function() use ($renderingContext, $self) {
 return '
         <div class="row ghp-mb-4"></div>
     ';
 };
-$arguments65 = array();
-$arguments65['value'] = NULL;
-$arguments65['value'] = 'large';
+$arguments68 = array();
+$arguments68['value'] = NULL;
+$arguments68['value'] = 'large';
 
-$output56 .= '';
+$output59 .= '';
 
-$output56 .= '
+$output59 .= '
     ';
 // Rendering ViewHelper TYPO3Fluid\Fluid\ViewHelpers\CaseViewHelper
-$renderChildrenClosure68 = function() use ($renderingContext, $self) {
+$renderChildrenClosure71 = function() use ($renderingContext, $self) {
 return '
         <div class="row ghp-mb-5"></div>
     ';
 };
-$arguments67 = array();
-$arguments67['value'] = NULL;
-$arguments67['value'] = 'extra-large';
+$arguments70 = array();
+$arguments70['value'] = NULL;
+$arguments70['value'] = 'extra-large';
 
-$output56 .= '';
+$output59 .= '';
 
-$output56 .= '
+$output59 .= '
 ';
-return $output56;
+return $output59;
 };
-$arguments41 = array();
-$arguments41['expression'] = NULL;
-$array55 = array (
-);$arguments41['expression'] = $renderingContext->getVariableProvider()->getByPath('data.space_after_class', $array55);
+$arguments44 = array();
+$arguments44['expression'] = NULL;
+$array58 = array (
+);$arguments44['expression'] = $renderingContext->getVariableProvider()->getByPath('data.space_after_class', $array58);
 
 $output0 .= call_user_func_array(function($arguments) use ($renderingContext, $self) {
 switch ($arguments['expression']) {
@@ -424,7 +448,7 @@ return '
     ';
 });
 }
-}, array($arguments41));
+}, array($arguments44));
 
 $output0 .= '
 

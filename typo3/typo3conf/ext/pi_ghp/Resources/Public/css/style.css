@@ -515,7 +515,7 @@ footer .secondary-menu a {
 }
 
 .grid-container {
-    display:flex;
+    display:flex!important;
 }
 
 /*************************************/

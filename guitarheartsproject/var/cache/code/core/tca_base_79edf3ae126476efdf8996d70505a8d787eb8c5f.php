@@ -12108,6 +12108,11 @@ return array (
                   ),
                   6 => 
                   array (
+                    0 => 'firstWord',
+                    1 => '6',
+                  ),
+                  7 => 
+                  array (
                     0 => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:header_layout.I.6',
                     1 => '100',
                   ),

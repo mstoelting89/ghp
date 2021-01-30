@@ -1,5 +1,6 @@
 body {
     font-family: "Open Sans";
+    font-size: 1.2rem;
 }
 
 /*************************************/
@@ -165,6 +166,11 @@ body {
 .card-header {
     background-color: #b20027;
     color:#fff;
+}
+
+.image-info-card {
+    display:flex;
+    justify-content: center;
 }
 
 /*************************************/
@@ -345,58 +351,7 @@ body {
         opacity: 1;
     }
 }
-/*
-.sidebars {
-    position:fixed;
-    bottom:0;
-    right:0;
-    left:0;
-    flex-direction: row;
-    display:flex;
-    justify-content: flex-end;
-}
 
-.sidebars .sidebar {
-    transition:all 0.25s ease-in-out;
-}
-
-.sidebar-item {
-    position:relative;
-    flex-grow: 1;
-    background-color: #b20027;
-    border-radius:5px 5px 0 0;
-
-    transition:all 0.25s ease-in-out;
-}
-
-.sidebar-item.active {
-    position:fixed;
-    height:100vh;
-    width:100vw;
-    top:0;
-}
-
-.sidebar-title {
-    text-align: center;
-    color:#fff;
-    padding:10px;
-    font-size:1rem;
-    font-weight:bold;
-    cursor:pointer;
-}
-
-.sidebar-content {
-    position: absolute;
-    display: block;
-    width:100vw;
-    top:36px;
-    bottom:0;
-    left:0;
-    overflow-y:auto;
-    background-color:#fff;
-    border: 2px solid black;
-}
-*/
 
 /*************************************/
 /*          Footer                   */
@@ -437,17 +392,21 @@ footer .secondary-menu a {
 /*************************************/
 
 .firstWord {
-    font-size:1.5rem;
+    font-size:2rem;
 }
 
 .word-highlight {
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: 600;
     color: #b20027;
 }
 
 .side-content-element {
     margin-top:5rem;
+}
+
+.info-card-header {
+    text-align: center;
 }
 
 .ghp-mt-0 {
@@ -498,9 +457,26 @@ footer .secondary-menu a {
     margin-top:5rem;
 }
 
+
 .info-items img {
     width: 400px;
     height: auto;
+}
+
+.mt-15 {
+    margin-top:15px;
+}
+
+/*************************************/
+/*          twoColumns               */
+/*************************************/
+.grid-container-zweispalten .grid-row {
+    display: flex;
+}
+
+.grid-container-zweispalten .grid-column {
+    min-width: 48%;
+    margin-right:5rem;
 }
 
 /*************************************/

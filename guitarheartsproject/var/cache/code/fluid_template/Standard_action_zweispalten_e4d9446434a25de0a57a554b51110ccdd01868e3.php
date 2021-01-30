@@ -1,6 +1,6 @@
 <?php
 
-class Standard_action_zweispalten_63f670c917d488afeb8d1452987af3df92ea941e extends \TYPO3Fluid\Fluid\Core\Compiler\AbstractCompiledTemplate {
+class Standard_action_zweispalten_e4d9446434a25de0a57a554b51110ccdd01868e3 extends \TYPO3Fluid\Fluid\Core\Compiler\AbstractCompiledTemplate {
 
 public function getLayoutName(\TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface $renderingContext) {
 $self = $this;
@@ -35,7 +35,8 @@ $self = $this;
 $output0 = '';
 
 $output0 .= '
-    ';
+
+        ';
 // Rendering ViewHelper TYPO3\CMS\Fluid\ViewHelpers\RenderViewHelper
 $renderChildrenClosure2 = function() use ($renderingContext, $self) {
 return NULL;
@@ -57,6 +58,7 @@ $arguments1['arguments'] = $renderingContext->getVariableProvider()->getAll();
 $output0 .= TYPO3\CMS\Fluid\ViewHelpers\RenderViewHelper::renderStatic($arguments1, $renderChildrenClosure2, $renderingContext);
 
 $output0 .= '
+
 ';
 
 return $output0;
@@ -89,7 +91,8 @@ $renderChildrenClosure8 = function() use ($renderingContext, $self) {
 $output9 = '';
 
 $output9 .= '
-    ';
+
+        ';
 // Rendering ViewHelper TYPO3\CMS\Fluid\ViewHelpers\RenderViewHelper
 $renderChildrenClosure11 = function() use ($renderingContext, $self) {
 return NULL;
@@ -111,6 +114,7 @@ $arguments10['arguments'] = $renderingContext->getVariableProvider()->getAll();
 $output9 .= TYPO3\CMS\Fluid\ViewHelpers\RenderViewHelper::renderStatic($arguments10, $renderChildrenClosure11, $renderingContext);
 
 $output9 .= '
+
 ';
 return $output9;
 };

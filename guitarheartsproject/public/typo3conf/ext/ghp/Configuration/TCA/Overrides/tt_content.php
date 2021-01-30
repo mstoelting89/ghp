@@ -349,6 +349,10 @@ $GLOBALS['TCA']['tt_content']['types']['ghp_info_card'] = [
                         '5'
                     ],
                     [
+                        'firstWord',
+                        '6'
+                    ],
+                    [
                         'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:header_layout.I.6',
                         '100'
                     ]
