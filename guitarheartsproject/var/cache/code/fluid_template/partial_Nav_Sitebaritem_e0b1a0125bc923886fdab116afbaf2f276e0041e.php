@@ -1,6 +1,6 @@
 <?php
 
-class partial_Nav_Sitebaritem_645dc2ec9af63c6a189cb3025c14f06b9fd8613a extends \TYPO3Fluid\Fluid\Core\Compiler\AbstractCompiledTemplate {
+class partial_Nav_Sitebaritem_e0b1a0125bc923886fdab116afbaf2f276e0041e extends \TYPO3Fluid\Fluid\Core\Compiler\AbstractCompiledTemplate {
 
 public function getLayoutName(\TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface $renderingContext) {
 $self = $this;
@@ -50,7 +50,18 @@ $output0 .= call_user_func_array( function ($var) { return (is_string($var) || (
 $output0 .= '
     </div>
     <div class="sidebar-content">
+        ';
+// Rendering ViewHelper TYPO3Fluid\Fluid\ViewHelpers\Format\RawViewHelper
+$renderChildrenClosure3 = function() use ($renderingContext, $self) {
+$array4 = array (
+);return $renderingContext->getVariableProvider()->getByPath('bewerbenContent', $array4);
+};
+$arguments2 = array();
+$arguments2['value'] = NULL;
 
+$output0 .= isset($arguments2['value']) ? $arguments2['value'] : $renderChildrenClosure3();
+
+$output0 .= '
     </div>
 </div>
 ';

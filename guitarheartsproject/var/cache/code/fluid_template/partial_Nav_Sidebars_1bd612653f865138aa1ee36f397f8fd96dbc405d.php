@@ -1,6 +1,6 @@
 <?php
 
-class partial_Nav_Sidebars_09e175a8b23f93f16d845ecaa0994bdb9dfa2dbe extends \TYPO3Fluid\Fluid\Core\Compiler\AbstractCompiledTemplate {
+class partial_Nav_Sidebars_1bd612653f865138aa1ee36f397f8fd96dbc405d extends \TYPO3Fluid\Fluid\Core\Compiler\AbstractCompiledTemplate {
 
 public function getLayoutName(\TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface $renderingContext) {
 $self = $this;
@@ -70,6 +70,8 @@ $array8 = array (
 );$array7['sidebar'] = $renderingContext->getVariableProvider()->getByPath('sidebaritem', $array8);
 $array9 = array (
 );$array7['sidebarcontent'] = $renderingContext->getVariableProvider()->getByPath('sidebarcontent', $array9);
+$array10 = array (
+);$array7['bewerbenContent'] = $renderingContext->getVariableProvider()->getByPath('bewerbenContent', $array10);
 $arguments5['arguments'] = $array7;
 
 $output4 .= TYPO3\CMS\Fluid\ViewHelpers\RenderViewHelper::renderStatic($arguments5, $renderChildrenClosure6, $renderingContext);

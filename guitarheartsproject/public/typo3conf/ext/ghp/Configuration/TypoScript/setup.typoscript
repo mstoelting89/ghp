@@ -173,6 +173,34 @@ page {
         20.data = DB:pages:5:title
       }
 
+      bewerbenContent = CONTENT
+      bewerbenContent {
+        table = tt_content
+        select {
+          pidInList = 5
+        }
+
+        renderObj = COA
+        renderObj {
+          10 = TEXT
+          10.stdWrap.field = bodytext
+        }
+      }
+
+      spendenContent = CONTENT
+      spendenContent {
+        table = tt_content
+        select {
+          pidInList = 6
+        }
+
+        renderObj = COA
+        renderObj {
+          10 = TEXT
+          10.stdWrap.field = bodytext
+        }
+      }
+
       ankermenue = CONTENT
       ankermenue {
         table = tt_content
