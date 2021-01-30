@@ -475,7 +475,7 @@ return array (
   'ajax_records_localize_summary' => 
   array (
     'path' => '/ajax/records/localize/summary',
-    'target' => 'TYPO3\\CMS\\Backend\\Controller\\Page\\LocalizationController::getRecordLocalizeSummary',
+    'target' => 'GridElementsTeam\\Gridelements\\Backend\\LocalizationController::getRecordLocalizeSummary',
     'ajax' => true,
   ),
   'ajax_records_localize' => 
@@ -535,6 +535,11 @@ return array (
     'path' => '/ajax/extensionBuilder/wireEditor',
     'target' => 'EBT\\ExtensionBuilder\\Configuration\\ExtensionBuilderConfigurationManager::getWiringEditorSmd',
     'ajax' => true,
+  ),
+  'wizard_gridelements_backend_layout' => 
+  array (
+    'path' => '/wizard',
+    'target' => 'GridElementsTeam\\Gridelements\\Wizard\\GridelementsBackendLayoutWizardElement::mainAction',
   ),
 );
 #

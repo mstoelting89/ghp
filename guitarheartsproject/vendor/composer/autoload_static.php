@@ -120,6 +120,7 @@ class ComposerStaticInitfdec5930a03065e17dd82993156040a0
             'GuzzleHttp\\Psr7\\' => 16,
             'GuzzleHttp\\Promise\\' => 19,
             'GuzzleHttp\\' => 11,
+            'GridElementsTeam\\Gridelements\\' => 30,
         ),
         'E' => 
         array (
@@ -442,6 +443,10 @@ class ComposerStaticInitfdec5930a03065e17dd82993156040a0
         'GuzzleHttp\\' => 
         array (
             0 => __DIR__ . '/..' . '/guzzlehttp/guzzle/src',
+        ),
+        'GridElementsTeam\\Gridelements\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/public/typo3conf/ext/gridelements/Classes',
         ),
         'Egulias\\EmailValidator\\' => 
         array (

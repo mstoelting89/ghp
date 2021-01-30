@@ -29,7 +29,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => 'd6e8977dd60fc7851985d6df678403b7e2e05e74',
+    'reference' => 'ec2f8c739b3931d46b59577a7011b786595fcb72',
     'name' => 'typo3/cms-base-distribution',
   ),
   'versions' => 
@@ -114,6 +114,19 @@ private static $installed = array (
       array (
       ),
       'reference' => '182132f8fdfa0d837b4ba756646dd81472beb466',
+    ),
+    'gridelementsteam/gridelements' => 
+    array (
+      'pretty_version' => '10.0.0',
+      'version' => '10.0.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '8ea5f0f39b1b0e8905209f79261a6198aa895280',
+      'replaced' => 
+      array (
+        0 => '10.0.0',
+      ),
     ),
     'guzzlehttp/guzzle' => 
     array (
@@ -652,6 +665,13 @@ private static $installed = array (
         0 => 'dev-v10-compatibility',
       ),
     ),
+    'typo3-ter/gridelements' => 
+    array (
+      'replaced' => 
+      array (
+        0 => '10.0.0',
+      ),
+    ),
     'typo3-ter/typo3-console' => 
     array (
       'replaced' => 
@@ -693,7 +713,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => 'd6e8977dd60fc7851985d6df678403b7e2e05e74',
+      'reference' => 'ec2f8c739b3931d46b59577a7011b786595fcb72',
     ),
     'typo3/cms-belog' => 
     array (

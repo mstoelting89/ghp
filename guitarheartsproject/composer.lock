@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b7fd1d67aae5995261be1d49c95557cd",
+    "content-hash": "e00257d2524f0ebc41aa684756b3df90",
     "packages": [
         {
             "name": "cogpowered/finediff",
@@ -725,6 +725,52 @@
                 "source": "https://github.com/FriendsOfTYPO3/extension_builder/tree/v10-compatibility"
             },
             "time": "2021-01-03T10:29:16+00:00"
+        },
+        {
+            "name": "gridelementsteam/gridelements",
+            "version": "10.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://gitlab.com/coderscare/gridelements.git",
+                "reference": "8ea5f0f39b1b0e8905209f79261a6198aa895280"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://gitlab.com/api/v4/projects/coderscare%2Fgridelements/repository/archive.zip?sha=8ea5f0f39b1b0e8905209f79261a6198aa895280",
+                "reference": "8ea5f0f39b1b0e8905209f79261a6198aa895280",
+                "shasum": ""
+            },
+            "require": {
+                "typo3/cms-backend": "^10",
+                "typo3/cms-core": "^10",
+                "typo3/cms-frontend": "^10",
+                "typo3/cms-recordlist": "^10"
+            },
+            "replace": {
+                "gridelementsteam/gridelements": "self.version",
+                "typo3-ter/gridelements": "self.version"
+            },
+            "type": "typo3-cms-extension",
+            "autoload": {
+                "psr-4": {
+                    "GridElementsTeam\\Gridelements\\": "Classes/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "description": "This extension integrates the grid layout concept also to regular content elements - the grid elements. It offers a lot of new features like advanced drag & drop or real references, that improve the usability of the page and list module to speed up the daily work with the backend.",
+            "homepage": "https://forge.typo3.org/projects/extension-gridelements2",
+            "keywords": [
+                "Gridelements",
+                "TYPO3 CMS",
+                "grids"
+            ],
+            "support": {
+                "issues": "https://forge.typo3.org/projects/extension-gridelements2/issues"
+            },
+            "time": "2020-04-23T19:51:52+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",

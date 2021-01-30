@@ -89,6 +89,9 @@ return [
         'ghp' => [
             'packagePath' => 'typo3conf/ext/ghp/',
         ],
+        'gridelements' => [
+            'packagePath' => 'typo3conf/ext/gridelements/',
+        ],
     ],
     'version' => 5,
 ];

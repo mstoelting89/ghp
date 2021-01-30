@@ -8610,6 +8610,16 @@ return array (
                 0 => 'XML Sitemap (seo)',
                 1 => 'EXT:seo/Configuration/TypoScript/XmlSitemap',
               ),
+              4 => 
+              array (
+                0 => 'Gridelements (deprecated) (gridelements)',
+                1 => 'EXT:gridelements/Configuration/TypoScript/',
+              ),
+              5 => 
+              array (
+                0 => 'Gridelements w/DataProcessing (recommended) (gridelements)',
+                1 => 'EXT:gridelements/Configuration/TypoScript/DataProcessingLibContentElement',
+              ),
             ),
             'softref' => 'ext_fileref',
           ),
@@ -8789,8 +8799,8 @@ return array (
         'hideAtCopy' => true,
         'prependAtCopy' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.prependAtCopy',
         'copyAfterDuplFields' => 'colPos,sys_language_uid',
-        'useColumnsForDefaultValues' => 'colPos,sys_language_uid,CType',
-        'shadowColumnsForNewPlaceholders' => 'colPos',
+        'useColumnsForDefaultValues' => 'colPos,sys_language_uid,CType,tx_gridelements_container,tx_gridelements_columns',
+        'shadowColumnsForNewPlaceholders' => 'colPos,tx_gridelements_container,tx_gridelements_columns',
         'transOrigPointerField' => 'l18n_parent',
         'transOrigDiffSourceField' => 'l18n_diffsource',
         'languageField' => 'sys_language_uid',
@@ -8833,6 +8843,7 @@ return array (
           'menu_section_pages' => 'content-menu-section',
           'form_formframework' => 'content-form',
           'felogin_login' => 'mimetypes-x-content-login',
+          'gridelements_pi1' => 'gridelements-default',
         ),
         'searchFields' => 'header,header_link,subheader,bodytext,pi_flexform',
       ),
@@ -9066,6 +9077,13 @@ return array (
                 2 => 'EXT:felogin/Resources/Public/Icons/Extension.png',
                 3 => 'forms',
               ),
+              31 => 
+              array (
+                0 => 'LLL:EXT:gridelements/Resources/Private/Language/locallang_db.xml:tt_content.CType_pi1',
+                1 => 'gridelements_pi1',
+                2 => 'gridelements-default',
+                3 => 'default',
+              ),
             ),
             'itemGroups' => 
             array (
@@ -9078,6 +9096,7 @@ return array (
             'default' => 'text',
             'authMode' => 'explicitAllow',
             'authMode_enforce' => 'strict',
+            'itemsProcFunc' => 'GridElementsTeam\\Gridelements\\Backend\\ItemsProcFuncs\\CTypeList->itemsProcFunc',
           ),
         ),
         'editlock' => 
@@ -9201,6 +9220,7 @@ return array (
               ),
             ),
             'default' => 0,
+            'itemsProcFunc' => 'GridElementsTeam\\Gridelements\\Backend\\ItemsProcFuncs\\SysLanguageUidList->itemsProcFunc',
           ),
         ),
         'l18n_parent' => 
@@ -9439,7 +9459,7 @@ return array (
           array (
             'type' => 'select',
             'renderType' => 'selectSingle',
-            'itemsProcFunc' => 'TYPO3\\CMS\\Backend\\View\\BackendLayoutView->colPosListItemProcFunc',
+            'itemsProcFunc' => 'GridElementsTeam\\Gridelements\\Backend\\ItemsProcFuncs\\ColPosList->itemsProcFunc',
             'items' => 
             array (
               0 => 
@@ -9465,6 +9485,7 @@ return array (
             ),
             'default' => 0,
           ),
+          'onChange' => 'reload',
         ),
         'date' => 
         array (
@@ -10203,6 +10224,7 @@ return array (
             'default' => '',
             'authMode' => 'explicitAllow',
             'authMode_enforce' => 'strict',
+            'itemsProcFunc' => 'GridElementsTeam\\Gridelements\\Backend\\ItemsProcFuncs\\ListTypeList->itemsProcFunc',
           ),
         ),
         'file_collections' => 
@@ -10414,7 +10436,7 @@ return array (
           array (
             'type' => 'group',
             'internal_type' => 'db',
-            'allowed' => 'tt_content',
+            'allowed' => 'tt_content,pages',
             'size' => 5,
             'maxitems' => 200,
             'minitems' => 0,
@@ -10488,6 +10510,7 @@ return array (
                     ',
               '*,form_formframework' => 'FILE:EXT:form/Configuration/FlexForms/FormFramework.xml',
               '*,felogin_login' => 'FILE:EXT:felogin/Configuration/FlexForms/Login.xml',
+              '*,gridelements_pi1' => '',
             ),
             'search' => 
             array (
@@ -10820,6 +10843,119 @@ return array (
             'type' => 'passthrough',
           ),
         ),
+        'tx_gridelements_backend_layout' => 
+        array (
+          'exclude' => 1,
+          'label' => 'LLL:EXT:gridelements/Resources/Private/Language/locallang_db.xml:tt_content.tx_gridelements_backend_layout',
+          'config' => 
+          array (
+            'type' => 'select',
+            'renderType' => 'selectSingle',
+            'itemsProcFunc' => 'GridElementsTeam\\Gridelements\\Backend\\TtContent->layoutItemsProcFunc',
+            'fieldWizard' => 
+            array (
+              'selectIcons' => 
+              array (
+                'disabled' => '',
+              ),
+            ),
+            'size' => 1,
+            'maxitems' => 1,
+            'default' => 0,
+          ),
+          'onChange' => 'reload',
+        ),
+        'tx_gridelements_children' => 
+        array (
+          'exclude' => 1,
+          'label' => 'LLL:EXT:gridelements/Resources/Private/Language/locallang_db.xml:tt_content.tx_gridelements_children',
+          'config' => 
+          array (
+            'type' => 'inline',
+            'appearance' => 
+            array (
+              'levelLinksPosition' => 'top',
+              'showPossibleLocalizationRecords' => true,
+              'showRemovedLocalizationRecords' => true,
+              'showAllLocalizationLink' => true,
+              'showSynchronizationLink' => true,
+              'enabledControls' => 
+              array (
+                'info' => true,
+                'new' => false,
+                'dragdrop' => false,
+                'sort' => false,
+                'hide' => true,
+                'delete' => true,
+                'localize' => true,
+              ),
+            ),
+            'inline' => 
+            array (
+              'inlineNewButtonStyle' => 'display: inline-block;',
+            ),
+            'foreign_table' => 'tt_content',
+            'foreign_field' => 'tx_gridelements_container',
+            'overrideChildTca' => 
+            array (
+              'columns' => 
+              array (
+                'colPos' => 
+                array (
+                  'config' => 
+                  array (
+                    'default' => -1,
+                  ),
+                ),
+              ),
+            ),
+            'foreign_sortby' => 'sorting',
+            'size' => 5,
+            'autoSizeMax' => 20,
+          ),
+        ),
+        'tx_gridelements_container' => 
+        array (
+          'exclude' => 1,
+          'label' => 'LLL:EXT:gridelements/Resources/Private/Language/locallang_db.xml:tt_content.tx_gridelements_container',
+          'config' => 
+          array (
+            'type' => 'select',
+            'renderType' => 'selectSingle',
+            'items' => 
+            array (
+              0 => 
+              array (
+                0 => '',
+                1 => 0,
+              ),
+            ),
+            'default' => 0,
+            'foreign_table' => 'tt_content',
+            'foreign_table_where' => 'AND (tt_content.sys_language_uid = ###REC_FIELD_sys_language_uid### OR tt_content.sys_language_uid = -1) AND tt_content.pid=###CURRENT_PID### AND tt_content.CType=\'gridelements_pi1\' AND (tt_content.uid != ###THIS_UID###) AND (tt_content.tx_gridelements_container != ###THIS_UID### OR tt_content.tx_gridelements_container=0) ORDER BY tt_content.header, tt_content.uid',
+            'dontRemapTablesOnCopy' => 'tt_content',
+            'itemsProcFunc' => 'GridElementsTeam\\Gridelements\\Backend\\TtContent->containerItemsProcFunc',
+            'size' => 1,
+            'minitems' => 0,
+            'maxitems' => 1,
+          ),
+          'onChange' => 'reload',
+        ),
+        'tx_gridelements_columns' => 
+        array (
+          'exclude' => 1,
+          'label' => 'LLL:EXT:gridelements/Resources/Private/Language/locallang_db.xml:tt_content.tx_gridelements_columns',
+          'config' => 
+          array (
+            'type' => 'select',
+            'renderType' => 'selectSingle',
+            'itemsProcFunc' => 'GridElementsTeam\\Gridelements\\Backend\\TtContent->columnsItemsProcFunc',
+            'size' => 1,
+            'maxitems' => 1,
+            'default' => 0,
+          ),
+          'onChange' => 'reload',
+        ),
         't3_origuid' => 
         array (
           'config' => 
@@ -10833,7 +10969,7 @@ return array (
       array (
         1 => 
         array (
-          'showitem' => 'CType, --div--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_category.tabs.category, categories',
+          'showitem' => 'CType, --div--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_category.tabs.category, categories, --div--;LLL:EXT:gridelements/Resources/Private/Language/locallang_db.xlf:gridElements, tx_gridelements_container, tx_gridelements_columns',
         ),
         'bullets' => 
         array (
@@ -10854,7 +10990,7 @@ return array (
                     --div--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_category.tabs.category, categories,
                 --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:notes,
                     rowDescription,
-                --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended',
+                --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended, --div--;LLL:EXT:gridelements/Resources/Private/Language/locallang_db.xlf:gridElements, tx_gridelements_container, tx_gridelements_columns',
           'columnsOverrides' => 
           array (
             'bodytext' => 
@@ -10883,7 +11019,7 @@ return array (
                     --div--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_category.tabs.category, categories,
                 --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:notes,
                     rowDescription,
-                --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended',
+                --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended, --div--;LLL:EXT:gridelements/Resources/Private/Language/locallang_db.xlf:gridElements, tx_gridelements_container, tx_gridelements_columns',
         ),
         'header' => 
         array (
@@ -10902,7 +11038,7 @@ return array (
                     --div--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_category.tabs.category, categories,
                 --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:notes,
                     rowDescription,
-                --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended',
+                --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended, --div--;LLL:EXT:gridelements/Resources/Private/Language/locallang_db.xlf:gridElements, tx_gridelements_container, tx_gridelements_columns',
         ),
         'text' => 
         array (
@@ -10922,7 +11058,7 @@ return array (
                     --div--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_category.tabs.category, categories,
                 --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:notes,
                     rowDescription,
-                --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended',
+                --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended, --div--;LLL:EXT:gridelements/Resources/Private/Language/locallang_db.xlf:gridElements, tx_gridelements_container, tx_gridelements_columns',
           'columnsOverrides' => 
           array (
             'bodytext' => 
@@ -10957,7 +11093,7 @@ return array (
                     --div--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_category.tabs.category, categories,
                 --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:notes,
                     rowDescription,
-                --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended',
+                --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended, --div--;LLL:EXT:gridelements/Resources/Private/Language/locallang_db.xlf:gridElements, tx_gridelements_container, tx_gridelements_columns',
           'columnsOverrides' => 
           array (
             'bodytext' => 
@@ -10992,7 +11128,7 @@ return array (
                     --div--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_category.tabs.category, categories,
                 --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:notes,
                     rowDescription,
-                --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended',
+                --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended, --div--;LLL:EXT:gridelements/Resources/Private/Language/locallang_db.xlf:gridElements, tx_gridelements_container, tx_gridelements_columns',
           'columnsOverrides' => 
           array (
             'bodytext' => 
@@ -11026,7 +11162,7 @@ return array (
                     --div--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_category.tabs.category, categories,
                 --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:notes,
                     rowDescription,
-                --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended',
+                --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended, --div--;LLL:EXT:gridelements/Resources/Private/Language/locallang_db.xlf:gridElements, tx_gridelements_container, tx_gridelements_columns',
         ),
         'html' => 
         array (
@@ -11046,7 +11182,7 @@ return array (
                     --div--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_category.tabs.category, categories,
                 --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:notes,
                     rowDescription,
-                --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended',
+                --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended, --div--;LLL:EXT:gridelements/Resources/Private/Language/locallang_db.xlf:gridElements, tx_gridelements_container, tx_gridelements_columns',
           'columnsOverrides' => 
           array (
             'bodytext' => 
@@ -11081,7 +11217,7 @@ return array (
                     --div--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_category.tabs.category, categories,
                 --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:notes,
                     rowDescription,
-                --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended',
+                --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended, --div--;LLL:EXT:gridelements/Resources/Private/Language/locallang_db.xlf:gridElements, tx_gridelements_container, tx_gridelements_columns',
           'subtype_value_field' => 'list_type',
         ),
         'menu_categorized_pages' => 
@@ -11105,7 +11241,7 @@ return array (
                     --div--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_category.tabs.category, categories,
                 --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:notes,
                     rowDescription,
-                --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended',
+                --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended, --div--;LLL:EXT:gridelements/Resources/Private/Language/locallang_db.xlf:gridElements, tx_gridelements_container, tx_gridelements_columns',
           'columnsOverrides' => 
           array (
             'selected_categories' => 
@@ -11148,7 +11284,7 @@ return array (
                     --div--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_category.tabs.category, categories,
                 --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:notes,
                     rowDescription,
-                --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended',
+                --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended, --div--;LLL:EXT:gridelements/Resources/Private/Language/locallang_db.xlf:gridElements, tx_gridelements_container, tx_gridelements_columns',
           'columnsOverrides' => 
           array (
             'selected_categories' => 
@@ -11190,7 +11326,7 @@ return array (
                     --div--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_category.tabs.category, categories,
                 --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:notes,
                     rowDescription,
-                --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended',
+                --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended, --div--;LLL:EXT:gridelements/Resources/Private/Language/locallang_db.xlf:gridElements, tx_gridelements_container, tx_gridelements_columns',
         ),
         'menu_subpages' => 
         array (
@@ -11212,7 +11348,7 @@ return array (
                     --div--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_category.tabs.category, categories,
                 --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:notes,
                     rowDescription,
-                --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended',
+                --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended, --div--;LLL:EXT:gridelements/Resources/Private/Language/locallang_db.xlf:gridElements, tx_gridelements_container, tx_gridelements_columns',
         ),
         'menu_sitemap' => 
         array (
@@ -11233,7 +11369,7 @@ return array (
                     --div--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_category.tabs.category, categories,
                 --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:notes,
                     rowDescription,
-                --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended',
+                --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended, --div--;LLL:EXT:gridelements/Resources/Private/Language/locallang_db.xlf:gridElements, tx_gridelements_container, tx_gridelements_columns',
         ),
         'menu_section' => 
         array (
@@ -11255,7 +11391,7 @@ return array (
                     --div--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_category.tabs.category, categories,
                 --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:notes,
                     rowDescription,
-                --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended',
+                --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended, --div--;LLL:EXT:gridelements/Resources/Private/Language/locallang_db.xlf:gridElements, tx_gridelements_container, tx_gridelements_columns',
         ),
         'menu_abstract' => 
         array (
@@ -11277,7 +11413,7 @@ return array (
                     --div--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_category.tabs.category, categories,
                 --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:notes,
                     rowDescription,
-                --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended',
+                --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended, --div--;LLL:EXT:gridelements/Resources/Private/Language/locallang_db.xlf:gridElements, tx_gridelements_container, tx_gridelements_columns',
         ),
         'menu_recently_updated' => 
         array (
@@ -11299,7 +11435,7 @@ return array (
                     --div--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_category.tabs.category, categories,
                 --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:notes,
                     rowDescription,
-                --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended',
+                --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended, --div--;LLL:EXT:gridelements/Resources/Private/Language/locallang_db.xlf:gridElements, tx_gridelements_container, tx_gridelements_columns',
         ),
         'menu_related_pages' => 
         array (
@@ -11321,7 +11457,7 @@ return array (
                     --div--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_category.tabs.category, categories,
                 --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:notes,
                     rowDescription,
-                --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended',
+                --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended, --div--;LLL:EXT:gridelements/Resources/Private/Language/locallang_db.xlf:gridElements, tx_gridelements_container, tx_gridelements_columns',
         ),
         'menu_section_pages' => 
         array (
@@ -11343,7 +11479,7 @@ return array (
                     --div--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_category.tabs.category, categories,
                 --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:notes,
                     rowDescription,
-                --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended',
+                --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended, --div--;LLL:EXT:gridelements/Resources/Private/Language/locallang_db.xlf:gridElements, tx_gridelements_container, tx_gridelements_columns',
         ),
         'menu_sitemap_pages' => 
         array (
@@ -11365,14 +11501,14 @@ return array (
                     --div--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_category.tabs.category, categories,
                 --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:notes,
                     rowDescription,
-                --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended',
+                --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended, --div--;LLL:EXT:gridelements/Resources/Private/Language/locallang_db.xlf:gridElements, tx_gridelements_container, tx_gridelements_columns',
         ),
         'shortcut' => 
         array (
           'showitem' => '--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,
                     --palette--;;general,
                     header;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:header.ALT.shortcut_formlabel,
-                    records;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:records_formlabel,
+                    records;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:records_formlabel, recursive,
                 --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.appearance,
                     --palette--;;frames,
                     --palette--;;appearanceLinks,
@@ -11385,7 +11521,7 @@ return array (
                     --div--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_category.tabs.category, categories,
                 --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:notes,
                     rowDescription,
-                --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended',
+                --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended, --div--;LLL:EXT:gridelements/Resources/Private/Language/locallang_db.xlf:gridElements, tx_gridelements_container, tx_gridelements_columns',
         ),
         'table' => 
         array (
@@ -11408,7 +11544,7 @@ return array (
                     --div--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_category.tabs.category, categories,
                 --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:notes,
                     rowDescription,
-                --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended',
+                --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended, --div--;LLL:EXT:gridelements/Resources/Private/Language/locallang_db.xlf:gridElements, tx_gridelements_container, tx_gridelements_columns',
           'columnsOverrides' => 
           array (
             'bodytext' => 
@@ -11440,12 +11576,11 @@ return array (
                     --div--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_category.tabs.category, categories,
                 --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:notes,
                     rowDescription,
-                --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended',
+                --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended, --div--;LLL:EXT:gridelements/Resources/Private/Language/locallang_db.xlf:gridElements, tx_gridelements_container, tx_gridelements_columns',
         ),
         'form_formframework' => 
         array (
-          'showitem' => '
-        --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,
+          'showitem' => '--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,
             --palette--;;general,
             --palette--;;header,
         --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.plugin,
@@ -11462,13 +11597,11 @@ return array (
             categories,
         --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:notes,
             rowDescription,
-        --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended,
-    ',
+        --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended, --div--;LLL:EXT:gridelements/Resources/Private/Language/locallang_db.xlf:gridElements, tx_gridelements_container, tx_gridelements_columns',
         ),
         'felogin_login' => 
         array (
-          'showitem' => '
-        --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,
+          'showitem' => '--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,
             --palette--;;general,
             --palette--;;headers,
         --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.plugin,
@@ -11485,13 +11618,11 @@ return array (
             categories,
         --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:notes,
             rowDescription,
-        --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended,
-    ',
+        --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended, --div--;LLL:EXT:gridelements/Resources/Private/Language/locallang_db.xlf:gridElements, tx_gridelements_container, tx_gridelements_columns',
         ),
         'sideHeaderContent' => 
         array (
-          'showitem' => '
-         --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,
+          'showitem' => '--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,
             --palette--;;general,
             header; Titel;,
             header_position; Titelposition;,
@@ -11501,8 +11632,7 @@ return array (
             bodytext;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:bodytext_formlabel,
          --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access,
             --palette--;;hidden,
-            --palette--;;access,
-      ',
+            --palette--;;access, --div--;LLL:EXT:gridelements/Resources/Private/Language/locallang_db.xlf:gridElements, tx_gridelements_container, tx_gridelements_columns',
           'columnsOverrides' => 
           array (
             'bodytext' => 
@@ -11853,8 +11983,7 @@ return array (
         ),
         'ghp_info_card' => 
         array (
-          'showitem' => '
-         --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,
+          'showitem' => '--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,
             --palette--;;general,
             header; Titel;,
             header_position; Titelposition;,
@@ -11866,8 +11995,7 @@ return array (
             bodytext;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:bodytext_formlabel,
          --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access,
             --palette--;;hidden,
-            --palette--;;access,
-      ',
+            --palette--;;access, --div--;LLL:EXT:gridelements/Resources/Private/Language/locallang_db.xlf:gridElements, tx_gridelements_container, tx_gridelements_columns',
           'columnsOverrides' => 
           array (
             'bodytext' => 
@@ -12215,6 +12343,25 @@ return array (
               ),
             ),
           ),
+        ),
+        'gridelements_pi1' => 
+        array (
+          'showitem' => '--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.general;general,
+	--palette--;;headers,
+	tx_gridelements_backend_layout,
+	pi_flexform,
+	tx_gridelements_children,
+    --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.appearance,
+    --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.frames;frames,
+    --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.appearanceLinks;appearanceLinks,
+    media,
+    --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language,--palette--;;language,
+    --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access,
+    --palette--;;hidden,
+    --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.access;access,
+    --div--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_category.tabs.category,
+	categories,
+    --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:notes,rowDescription, --div--;LLL:EXT:gridelements/Resources/Private/Language/locallang_db.xlf:gridElements, tx_gridelements_container, tx_gridelements_columns',
         ),
       ),
       'palettes' => 
@@ -13018,7 +13165,7 @@ return array (
       array (
         1 => 
         array (
-          'showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, titel, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime',
+          'showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, titel, fadeIn, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime',
         ),
       ),
       'columns' => 
@@ -13147,6 +13294,378 @@ return array (
             'size' => 30,
             'eval' => 'trim',
           ),
+        ),
+        'fadeIn' => 
+        array (
+          'exclude' => false,
+          'label' => 'LLL:EXT:ghp/Resources/Private/Language/locallang_db.xlf:tx_ghp_domain_model_guitarheartsproject.titel',
+          'config' => 
+          array (
+            'type' => 'input',
+            'size' => 30,
+            'eval' => 'trim',
+          ),
+        ),
+      ),
+    ),
+    'tx_gridelements_backend_layout' => 
+    array (
+      'ctrl' => 
+      array (
+        'title' => 'LLL:EXT:gridelements/Resources/Private/Language/locallang_db.xml:tx_gridelements_backend_layout',
+        'label' => 'title',
+        'tstamp' => 'tstamp',
+        'crdate' => 'crdate',
+        'cruser_id' => 'cruser_id',
+        'versioningWS' => true,
+        'origUid' => 't3_origuid',
+        'sortby' => 'sorting',
+        'delete' => 'deleted',
+        'rootLevel' => -1,
+        'thumbnail' => 'resources',
+        'dividers2tabs' => true,
+        'selicon_field' => 'icon',
+        'enablecolumns' => 
+        array (
+          'disabled' => 'hidden',
+        ),
+        'iconfile' => 'EXT:gridelements/Resources/Public/Icons/gridelements.svg',
+      ),
+      'columns' => 
+      array (
+        't3ver_label' => 
+        array (
+          'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.versionLabel',
+          'config' => 
+          array (
+            'type' => 'input',
+            'size' => '30',
+            'max' => '30',
+          ),
+        ),
+        'hidden' => 
+        array (
+          'exclude' => 1,
+          'label' => 'LLL:EXT:gridelements/Resources/Private/Language/locallang_db.xml:tx_gridelements_backend_layout',
+          'config' => 
+          array (
+            'type' => 'check',
+            'items' => 
+            array (
+              1 => 
+              array (
+                0 => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:hidden.I.0',
+              ),
+            ),
+          ),
+        ),
+        'title' => 
+        array (
+          'exclude' => 1,
+          'label' => 'LLL:EXT:gridelements/Resources/Private/Language/locallang_db.xml:tx_gridelements_backend_layout.title',
+          'config' => 
+          array (
+            'type' => 'input',
+            'size' => '25',
+            'max' => '256',
+            'eval' => 'required',
+          ),
+        ),
+        'alias' => 
+        array (
+          'exclude' => 1,
+          'label' => 'LLL:EXT:gridelements/Resources/Private/Language/locallang_db.xml:tx_gridelements_backend_layout.alias',
+          'config' => 
+          array (
+            'type' => 'input',
+            'size' => '25',
+            'max' => '256',
+            'eval' => 'nospace,alphanum_x,lower',
+          ),
+        ),
+        'description' => 
+        array (
+          'exclude' => 1,
+          'label' => 'LLL:EXT:gridelements/Resources/Private/Language/locallang_db.xml:tx_gridelements_backend_layout.description',
+          'config' => 
+          array (
+            'type' => 'text',
+            'rows' => '5',
+          ),
+        ),
+        'horizontal' => 
+        array (
+          'exclude' => 1,
+          'label' => 'LLL:EXT:gridelements/Resources/Private/Language/locallang_db.xml:tx_gridelements_backend_layout.horizontal',
+          'config' => 
+          array (
+            'type' => 'check',
+            'items' => 
+            array (
+              1 => 
+              array (
+                0 => 'LLL:EXT:gridelements/Resources/Private/Language/locallang_db.xml:tx_gridelements_backend_layout.horizontal.I.0',
+              ),
+            ),
+          ),
+        ),
+        'icon' => 
+        array (
+          'exclude' => 1,
+          'label' => 'LLL:EXT:gridelements/Resources/Private/Language/locallang_db.xml:tx_gridelements_backend_layout.icon',
+          'config' => 
+          array (
+            'type' => 'inline',
+            'foreign_table' => 'sys_file_reference',
+            'foreign_field' => 'uid_foreign',
+            'foreign_sortby' => 'sorting_foreign',
+            'foreign_table_field' => 'tablenames',
+            'foreign_match_fields' => 
+            array (
+              'fieldname' => 'icon',
+            ),
+            'foreign_label' => 'uid_local',
+            'foreign_selector' => 'uid_local',
+            'overrideChildTca' => 
+            array (
+              'columns' => 
+              array (
+                'uid_local' => 
+                array (
+                  'config' => 
+                  array (
+                    'appearance' => 
+                    array (
+                      'elementBrowserType' => 'file',
+                      'elementBrowserAllowed' => 'gif,jpg,jpeg,tif,tiff,bmp,pcx,tga,png,pdf,ai,svg',
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            'filter' => 
+            array (
+              0 => 
+              array (
+                'userFunc' => 'TYPO3\\CMS\\Core\\Resource\\Filter\\FileExtensionFilter->filterInlineChildren',
+                'parameters' => 
+                array (
+                  'allowedFileExtensions' => 'gif,jpg,jpeg,tif,tiff,bmp,pcx,tga,png,pdf,ai,svg',
+                  'disallowedFileExtensions' => '',
+                ),
+              ),
+            ),
+            'appearance' => 
+            array (
+              'useSortable' => true,
+              'headerThumbnail' => 
+              array (
+                'field' => 'uid_local',
+                'height' => '45m',
+              ),
+              'enabledControls' => 
+              array (
+                'info' => true,
+                'new' => false,
+                'dragdrop' => true,
+                'sort' => false,
+                'hide' => true,
+                'delete' => true,
+              ),
+              'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:images.addFileReference',
+            ),
+            'maxitems' => 1,
+          ),
+        ),
+        'frame' => 
+        array (
+          'exclude' => 1,
+          'label' => 'LLL:EXT:gridelements/Resources/Private/Language/locallang_db.xml:tx_gridelements_backend_layout.frame',
+          'config' => 
+          array (
+            'type' => 'select',
+            'renderType' => 'selectSingle',
+            'items' => 
+            array (
+              0 => 
+              array (
+                0 => 'LLL:EXT:gridelements/Resources/Private/Language/locallang_db.xml:tx_gridelements_backend_layout.frame.I.0',
+                1 => '0',
+              ),
+              1 => 
+              array (
+                0 => 'LLL:EXT:gridelements/Resources/Private/Language/locallang_db.xml:tx_gridelements_backend_layout.frame.I.-1',
+                1 => '-1',
+              ),
+              2 => 
+              array (
+                0 => 'LLL:EXT:gridelements/Resources/Private/Language/locallang_db.xml:tx_gridelements_backend_layout.frame.I.1',
+                1 => '1',
+              ),
+              3 => 
+              array (
+                0 => 'LLL:EXT:gridelements/Resources/Private/Language/locallang_db.xml:tx_gridelements_backend_layout.frame.I.2',
+                1 => '2',
+              ),
+              4 => 
+              array (
+                0 => 'LLL:EXT:gridelements/Resources/Private/Language/locallang_db.xml:tx_gridelements_backend_layout.frame.I.3',
+                1 => '3',
+              ),
+            ),
+            'size' => 1,
+            'maxitems' => 1,
+          ),
+        ),
+        'top_level_layout' => 
+        array (
+          'exclude' => 1,
+          'label' => 'LLL:EXT:gridelements/Resources/Private/Language/locallang_db.xml:tx_gridelements_backend_layout.top_level_layout',
+          'config' => 
+          array (
+            'type' => 'check',
+            'items' => 
+            array (
+              1 => 
+              array (
+                0 => 'LLL:EXT:core/Resources/Private/Language/locallang_core.xlf:labels.enabled',
+              ),
+            ),
+          ),
+        ),
+        'config' => 
+        array (
+          'exclude' => 1,
+          'label' => 'LLL:EXT:gridelements/Resources/Private/Language/locallang_db.xml:tx_gridelements_backend_layout.config',
+          'config' => 
+          array (
+            'type' => 'text',
+            'renderType' => 'belayoutwizard',
+            'cols' => '25',
+            'rows' => '5',
+            'fixedFont' => true,
+          ),
+        ),
+        'pi_flexform_ds' => 
+        array (
+          'exclude' => 1,
+          'label' => 'LLL:EXT:gridelements/Resources/Private/Language/locallang_db.xml:tx_gridelements_backend_layout.pi_flexform_ds',
+          'config' => 
+          array (
+            'type' => 'text',
+            'cols' => '35',
+            'rows' => '10',
+          ),
+        ),
+        'pi_flexform_ds_file' => 
+        array (
+          'exclude' => 1,
+          'label' => 'LLL:EXT:gridelements/Resources/Private/Language/locallang_db.xml:tx_gridelements_backend_layout.pi_flexform_ds_file',
+          'config' => 
+          array (
+            'type' => 'inline',
+            'foreign_table' => 'sys_file_reference',
+            'foreign_field' => 'uid_foreign',
+            'foreign_sortby' => 'sorting_foreign',
+            'foreign_table_field' => 'tablenames',
+            'foreign_match_fields' => 
+            array (
+              'fieldname' => 'pi_flexform_ds_file',
+            ),
+            'foreign_label' => 'uid_local',
+            'foreign_selector' => 'uid_local',
+            'overrideChildTca' => 
+            array (
+              'columns' => 
+              array (
+                'uid_local' => 
+                array (
+                  'config' => 
+                  array (
+                    'appearance' => 
+                    array (
+                      'elementBrowserType' => 'file',
+                      'elementBrowserAllowed' => 'xml',
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            'filter' => 
+            array (
+              0 => 
+              array (
+                'userFunc' => 'TYPO3\\CMS\\Core\\Resource\\Filter\\FileExtensionFilter->filterInlineChildren',
+                'parameters' => 
+                array (
+                  'allowedFileExtensions' => 'xml',
+                  'disallowedFileExtensions' => '',
+                ),
+              ),
+            ),
+            'appearance' => 
+            array (
+              'useSortable' => true,
+              'headerThumbnail' => 
+              array (
+                'field' => 'uid_local',
+                'height' => '45m',
+              ),
+              'enabledControls' => 
+              array (
+                'info' => true,
+                'new' => false,
+                'dragdrop' => true,
+                'sort' => false,
+                'hide' => true,
+                'delete' => true,
+              ),
+              'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:media.addFileReference',
+            ),
+            'maxitems' => 1,
+          ),
+        ),
+        't3_origuid' => 
+        array (
+          'config' => 
+          array (
+            'type' => 'passthrough',
+            'default' => 0,
+          ),
+        ),
+      ),
+      'palettes' => 
+      array (
+        'general' => 
+        array (
+          'canNotCollapse' => 1,
+          'showitem' => 'title, --linebreak--, description',
+        ),
+        'appearance' => 
+        array (
+          'canNotCollapse' => 1,
+          'showitem' => 'icon, horizontal, frame',
+        ),
+        'visibility' => 
+        array (
+          'canNotCollapse' => 1,
+          'showitem' => 'hidden',
+        ),
+        'flexform' => 
+        array (
+          'canNotCollapse' => 1,
+          'showitem' => 'pi_flexform_ds, --linebreak--, pi_flexform_ds_file',
+        ),
+      ),
+      'types' => 
+      array (
+        1 => 
+        array (
+          'showitem' => '--palette--;LLL:EXT:gridelements/Resources/Private/Language/locallang_db.xml:tx_gridelements_backend_layout;general,
+					--palette--;LLL:EXT:gridelements/Resources/Private/Language/locallang_db.xml:tx_gridelements_backend_layout.palette.appearance;appearance,
+					--div--;LLL:EXT:gridelements/Resources/Private/Language/locallang_db.xml:tx_gridelements_backend_layout.div.configuration, top_level_layout, alias, config,
+					--palette--;LLL:EXT:gridelements/Resources/Private/Language/locallang_db.xml:tx_gridelements_backend_layout.ce_configuration;flexform,
+					--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.visibility;visibility',
         ),
       ),
     ),

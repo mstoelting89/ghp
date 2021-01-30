@@ -10,6 +10,7 @@
 	},
 	"require": {
 		"friendsoftypo3/extension-builder": "dev-v10-compatibility",
+		"gridelementsteam/gridelements": "^10.0",
 		"helhum/typo3-console": "^6.0.0",
 		"typo3/cms-about": "^10.4",
 		"typo3/cms-backend": "^10.4",
