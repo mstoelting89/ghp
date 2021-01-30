@@ -92,9 +92,6 @@ return [
         'gridelements' => [
             'packagePath' => 'typo3conf/ext/gridelements/',
         ],
-        'news' => [
-            'packagePath' => 'typo3conf/ext/news/',
-        ],
     ],
     'version' => 5,
 ];
