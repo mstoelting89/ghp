@@ -504,6 +504,21 @@ footer .secondary-menu a {
 }
 
 /*************************************/
+/*          twoColumns               */
+/*************************************/
+.grid-container-zweispalten .grid-row {
+    display: flex;
+}
+
+.grid-container-zweispalten .grid-column {
+     min-width: 48%;
+}
+
+.grid-container {
+    display:flex;
+}
+
+/*************************************/
 /*          Tablet                   */
 /*************************************/
 
