@@ -472,11 +472,12 @@ footer .secondary-menu a {
 /*************************************/
 .grid-container-zweispalten .grid-row {
     display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
 }
 
 .grid-container-zweispalten .grid-column {
-    min-width: 48%;
-    margin-right:5rem;
+    min-width: 90vw;
 }
 
 /*************************************/
@@ -484,69 +485,17 @@ footer .secondary-menu a {
 /*************************************/
 
 @media (min-width: 768px) {
+
     /*************************************/
-    /*          Sidebar                  */
+    /*          Header                   */
     /*************************************/
-    /*
-    .sidebars {
-        position:fixed;
-        bottom:30vh;
-        right:0;
-        left:inherit;
-        z-index:2000;
-        flex-direction: column;
-        justify-content: center;
-        display:flex;
-        align-items:end;
+
+    .header-title {
+        top: 30vh;
+        min-width:92vw;
+        max-width: 92vw;
     }
 
-    .sidebars .sidebar {
-        transition:all 0.25s ease-in-out;
-    }
-
-    .sidebar-item {
-        position:relative;
-        width:368px;
-        right:-320px;
-        background-color: #b20027;
-        margin-bottom:2rem;
-        border-radius:5px 0 0 5px;
-        transition:all 0.25s ease-in-out;
-    }
-
-    .sidebar-item.active {
-        right:0px;
-        position:relative;
-        height:inherit;
-        width:368px;
-    }
-
-    .sidebar-title {
-        writing-mode: vertical-rl;
-        transform: rotate(180deg);
-        text-align: center;
-        color:#fff;
-        padding:10px;
-        font-size:1rem;
-        font-weight:bold;
-        cursor:pointer;
-    }
-
-    .sidebar-content {
-        position: relative;
-        display: inline-block;
-        max-height: 30rem;
-        min-height: 30rem;
-        margin-top: -17rem;
-        margin-bottom: -17rem;
-        overflow-y:auto;
-        width:320px;
-        float:right;
-        background-color:#fff;
-        z-index:3000;
-        border: 2px solid black;
-    }
-    */
     /*************************************/
     /*          Blog-Posts               */
     /*************************************/
@@ -564,9 +513,8 @@ footer .secondary-menu a {
         border-radius: 5px;
         padding:3rem;
     }
+
 }
-
-
 
 /*************************************/
 /*          Desktop                  */
@@ -596,5 +544,20 @@ footer .secondary-menu a {
         max-width: 60vw;
         display:flex;
         border-radius: 5px;
+    }
+
+    /*************************************/
+    /*          twoColumns               */
+    /*************************************/
+    .grid-container-zweispalten .grid-row {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
+
+    .grid-container-zweispalten .grid-column {
+        min-width: 37vw;
+        max-width: 37vw;
+        margin-left: 2rem;
     }
 }

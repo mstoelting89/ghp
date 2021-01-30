@@ -173,6 +173,26 @@ page {
         20.data = DB:pages:5:title
       }
 
+      ankermenue = CONTENT
+      ankermenue {
+        table = tt_content
+        wrap = <ul>|</ul>
+        select {
+          pidInList = this
+          orderBy = sorting
+          where = colPos=0
+          languageField=sys_language_uid
+        }
+        renderObj = TEXT
+        renderObj {
+          wrap = <li>|</li>
+          field = header
+          typolink.parameter.field = pid
+          typolink.parameter.dataWrap = |#{field:uid}
+          if.isTrue.field=header
+        }
+      }
+
       contentMain = CONTENT
       contentMain < styles.content.get
 
