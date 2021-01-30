@@ -29,7 +29,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => 'b75699221a351d7b34a7a94a7a6df6a237dc8060',
+    'reference' => '10003c7e47de24a7f43a3e6cf80f4be5a07f372f',
     'name' => 'typo3/cms-base-distribution',
   ),
   'versions' => 
@@ -713,7 +713,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => 'b75699221a351d7b34a7a94a7a6df6a237dc8060',
+      'reference' => '10003c7e47de24a7f43a3e6cf80f4be5a07f372f',
     ),
     'typo3/cms-belog' => 
     array (
