@@ -173,8 +173,15 @@ page {
         20.data = DB:pages:5:title
       }
 
+      bTest = TEXT
+      bTest {
+        data = FIELD:uid
+      }
+
+
       bewerbenContent = CONTENT
       bewerbenContent {
+        10 = TEXT
         table = tt_content
         select {
           pidInList = 5
@@ -185,6 +192,7 @@ page {
           10 = TEXT
           10.stdWrap.field = bodytext
         }
+
       }
 
       spendenContent = CONTENT
@@ -199,6 +207,11 @@ page {
           10 = TEXT
           10.stdWrap.field = bodytext
         }
+      }
+
+      gpContact = TEXT
+      gpContact {
+        stdWrap.data = GP:finish
       }
 
       ankermenue = CONTENT
@@ -266,14 +279,18 @@ lib.contentElement {
   }
 }
 
-lib.sidebarcontent = CONTENT
+lib.sidebarcontent = COA
 lib.sidebarcontent {
-  table = tt_content
-  select.pidInList = {field:uid}
-  select.pidInList.insertData = 1
 
+  10 = CONTENT
+  10 {
+    table = tt_content
+    select.pidInList = {field:uid}
+    select.pidInList.insertData = 1
+  }
   renderObj = TEXT
   renderObj.field = bodytext
+
 }
 
 # these classes are only used in auto-generated templates

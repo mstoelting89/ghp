@@ -4,7 +4,16 @@
     <div class="sidebar-title">
         {sidebar.data.title}
     </div>
-    <div class="sidebar-content">
-        {bewerbenContent -> f:format.raw()}
-    </div>
+    <f:if condition="{gpContact} == 'true' && {sidebar.data.uid} == '5'">
+        <f:then>
+            <div class="sidebar-content active">
+                Die Nachricht wurde erfolgreich verschickt
+            </div>
+        </f:then>
+        <f:else>
+            <div class="sidebar-content">
+                <f:cObject typoscriptObjectPath="lib.sidebarcontent" data="{sidebar.data}"></f:cObject>
+            </div>
+        </f:else>
+    </f:if>
 </div>

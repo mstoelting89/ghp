@@ -1,0 +1,59 @@
+
+renderingOptions:
+  submitButtonLabel: Absenden
+type: Form
+identifier: kontakt
+label: Kontakt
+prototypeName: standard
+finishers:
+  -
+    options:
+      subject: 'Neue Kontaktanfrage'
+      recipients:
+        michaelstoelting@gmail.com: Michael
+      senderAddress: kontakt@guitarheartsproject.de
+      senderName: Kontakt
+      addHtmlPart: true
+      attachUploads: true
+      translation:
+        language: ''
+      useFluidEmail: false
+      title: ''
+    identifier: EmailToReceiver
+  -
+    options:
+      pageUid: '2'
+      additionalParameters: finish=true
+    identifier: Redirect
+renderables:
+  -
+    renderingOptions:
+      previousButtonLabel: 'Vorherige Seite'
+      nextButtonLabel: 'Nächster Schritt'
+    type: Page
+    identifier: page-1
+    label: ''
+    renderables:
+      -
+        defaultValue: ''
+        type: Text
+        identifier: text-1
+        label: Name
+      -
+        defaultValue: ''
+        type: Text
+        identifier: text-2
+        label: Vorname
+      -
+        defaultValue: ''
+        type: Email
+        identifier: email-1
+        label: 'E-Mail Adresse'
+        validators:
+          -
+            identifier: EmailAddress
+      -
+        defaultValue: ''
+        type: Textarea
+        identifier: textarea-1
+        label: Nachricht

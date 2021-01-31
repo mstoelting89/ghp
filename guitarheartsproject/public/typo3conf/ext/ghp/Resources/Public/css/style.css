@@ -79,15 +79,10 @@ body {
     transition: .3s;
     color:#b20027;
 }
-/*
-.nav-item a:hover {
-    font-size: 22px;
-    transition: .2s;
+.fixed-top .nav-item a:hover {
+    transition: .3s;
+    color: #000;
 }
-
-.nav-link {
-    padding: 0;
-}*/
 
 .nav-link a {
     color: #f7f7f7;
@@ -284,19 +279,31 @@ body {
 }
 
 .sidebar-content {
-    position:absolute;
-    max-height:30rem;
-    min-height:30rem;
-    width:320px;
+    position:fixed;
+    max-height:90vh;
+    min-height:90vh;
+    width:100vw;
     background-color: #fff;
     border:2px  solid #b20027;
     display:none;
     transition: all 2s ease-in-out;
     right:0;
+    padding: 1rem;
+    overflow:scroll;
+    left:0;
 }
 
 .sidebar-content.active {
     display:block;
+}
+
+.sidebar-content .form-group textarea {
+    height:15rem;
+}
+
+.sidebar-content .info-card-header {
+    margin-top:10px;
+    text-align: left;
 }
 
 .fade-in {
@@ -511,6 +518,23 @@ footer .secondary-menu a {
         display:none;
         border-radius: 5px;
         padding:3rem;
+    }
+
+    /*************************************/
+    /*          Sidebar                  */
+    /*************************************/
+
+    .sidebar-content {
+        position:fixed;
+        max-height:90vh;
+        min-height:90vh;
+        width:50vw;
+        background-color: #fff;
+        border:2px  solid #b20027;
+        display:none;
+        transition: all 2s ease-in-out;
+        left: 50vw;
+        padding: 1rem;
     }
 }
 
