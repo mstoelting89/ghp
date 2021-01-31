@@ -125,6 +125,26 @@ body {
     border-radius: 5px;
 }
 
+.header-title-blog {
+    position: absolute;
+    left: 2vw;
+    bottom: 2vh;
+    background-color: rgba(255,255,255,.8);
+    color:#000;
+    padding-top:1rem;
+    padding-left:1rem;
+    padding-right:3rem;
+    padding-bottom:3rem;
+    min-width: 96vw;
+    max-width: 96vw;
+    display:flex;
+    border-radius: 5px;
+    min-height:90vh;
+    max-height:90vh;
+    overflow:scroll;
+    scrollbar-color: #b20027 #000;
+}
+
 .header-title img {
     height: 10vw;
     margin-right: 5vw;
