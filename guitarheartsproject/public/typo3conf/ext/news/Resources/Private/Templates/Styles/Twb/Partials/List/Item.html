@@ -7,6 +7,7 @@
 -->
 <n:excludeDisplayedNews newsItem="{newsItem}" />
 <div class="row news-list-item">
+	<!--
 	<div class="col-md-3">
 		<n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}">
 			<f:if condition="{newsItem.mediaPreviews}">
@@ -21,15 +22,33 @@
 			</f:if>
 		</n:link>
 	</div>
-
-	<div class="col-md-9 articletype-{newsItem.type}{f:if(condition: newsItem.istopnews, then: ' topnews')}" itemscope="itemscope" itemtype="http://schema.org/Article">
-		<h3 itemprop="headline">
-			<n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}">
-				{newsItem.title}
-			</n:link>
-		</h3>
+	-->
+	<div class="col-md-12 articletype-{newsItem.type}{f:if(condition: newsItem.istopnews, then: ' topnews')}" itemscope="itemscope" itemtype="http://schema.org/Article">
+		<div class="news-header">
+			<h5 itemprop="headline">
+				<n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}">
+					{newsItem.title}
+				</n:link>
+			</h5>
+		</div>
 
 		<f:render partial="General/AdditionalInformation" arguments="{settings:settings,newsItem:newsItem}" />
+
+		<div class="news-media">
+			<n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}">
+				<f:if condition="{newsItem.mediaPreviews}">
+					<f:then>
+						<f:media class="img-responsive" file="{newsItem.mediaPreviews.0}" title="{mediaElement.originalResource.title}" alt="{mediaElement.originalResource.alternative}" width="150" height="150" />
+					</f:then>
+					<f:else>
+						<f:if condition="{settings.displayDummyIfNoMedia}">
+							<f:image class="img-dummy img-responsive" src="{settings.list.media.dummyImage}" title="" alt="" maxWidth="{settings.list.media.image.maxWidth}" maxHeight="{settings.list.media.image.maxHeight}" />
+						</f:if>
+					</f:else>
+				</f:if>
+			</n:link>
+		</div>
+
 
 		<!-- teaser -->
 		<div class="lead" itemprop="description">
@@ -44,10 +63,13 @@
 				</f:if>
 			</n:removeMediaTags>
 		</div>
+		<div class="news-further-link">
+			<span class="glyphicon glyphicon-circle-arrow-right"></span>
+			<n:link newsItem="{newsItem}" settings="{settings}" class="btn btn-default btn-read-more" title="{newsItem.title}">
+				<f:translate key="more-link" />
+			</n:link>
+		</div>
 
-		<n:link newsItem="{newsItem}" settings="{settings}" class="btn btn-default btn-read-more" title="{newsItem.title}">
-			<f:translate key="more-link" />
-		</n:link>
 	</div>
 </div>
 </html>
